@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* DolceStay Brand Colors */
+  --ds-primary-green: #8DBE91;
+  --ds-soft-green: #CFE8D2;
+  --ds-ocean-blue: #7EBBD3;
+  --ds-deep-blue: #1F4E5F;
+  --ds-black: #111111;
+  --ds-white: #FFFFFF;
+  --ds-light-bg: #F8FAF8;
+  
+  /* Design System Tokens */
+  --background: #F8FAF8;
+  --foreground: #111111;
+  --card: #FFFFFF;
+  --card-foreground: #111111;
+  --popover: #FFFFFF;
+  --popover-foreground: #111111;
+  --primary: #8DBE91;
+  --primary-foreground: #FFFFFF;
+  --secondary: #CFE8D2;
+  --secondary-foreground: #1F4E5F;
+  --muted: #F8FAF8;
+  --muted-foreground: #6B7280;
+  --accent: #7EBBD3;
+  --accent-foreground: #1F4E5F;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #8DBE91;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-mono: 'Geist Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* DolceStay Custom Colors */
+  --color-ds-primary: #8DBE91;
+  --color-ds-soft: #CFE8D2;
+  --color-ds-ocean: #7EBBD3;
+  --color-ds-deep: #1F4E5F;
+  --color-ds-light: #F8FAF8;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ds-light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ds-primary-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ds-deep-blue);
+}
