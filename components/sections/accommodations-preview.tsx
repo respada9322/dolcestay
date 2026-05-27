@@ -1,8 +1,9 @@
 'use client';
 
-import { MapPin, Users, Bed, Wifi, Car, Waves, TreePine, Building, Sun, Wind, ArrowRight, Star } from 'lucide-react';
+import { MapPin, Users, Bed, Wifi, Car, Waves, TreePine, Building, Sun, Wind, Star } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
-import { BOOKING_URL, featuredAccommodations } from '@/lib/data';
+import { featuredAccommodations } from '@/lib/data';
+import { AccommodationsCta } from '@/components/sections/accommodations-cta';
 
 const featureIcons: Record<string, React.ReactNode> = {
   seaView: <Waves className="h-3.5 w-3.5" />,
@@ -122,21 +123,7 @@ export function AccommodationsPreview() {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center bg-white rounded-2xl p-8 lg:p-12 shadow-lg max-w-3xl mx-auto">
-          <p className="text-[#6B7280] mb-6">
-            {t.accommodations.bookingNote}
-          </p>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-2 px-10 py-4 text-lg font-bold text-white bg-[#8DBE91] hover:bg-[#7AAD7E] rounded-full transition-all shadow-xl hover:shadow-2xl hover:scale-105"
-          >
-            {t.common.viewAll}
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
+        <AccommodationsCta />
       </div>
     </section>
   );

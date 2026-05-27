@@ -57,7 +57,11 @@ export const translations = {
       featured: 'Destaque',
       guests: 'pessoas',
       bedrooms: 'quartos',
-      bookingNote: 'As reservas são concluídas de forma segura através da nossa plataforma de reservas.',
+      ctaTitle: 'Reserve com confiança',
+      bookingNote:
+        'As reservas são concluídas de forma segura através da nossa plataforma oficial.',
+      ctaButton: 'Ver todos os alojamentos',
+      ctaHint: 'Disponibilidade atualizada',
       book: 'Reservar',
       features: {
         seaView: 'Vista Mar',
@@ -83,7 +87,7 @@ export const translations = {
       items: {
         bookingManagement: {
           title: 'Gestão de Reservas',
-          description: 'Colocamos e gerimos as reservas do seu AL em plataformas como Airbnb e Booking.com.',
+          description: 'Colocamos e gerimos as reservas do seu alojamento em plataformas como Airbnb, Booking.com e o nosso próprio site.',
         },
         checkInOut: {
           title: 'Check-in & Check-out',
@@ -124,6 +128,12 @@ export const translations = {
       offersTitle: 'O que oferecemos',
       ctaTitle: 'Pronto para começar?',
       ctaDescription: 'Entre em contacto connosco e descubra como podemos maximizar o rendimento do seu imóvel em Sesimbra.',
+      ctaPills: {
+        fastSetup: 'Setup rápido',
+        dedicatedTeam: 'Equipa dedicada',
+        premiumManagement: 'Gestão premium',
+      },
+      ctaDisclaimer: 'Sem compromisso inicial. Resposta em menos de 24h.',
       benefits: {
         fullManagement: 'Gestão completa',
         visibility: 'Mais visibilidade',
@@ -151,6 +161,64 @@ export const translations = {
       },
       cta: 'Quero Rentabilizar o Meu Imóvel',
     },
+    howItWorks: {
+      title: 'Como funciona',
+      subtitle: 'Um processo claro, transparente e pensado para resultados consistentes.',
+      stepLabel: 'STEP',
+      steps: {
+        step1: {
+          title: 'Contacto inicial',
+          description: 'Percebemos o seu objetivo e validamos o perfil do imóvel.',
+        },
+        step2: {
+          title: 'Avaliação da propriedade',
+          description: 'Analisamos potencial, mercado e rentabilidade esperada.',
+        },
+        step3: {
+          title: 'Preparação e otimização',
+          description: 'Preparamos o imóvel e otimizamos anúncio, preço e posicionamento.',
+        },
+        step4: {
+          title: 'Gestão contínua',
+          description: 'Executamos operações, reservas, limpeza e comunicação com hóspedes.',
+        },
+        step5: {
+          title: 'Relatórios e resultados',
+          description: 'Partilhamos indicadores e ajustamos a estratégia para crescer.',
+        },
+      },
+    },
+    trustMetrics: {
+      badge: 'CONFIANÇA DOLCESTAY',
+      title: 'Uma marca premium construída em resultados consistentes.',
+      subtitle:
+        'Indicadores editáveis para apresentação comercial. Substitua estes valores pelos seus números reais sem alterar a estrutura.',
+      metrics: {
+        metric1: {
+          value: '100%',
+          label: 'Transparência operacional',
+          counterType: 'percent',
+          counterValue: 100,
+        },
+        metric2: {
+          value: '4.9',
+          label: 'Satisfação média dos hóspedes',
+          counterType: 'decimal',
+          counterValue: 4.9,
+        },
+        metric3: {
+          value: '+32%',
+          label: 'Potencial de otimização de receita',
+          counterType: 'percentPlus',
+          counterValue: 32,
+        },
+        metric4: {
+          value: '24/7',
+          label: 'Apoio contínuo para hóspedes e proprietários',
+          counterType: 'static',
+        },
+      },
+    },
     partnerships: {
       title: 'Parcerias',
       subtitle: 'Os melhores planos para as suas férias',
@@ -161,6 +229,16 @@ export const translations = {
       zoomIn: 'Aumentar zoom',
       zoomOut: 'Diminuir zoom',
       mapComingSoon: 'Mapa interativo disponível em breve. Contacte-nos para recomendações personalizadas.',
+      mapLocation: 'Sesimbra, Portugal',
+      mapPartnersCount: '21 parceiros DolceStay',
+      openInGoogleMaps: 'Abrir no Google Maps',
+      mapUnavailableTitle: 'Mapa indisponível',
+      mapUnavailableDescription:
+        'Configure a chave da API Google Maps para ver o mapa interativo dos parceiros.',
+      mapUnavailableRestart:
+        'Adicione a chave em .env.local e reinicie o servidor de desenvolvimento (npm run dev).',
+      mapUnavailableLoadError:
+        'Não foi possível carregar o Google Maps. Verifique se a chave é válida e se a Maps JavaScript API está ativa.',
       categories: {
         experiences: 'Experiências Turísticas',
         restaurants: 'Restaurantes & Bares',
@@ -315,7 +393,11 @@ export const translations = {
       featured: 'Featured',
       guests: 'guests',
       bedrooms: 'bedrooms',
-      bookingNote: 'Reservations are completed securely through our booking platform.',
+      ctaTitle: 'Book with confidence',
+      bookingNote:
+        'Reservations are completed securely through our official platform.',
+      ctaButton: 'View all accommodations',
+      ctaHint: 'Availability updated',
       book: 'Book',
       features: {
         seaView: 'Sea View',
@@ -382,6 +464,12 @@ export const translations = {
       offersTitle: 'What we offer',
       ctaTitle: 'Ready to get started?',
       ctaDescription: 'Get in touch with us and discover how we can maximize your property income in Sesimbra.',
+      ctaPills: {
+        fastSetup: 'Fast setup',
+        dedicatedTeam: 'Dedicated team',
+        premiumManagement: 'Premium management',
+      },
+      ctaDisclaimer: 'No initial commitment. Response in less than 24h.',
       benefits: {
         fullManagement: 'Complete management',
         visibility: 'More visibility',
@@ -409,6 +497,64 @@ export const translations = {
       },
       cta: 'I Want to Monetize My Property',
     },
+    howItWorks: {
+      title: 'How it works',
+      subtitle: 'A clear, transparent process designed for consistent results.',
+      stepLabel: 'STEP',
+      steps: {
+        step1: {
+          title: 'Initial contact',
+          description: 'We understand your goals and validate your property profile.',
+        },
+        step2: {
+          title: 'Property assessment',
+          description: 'We analyze potential, market conditions and expected profitability.',
+        },
+        step3: {
+          title: 'Preparation & optimization',
+          description: 'We prepare the property and optimize listing, pricing and positioning.',
+        },
+        step4: {
+          title: 'Ongoing management',
+          description: 'We handle operations, bookings, cleaning and guest communication.',
+        },
+        step5: {
+          title: 'Reports & results',
+          description: 'We share key metrics and adjust strategy to grow performance.',
+        },
+      },
+    },
+    trustMetrics: {
+      badge: 'DOLCESTAY TRUST',
+      title: 'A premium brand built on consistent results.',
+      subtitle:
+        'Editable indicators for commercial presentations. Replace these values with your real numbers without changing the structure.',
+      metrics: {
+        metric1: {
+          value: '100%',
+          label: 'Operational transparency',
+          counterType: 'percent',
+          counterValue: 100,
+        },
+        metric2: {
+          value: '4.9',
+          label: 'Average guest satisfaction',
+          counterType: 'decimal',
+          counterValue: 4.9,
+        },
+        metric3: {
+          value: '+32%',
+          label: 'Revenue optimization potential',
+          counterType: 'percentPlus',
+          counterValue: 32,
+        },
+        metric4: {
+          value: '24/7',
+          label: 'Continuous support for guests and owners',
+          counterType: 'static',
+        },
+      },
+    },
     partnerships: {
       title: 'Partnerships',
       subtitle: 'The best plans for your holidays',
@@ -419,6 +565,16 @@ export const translations = {
       zoomIn: 'Zoom in',
       zoomOut: 'Zoom out',
       mapComingSoon: 'Interactive map coming soon. Contact us for personalized recommendations.',
+      mapLocation: 'Sesimbra, Portugal',
+      mapPartnersCount: '21 DolceStay partners',
+      openInGoogleMaps: 'Open in Google Maps',
+      mapUnavailableTitle: 'Map unavailable',
+      mapUnavailableDescription:
+        'Set up your Google Maps API key to show the interactive partners map.',
+      mapUnavailableRestart:
+        'Add the key to .env.local and restart the dev server (npm run dev).',
+      mapUnavailableLoadError:
+        'Could not load Google Maps. Check that the key is valid and Maps JavaScript API is enabled.',
       categories: {
         experiences: 'Tourist Experiences',
         restaurants: 'Restaurants & Bars',
@@ -573,7 +729,11 @@ export const translations = {
       featured: 'En Vedette',
       guests: 'personnes',
       bedrooms: 'chambres',
-      bookingNote: 'Les réservations sont effectuées en toute sécurité via notre plateforme de réservation.',
+      ctaTitle: 'Réservez en toute confiance',
+      bookingNote:
+        'Les réservations sont effectuées en toute sécurité via notre plateforme officielle.',
+      ctaButton: 'Voir tous les hébergements',
+      ctaHint: 'Disponibilité actualisée',
       book: 'Réserver',
       features: {
         seaView: 'Vue Mer',
@@ -640,6 +800,12 @@ export const translations = {
       offersTitle: 'Ce que nous offrons',
       ctaTitle: 'Prêt à commencer?',
       ctaDescription: 'Contactez-nous et découvrez comment nous pouvons maximiser les revenus de votre bien à Sesimbra.',
+      ctaPills: {
+        fastSetup: 'Configuration rapide',
+        dedicatedTeam: 'Équipe dédiée',
+        premiumManagement: 'Gestion premium',
+      },
+      ctaDisclaimer: 'Sans engagement initial. Réponse en moins de 24h.',
       benefits: {
         fullManagement: 'Gestion complète',
         visibility: 'Plus de visibilité',
@@ -667,6 +833,64 @@ export const translations = {
       },
       cta: 'Je Veux Rentabiliser Mon Bien',
     },
+    howItWorks: {
+      title: 'Comment ça marche',
+      subtitle: 'Un processus clair, transparent et conçu pour des résultats constants.',
+      stepLabel: 'ÉTAPE',
+      steps: {
+        step1: {
+          title: 'Premier contact',
+          description: 'Nous comprenons votre objectif et validons le profil du bien.',
+        },
+        step2: {
+          title: 'Évaluation du bien',
+          description: 'Nous analysons le potentiel, le marché et la rentabilité attendue.',
+        },
+        step3: {
+          title: 'Préparation et optimisation',
+          description: 'Nous préparons le bien et optimisons l\'annonce, le prix et le positionnement.',
+        },
+        step4: {
+          title: 'Gestion continue',
+          description: 'Nous gérons les opérations, réservations, ménage et communication avec les clients.',
+        },
+        step5: {
+          title: 'Rapports et résultats',
+          description: 'Nous partageons les indicateurs et ajustons la stratégie pour progresser.',
+        },
+      },
+    },
+    trustMetrics: {
+      badge: 'CONFIANCE DOLCESTAY',
+      title: 'Une marque premium construite sur des résultats constants.',
+      subtitle:
+        'Indicateurs modifiables pour présentation commerciale. Remplacez ces valeurs par vos chiffres réels sans modifier la structure.',
+      metrics: {
+        metric1: {
+          value: '100%',
+          label: 'Transparence opérationnelle',
+          counterType: 'percent',
+          counterValue: 100,
+        },
+        metric2: {
+          value: '4.9',
+          label: 'Satisfaction moyenne des clients',
+          counterType: 'decimal',
+          counterValue: 4.9,
+        },
+        metric3: {
+          value: '+32%',
+          label: 'Potentiel d\'optimisation des revenus',
+          counterType: 'percentPlus',
+          counterValue: 32,
+        },
+        metric4: {
+          value: '24/7',
+          label: 'Support continu pour clients et propriétaires',
+          counterType: 'static',
+        },
+      },
+    },
     partnerships: {
       title: 'Partenariats',
       subtitle: 'Les meilleurs plans pour vos vacances',
@@ -677,6 +901,16 @@ export const translations = {
       zoomIn: 'Agrandir',
       zoomOut: 'Réduire',
       mapComingSoon: 'Carte interactive bientôt disponible. Contactez-nous pour des recommandations personnalisées.',
+      mapLocation: 'Sesimbra, Portugal',
+      mapPartnersCount: '21 partenaires DolceStay',
+      openInGoogleMaps: 'Ouvrir dans Google Maps',
+      mapUnavailableTitle: 'Carte indisponible',
+      mapUnavailableDescription:
+        'Configurez votre clé API Google Maps pour afficher la carte interactive des partenaires.',
+      mapUnavailableRestart:
+        'Ajoutez la clé dans .env.local et redémarrez le serveur de développement (npm run dev).',
+      mapUnavailableLoadError:
+        'Impossible de charger Google Maps. Vérifiez que la clé est valide et que l’API Maps JavaScript est activée.',
       categories: {
         experiences: 'Expériences Touristiques',
         restaurants: 'Restaurants & Bars',
@@ -831,7 +1065,11 @@ export const translations = {
       featured: 'Destacado',
       guests: 'personas',
       bedrooms: 'habitaciones',
-      bookingNote: 'Las reservas se completan de forma segura a través de nuestra plataforma de reservas.',
+      ctaTitle: 'Reserve con confianza',
+      bookingNote:
+        'Las reservas se completan de forma segura a través de nuestra plataforma oficial.',
+      ctaButton: 'Ver todos los alojamientos',
+      ctaHint: 'Disponibilidad actualizada',
       book: 'Reservar',
       features: {
         seaView: 'Vistas al Mar',
@@ -898,6 +1136,12 @@ export const translations = {
       offersTitle: 'Lo que ofrecemos',
       ctaTitle: '¿Listo para empezar?',
       ctaDescription: 'Contáctenos y descubra cómo podemos maximizar el rendimiento de su inmueble en Sesimbra.',
+      ctaPills: {
+        fastSetup: 'Configuración rápida',
+        dedicatedTeam: 'Equipo dedicado',
+        premiumManagement: 'Gestión premium',
+      },
+      ctaDisclaimer: 'Sin compromiso inicial. Respuesta en menos de 24h.',
       benefits: {
         fullManagement: 'Gestión completa',
         visibility: 'Mayor visibilidad',
@@ -925,6 +1169,64 @@ export const translations = {
       },
       cta: 'Quiero Rentabilizar Mi Inmueble',
     },
+    howItWorks: {
+      title: 'Cómo funciona',
+      subtitle: 'Un proceso claro, transparente y pensado para resultados consistentes.',
+      stepLabel: 'PASO',
+      steps: {
+        step1: {
+          title: 'Contacto inicial',
+          description: 'Entendemos su objetivo y validamos el perfil del inmueble.',
+        },
+        step2: {
+          title: 'Evaluación del inmueble',
+          description: 'Analizamos potencial, mercado y rentabilidad esperada.',
+        },
+        step3: {
+          title: 'Preparación y optimización',
+          description: 'Preparamos el inmueble y optimizamos anuncio, precio y posicionamiento.',
+        },
+        step4: {
+          title: 'Gestión continua',
+          description: 'Ejecutamos operaciones, reservas, limpieza y comunicación con huéspedes.',
+        },
+        step5: {
+          title: 'Informes y resultados',
+          description: 'Compartimos indicadores y ajustamos la estrategia para crecer.',
+        },
+      },
+    },
+    trustMetrics: {
+      badge: 'CONFIANZA DOLCESTAY',
+      title: 'Una marca premium construida sobre resultados consistentes.',
+      subtitle:
+        'Indicadores editables para presentación comercial. Sustituya estos valores por sus cifras reales sin alterar la estructura.',
+      metrics: {
+        metric1: {
+          value: '100%',
+          label: 'Transparencia operativa',
+          counterType: 'percent',
+          counterValue: 100,
+        },
+        metric2: {
+          value: '4.9',
+          label: 'Satisfacción media de los huéspedes',
+          counterType: 'decimal',
+          counterValue: 4.9,
+        },
+        metric3: {
+          value: '+32%',
+          label: 'Potencial de optimización de ingresos',
+          counterType: 'percentPlus',
+          counterValue: 32,
+        },
+        metric4: {
+          value: '24/7',
+          label: 'Apoyo continuo para huéspedes y propietarios',
+          counterType: 'static',
+        },
+      },
+    },
     partnerships: {
       title: 'Colaboraciones',
       subtitle: 'Los mejores planes para sus vacaciones',
@@ -935,6 +1237,16 @@ export const translations = {
       zoomIn: 'Acercar',
       zoomOut: 'Alejar',
       mapComingSoon: 'Mapa interactivo próximamente. Contáctenos para recomendaciones personalizadas.',
+      mapLocation: 'Sesimbra, Portugal',
+      mapPartnersCount: '21 colaboradores DolceStay',
+      openInGoogleMaps: 'Abrir en Google Maps',
+      mapUnavailableTitle: 'Mapa no disponible',
+      mapUnavailableDescription:
+        'Configure su clave de API de Google Maps para ver el mapa interactivo de colaboradores.',
+      mapUnavailableRestart:
+        'Añada la clave en .env.local y reinicie el servidor de desarrollo (npm run dev).',
+      mapUnavailableLoadError:
+        'No se pudo cargar Google Maps. Compruebe que la clave es válida y que la API Maps JavaScript está activada.',
       categories: {
         experiences: 'Experiencias Turísticas',
         restaurants: 'Restaurantes & Bares',
@@ -1089,7 +1401,11 @@ export const translations = {
       featured: 'Empfohlen',
       guests: 'Personen',
       bedrooms: 'Zimmer',
-      bookingNote: 'Reservierungen werden sicher über unsere Buchungsplattform abgeschlossen.',
+      ctaTitle: 'Mit Vertrauen buchen',
+      bookingNote:
+        'Reservierungen werden sicher über unsere offizielle Plattform abgeschlossen.',
+      ctaButton: 'Alle Unterkünfte anzeigen',
+      ctaHint: 'Aktualisierte Verfügbarkeit',
       book: 'Buchen',
       features: {
         seaView: 'Meerblick',
@@ -1156,6 +1472,12 @@ export const translations = {
       offersTitle: 'Was wir anbieten',
       ctaTitle: 'Bereit anzufangen?',
       ctaDescription: 'Kontaktieren Sie uns und entdecken Sie, wie wir Ihre Immobilieneinnahmen in Sesimbra maximieren können.',
+      ctaPills: {
+        fastSetup: 'Schnelles Setup',
+        dedicatedTeam: 'Dediziertes Team',
+        premiumManagement: 'Premium-Verwaltung',
+      },
+      ctaDisclaimer: 'Keine anfängliche Verpflichtung. Antwort in weniger als 24 Stunden.',
       benefits: {
         fullManagement: 'Komplette Verwaltung',
         visibility: 'Mehr Sichtbarkeit',
@@ -1183,6 +1505,64 @@ export const translations = {
       },
       cta: 'Ich möchte meine Immobilie monetarisieren',
     },
+    howItWorks: {
+      title: 'So funktioniert es',
+      subtitle: 'Ein klarer, transparenter Prozess für konstante Ergebnisse.',
+      stepLabel: 'SCHRITT',
+      steps: {
+        step1: {
+          title: 'Erstkontakt',
+          description: 'Wir verstehen Ihr Ziel und prüfen das Profil Ihrer Immobilie.',
+        },
+        step2: {
+          title: 'Immobilienbewertung',
+          description: 'Wir analysieren Potenzial, Markt und erwartete Rentabilität.',
+        },
+        step3: {
+          title: 'Vorbereitung & Optimierung',
+          description: 'Wir bereiten die Immobilie vor und optimieren Inserat, Preis und Positionierung.',
+        },
+        step4: {
+          title: 'Laufende Verwaltung',
+          description: 'Wir übernehmen Betrieb, Buchungen, Reinigung und Gästekommunikation.',
+        },
+        step5: {
+          title: 'Berichte & Ergebnisse',
+          description: 'Wir teilen Kennzahlen und passen die Strategie zum Wachstum an.',
+        },
+      },
+    },
+    trustMetrics: {
+      badge: 'DOLCESTAY VERTRAUEN',
+      title: 'Eine Premium-Marke, gebaut auf konstanten Ergebnissen.',
+      subtitle:
+        'Bearbeitbare Kennzahlen für kommerzielle Präsentationen. Ersetzen Sie diese Werte durch Ihre echten Zahlen, ohne die Struktur zu ändern.',
+      metrics: {
+        metric1: {
+          value: '100%',
+          label: 'Operative Transparenz',
+          counterType: 'percent',
+          counterValue: 100,
+        },
+        metric2: {
+          value: '4.9',
+          label: 'Durchschnittliche Gästezufriedenheit',
+          counterType: 'decimal',
+          counterValue: 4.9,
+        },
+        metric3: {
+          value: '+32%',
+          label: 'Potenzial zur Umsatzoptimierung',
+          counterType: 'percentPlus',
+          counterValue: 32,
+        },
+        metric4: {
+          value: '24/7',
+          label: 'Kontinuierlicher Support für Gäste und Eigentümer',
+          counterType: 'static',
+        },
+      },
+    },
     partnerships: {
       title: 'Partnerschaften',
       subtitle: 'Die besten Pläne für Ihren Urlaub',
@@ -1193,6 +1573,16 @@ export const translations = {
       zoomIn: 'Vergrößern',
       zoomOut: 'Verkleinern',
       mapComingSoon: 'Interaktive Karte demnächst verfügbar. Kontaktieren Sie uns für personalisierte Empfehlungen.',
+      mapLocation: 'Sesimbra, Portugal',
+      mapPartnersCount: '21 DolceStay-Partner',
+      openInGoogleMaps: 'In Google Maps öffnen',
+      mapUnavailableTitle: 'Karte nicht verfügbar',
+      mapUnavailableDescription:
+        'Richten Sie Ihren Google Maps API-Schlüssel ein, um die interaktive Partnerkarte anzuzeigen.',
+      mapUnavailableRestart:
+        'Schlüssel in .env.local eintragen und den Entwicklungsserver neu starten (npm run dev).',
+      mapUnavailableLoadError:
+        'Google Maps konnte nicht geladen werden. Prüfen Sie den Schlüssel und ob die Maps JavaScript API aktiviert ist.',
       categories: {
         experiences: 'Touristische Erlebnisse',
         restaurants: 'Restaurants & Bars',

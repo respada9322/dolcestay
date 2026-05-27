@@ -90,19 +90,6 @@ export function ServicesSection() {
             );
           })}
         </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-14">
-          <p className="text-[#6B7280] mb-6 max-w-2xl mx-auto">
-            {t.services.ctaDescription}
-          </p>
-          <a
-            href="#owners"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-[#1F4E5F] border-2 border-[#1F4E5F] hover:bg-[#1F4E5F] hover:text-white rounded-full transition-all"
-          >
-            {t.services.learnMore}
-          </a>
-        </div>
       </div>
     </section>
   );

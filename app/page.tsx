@@ -5,11 +5,10 @@ import { HeroSection } from '@/components/sections/hero-section'
 import { DualJourneySection } from '@/components/sections/dual-journey-section'
 import { AccommodationsPreview } from '@/components/sections/accommodations-preview'
 import { ServicesSection } from '@/components/sections/services-section'
+import { HowItWorksSection } from '@/components/sections/how-it-works-section'
+import { TrustMetricsSection } from '@/components/sections/trust-metrics-section'
 import { OwnersSection } from '@/components/sections/owners-section'
-import { PartnershipsSection } from '@/components/sections/partnerships-section'
 import { TestimonialsSection } from '@/components/sections/testimonials-section'
-import { AboutSection } from '@/components/sections/about-section'
-import { ContactSection } from '@/components/sections/contact-section'
 
 export default function HomePage() {
   return (
@@ -19,11 +18,10 @@ export default function HomePage() {
       <DualJourneySection />
       <AccommodationsPreview />
       <ServicesSection />
+      <HowItWorksSection />
+      <TrustMetricsSection />
       <OwnersSection />
-      <PartnershipsSection />
-      <AboutSection />
       <TestimonialsSection />
-      <ContactSection />
       <Footer />
       <FloatingWhatsApp />
     </main>

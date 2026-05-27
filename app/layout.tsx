@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { LanguageProvider } from '@/lib/language-context'
+import { HashScrollHandler } from '@/components/hash-scroll-handler'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -65,6 +66,7 @@ export default function RootLayout({
     <html lang="pt" className={`${inter.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased">
         <LanguageProvider>
+          <HashScrollHandler />
           {children}
         </LanguageProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}

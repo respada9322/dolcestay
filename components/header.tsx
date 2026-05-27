@@ -6,7 +6,9 @@ import Image from 'next/image';
 import { Menu, X, ChevronDown, Phone, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { BOOKING_URL, contactInfo } from '@/lib/data';
+import { HEADER_NAV_LINKS, OWNER_CTA_HREF } from '@/lib/navigation';
 import type { Language } from '@/lib/translations';
+import { SiteNavLink } from '@/components/site-nav-link';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -45,15 +47,10 @@ export function Header() {
     return () => window.removeEventListener('keydown', handleEscape);
   }, []);
 
-  const navItems = [
-    { href: '/', label: t.nav.home },
-    { href: '#accommodations', label: t.nav.accommodations },
-    { href: '#services', label: t.nav.services },
-    { href: '#owners', label: t.nav.owners },
-    { href: '#partnerships', label: t.nav.partnerships },
-    { href: '#about', label: t.nav.about },
-    { href: '#contact', label: t.nav.contact },
-  ];
+  const navItems = HEADER_NAV_LINKS.map((item) => ({
+    href: item.href,
+    label: t.nav[item.key],
+  }));
 
   const currentLanguage = languages.find(l => l.code === language) || languages[0];
 
@@ -83,13 +80,13 @@ export function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
-                <Link
+                <SiteNavLink
                   key={item.href}
                   href={item.href}
                   className="px-3 py-2 text-sm font-medium text-[#111111] hover:text-[#8DBE91] transition-colors rounded-lg hover:bg-[#F8FAF8]"
                 >
                   {item.label}
-                </Link>
+                </SiteNavLink>
               ))}
             </nav>
 
@@ -119,12 +116,12 @@ export function Header() {
               </DropdownMenu>
 
               {/* Owner CTA - Desktop */}
-              <Link
-                href="#owners"
+              <SiteNavLink
+                href={OWNER_CTA_HREF}
                 className="hidden xl:inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-[#1F4E5F] hover:text-white border-2 border-[#1F4E5F] hover:bg-[#1F4E5F] rounded-full transition-all"
               >
                 {t.nav.imOwner}
-              </Link>
+              </SiteNavLink>
 
               {/* Book CTA - Primary */}
               <a
@@ -160,26 +157,26 @@ export function Header() {
           <nav className="container mx-auto px-4 py-6">
             <div className="flex flex-col gap-1">
               {navItems.map((item) => (
-                <Link
+                <SiteNavLink
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="px-4 py-3.5 text-base font-medium text-[#111111] hover:bg-[#CFE8D2] hover:text-[#1F4E5F] rounded-xl transition-colors"
                 >
                   {item.label}
-                </Link>
+                </SiteNavLink>
               ))}
             </div>
             
             {/* Mobile CTAs */}
             <div className="mt-6 pt-6 border-t border-[#E5E7EB] flex flex-col gap-3">
-              <Link
-                href="#owners"
+              <SiteNavLink
+                href={OWNER_CTA_HREF}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="px-4 py-3.5 text-base font-semibold text-[#1F4E5F] border-2 border-[#1F4E5F] hover:bg-[#1F4E5F] hover:text-white rounded-xl transition-all text-center"
               >
                 {t.nav.imOwner}
-              </Link>
+              </SiteNavLink>
               <a
                 href={BOOKING_URL}
                 target="_blank"

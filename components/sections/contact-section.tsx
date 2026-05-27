@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import { MapPin, Phone, Mail, MessageCircle, Send, ArrowRight } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '@/lib/language-context';
 import { contactInfo, BOOKING_URL } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 
 export function ContactSection() {
   const { t } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -136,16 +138,38 @@ export function ContactSection() {
                 </a>
               </div>
 
-              {/* Map Preview */}
-              <div className="mt-8 rounded-2xl overflow-hidden h-48 shadow-md">
-                <div
-                  className="w-full h-full bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/print_contactos-Lpy2MyyV3fBvC2mTVnQ3cQdc1F5AYO.png')`,
-                    backgroundPosition: 'center 70%',
-                  }}
+              {/* Interactive Google Map */}
+              <motion.div
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
+                whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.55, ease: 'easeOut' }}
+                whileHover={shouldReduceMotion ? {} : { scale: 1.01 }}
+                className="group relative mt-8 overflow-hidden rounded-[22px] shadow-[0_12px_34px_rgba(20,43,56,0.16)] transition-shadow duration-300 hover:shadow-[0_16px_42px_rgba(20,43,56,0.22)]"
+              >
+                <div className="absolute left-3 top-3 z-10 rounded-full border border-white/30 bg-[#1F4E5F]/85 px-3 py-1 text-xs font-semibold text-white shadow-lg backdrop-blur-sm">
+                  📍 Sesimbra, Portugal
+                </div>
+
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Av.+da+Liberdade+58%2F60%2C+2970-635+Sesimbra%2C+Portugal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute right-3 top-3 z-10 rounded-full border border-white/30 bg-white/90 px-3 py-1 text-xs font-semibold text-[#1F4E5F] shadow-lg transition-colors hover:bg-white"
+                >
+                  Abrir no Google Maps
+                </a>
+
+                <iframe
+                  title="Mapa de DolceStay em Sesimbra"
+                  src="https://www.google.com/maps?q=Av.+da+Liberdade+58/60,+2970-635+Sesimbra,+Portugal&z=15&output=embed"
+                  width="100%"
+                  height="280"
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="block h-[240px] w-full border-0 md:h-[280px]"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
 

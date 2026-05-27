@@ -18,10 +18,4 @@ export const consumerDisputesSections: LegalSection[] = [
       'Correio eletrónico: dolcestayportugal@gmail.com',
     ],
   },
-  {
-    title: 'Portal do Consumidor',
-    paragraphs: [
-      'Mais informações no Portal do Consumidor www.consumidor.pt',
-    ],
-  },
 ];

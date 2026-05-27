@@ -4,17 +4,31 @@ import Link from 'next/link';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { BOOKING_URL, contactInfo } from '@/lib/data';
+import {
+  HEADER_NAV_LINKS,
+  homeSection,
+  HOME_SECTION_IDS,
+  routes,
+} from '@/lib/navigation';
+import { SiteNavLink } from '@/components/site-nav-link';
 
 export function Footer() {
   const { t } = useLanguage();
 
   const quickLinks = [
-    { href: '/', label: t.nav.home },
+    { href: routes.home, label: t.nav.home },
     { href: BOOKING_URL, label: t.nav.accommodations, external: true },
-    { href: '#services', label: t.nav.services },
-    { href: '#owners', label: t.nav.owners },
-    { href: '#partnerships', label: t.nav.partnerships },
-    { href: '#contact', label: t.nav.contact },
+    {
+      href: homeSection(HOME_SECTION_IDS.services),
+      label: t.nav.services,
+    },
+    { href: homeSection(HOME_SECTION_IDS.owners), label: t.nav.owners },
+    ...HEADER_NAV_LINKS.filter(
+      (item) =>
+        item.key === 'partnerships' ||
+        item.key === 'about' ||
+        item.key === 'contact',
+    ).map((item) => ({ href: item.href, label: t.nav[item.key] })),
   ];
 
   const legalLinks = [
@@ -23,9 +37,9 @@ export function Footer() {
       label: t.footer.legalLinks.complaints,
       external: true,
     },
-    { href: '/termos-e-condicoes', label: t.footer.legalLinks.terms },
-    { href: '/politica-de-privacidade', label: t.footer.legalLinks.privacy },
-    { href: '/litigios-de-consumo', label: t.footer.legalLinks.disputes },
+    { href: routes.terms, label: t.footer.legalLinks.terms },
+    { href: routes.privacy, label: t.footer.legalLinks.privacy },
+    { href: routes.consumerDisputes, label: t.footer.legalLinks.disputes },
   ];
 
   return (
@@ -126,12 +140,12 @@ export function Footer() {
                       {link.label}
                     </a>
                   ) : (
-                    <Link
+                    <SiteNavLink
                       href={link.href}
                       className="text-white/80 hover:text-[#8DBE91] text-sm transition-colors"
                     >
                       {link.label}
-                    </Link>
+                    </SiteNavLink>
                   )}
                 </li>
               ))}

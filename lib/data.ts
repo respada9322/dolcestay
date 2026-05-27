@@ -15,7 +15,7 @@ export const contactInfo = {
   },
   social: {
     instagram: 'https://instagram.com/dolcestay',
-    facebook: 'https://facebook.com/dolcestay',
+    facebook: 'https://www.facebook.com/profile.php?id=61551128039116',
   },
 };
 

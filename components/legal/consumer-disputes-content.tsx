@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink, Mail, MapPin, Phone, Printer } from 'lucide-react';
+import { Mail, MapPin, Phone, Printer } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 
 const contactDetails = [
@@ -74,19 +74,6 @@ export function ConsumerDisputesContent() {
             ))}
           </ul>
         </div>
-
-        <p className="mt-10 text-center text-[#5B6573] leading-relaxed">
-          Mais informações no{' '}
-          <a
-            href="https://www.consumidor.pt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-medium text-[#1F4E5F] underline decoration-[#8DBE91]/50 underline-offset-4 transition-colors hover:text-[#8DBE91]"
-          >
-            Portal do Consumidor
-            <ExternalLink className="h-4 w-4" aria-hidden />
-          </a>
-        </p>
       </motion.article>
     </div>
   );

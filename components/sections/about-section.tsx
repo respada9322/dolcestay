@@ -15,9 +15,9 @@ export function AboutSection() {
             <span className="inline-block px-4 py-1.5 bg-[#CFE8D2] text-[#1F4E5F] text-sm font-semibold rounded-full mb-4">
               {t.about.subtitle}
             </span>
-            <h2 className="font-serif text-3xl lg:text-4xl xl:text-5xl text-[#1F4E5F] mb-4">
+            <h1 className="font-serif text-3xl lg:text-4xl xl:text-5xl text-[#1F4E5F] mb-4">
               {t.about.title}
-            </h2>
+            </h1>
           </div>
 
           {/* Content with visual hierarchy */}

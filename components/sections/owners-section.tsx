@@ -1,7 +1,8 @@
 'use client';
 
-import { Check, ClipboardList, LineChart, Settings, ArrowRight, Shield, TrendingUp, Users2, Sparkles, Calendar, MessageCircle, Banknote } from 'lucide-react';
+import { Check, Shield, TrendingUp, Users2, Sparkles, Calendar, MessageCircle, Banknote } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
+import { PremiumCtaCard } from '@/components/sections/premium-cta-card';
 
 export function OwnersSection() {
   const { t } = useLanguage();
@@ -17,14 +18,11 @@ export function OwnersSection() {
     { icon: Check, text: t.owners.benefits.personalized },
   ];
 
-  const steps = [
-    { icon: ClipboardList, ...t.owners.steps.step1 },
-    { icon: LineChart, ...t.owners.steps.step2 },
-    { icon: Settings, ...t.owners.steps.step3 },
-  ];
-
   return (
-    <section id="owners" className="py-20 lg:py-28 bg-gradient-to-b from-[#F8FAF8] to-white scroll-mt-20">
+    <section
+      id="owners"
+      className="scroll-mt-20 bg-ds-light bg-gradient-to-b from-ds-light from-75% to-white pt-10 pb-20 lg:pt-12 lg:pb-28"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header - SEO optimized */}
         <div className="text-center mb-14 lg:mb-20">
@@ -36,16 +34,6 @@ export function OwnersSection() {
           </h2>
           <p className="text-[#6B7280] max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
             {t.owners.subtitle}
-          </p>
-        </div>
-
-        {/* Value Proposition Banner */}
-        <div className="bg-gradient-to-r from-[#1F4E5F] to-[#2D6A7A] rounded-3xl p-8 lg:p-12 mb-16 text-white text-center shadow-2xl">
-          <h3 className="font-serif text-2xl lg:text-3xl mb-4">
-            {t.owners.whyTitle}
-          </h3>
-          <p className="text-white/90 max-w-3xl mx-auto text-lg leading-relaxed">
-            {t.owners.whyDescription}
           </p>
         </div>
 
@@ -69,57 +57,17 @@ export function OwnersSection() {
           </div>
         </div>
 
-        {/* How It Works - Enhanced steps */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <h3 className="font-serif text-2xl lg:text-3xl text-[#1F4E5F] text-center mb-12">
-            {t.owners.steps.title}
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            {steps.map((step, index) => (
-              <div key={index} className="relative">
-                {/* Connector Line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-1 bg-gradient-to-r from-[#CFE8D2] to-[#8DBE91] rounded-full" />
-                )}
-                
-                <div className="text-center">
-                  <div className="relative inline-flex mb-6">
-                    <div className="w-28 h-28 bg-white rounded-3xl shadow-xl flex items-center justify-center border-2 border-[#CFE8D2]">
-                      <step.icon className="h-12 w-12 text-[#8DBE91]" />
-                    </div>
-                    <span className="absolute -top-3 -right-3 w-10 h-10 bg-[#8DBE91] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
-                      {index + 1}
-                    </span>
-                  </div>
-                  <h4 className="font-bold text-xl text-[#1F4E5F] mb-3">
-                    {step.title}
-                  </h4>
-                  <p className="text-[#6B7280] leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Strong CTA */}
-        <div className="text-center bg-[#CFE8D2] rounded-3xl p-10 lg:p-14 max-w-3xl mx-auto shadow-lg">
-          <h3 className="font-serif text-2xl lg:text-3xl text-[#1F4E5F] mb-4">
-            {t.owners.ctaTitle}
-          </h3>
-          <p className="text-[#1F4E5F]/80 mb-8 max-w-xl mx-auto">
-            {t.owners.ctaDescription}
-          </p>
-          <a
-            href="#contact"
-            className="group inline-flex items-center justify-center gap-2 px-10 py-5 text-lg font-bold text-white bg-[#1F4E5F] hover:bg-[#163B48] rounded-full transition-all shadow-xl hover:shadow-2xl hover:scale-105"
-          >
-            {t.owners.cta}
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
+        <PremiumCtaCard
+          title={t.owners.ctaTitle}
+          description={t.owners.ctaDescription}
+          pills={[
+            t.owners.ctaPills.fastSetup,
+            t.owners.ctaPills.dedicatedTeam,
+            t.owners.ctaPills.premiumManagement,
+          ]}
+          ctaLabel={t.owners.cta}
+          disclaimer={t.owners.ctaDisclaimer}
+        />
       </div>
     </section>
   );
