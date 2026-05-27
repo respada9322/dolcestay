@@ -18,10 +18,14 @@ export function Footer() {
   ];
 
   const legalLinks = [
-    { href: '#', label: t.footer.legalLinks.complaints },
-    { href: '#', label: t.footer.legalLinks.terms },
-    { href: '#', label: t.footer.legalLinks.privacy },
-    { href: '#', label: t.footer.legalLinks.disputes },
+    {
+      href: 'https://www.livroreclamacoes.pt/Inicio/',
+      label: t.footer.legalLinks.complaints,
+      external: true,
+    },
+    { href: '/termos-e-condicoes', label: t.footer.legalLinks.terms },
+    { href: '/politica-de-privacidade', label: t.footer.legalLinks.privacy },
+    { href: '/litigios-de-consumo', label: t.footer.legalLinks.disputes },
   ];
 
   return (
@@ -150,12 +154,23 @@ export function Footer() {
             <ul className="space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-white/80 hover:text-[#8DBE91] text-sm transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/80 hover:text-[#8DBE91] text-sm transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-white/80 hover:text-[#8DBE91] text-sm transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
