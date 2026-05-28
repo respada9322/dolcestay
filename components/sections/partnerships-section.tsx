@@ -1,9 +1,12 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { ExternalLink, Instagram, Facebook, Navigation } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { partnerExperiences, partnerRestaurants } from '@/lib/data';
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const PartnersMap = dynamic(
   () => import('@/components/partners/partners-map').then((mod) => mod.PartnersMap),
@@ -70,11 +73,7 @@ export function PartnershipsSection() {
           <h3 className="font-serif text-2xl lg:text-3xl text-[#1F4E5F] mb-10 text-center">
             {t.partnerships.categories.restaurants}
           </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {partnerRestaurants.map((partner) => (
-              <PartnerRestaurantCard key={partner.id} partner={partner} t={t} />
-            ))}
-          </div>
+          <PartnerRestaurantsCarousel partners={partnerRestaurants} t={t} />
         </div>
 
         {/* Interactive partners map */}
@@ -104,9 +103,20 @@ function PartnerExperienceCard({ partner, t, language }: { partner: typeof partn
     <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
       {/* Image */}
       <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#7EBBD3]/30 to-[#1F4E5F]/30">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white/80 text-sm font-medium">{partner.name}</span>
-        </div>
+        {partner.image ? (
+          <Image
+            src={partner.image}
+            alt={partner.name}
+            fill
+            loading="lazy"
+            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-white/80 text-sm font-medium">{partner.name}</span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
       </div>
 
@@ -172,21 +182,92 @@ function PartnerRestaurantCard({ partner, t }: { partner: typeof partnerRestaura
       href={partner.website}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all group hover:-translate-y-1"
+      className="group block h-full overflow-hidden rounded-[28px] border border-[#1F4E5F]/5 bg-[#FCFDFC] shadow-[0_14px_35px_rgba(31,78,95,0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_45px_rgba(31,78,95,0.2)]"
     >
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#7EBBD3]/20 to-[#1F4E5F]/20">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-[#1F4E5F]/50 text-xs font-medium">{partner.name}</span>
-        </div>
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#D8E6EC] to-[#BCD4DC]">
+        <Image
+          src={partner.image}
+          alt={partner.name}
+          fill
+          loading="lazy"
+          sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1F4E5F]/20 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
       </div>
 
       {/* Content */}
-      <div className="p-4 bg-gradient-to-b from-[#CFE8D2]/80 to-[#CFE8D2]/50">
-        <h4 className="font-semibold text-[#1F4E5F] mb-0.5 group-hover:text-[#8DBE91] transition-colors line-clamp-1">{partner.name}</h4>
-        <p className="text-sm text-[#1F4E5F]/70">{t.partnerships.typeLabels[partner.type as keyof typeof t.partnerships.typeLabels]}</p>
+      <div className="bg-gradient-to-b from-[#E5F2E8] to-[#DDEDE1] px-5 py-4">
+        <h4 className="mb-1 line-clamp-1 text-base font-bold text-[#1F4E5F] transition-colors group-hover:text-[#18404F]">{partner.name}</h4>
+        <p className="text-sm text-[#1F4E5F]/70">
+          {t.partnerships.typeLabels[partner.type as keyof typeof t.partnerships.typeLabels]}
+        </p>
       </div>
     </a>
+  );
+}
+
+function PartnerRestaurantsCarousel({ partners, t }: { partners: typeof partnerRestaurants; t: any }) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [snapCount, setSnapCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const updateState = () => {
+      setSelectedIndex(api.selectedScrollSnap());
+      setSnapCount(api.scrollSnapList().length);
+    };
+
+    updateState();
+    api.on('select', updateState);
+    api.on('reInit', updateState);
+
+    return () => {
+      api.off('select', updateState);
+      api.off('reInit', updateState);
+    };
+  }, [api]);
+
+  return (
+    <div className="relative mx-auto w-full max-w-6xl px-1 sm:px-10">
+      <Carousel
+        setApi={setApi}
+        opts={{
+          align: 'start',
+          loop: true,
+          slidesToScroll: 'auto',
+        }}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-5">
+          {partners.map((partner) => (
+            <CarouselItem key={partner.id} className="basis-full pl-5 md:basis-1/2 xl:basis-1/4">
+              <PartnerRestaurantCard partner={partner} t={t} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-0 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 rounded-full border border-[#1F4E5F]/10 bg-white/95 text-[#1F4E5F] shadow-lg backdrop-blur-sm transition-all hover:bg-white hover:text-[#18404F] md:flex" />
+        <CarouselNext className="right-0 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 rounded-full border border-[#1F4E5F]/10 bg-white/95 text-[#1F4E5F] shadow-lg backdrop-blur-sm transition-all hover:bg-white hover:text-[#18404F] md:flex" />
+      </Carousel>
+
+      {snapCount > 1 && (
+        <div className="mt-6 flex items-center justify-center gap-2">
+          {Array.from({ length: snapCount }).map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => api?.scrollTo(index)}
+              className={`h-2 rounded-full transition-all ${
+                selectedIndex === index ? 'w-6 bg-[#1F4E5F]' : 'w-2 bg-[#1F4E5F]/20 hover:bg-[#1F4E5F]/40'
+              }`}
+              aria-label={`${t.partnerships.categories.restaurants} ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

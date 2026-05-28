@@ -105,6 +105,70 @@ export const testimonials = [
   },
 ];
 
+// Build `images[]` now, so a per-partner gallery can be enabled later.
+// Matching is case-insensitive and tolerant to spaces, underscores and hyphens.
+const partnerGalleryFiles = [
+  '/images/partners/Cipreia_photo1.jpg',
+  '/images/partners/Cipreia_photo2.jpg',
+  '/images/partners/Cipreia_photo3.jpg',
+  '/images/partners/Cipreia_photo4.jpg',
+  '/images/partners/Cipreia_photo5.jpg',
+  '/images/partners/Cipreia_photo6.jpg',
+  '/images/partners/Logo_Seatru.png',
+  '/images/partners/Look_Around_Tours_photo1.jpg',
+  '/images/partners/Look_Around_Tours_photo2.jpg',
+  '/images/partners/Look_Around_Tours_photo3.jpg',
+  '/images/partners/Look_Around_Tours_photo4.jpg',
+  '/images/partners/Look_Around_Tours_photo5.jpg',
+  '/images/partners/Look_Around_Tours_photo6.jpg',
+  '/images/partners/O_Batel_photo1.jpg',
+  '/images/partners/Pexitos_photo1.jpg',
+  '/images/partners/Pexitos_photo2.jpg',
+  '/images/partners/Pexitos_photo3.jpg',
+  '/images/partners/Pexitos_photo4.jpg',
+  '/images/partners/Pexitos_photo5.jpg',
+  '/images/partners/SEATRU_photo1.jpg',
+  '/images/partners/SEATRU_photo2.jpg',
+  '/images/partners/SEATRU_photo3.jpg',
+  '/images/partners/SEATRU_photo4.jpg',
+  '/images/partners/Sesimbra_SUP_Rentals_Logo.png',
+  '/images/partners/Sesimbra_SUP_Rentals_photo1.jpg',
+  '/images/partners/Sesimbra_SUP_Rentals_photo2.jpg',
+  '/images/partners/Sesimbra_SUP_Rentals_photo3.jpg',
+  '/images/partners/Sesimbra_SUP_Rentals_photo4.jpg',
+  '/images/partners/Sesimbra_SUP_Rentals_photo5.jpg',
+  '/images/partners/Sesimbra_SUP_Rentals_photo6.jpg',
+  '/images/partners/gliese.jpg',
+  '/images/partners/logo_o_batel.png',
+];
+
+const normalizePartnerToken = (value: string) => value.toLowerCase().replace(/[\s_-]+/g, '');
+
+const matchPartnerImages = (name: string, aliases: string[] = []) => {
+  const tokens = [name, ...aliases].map(normalizePartnerToken);
+
+  return partnerGalleryFiles
+    .filter((filePath) => {
+      const fileName = filePath.split('/').pop() ?? '';
+      const normalizedFile = normalizePartnerToken(fileName.replace(/\.[a-z0-9]+$/i, ''));
+      return tokens.some((token) => normalizedFile.includes(token));
+    })
+    .sort((a, b) => {
+      const aIsPhoto = /photo/i.test(a);
+      const bIsPhoto = /photo/i.test(b);
+      if (aIsPhoto !== bIsPhoto) return aIsPhoto ? -1 : 1;
+      return a.localeCompare(b);
+    });
+};
+
+const withPartnerImages = (name: string, fallbackImage: string, aliases: string[] = []) => {
+  const images = matchPartnerImages(name, aliases);
+  return {
+    image: images[0] ?? fallbackImage,
+    images,
+  };
+};
+
 export const partnerExperiences = [
   {
     id: 1,
@@ -117,7 +181,7 @@ export const partnerExperiences = [
       es: ['Tours en Jeep 4x4', 'Tours culturales & Senderismo', 'Avistamiento de delfines', 'Coasteering & Escalada'],
       de: ['Jeep 4x4 Touren', 'Kulturtouren & Wanderungen', 'Delfinbeobachtung', 'Coasteering & Klettern'],
     },
-    image: '/images/partner-lookaround.jpg',
+    ...withPartnerImages('Look Around Tours', '/images/partner-lookaround.jpg', ['lookaroundtours']),
     instagram: 'https://instagram.com/lookaroundtours',
     facebook: 'https://facebook.com/lookaroundtours',
     website: 'https://lookaroundtours.com/',
@@ -133,7 +197,7 @@ export const partnerExperiences = [
       es: ['Piragüismo', 'Tours en kayak', 'Stand up paddle', 'Paseos en barco'],
       de: ['Kanufahren', 'Kajaktouren', 'Stand up paddle', 'Bootsfahrten'],
     },
-    image: '/images/partner-ourroots.jpg',
+    ...withPartnerImages('Our Roots', '/images/partner-ourroots.jpg'),
     instagram: 'https://instagram.com/ourroots',
     facebook: 'https://facebook.com/ourroots',
     website: 'https://cipreiadiveclub.com/',
@@ -149,7 +213,7 @@ export const partnerExperiences = [
       es: ['Alquiler de tablas de paddle', 'Tabla entregada en su dirección', '¡Desempaquete, infle y entre al agua!'],
       de: ['Paddelbrett-Verleih', 'Brett wird zu Ihrer Adresse geliefert', 'Auspacken, aufblasen und ins Wasser!'],
     },
-    image: '/images/partner-sup.jpg',
+    ...withPartnerImages('Sesimbra SUP Rentals', '/images/partner-sup.jpg', ['sesimbrasuprentals']),
     instagram: 'https://instagram.com/sesimbrasup',
     website: 'https://sesimbrasuprentals.com/',
   },
@@ -164,7 +228,7 @@ export const partnerExperiences = [
       es: ['Bautismo de buceo', 'Salidas de buceo', 'Varios cursos'],
       de: ['Tauch-Taufe', 'Tauchausflüge', 'Verschiedene Kurse'],
     },
-    image: '/images/partner-cipreia.jpg',
+    ...withPartnerImages('Cipreia Dive Club', '/images/partner-cipreia.jpg', ['cipreia']),
     instagram: 'https://instagram.com/cipreiadive',
     facebook: 'https://facebook.com/cipreiadive',
     website: 'https://cipreiadiveclub.com/',
@@ -180,7 +244,7 @@ export const partnerExperiences = [
       es: ['Excursiones culturales', 'Excursiones por patrimonio histórico', 'Excursiones de senderismo'],
       de: ['Kulturausflüge', 'Ausflüge zum historischen Erbe', 'Wanderausflüge'],
     },
-    image: '/images/partner-pexitos.jpg',
+    ...withPartnerImages('Pexitos', '/images/partner-pexitos.jpg'),
     instagram: 'https://instagram.com/pexitos',
     facebook: 'https://facebook.com/pexitos',
     website: 'https://www.wearepexitos.com/',
@@ -196,7 +260,7 @@ export const partnerExperiences = [
       es: ['Experiencia Kayak Transparente', 'Alquiler de kayaks', 'Tours personalizados'],
       de: ['Clear Kayak Erlebnis', 'Kajak-Verleih', 'Personalisierte Touren'],
     },
-    image: '/images/partner-seatru.jpg',
+    ...withPartnerImages('Seatru', '/images/partner-seatru.jpg'),
     instagram: 'https://instagram.com/seatru',
     website: 'https://www.seatru.eu/',
   },
@@ -208,7 +272,7 @@ export const partnerRestaurants = [
     name: 'Gliese',
     category: 'restaurants' as const,
     type: 'bar' as const,
-    image: '/images/partner-gliese.jpg',
+    ...withPartnerImages('Gliese', '/images/partner-gliese.jpg'),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d20074683-Reviews-Gliese_Restaurante_Bar-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -216,7 +280,7 @@ export const partnerRestaurants = [
     name: 'O Batel',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-batel.jpg',
+    ...withPartnerImages('O Batel', '/images/partner-batel.jpg', ['obatel']),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d23432167-Reviews-O_Batel-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -224,7 +288,7 @@ export const partnerRestaurants = [
     name: 'O Zagaia',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-zagaia.jpg',
+    ...withPartnerImages('O Zagaia', '/images/partner-zagaia.jpg'),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d17188917-Reviews-O_Zagaia-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -232,7 +296,7 @@ export const partnerRestaurants = [
     name: 'Casa Mateus',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-casamateus.jpg',
+    ...withPartnerImages('Casa Mateus', '/images/partner-casamateus.jpg', ['casamateus']),
     website: 'https://www.casamateus.pt/',
   },
   {
@@ -240,7 +304,7 @@ export const partnerRestaurants = [
     name: 'Tasca do 13',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-tasca13.jpg',
+    ...withPartnerImages('Tasca do 13', '/images/partner-tasca13.jpg', ['tascado13']),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d4136825-Reviews-Tasca_do_13-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -248,7 +312,7 @@ export const partnerRestaurants = [
     name: 'Onda Selvagem',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-ondaselvagem.jpg',
+    ...withPartnerImages('Onda Selvagem', '/images/partner-ondaselvagem.jpg', ['ondaselvagem']),
     website: 'https://ondaselvagem.com/',
   },
   {
@@ -256,7 +320,7 @@ export const partnerRestaurants = [
     name: 'A Sesimbrense',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-sesimbrense.jpg',
+    ...withPartnerImages('A Sesimbrense', '/images/partner-sesimbrense.jpg', ['asesimbrense']),
     website: 'https://restauranteasesimbrense.eatbu.com/?lang=pt',
   },
   {
@@ -264,7 +328,7 @@ export const partnerRestaurants = [
     name: 'Isaías',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-isaias.jpg',
+    ...withPartnerImages('Isaías', '/images/partner-isaias.jpg', ['isaias']),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d3169993-Reviews-Taberna_Isaias-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -272,7 +336,7 @@ export const partnerRestaurants = [
     name: 'Vidal Food and Drinks',
     category: 'restaurants' as const,
     type: 'bar' as const,
-    image: '/images/partner-vidal.jpg',
+    ...withPartnerImages('Vidal Food and Drinks', '/images/partner-vidal.jpg', ['vidalfoodanddrinks']),
     website: 'https://www.instagram.com/vidalfood_and_drinks/',
   },
   {
@@ -280,7 +344,7 @@ export const partnerRestaurants = [
     name: 'Restaurante Maré',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-mare.jpg',
+    ...withPartnerImages('Restaurante Maré', '/images/partner-mare.jpg', ['restaurantemare', 'mare']),
     website: 'https://restaurantemaresesimbra.eatbu.com/?lang=pt',
   },
   {
@@ -288,7 +352,7 @@ export const partnerRestaurants = [
     name: 'Bar do Peixe - Meco',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-bardopeixe.jpg',
+    ...withPartnerImages('Bar do Peixe - Meco', '/images/partner-bardopeixe.jpg', ['bardopeixemeco', 'bardopeixe']),
     website: 'https://www.bardopeixe.pt/',
   },
   {
@@ -296,7 +360,7 @@ export const partnerRestaurants = [
     name: 'Gelatomania',
     category: 'restaurants' as const,
     type: 'gelataria' as const,
-    image: '/images/partner-gelatomania.jpg',
+    ...withPartnerImages('Gelatomania', '/images/partner-gelatomania.jpg'),
     website: 'https://gelatomania.pt/',
   },
   {
@@ -304,7 +368,7 @@ export const partnerRestaurants = [
     name: 'Ribamar',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-ribamar.jpg',
+    ...withPartnerImages('Ribamar', '/images/partner-ribamar.jpg'),
     website: 'https://www.restaurante-ribamar.pt/',
   },
   {
@@ -312,7 +376,7 @@ export const partnerRestaurants = [
     name: "Fun Friends n'Fandango",
     category: 'restaurants' as const,
     type: 'bar' as const,
-    image: '/images/partner-fandango.jpg',
+    ...withPartnerImages("Fun Friends n'Fandango", '/images/partner-fandango.jpg', ['funfriendsnfandango', 'fandango']),
     website: 'https://www.instagram.com/fandangosesimbra/',
   },
   {
@@ -320,7 +384,7 @@ export const partnerRestaurants = [
     name: 'Virgilinda',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-virgilinda.jpg',
+    ...withPartnerImages('Virgilinda', '/images/partner-virgilinda.jpg'),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d7225471-Reviews-Restaurante_a_Virgilinda-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -328,7 +392,7 @@ export const partnerRestaurants = [
     name: 'O Velho e o Mar',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-velhoeomar.jpg',
+    ...withPartnerImages('O Velho e o Mar', '/images/partner-velhoeomar.jpg', ['ovelhoeomar']),
     website: 'https://restauranteovelhoeomar.com/',
   },
   {
@@ -336,7 +400,7 @@ export const partnerRestaurants = [
     name: 'O Golfinho',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    image: '/images/partner-golfinho.jpg',
+    ...withPartnerImages('O Golfinho', '/images/partner-golfinho.jpg', ['ogolfinho']),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d7372042-Reviews-O_Golfinho-Sesimbra_Setubal_District_Alentejo.html',
   },
 ];
