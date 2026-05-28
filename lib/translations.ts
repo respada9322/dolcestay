@@ -35,7 +35,7 @@ export const translations = {
         support: 'Apoio local durante a estadia',
       },
       ownerBenefits: {
-        management: 'Gestão completa do seu AL',
+        management: 'Gestão completa do seu alojamento',
         profitability: 'Maximização da rentabilidade',
         noWorries: 'Sem preocupações, sem stress',
       },
@@ -90,11 +90,11 @@ export const translations = {
           description: 'Colocamos e gerimos as reservas do seu alojamento em plataformas como Airbnb, Booking.com e o nosso próprio site.',
         },
         checkInOut: {
-          title: 'Check-in & Check-out',
+          title: 'Check-in e Check-out',
           description: 'A nossa equipa recebe os hóspedes e acompanha-os, garantindo uma experiência pessoal.',
         },
         cleaning: {
-          title: 'Limpeza & Lavandaria',
+          title: 'Limpeza e Lavandaria',
           description: 'Garantimos que o seu imóvel está sempre impecável para receber novos hóspedes.',
         },
         pricing: {
@@ -106,7 +106,7 @@ export const translations = {
           description: 'Apoio 24/7 aos hóspedes durante toda a estadia para garantir a melhor experiência.',
         },
         marketing: {
-          title: 'Divulgação & Marketing',
+          title: 'Divulgação e Marketing',
           description: 'Promovemos o seu alojamento nas nossas redes sociais e website.',
         },
         maintenance: {

@@ -60,7 +60,7 @@ export function AccommodationsCta() {
           </div>
 
           {/* Right: button + hint */}
-          <div className="flex w-full shrink-0 flex-col items-center lg:w-auto lg:items-end">
+          <div className="flex w-full shrink-0 flex-col items-center lg:w-auto lg:translate-y-2 lg:items-end">
             <div className="relative w-full sm:w-auto">
               {/* Decorative glow behind button */}
               <div
@@ -82,7 +82,7 @@ export function AccommodationsCta() {
                 />
               </motion.a>
             </div>
-            <p className="mt-2.5 text-center text-xs text-[#9CA3AF] lg:text-right">
+            <p className="mt-2.5 w-full text-center text-xs text-[#9CA3AF]">
               {accommodations.ctaHint}
             </p>
           </div>

@@ -14,7 +14,7 @@ export const contactInfo = {
     country: 'Portugal',
   },
   social: {
-    instagram: 'https://instagram.com/dolcestay',
+    instagram: 'https://www.instagram.com/dolce_stay/',
     facebook: 'https://www.facebook.com/profile.php?id=61551128039116',
   },
 };
