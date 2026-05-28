@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Star, Users, ArrowRight, Building2 } from 'lucide-react';
+import { MapPin, Star, Users, Building2 } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { BOOKING_URL } from '@/lib/data';
 
@@ -49,7 +49,6 @@ export function HeroSection() {
                 className="group inline-flex items-center justify-center gap-2 px-10 py-5 text-lg font-bold text-white bg-[#8DBE91] hover:bg-[#7AAD7E] rounded-full transition-all shadow-xl hover:shadow-2xl hover:scale-105 ring-4 ring-[#8DBE91]/20"
               >
                 {t.hero.bookNow}
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#owners"
