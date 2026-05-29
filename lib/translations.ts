@@ -21,6 +21,7 @@ export const translations = {
       trustBadges: {
         local: 'Gestão Local',
         personalized: 'Experiências Personalizadas',
+        personalizedShort: 'Experiências',
         support: 'Apoio ao Hóspede',
       },
     },
@@ -437,6 +438,7 @@ export const translations = {
       trustBadges: {
         local: 'Local Management',
         personalized: 'Personalized Experiences',
+        personalizedShort: 'Experiences',
         support: 'Guest Support',
       },
     },
@@ -853,6 +855,7 @@ export const translations = {
       trustBadges: {
         local: 'Gestion Locale',
         personalized: 'Expériences Personnalisées',
+        personalizedShort: 'Expériences',
         support: 'Support Client',
       },
     },
@@ -1269,6 +1272,7 @@ export const translations = {
       trustBadges: {
         local: 'Gestión Local',
         personalized: 'Experiencias Personalizadas',
+        personalizedShort: 'Experiencias',
         support: 'Apoyo al Huésped',
       },
     },
@@ -1685,6 +1689,7 @@ export const translations = {
       trustBadges: {
         local: 'Lokale Verwaltung',
         personalized: 'Personalisierte Erlebnisse',
+        personalizedShort: 'Erlebnisse',
         support: 'Gästebetreuung',
       },
     },
