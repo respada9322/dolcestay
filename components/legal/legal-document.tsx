@@ -162,7 +162,7 @@ export function LegalDocument({ sections }: LegalDocumentProps) {
         }}
         transition={{ duration: 0.25 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-24 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-[#1F4E5F]/10 bg-white/90 text-[#1F4E5F] shadow-[0_8px_32px_rgba(31,78,95,0.12)] backdrop-blur-md transition-colors hover:border-[#8DBE91]/40 hover:bg-white hover:text-[#8DBE91] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8DBE91] focus-visible:ring-offset-2 sm:bottom-8 sm:right-6 lg:right-10"
+        className="fixed bottom-8 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-[#1F4E5F]/10 bg-white/90 text-[#1F4E5F] shadow-[0_8px_32px_rgba(31,78,95,0.12)] backdrop-blur-md transition-colors hover:border-[#8DBE91]/40 hover:bg-white hover:text-[#8DBE91] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8DBE91] focus-visible:ring-offset-2 sm:right-6 lg:right-10"
         aria-label="Voltar ao topo"
       >
         <ArrowUp className="h-5 w-5" aria-hidden />

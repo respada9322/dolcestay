@@ -55,7 +55,6 @@ export function Header() {
   const currentLanguage = languages.find(l => l.code === language) || languages[0];
 
   return (
-    <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
@@ -200,19 +199,5 @@ export function Header() {
           </nav>
         </div>
       </header>
-
-      {/* Mobile Sticky CTA - Enhanced */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 sm:hidden bg-white/98 backdrop-blur-lg border-t border-[#E5E7EB] p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full px-6 py-3.5 text-base font-bold text-white bg-[#8DBE91] hover:bg-[#7AAD7E] rounded-full transition-all shadow-lg"
-        >
-          {t.hero.bookNow}
-          <ArrowRight className="h-5 w-5" />
-        </a>
-      </div>
-    </>
   );
 }
