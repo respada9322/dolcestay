@@ -26,7 +26,7 @@ import { homeSection, HOME_SECTION_IDS, routes } from '@/lib/navigation';
 
 const ABOUT_IMAGES = {
   hero: '/hero.webp',
-  story: '/images/partners/Sesimbra_SUP_Rentals_photo1.jpg',
+  story: '/images/about/sesimbra-aerial.png',
   sesimbraPanorama: '/images/partners/Sesimbra_SUP_Rentals_photo4.jpg',
   sesimbraCards: [
     '/images/partners/Look_Around_Tours_photo1.jpg',

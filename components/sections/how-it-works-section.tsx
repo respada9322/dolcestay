@@ -2,36 +2,14 @@
 
 import { ClipboardList, LineChart, Settings, type LucideIcon } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { useLanguage } from '@/lib/language-context';
 
 const CARD_SIZE = 150;
 const CARD_HALF = CARD_SIZE / 2;
 const ICON_SIZE = 56;
 const NUMBER_SIZE = 48;
 
-const steps: {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-}[] = [
-  {
-    title: 'Avaliamos o seu imóvel',
-    description:
-      'Analisamos o potencial do seu imóvel e apresentamos uma proposta personalizada.',
-    icon: ClipboardList,
-  },
-  {
-    title: 'Preparamos a estratégia',
-    description:
-      'Definimos a melhor estratégia de rentabilização para o seu alojamento.',
-    icon: LineChart,
-  },
-  {
-    title: 'Gerimos tudo',
-    description:
-      'Tratamos de reservas, hóspedes e todas as operações do dia-a-dia.',
-    icon: Settings,
-  },
-];
+const stepIcons: LucideIcon[] = [ClipboardList, LineChart, Settings];
 
 const headerVariants = {
   hidden: { opacity: 0, y: 28 },
@@ -103,7 +81,14 @@ function ConnectorLine({
 }
 
 export function HowItWorksSection() {
+  const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
+
+  const steps = [
+    t.owners.steps.step1,
+    t.owners.steps.step2,
+    t.owners.steps.step3,
+  ];
 
   return (
     <section
@@ -123,7 +108,7 @@ export function HowItWorksSection() {
             id="how-it-works-heading"
             className="font-serif text-[1.75rem] font-medium text-[#1F4E5F] text-balance sm:text-3xl lg:text-[2.25rem] lg:leading-tight"
           >
-            Como funciona
+            {t.owners.steps.title}
           </h2>
         </motion.header>
 
@@ -146,11 +131,11 @@ export function HowItWorksSection() {
 
           <div className="relative z-10 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-6 lg:justify-between">
             {steps.map((step, index) => {
-              const Icon = step.icon;
+              const Icon = stepIcons[index];
 
               return (
                 <motion.article
-                  key={step.title}
+                  key={index}
                   variants={stepVariants}
                   whileHover={
                     shouldReduceMotion

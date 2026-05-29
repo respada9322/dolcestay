@@ -275,7 +275,7 @@ export const translations = {
           'Vivemos e trabalhamos em Sesimbra. Conhecemos as praias, os proprietários, os ritmos da temporada e o que faz cada estadia ser inesquecível.',
           'Para nós, cada imóvel é um projecto: tratamos da operação diária para que proprietários ganhem tempo e hóspedes vivam Sesimbra com autenticidade.',
         ],
-        imageAlt: 'Paisagem costeira de Sesimbra',
+        imageAlt: 'Vista aérea de Sesimbra com o castelo, a vila e a baía',
       },
       whyUs: {
         title: 'Porquê escolher a DolceStay',
@@ -692,7 +692,7 @@ export const translations = {
           'We live and work in Sesimbra. We know the beaches, the owners, the seasonal rhythms and what makes every stay unforgettable.',
           'For us, every property is a project: we handle daily operations so owners gain time and guests experience Sesimbra authentically.',
         ],
-        imageAlt: 'Sesimbra coastal landscape',
+        imageAlt: 'Aerial view of Sesimbra with the castle, town and bay',
       },
       whyUs: {
         title: 'Why choose DolceStay',
@@ -1109,7 +1109,7 @@ export const translations = {
           'Nous vivons et travaillons à Sesimbra. Nous connaissons les plages, les propriétaires, les saisons et ce qui rend chaque séjour inoubliable.',
           'Pour nous, chaque bien est un projet : nous gérons l\'opération quotidienne pour que les propriétaires gagnent du temps et les clients vivent Sesimbra avec authenticité.',
         ],
-        imageAlt: 'Paysage côtier de Sesimbra',
+        imageAlt: 'Vue aérienne de Sesimbra avec le château, le village et la baie',
       },
       whyUs: {
         title: 'Pourquoi choisir DolceStay',
@@ -1526,7 +1526,7 @@ export const translations = {
           'Vivimos y trabajamos en Sesimbra. Conocemos las playas, los propietarios, los ritmos de temporada y lo que hace inolvidable cada estancia.',
           'Para nosotros, cada inmueble es un proyecto: gestionamos la operación diaria para que los propietarios ganen tiempo y los huéspedes vivan Sesimbra con autenticidad.',
         ],
-        imageAlt: 'Paisaje costero de Sesimbra',
+        imageAlt: 'Vista aérea de Sesimbra con el castillo, el pueblo y la bahía',
       },
       whyUs: {
         title: 'Por qué elegir DolceStay',
@@ -1943,7 +1943,7 @@ export const translations = {
           'Wir leben und arbeiten in Sesimbra. Wir kennen die Strände, die Eigentümer, die Saisons und was jeden Aufenthalt unvergesslich macht.',
           'Für uns ist jede Immobilie ein Projekt: Wir übernehmen den Tagesbetrieb, damit Eigentümer Zeit gewinnen und Gäste Sesimbra authentisch erleben.',
         ],
-        imageAlt: 'Küstenlandschaft von Sesimbra',
+        imageAlt: 'Luftaufnahme von Sesimbra mit Burg, Ort und Bucht',
       },
       whyUs: {
         title: 'Warum DolceStay wählen',
