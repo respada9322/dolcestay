@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { FloatingWhatsApp } from '@/components/floating-whatsapp';
 import { AboutSection } from '@/components/sections/about-section';
 
 export const metadata: Metadata = {
-  title: 'Quem Somos | DolceStay',
+  title: 'Quem Somos | DolceStay — Gestão Local em Sesimbra',
   description:
-    'Conheça a DolceStay: gestão de alojamento local em Sesimbra, com foco na rentabilização de imóveis e experiências turísticas de excelência.',
+    'Somos locais em Sesimbra. Gestão premium de alojamento local para proprietários que querem rentabilizar com confiança e proximidade.',
   robots: { index: true, follow: true },
 };
 
@@ -18,6 +19,7 @@ export default function QuemSomosPage() {
         <AboutSection />
       </div>
       <Footer />
+      <FloatingWhatsApp />
     </main>
   );
 }

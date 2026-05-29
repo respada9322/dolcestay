@@ -122,6 +122,10 @@ const partnerGalleryFiles = [
   '/images/partners/Look_Around_Tours_photo5.jpg',
   '/images/partners/Look_Around_Tours_photo6.jpg',
   '/images/partners/O_Batel_photo1.jpg',
+  '/images/partners/O_Zagaia_Logo.png',
+  '/images/partners/O_Zagaia_photo1.png',
+  '/images/partners/Casa_Mateus_Logo.png',
+  '/images/partners/Casa_Mateus_photo1.png',
   '/images/partners/Pexitos_photo1.jpg',
   '/images/partners/Pexitos_photo2.jpg',
   '/images/partners/Pexitos_photo3.jpg',
@@ -140,6 +144,12 @@ const partnerGalleryFiles = [
   '/images/partners/Sesimbra_SUP_Rentals_photo6.jpg',
   '/images/partners/gliese.jpg',
   '/images/partners/logo_o_batel.png',
+  '/images/partners/Our_Roots_Logo.png',
+  '/images/partners/Our_Roots_photo1.png',
+  '/images/partners/Our_Roots_photo2.png',
+  '/images/partners/Our_Roots_photo3.png',
+  '/images/partners/Our_Roots_photo4.png',
+  '/images/partners/Our_Roots_photo5.png',
 ];
 
 const normalizePartnerToken = (value: string) => value.toLowerCase().replace(/[\s_-]+/g, '');
@@ -197,7 +207,7 @@ export const partnerExperiences = [
       es: ['Piragüismo', 'Tours en kayak', 'Stand up paddle', 'Paseos en barco'],
       de: ['Kanufahren', 'Kajaktouren', 'Stand up paddle', 'Bootsfahrten'],
     },
-    ...withPartnerImages('Our Roots', '/images/partner-ourroots.jpg'),
+    ...withPartnerImages('Our Roots', '/images/partners/Our_Roots_photo1.png', ['ourroots']),
     instagram: 'https://instagram.com/ourroots',
     facebook: 'https://facebook.com/ourroots',
     website: 'https://cipreiadiveclub.com/',
@@ -288,7 +298,7 @@ export const partnerRestaurants = [
     name: 'O Zagaia',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('O Zagaia', '/images/partner-zagaia.jpg'),
+    ...withPartnerImages('O Zagaia', '/images/partners/O_Zagaia_photo1.png', ['ozagaia']),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d17188917-Reviews-O_Zagaia-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -296,7 +306,7 @@ export const partnerRestaurants = [
     name: 'Casa Mateus',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('Casa Mateus', '/images/partner-casamateus.jpg', ['casamateus']),
+    ...withPartnerImages('Casa Mateus', '/images/partners/Casa_Mateus_photo1.png', ['casamateus']),
     website: 'https://www.casamateus.pt/',
   },
   {

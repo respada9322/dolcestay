@@ -252,26 +252,106 @@ export const translations = {
       },
     },
     about: {
-      title: 'Quem somos?',
-      subtitle: 'Gestão de Alojamento Local',
-      description1: 'A DolceStay é uma empresa de gestão de alojamentos locais baseada no concelho de Sesimbra em Portugal. A nossa missão é providenciar uma rentabilização dos imóveis dos nossos proprietários e uma experiência turística de excelência aos nossos hóspedes.',
-      description2: 'Com as suas praias únicas, como a Praia do Ribeiro de Cavalo, e a sua beleza natural incomparável, Sesimbra é um dos paraísos perdidos de Portugal. Devido ao aumento do turismo no nosso país, esta pequena vila tornou-se num dos destinos turísticos mais procurados do País.',
-      description3: 'Estamos empenhados em promover o turismo e o comércio local, introduzindo o público em geral à herança cultural, beleza natural, gastronomia e muito mais do que esta vila tem para oferecer.',
-      stats: {
-        location: {
-          title: 'Localização',
-          description: 'Baseados em Sesimbra, conhecemos a região como ninguém.',
-        },
-        experience: {
-          title: 'Experiência',
-          description: 'Equipa experiente em gestão de alojamento local.',
-        },
-        dedication: {
-          title: 'Dedicação',
-          description: 'Comprometidos com a satisfação de hóspedes e proprietários.',
-        },
+      hero: {
+        badge: 'Gestão Local em Sesimbra',
+        title: 'Somos locais. Gerimos como proprietários.',
+        description:
+          'Ajudamos proprietários a maximizar o rendimento dos seus imóveis enquanto criamos experiências memoráveis para quem visita Sesimbra.',
+        ctaPrimary: 'Falar Connosco',
+        ctaSecondary: 'Conhecer os Serviços',
+        imageAlt: 'Vista de Sesimbra com praia e costa atlântica',
       },
-      overlayDescription: 'Um dos destinos mais procurados da costa portuguesa',
+      stats: {
+        stat1: { value: '+15', label: 'Propriedades geridas', counterType: 'plus' as const, counterValue: 15 },
+        stat2: { value: '+500', label: 'Hóspedes recebidos', counterType: 'plus' as const, counterValue: 500 },
+        stat3: { value: '4.9★', label: 'Avaliação média', counterType: 'decimal' as const, counterValue: 4.9 },
+        stat4: { value: '24/7', label: 'Apoio permanente', counterType: 'static' as const },
+      },
+      story: {
+        title: 'Nascemos em Sesimbra',
+        paragraphs: [
+          'A DolceStay nasceu da vontade de elevar a gestão de alojamento local num destino que conhecemos como a palma da nossa mão.',
+          'Vivemos e trabalhamos em Sesimbra. Conhecemos as praias, os proprietários, os ritmos da temporada e o que faz cada estadia ser inesquecível.',
+          'Para nós, cada imóvel é um projecto: tratamos da operação diária para que proprietários ganhem tempo e hóspedes vivam Sesimbra com autenticidade.',
+        ],
+        imageAlt: 'Paisagem costeira de Sesimbra',
+      },
+      whyUs: {
+        title: 'Porquê escolher a DolceStay',
+        subtitle:
+          'Gestão premium com foco local, resultados mensuráveis e proximidade real com proprietários e hóspedes.',
+        items: [
+          {
+            title: 'Conhecimento local',
+            description:
+              'Conhecemos Sesimbra, a sua oferta e o que os viajantes procuram em cada época do ano.',
+          },
+          {
+            title: 'Comunicação rápida',
+            description:
+              'Respostas ágeis a proprietários e hóspedes, com acompanhamento próximo em cada fase da estadia.',
+          },
+          {
+            title: 'Gestão completa',
+            description:
+              'Da reserva à limpeza, passando por manutenção e check-in — tudo centralizado numa só equipa.',
+          },
+          {
+            title: 'Equipa dedicada',
+            description:
+              'Profissionais locais que tratam cada imóvel com o cuidado de quem conhece o território.',
+          },
+          {
+            title: 'Estratégias de rentabilização',
+            description:
+              'Preços dinâmicos, posicionamento premium e optimização contínua da performance do imóvel.',
+          },
+          {
+            title: 'Experiência do hóspede',
+            description:
+              'Detalhes que fazem a diferença: acolhimento, recomendações locais e estadias memoráveis.',
+          },
+        ],
+      },
+      mission: {
+        missionTitle: 'Missão',
+        missionText:
+          'Maximizar o potencial dos imóveis e elevar a experiência turística em Sesimbra.',
+        valuesTitle: 'Valores',
+        values: ['Transparência', 'Proximidade', 'Excelência', 'Confiança'],
+      },
+      sesimbra: {
+        title: 'Porque escolhemos Sesimbra',
+        panoramicAlt: 'Panorâmica da costa e vila de Sesimbra',
+        panoramicCaption: 'Um destino autêntico entre o mar, a serra e a aldeia.',
+        cards: [
+          {
+            title: 'Praias únicas',
+            description:
+              'Da Praia da Califórnia ao Ribeiro do Cavalo — areias, falésias e águas cristalinas.',
+            imageAlt: 'Praia em Sesimbra',
+          },
+          {
+            title: 'Natureza protegida',
+            description:
+              'Parque Natural da Arrábida, trilhos e paisagens que convidam a explorar devagar.',
+            imageAlt: 'Natureza na região de Sesimbra',
+          },
+          {
+            title: 'Gastronomia e cultura',
+            description:
+              'Marisco fresco, vinhos locais e uma comunidade acolhedora com raízes fortes.',
+            imageAlt: 'Gastronomia e cultura em Sesimbra',
+          },
+        ],
+      },
+      cta: {
+        title: 'Pronto para rentabilizar o seu imóvel?',
+        description: 'Descubra quanto pode faturar com uma gestão profissional.',
+        button: 'Agendar Conversa',
+        pills: ['Sem compromisso', 'Equipa local', 'Avaliação personalizada'],
+        disclaimer: 'Resposta em menos de 24 horas.',
+      },
     },
     contact: {
       title: 'Contactos',
@@ -588,26 +668,106 @@ export const translations = {
       },
     },
     about: {
-      title: 'Who are we?',
-      subtitle: 'Local Accommodation Management',
-      description1: 'DolceStay is a local accommodation management company based in the municipality of Sesimbra in Portugal. Our mission is to provide profitability to our property owners and an excellent tourist experience to our guests.',
-      description2: 'With its unique beaches, such as Praia do Ribeiro de Cavalo, and its incomparable natural beauty, Sesimbra is one of Portugal\'s hidden paradises. Due to the increase in tourism in our country, this small village has become one of the most sought-after tourist destinations in the country.',
-      description3: 'We are committed to promoting tourism and local commerce, introducing the general public to the cultural heritage, natural beauty, gastronomy and much more that this village has to offer.',
-      stats: {
-        location: {
-          title: 'Location',
-          description: 'Based in Sesimbra, we know the region like no one else.',
-        },
-        experience: {
-          title: 'Experience',
-          description: 'Experienced team in local accommodation management.',
-        },
-        dedication: {
-          title: 'Dedication',
-          description: 'Committed to guest and owner satisfaction.',
-        },
+      hero: {
+        badge: 'Local Management in Sesimbra',
+        title: 'We are locals. We manage like owners.',
+        description:
+          'We help property owners maximize their rental income while creating memorable experiences for everyone who visits Sesimbra.',
+        ctaPrimary: 'Talk to Us',
+        ctaSecondary: 'Explore Our Services',
+        imageAlt: 'Sesimbra coastline with beach and Atlantic views',
       },
-      overlayDescription: 'One of the most sought-after destinations on the Portuguese coast',
+      stats: {
+        stat1: { value: '+15', label: 'Properties managed', counterType: 'plus' as const, counterValue: 15 },
+        stat2: { value: '+500', label: 'Guests hosted', counterType: 'plus' as const, counterValue: 500 },
+        stat3: { value: '4.9★', label: 'Average rating', counterType: 'decimal' as const, counterValue: 4.9 },
+        stat4: { value: '24/7', label: 'Always-on support', counterType: 'static' as const },
+      },
+      story: {
+        title: 'Born in Sesimbra',
+        paragraphs: [
+          'DolceStay was founded to raise the standard of local accommodation management in a destination we know inside out.',
+          'We live and work in Sesimbra. We know the beaches, the owners, the seasonal rhythms and what makes every stay unforgettable.',
+          'For us, every property is a project: we handle daily operations so owners gain time and guests experience Sesimbra authentically.',
+        ],
+        imageAlt: 'Sesimbra coastal landscape',
+      },
+      whyUs: {
+        title: 'Why choose DolceStay',
+        subtitle:
+          'Premium management with a local focus, measurable results and genuine closeness to owners and guests.',
+        items: [
+          {
+            title: 'Local expertise',
+            description:
+              'We know Sesimbra, its offering and what travelers look for in every season.',
+          },
+          {
+            title: 'Fast communication',
+            description:
+              'Quick responses to owners and guests, with close follow-up at every stage of the stay.',
+          },
+          {
+            title: 'Full management',
+            description:
+              'From booking to cleaning, maintenance and check-in — everything handled by one team.',
+          },
+          {
+            title: 'Dedicated team',
+            description:
+              'Local professionals who care for every property as people who know the area.',
+          },
+          {
+            title: 'Revenue strategies',
+            description:
+              'Dynamic pricing, premium positioning and continuous performance optimization.',
+          },
+          {
+            title: 'Guest experience',
+            description:
+              'Details that matter: warm welcome, local recommendations and memorable stays.',
+          },
+        ],
+      },
+      mission: {
+        missionTitle: 'Mission',
+        missionText:
+          'To maximize property potential and elevate the tourist experience in Sesimbra.',
+        valuesTitle: 'Values',
+        values: ['Transparency', 'Closeness', 'Excellence', 'Trust'],
+      },
+      sesimbra: {
+        title: 'Why we chose Sesimbra',
+        panoramicAlt: 'Panoramic view of Sesimbra coast and village',
+        panoramicCaption: 'An authentic destination between sea, hills and village life.',
+        cards: [
+          {
+            title: 'Unique beaches',
+            description:
+              'From Praia da Califórnia to Ribeiro do Cavalo — sand, cliffs and crystal-clear waters.',
+            imageAlt: 'Beach in Sesimbra',
+          },
+          {
+            title: 'Protected nature',
+            description:
+              'Arrábida Natural Park, trails and landscapes that invite you to explore slowly.',
+            imageAlt: 'Nature in the Sesimbra region',
+          },
+          {
+            title: 'Food and culture',
+            description:
+              'Fresh seafood, local wines and a welcoming community with deep roots.',
+            imageAlt: 'Food and culture in Sesimbra',
+          },
+        ],
+      },
+      cta: {
+        title: 'Ready to monetize your property?',
+        description: 'Find out how much you could earn with professional management.',
+        button: 'Schedule a Call',
+        pills: ['No commitment', 'Local team', 'Personalized assessment'],
+        disclaimer: 'Response within 24 hours.',
+      },
     },
     contact: {
       title: 'Contact',
@@ -924,26 +1084,106 @@ export const translations = {
       },
     },
     about: {
-      title: 'Qui sommes-nous?',
-      subtitle: 'Gestion d\'Hébergement Local',
-      description1: 'DolceStay est une entreprise de gestion d\'hébergements locaux basée dans la municipalité de Sesimbra au Portugal. Notre mission est de fournir une rentabilité aux propriétaires et une excellente expérience touristique à nos clients.',
-      description2: 'Avec ses plages uniques, comme la Praia do Ribeiro de Cavalo, et sa beauté naturelle incomparable, Sesimbra est l\'un des paradis cachés du Portugal. Grâce à l\'augmentation du tourisme dans notre pays, ce petit village est devenu l\'une des destinations touristiques les plus recherchées du pays.',
-      description3: 'Nous nous engageons à promouvoir le tourisme et le commerce local, en présentant au public l\'héritage culturel, la beauté naturelle, la gastronomie et bien plus encore que ce village a à offrir.',
-      stats: {
-        location: {
-          title: 'Localisation',
-          description: 'Basés à Sesimbra, nous connaissons la région comme personne.',
-        },
-        experience: {
-          title: 'Expérience',
-          description: 'Équipe expérimentée en gestion d\'hébergement local.',
-        },
-        dedication: {
-          title: 'Dévouement',
-          description: 'Engagés envers la satisfaction des clients et des propriétaires.',
-        },
+      hero: {
+        badge: 'Gestion locale à Sesimbra',
+        title: 'Nous sommes locaux. Nous gérons comme des propriétaires.',
+        description:
+          'Nous aidons les propriétaires à maximiser leurs revenus tout en créant des expériences mémorables pour ceux qui visitent Sesimbra.',
+        ctaPrimary: 'Nous contacter',
+        ctaSecondary: 'Découvrir nos services',
+        imageAlt: 'Vue de Sesimbra avec plage et côte atlantique',
       },
-      overlayDescription: 'L\'une des destinations les plus recherchées de la côte portugaise',
+      stats: {
+        stat1: { value: '+15', label: 'Propriétés gérées', counterType: 'plus' as const, counterValue: 15 },
+        stat2: { value: '+500', label: 'Clients accueillis', counterType: 'plus' as const, counterValue: 500 },
+        stat3: { value: '4.9★', label: 'Note moyenne', counterType: 'decimal' as const, counterValue: 4.9 },
+        stat4: { value: '24/7', label: 'Support permanent', counterType: 'static' as const },
+      },
+      story: {
+        title: 'Nés à Sesimbra',
+        paragraphs: [
+          'DolceStay est né de la volonté d\'élever la gestion d\'hébergement local dans une destination que nous connaissons par cœur.',
+          'Nous vivons et travaillons à Sesimbra. Nous connaissons les plages, les propriétaires, les saisons et ce qui rend chaque séjour inoubliable.',
+          'Pour nous, chaque bien est un projet : nous gérons l\'opération quotidienne pour que les propriétaires gagnent du temps et les clients vivent Sesimbra avec authenticité.',
+        ],
+        imageAlt: 'Paysage côtier de Sesimbra',
+      },
+      whyUs: {
+        title: 'Pourquoi choisir DolceStay',
+        subtitle:
+          'Gestion premium avec ancrage local, résultats mesurables et proximité réelle avec propriétaires et clients.',
+        items: [
+          {
+            title: 'Connaissance locale',
+            description:
+              'Nous connaissons Sesimbra, son offre et ce que les voyageurs recherchent à chaque saison.',
+          },
+          {
+            title: 'Communication rapide',
+            description:
+              'Réponses rapides aux propriétaires et clients, avec un suivi proche à chaque étape du séjour.',
+          },
+          {
+            title: 'Gestion complète',
+            description:
+              'De la réservation au ménage, en passant par la maintenance et le check-in — une seule équipe.',
+          },
+          {
+            title: 'Équipe dédiée',
+            description:
+              'Des professionnels locaux qui traitent chaque bien avec le soin de ceux qui connaissent le territoire.',
+          },
+          {
+            title: 'Stratégies de rentabilité',
+            description:
+              'Tarification dynamique, positionnement premium et optimisation continue des performances.',
+          },
+          {
+            title: 'Expérience client',
+            description:
+              'Des détails qui comptent : accueil chaleureux, recommandations locales et séjours mémorables.',
+          },
+        ],
+      },
+      mission: {
+        missionTitle: 'Mission',
+        missionText:
+          'Maximiser le potentiel des biens et élever l\'expérience touristique à Sesimbra.',
+        valuesTitle: 'Valeurs',
+        values: ['Transparence', 'Proximité', 'Excellence', 'Confiance'],
+      },
+      sesimbra: {
+        title: 'Pourquoi nous avons choisi Sesimbra',
+        panoramicAlt: 'Panorama de la côte et du village de Sesimbra',
+        panoramicCaption: 'Une destination authentique entre mer, collines et village.',
+        cards: [
+          {
+            title: 'Plages uniques',
+            description:
+              'De la Praia da Califórnia au Ribeiro do Cavalo — sable, falaises et eaux cristallines.',
+            imageAlt: 'Plage à Sesimbra',
+          },
+          {
+            title: 'Nature protégée',
+            description:
+              'Parc naturel de l\'Arrábida, sentiers et paysages qui invitent à explorer lentement.',
+            imageAlt: 'Nature dans la région de Sesimbra',
+          },
+          {
+            title: 'Gastronomie et culture',
+            description:
+              'Fruits de mer frais, vins locaux et une communauté accueillante aux racines profondes.',
+            imageAlt: 'Gastronomie et culture à Sesimbra',
+          },
+        ],
+      },
+      cta: {
+        title: 'Prêt à rentabiliser votre bien?',
+        description: 'Découvrez combien vous pourriez gagner avec une gestion professionnelle.',
+        button: 'Planifier un appel',
+        pills: ['Sans engagement', 'Équipe locale', 'Évaluation personnalisée'],
+        disclaimer: 'Réponse sous 24 heures.',
+      },
     },
     contact: {
       title: 'Contact',
@@ -1260,26 +1500,106 @@ export const translations = {
       },
     },
     about: {
-      title: '¿Quiénes somos?',
-      subtitle: 'Gestión de Alojamiento Local',
-      description1: 'DolceStay es una empresa de gestión de alojamientos locales con sede en el municipio de Sesimbra en Portugal. Nuestra misión es proporcionar rentabilidad a nuestros propietarios y una excelente experiencia turística a nuestros huéspedes.',
-      description2: 'Con sus playas únicas, como la Praia do Ribeiro de Cavalo, y su incomparable belleza natural, Sesimbra es uno de los paraísos escondidos de Portugal. Debido al aumento del turismo en nuestro país, este pequeño pueblo se ha convertido en uno de los destinos turísticos más buscados del país.',
-      description3: 'Estamos comprometidos a promover el turismo y el comercio local, presentando al público en general el patrimonio cultural, la belleza natural, la gastronomía y mucho más que este pueblo tiene para ofrecer.',
-      stats: {
-        location: {
-          title: 'Ubicación',
-          description: 'Basados en Sesimbra, conocemos la región como nadie.',
-        },
-        experience: {
-          title: 'Experiencia',
-          description: 'Equipo con experiencia en gestión de alojamiento local.',
-        },
-        dedication: {
-          title: 'Dedicación',
-          description: 'Comprometidos con la satisfacción de huéspedes y propietarios.',
-        },
+      hero: {
+        badge: 'Gestión local en Sesimbra',
+        title: 'Somos locales. Gestionamos como propietarios.',
+        description:
+          'Ayudamos a propietarios a maximizar el rendimiento de sus inmuebles mientras creamos experiencias memorables para quienes visitan Sesimbra.',
+        ctaPrimary: 'Hablar con nosotros',
+        ctaSecondary: 'Conocer los servicios',
+        imageAlt: 'Vista de Sesimbra con playa y costa atlántica',
       },
-      overlayDescription: 'Uno de los destinos más buscados de la costa portuguesa',
+      stats: {
+        stat1: { value: '+15', label: 'Propiedades gestionadas', counterType: 'plus' as const, counterValue: 15 },
+        stat2: { value: '+500', label: 'Huéspedes recibidos', counterType: 'plus' as const, counterValue: 500 },
+        stat3: { value: '4.9★', label: 'Valoración media', counterType: 'decimal' as const, counterValue: 4.9 },
+        stat4: { value: '24/7', label: 'Apoyo permanente', counterType: 'static' as const },
+      },
+      story: {
+        title: 'Nacimos en Sesimbra',
+        paragraphs: [
+          'DolceStay nació con la voluntad de elevar la gestión de alojamiento local en un destino que conocemos como la palma de la mano.',
+          'Vivimos y trabajamos en Sesimbra. Conocemos las playas, los propietarios, los ritmos de temporada y lo que hace inolvidable cada estancia.',
+          'Para nosotros, cada inmueble es un proyecto: gestionamos la operación diaria para que los propietarios ganen tiempo y los huéspedes vivan Sesimbra con autenticidad.',
+        ],
+        imageAlt: 'Paisaje costero de Sesimbra',
+      },
+      whyUs: {
+        title: 'Por qué elegir DolceStay',
+        subtitle:
+          'Gestión premium con enfoque local, resultados medibles y proximidad real con propietarios y huéspedes.',
+        items: [
+          {
+            title: 'Conocimiento local',
+            description:
+              'Conocemos Sesimbra, su oferta y lo que buscan los viajeros en cada época del año.',
+          },
+          {
+            title: 'Comunicación rápida',
+            description:
+              'Respuestas ágiles a propietarios y huéspedes, con seguimiento cercano en cada fase de la estancia.',
+          },
+          {
+            title: 'Gestión completa',
+            description:
+              'Desde la reserva hasta la limpieza, mantenimiento y check-in — todo en un solo equipo.',
+          },
+          {
+            title: 'Equipo dedicado',
+            description:
+              'Profesionales locales que cuidan cada inmueble con el detalle de quien conoce el territorio.',
+          },
+          {
+            title: 'Estrategias de rentabilización',
+            description:
+              'Precios dinámicos, posicionamiento premium y optimización continua del rendimiento.',
+          },
+          {
+            title: 'Experiencia del huésped',
+            description:
+              'Detalles que marcan la diferencia: acogida, recomendaciones locales y estancias memorables.',
+          },
+        ],
+      },
+      mission: {
+        missionTitle: 'Misión',
+        missionText:
+          'Maximizar el potencial de los inmuebles y elevar la experiencia turística en Sesimbra.',
+        valuesTitle: 'Valores',
+        values: ['Transparencia', 'Proximidad', 'Excelencia', 'Confianza'],
+      },
+      sesimbra: {
+        title: 'Por qué elegimos Sesimbra',
+        panoramicAlt: 'Panorámica de la costa y el pueblo de Sesimbra',
+        panoramicCaption: 'Un destino auténtico entre mar, sierra y pueblo.',
+        cards: [
+          {
+            title: 'Playas únicas',
+            description:
+              'De la Praia da Califórnia al Ribeiro do Cavalo — arena, acantilados y aguas cristalinas.',
+            imageAlt: 'Playa en Sesimbra',
+          },
+          {
+            title: 'Naturaleza protegida',
+            description:
+              'Parque Natural de Arrábida, senderos y paisajes que invitan a explorar con calma.',
+            imageAlt: 'Naturaleza en la región de Sesimbra',
+          },
+          {
+            title: 'Gastronomía y cultura',
+            description:
+              'Marisco fresco, vinos locales y una comunidad acogedora con raíces profundas.',
+            imageAlt: 'Gastronomía y cultura en Sesimbra',
+          },
+        ],
+      },
+      cta: {
+        title: '¿Listo para rentabilizar su inmueble?',
+        description: 'Descubra cuánto puede facturar con una gestión profesional.',
+        button: 'Agendar conversación',
+        pills: ['Sin compromiso', 'Equipo local', 'Evaluación personalizada'],
+        disclaimer: 'Respuesta en menos de 24 horas.',
+      },
     },
     contact: {
       title: 'Contacto',
@@ -1596,26 +1916,106 @@ export const translations = {
       },
     },
     about: {
-      title: 'Wer sind wir?',
-      subtitle: 'Lokale Unterkunftsverwaltung',
-      description1: 'DolceStay ist ein Unternehmen für die Verwaltung lokaler Unterkünfte mit Sitz in der Gemeinde Sesimbra in Portugal. Unsere Mission ist es, unseren Eigentümern Rentabilität und unseren Gästen ein hervorragendes touristisches Erlebnis zu bieten.',
-      description2: 'Mit seinen einzigartigen Stränden, wie der Praia do Ribeiro de Cavalo, und seiner unvergleichlichen natürlichen Schönheit ist Sesimbra eines der versteckten Paradiese Portugals. Aufgrund des zunehmenden Tourismus in unserem Land ist dieses kleine Dorf zu einem der gefragtesten Reiseziele des Landes geworden.',
-      description3: 'Wir setzen uns dafür ein, den Tourismus und den lokalen Handel zu fördern und der Öffentlichkeit das kulturelle Erbe, die natürliche Schönheit, die Gastronomie und vieles mehr vorzustellen, was dieses Dorf zu bieten hat.',
-      stats: {
-        location: {
-          title: 'Lage',
-          description: 'Mit Sitz in Sesimbra kennen wir die Region wie kein anderer.',
-        },
-        experience: {
-          title: 'Erfahrung',
-          description: 'Erfahrenes Team in der Verwaltung lokaler Unterkünfte.',
-        },
-        dedication: {
-          title: 'Engagement',
-          description: 'Verpflichtet zur Zufriedenheit von Gästen und Eigentümern.',
-        },
+      hero: {
+        badge: 'Lokale Verwaltung in Sesimbra',
+        title: 'Wir sind Einheimische. Wir verwalten wie Eigentümer.',
+        description:
+          'Wir helfen Eigentümern, ihre Mieteinnahmen zu maximieren und gleichzeitig unvergessliche Erlebnisse für alle zu schaffen, die Sesimbra besuchen.',
+        ctaPrimary: 'Kontakt aufnehmen',
+        ctaSecondary: 'Unsere Leistungen entdecken',
+        imageAlt: 'Sesimbra-Küste mit Strand und Atlantikblick',
       },
-      overlayDescription: 'Eines der gefragtesten Reiseziele an der portugiesischen Küste',
+      stats: {
+        stat1: { value: '+15', label: 'Verwaltete Objekte', counterType: 'plus' as const, counterValue: 15 },
+        stat2: { value: '+500', label: 'Gäste beherbergt', counterType: 'plus' as const, counterValue: 500 },
+        stat3: { value: '4.9★', label: 'Durchschnittsbewertung', counterType: 'decimal' as const, counterValue: 4.9 },
+        stat4: { value: '24/7', label: 'Dauerhafter Support', counterType: 'static' as const },
+      },
+      story: {
+        title: 'Geboren in Sesimbra',
+        paragraphs: [
+          'DolceStay entstand aus dem Wunsch, die Verwaltung lokaler Unterkünfte in einem Reiseziel zu heben, das wir in- und auswendig kennen.',
+          'Wir leben und arbeiten in Sesimbra. Wir kennen die Strände, die Eigentümer, die Saisons und was jeden Aufenthalt unvergesslich macht.',
+          'Für uns ist jede Immobilie ein Projekt: Wir übernehmen den Tagesbetrieb, damit Eigentümer Zeit gewinnen und Gäste Sesimbra authentisch erleben.',
+        ],
+        imageAlt: 'Küstenlandschaft von Sesimbra',
+      },
+      whyUs: {
+        title: 'Warum DolceStay wählen',
+        subtitle:
+          'Premium-Verwaltung mit lokalem Fokus, messbaren Ergebnissen und echter Nähe zu Eigentümern und Gästen.',
+        items: [
+          {
+            title: 'Lokales Know-how',
+            description:
+              'Wir kennen Sesimbra, das Angebot und was Reisende in jeder Jahreszeit suchen.',
+          },
+          {
+            title: 'Schnelle Kommunikation',
+            description:
+              'Schnelle Antworten an Eigentümer und Gäste, mit enger Begleitung in jeder Phase des Aufenthalts.',
+          },
+          {
+            title: 'Vollständige Verwaltung',
+            description:
+              'Von der Buchung bis zur Reinigung, Wartung und dem Check-in — alles aus einer Hand.',
+          },
+          {
+            title: 'Engagiertes Team',
+            description:
+              'Lokale Profis, die jede Immobilie mit der Sorgfalt betreuen, die das Gebiet verdient.',
+          },
+          {
+            title: 'Ertragsstrategien',
+            description:
+              'Dynamische Preise, Premium-Positionierung und kontinuierliche Leistungsoptimierung.',
+          },
+          {
+            title: 'Gästeerlebnis',
+            description:
+              'Details, die zählen: herzlicher Empfang, lokale Empfehlungen und unvergessliche Aufenthalte.',
+          },
+        ],
+      },
+      mission: {
+        missionTitle: 'Mission',
+        missionText:
+          'Das Potenzial von Immobilien maximieren und das touristische Erlebnis in Sesimbra heben.',
+        valuesTitle: 'Werte',
+        values: ['Transparenz', 'Nähe', 'Exzellenz', 'Vertrauen'],
+      },
+      sesimbra: {
+        title: 'Warum wir Sesimbra gewählt haben',
+        panoramicAlt: 'Panorama der Küste und des Dorfes Sesimbra',
+        panoramicCaption: 'Ein authentisches Reiseziel zwischen Meer, Hügeln und Dorfleben.',
+        cards: [
+          {
+            title: 'Einzigartige Strände',
+            description:
+              'Von der Praia da Califórnia bis zum Ribeiro do Cavalo — Sand, Klippen und kristallklares Wasser.',
+            imageAlt: 'Strand in Sesimbra',
+          },
+          {
+            title: 'Geschützte Natur',
+            description:
+              'Naturpark Arrábida, Wege und Landschaften, die zum langsamen Entdecken einladen.',
+            imageAlt: 'Natur in der Region Sesimbra',
+          },
+          {
+            title: 'Kulinarik und Kultur',
+            description:
+              'Frische Meeresfrüchte, lokale Weine und eine gastfreundliche Gemeinschaft mit tiefen Wurzeln.',
+            imageAlt: 'Kulinarik und Kultur in Sesimbra',
+          },
+        ],
+      },
+      cta: {
+        title: 'Bereit, Ihre Immobilie zu vermieten?',
+        description: 'Erfahren Sie, wie viel Sie mit professioneller Verwaltung verdienen können.',
+        button: 'Gespräch vereinbaren',
+        pills: ['Unverbindlich', 'Lokales Team', 'Persönliche Bewertung'],
+        disclaimer: 'Antwort innerhalb von 24 Stunden.',
+      },
     },
     contact: {
       title: 'Kontakt',
