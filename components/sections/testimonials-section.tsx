@@ -3,10 +3,13 @@
 import { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
-import { testimonials } from '@/lib/data';
+import type { Translations } from '@/lib/translations';
+
+type Testimonial = Translations['testimonials']['items'][number];
 
 export function TestimonialsSection() {
   const { t } = useLanguage();
+  const testimonials = t.testimonials.items;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextTestimonial = () => {
@@ -32,8 +35,8 @@ export function TestimonialsSection() {
 
         {/* Testimonials Grid - Desktop */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} t={t} />
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} testimonial={testimonial} t={t} />
           ))}
         </div>
 
@@ -82,7 +85,7 @@ export function TestimonialsSection() {
   );
 }
 
-function TestimonialCard({ testimonial, t }: { testimonial: typeof testimonials[0]; t: any }) {
+function TestimonialCard({ testimonial, t }: { testimonial: Testimonial; t: Translations }) {
   const typeLabel = testimonial.type === 'guest' ? t.testimonials.guest : t.testimonials.owner;
 
   return (

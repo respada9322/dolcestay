@@ -70,41 +70,6 @@ export const featuredAccommodations = [
   },
 ];
 
-export const testimonials = [
-  {
-    id: 1,
-    text: 'O anfitrião responde muito rapidamente e é muito atencioso. O sítio é muito agradável, ideal para uns dias na praia. O apartamento não tem nada de desnecessário, apenas o básico, tudo o que é necessário para uns dias relaxantes.',
-    author: 'João Pedro',
-    location: 'Almada, Portugal',
-    type: 'guest' as const,
-    rating: 5,
-  },
-  {
-    id: 2,
-    text: 'Excelente experiência! A equipa da DolceStay tratou de tudo, desde a preparação do imóvel até à gestão das reservas. O rendimento do meu apartamento aumentou significativamente.',
-    author: 'Maria Santos',
-    location: 'Lisboa, Portugal',
-    type: 'owner' as const,
-    rating: 5,
-  },
-  {
-    id: 3,
-    text: 'Localização perfeita, a poucos minutos da praia. O apartamento estava impecável e a comunicação com a equipa foi excelente durante toda a estadia.',
-    author: 'Pierre Dubois',
-    location: 'Paris, France',
-    type: 'guest' as const,
-    rating: 5,
-  },
-  {
-    id: 4,
-    text: 'Finalmente posso rentabilizar o meu imóvel em Sesimbra sem preocupações. A DolceStay é muito profissional e os resultados são visíveis.',
-    author: 'António Ferreira',
-    location: 'Setúbal, Portugal',
-    type: 'owner' as const,
-    rating: 5,
-  },
-];
-
 // Build `images[]` now, so a per-partner gallery can be enabled later.
 // Matching is case-insensitive and tolerant to spaces, underscores and hyphens.
 const partnerGalleryFiles = [
