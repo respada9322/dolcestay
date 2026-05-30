@@ -20,6 +20,9 @@ const featureIcons: Record<string, React.ReactNode> = {
 
 export function AccommodationsPreview() {
   const { t } = useLanguage();
+  const subtitleById = Object.fromEntries(
+    t.accommodations.items.map((item) => [item.id, item.subtitle])
+  ) as Record<number, string>;
 
   return (
     <section id="accommodations" className="py-20 lg:py-28 bg-[#F8FAF8] scroll-mt-20">
@@ -79,7 +82,7 @@ export function AccommodationsPreview() {
                   {accommodation.title}
                 </h3>
                 <p className="text-sm text-[#6B7280] mb-3 line-clamp-1">
-                  {accommodation.subtitle}
+                  {subtitleById[accommodation.id]}
                 </p>
 
                 {/* Location with rating */}

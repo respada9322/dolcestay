@@ -78,6 +78,12 @@ export const translations = {
       },
       perNight: '/noite',
       from: 'Desde',
+      items: [
+        { id: 1, subtitle: 'Casa a 5 min da Praia com Jardim e Churrasqueira' },
+        { id: 2, subtitle: 'Studio a 50m da Praia de Sesimbra' },
+        { id: 3, subtitle: 'Casa com Piscina e Vista Mar' },
+        { id: 4, subtitle: 'Apartamento Moderno no Centro' },
+      ],
     },
     services: {
       title: 'Os Nossos Serviços',
@@ -525,6 +531,12 @@ export const translations = {
       },
       perNight: '/night',
       from: 'From',
+      items: [
+        { id: 1, subtitle: 'House 5 min from the beach with garden and BBQ' },
+        { id: 2, subtitle: 'Studio 50m from Sesimbra beach' },
+        { id: 3, subtitle: 'House with pool and sea view' },
+        { id: 4, subtitle: 'Modern apartment in the center' },
+      ],
     },
     services: {
       title: 'Our Services',
@@ -972,6 +984,12 @@ export const translations = {
       },
       perNight: '/nuit',
       from: 'À partir de',
+      items: [
+        { id: 1, subtitle: 'Maison à 5 min de la plage avec jardin et barbecue' },
+        { id: 2, subtitle: 'Studio à 50 m de la plage de Sesimbra' },
+        { id: 3, subtitle: 'Maison avec piscine et vue mer' },
+        { id: 4, subtitle: 'Appartement moderne au centre' },
+      ],
     },
     services: {
       title: 'Nos Services',
@@ -1419,6 +1437,12 @@ export const translations = {
       },
       perNight: '/noche',
       from: 'Desde',
+      items: [
+        { id: 1, subtitle: 'Casa a 5 min de la playa con jardín y barbacoa' },
+        { id: 2, subtitle: 'Estudio a 50 m de la playa de Sesimbra' },
+        { id: 3, subtitle: 'Casa con piscina y vistas al mar' },
+        { id: 4, subtitle: 'Apartamento moderno en el centro' },
+      ],
     },
     services: {
       title: 'Nuestros Servicios',
@@ -1866,6 +1890,12 @@ export const translations = {
       },
       perNight: '/Nacht',
       from: 'Ab',
+      items: [
+        { id: 1, subtitle: 'Haus 5 Min. vom Strand mit Garten und Grill' },
+        { id: 2, subtitle: 'Studio 50 m vom Strand von Sesimbra' },
+        { id: 3, subtitle: 'Haus mit Pool und Meerblick' },
+        { id: 4, subtitle: 'Modernes Apartment im Zentrum' },
+      ],
     },
     services: {
       title: 'Unsere Dienstleistungen',

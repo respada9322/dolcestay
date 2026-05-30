@@ -23,7 +23,6 @@ export const featuredAccommodations = [
   {
     id: 1,
     title: 'Cantinho da Gingeira',
-    subtitle: 'Casa a 5 min da Praia com Jardim e Churrasqueira',
     location: 'Sesimbra',
     image: '/images/accommodation-1.jpg',
     features: ['garden', 'beach', 'parking', 'wifi'] as const,
@@ -35,7 +34,6 @@ export const featuredAccommodations = [
   {
     id: 2,
     title: 'Casa do Dário',
-    subtitle: 'Studio a 50m da Praia de Sesimbra',
     location: 'Sesimbra',
     image: '/images/accommodation-2.jpg',
     features: ['beach', 'center', 'wifi'] as const,
@@ -47,7 +45,6 @@ export const featuredAccommodations = [
   {
     id: 3,
     title: 'Villa Mar Azul',
-    subtitle: 'Casa com Piscina e Vista Mar',
     location: 'Sesimbra',
     image: '/images/accommodation-3.jpg',
     features: ['seaView', 'pool', 'terrace', 'parking'] as const,
@@ -59,7 +56,6 @@ export const featuredAccommodations = [
   {
     id: 4,
     title: 'Apartamento Sesimbra Centro',
-    subtitle: 'Apartamento Moderno no Centro',
     location: 'Sesimbra',
     image: '/images/accommodation-4.jpg',
     features: ['center', 'modern', 'wifi', 'aircon'] as const,
