@@ -171,7 +171,7 @@ export const partnerExperiences = [
     ...withPartnerImages('Our Roots', '/images/partners/Our_Roots_photo1.png', ['ourroots']),
     instagram: 'https://instagram.com/ourroots',
     facebook: 'https://facebook.com/ourroots',
-    website: 'https://cipreiadiveclub.com/',
+    website: 'https://www.ourroots.pt/',
   },
   {
     id: 3,
