@@ -34,7 +34,7 @@ export const featuredAccommodations = [
   },
   {
     id: 2,
-    title: 'Casa do Mário',
+    title: 'Casa do Dário',
     subtitle: 'Studio a 50m da Praia de Sesimbra',
     location: 'Sesimbra',
     image: '/images/accommodation-2.jpg',
