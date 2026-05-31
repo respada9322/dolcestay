@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ParceriasPage() {
   return (
-    <main className="min-h-screen bg-[#F8FAF8]">
+    <main className="min-h-screen bg-white">
       <Header />
       <div className="pt-16 lg:pt-20">
         <PartnershipsSection />

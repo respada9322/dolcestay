@@ -24,7 +24,7 @@ export function PartnershipsSection() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="partnerships" className="py-20 lg:py-28 bg-[#F8FAF8] scroll-mt-20">
+    <section id="partnerships" className="py-20 lg:py-28 bg-white scroll-mt-20">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-14 lg:mb-20">
@@ -182,7 +182,7 @@ function PartnerRestaurantCard({ partner, t }: { partner: typeof partnerRestaura
       href={partner.website}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block h-full overflow-hidden rounded-[28px] border border-[#1F4E5F]/5 bg-[#FCFDFC] shadow-[0_14px_35px_rgba(31,78,95,0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_45px_rgba(31,78,95,0.2)]"
+      className="group block h-full overflow-hidden rounded-[28px] border border-[#1F4E5F]/8 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#1F4E5F]/15 hover:shadow-[0_8px_24px_rgba(31,78,95,0.1)]"
     >
       {/* Image */}
       <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#D8E6EC] to-[#BCD4DC]">
@@ -240,7 +240,7 @@ function PartnerRestaurantsCarousel({ partners, t }: { partners: typeof partnerR
           loop: true,
           slidesToScroll: 'auto',
         }}
-        className="w-full"
+        className="w-full overflow-hidden"
       >
         <CarouselContent className="-ml-5">
           {partners.map((partner) => (
