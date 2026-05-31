@@ -288,7 +288,7 @@ export function ContactSection() {
 
         <iframe
           title="Mapa de DolceStay em Sesimbra"
-          src="https://www.google.com/maps?q=Av.+da+Liberdade+58/60,+2970-635+Sesimbra,+Portugal&z=15&output=embed"
+          src="https://www.google.com/maps?q=Av.+da+Liberdade+58/60,+2970-635+Sesimbra,+Portugal&z=15&t=k&output=embed"
           width="100%"
           height="420"
           loading="lazy"
