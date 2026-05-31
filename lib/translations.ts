@@ -411,6 +411,15 @@ export const translations = {
       guest: 'Hóspede',
       owner: 'Proprietário',
       starsLabel: 'de 5 estrelas',
+      reviewCta: {
+        title: 'Gostou da sua estadia ou da nossa gestão?',
+        socialProof: '4.9/5 média de avaliação',
+        socialProofAria: '4.9 em 5 estrelas, média de avaliação',
+        description:
+          'A sua opinião ajuda-nos a melhorar continuamente e ajuda outros hóspedes e proprietários a confiar na DolceStay.',
+        button: 'Avaliar a DolceStay',
+        microcopy: 'Leva menos de 1 minuto.',
+      },
       items: [
         {
           text: 'O anfitrião responde muito rapidamente e é muito atencioso. O sítio é muito agradável, ideal para uns dias na praia. O apartamento não tem nada de desnecessário, apenas o básico, tudo o que é necessário para uns dias relaxantes.',
@@ -864,6 +873,15 @@ export const translations = {
       guest: 'Guest',
       owner: 'Owner',
       starsLabel: 'out of 5 stars',
+      reviewCta: {
+        title: 'Enjoyed your stay or our management?',
+        socialProof: '4.9/5 average rating',
+        socialProofAria: '4.9 out of 5 stars, average rating',
+        description:
+          'Your feedback helps us keep improving and helps other guests and owners trust DolceStay.',
+        button: 'Rate DolceStay',
+        microcopy: 'Takes less than 1 minute.',
+      },
       items: [
         {
           text: 'The host responds very quickly and is very attentive. The place is very pleasant, ideal for a few days at the beach. The apartment has nothing unnecessary, just the basics, everything needed for a relaxing few days.',
@@ -1317,6 +1335,15 @@ export const translations = {
       guest: 'Client',
       owner: 'Propriétaire',
       starsLabel: 'sur 5 étoiles',
+      reviewCta: {
+        title: 'Vous avez apprécié votre séjour ou notre gestion ?',
+        socialProof: '4,9/5 note moyenne',
+        socialProofAria: '4,9 sur 5 étoiles, note moyenne',
+        description:
+          'Votre avis nous aide à nous améliorer continuellement et aide d\'autres clients et propriétaires à faire confiance à DolceStay.',
+        button: 'Évaluer DolceStay',
+        microcopy: 'Moins d\'une minute.',
+      },
       items: [
         {
           text: 'L\'hôte répond très rapidement et est très attentionné. L\'endroit est très agréable, idéal pour quelques jours à la plage. L\'appartement n\'a rien de superflu, juste l\'essentiel, tout ce qu\'il faut pour quelques jours de détente.',
@@ -1770,6 +1797,15 @@ export const translations = {
       guest: 'Huésped',
       owner: 'Propietario',
       starsLabel: 'de 5 estrellas',
+      reviewCta: {
+        title: '¿Le gustó su estancia o nuestra gestión?',
+        socialProof: '4,9/5 valoración media',
+        socialProofAria: '4,9 de 5 estrellas, valoración media',
+        description:
+          'Su opinión nos ayuda a mejorar continuamente y ayuda a otros huéspedes y propietarios a confiar en DolceStay.',
+        button: 'Valorar DolceStay',
+        microcopy: 'Menos de 1 minuto.',
+      },
       items: [
         {
           text: 'El anfitrión responde muy rápidamente y es muy atento. El lugar es muy agradable, ideal para unos días en la playa. El apartamento no tiene nada innecesario, solo lo básico, todo lo necesario para unos días relajantes.',
@@ -2223,6 +2259,15 @@ export const translations = {
       guest: 'Gast',
       owner: 'Eigentümer',
       starsLabel: 'von 5 Sternen',
+      reviewCta: {
+        title: 'Hat Ihnen Ihr Aufenthalt oder unsere Verwaltung gefallen?',
+        socialProof: '4,9/5 durchschnittliche Bewertung',
+        socialProofAria: '4,9 von 5 Sternen, durchschnittliche Bewertung',
+        description:
+          'Ihre Meinung hilft uns, uns kontinuierlich zu verbessern, und hilft anderen Gästen und Eigentümern, DolceStay zu vertrauen.',
+        button: 'DolceStay bewerten',
+        microcopy: 'Dauert weniger als 1 Minute.',
+      },
       items: [
         {
           text: 'Der Gastgeber antwortet sehr schnell und ist sehr aufmerksam. Der Ort ist sehr angenehm, ideal für ein paar Tage am Strand. Die Wohnung hat nichts Überflüssiges, nur das Nötigste, alles was man für ein paar entspannte Tage braucht.',

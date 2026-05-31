@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import type { Translations } from '@/lib/translations';
+import { getGoogleReviewsUrl } from '@/lib/google-reviews-config';
 
 type Testimonial = Translations['testimonials']['items'][number];
 
@@ -80,8 +81,55 @@ export function TestimonialsSection() {
             </div>
           </div>
         </div>
+
+        <ReviewCta t={t} />
       </div>
     </section>
+  );
+}
+
+function ReviewCta({ t }: { t: Translations }) {
+  const reviewUrl = getGoogleReviewsUrl();
+  const cta = t.testimonials.reviewCta;
+
+  return (
+    <aside
+      className="mx-auto mt-12 max-w-[900px] rounded-2xl border border-[#E8EDEA] bg-[#F8FAF8] px-6 py-8 text-center lg:flex lg:items-center lg:justify-between lg:gap-8 lg:px-10 lg:py-9 lg:text-left"
+      aria-labelledby="review-cta-heading"
+    >
+      <div className="min-w-0 flex-1">
+        <h3
+          id="review-cta-heading"
+          className="font-serif text-2xl font-semibold text-[#1F4E5F] lg:text-[1.75rem]"
+        >
+          {cta.title}
+        </h3>
+
+        <p
+          className="mt-2 text-sm text-[#6B7280]"
+          role="img"
+          aria-label={cta.socialProofAria}
+        >
+          <span className="mr-1.5 tracking-wider text-[#F59E0B]" aria-hidden="true">
+            ★★★★★
+          </span>
+          {cta.socialProof}
+        </p>
+
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[#6B7280] lg:mx-0">
+          {cta.description}
+        </p>
+      </div>
+
+      <a
+        href={reviewUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-flex h-11 w-full shrink-0 items-center justify-center rounded-full bg-[#1F4E5F] px-8 text-sm font-semibold text-white transition-colors hover:bg-[#163B48] lg:mt-0 lg:w-auto"
+      >
+        {cta.button}
+      </a>
+    </aside>
   );
 }
 
