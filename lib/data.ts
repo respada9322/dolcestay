@@ -19,12 +19,19 @@ export const contactInfo = {
   },
 };
 
+const buildAccommodationGallery = (folder: string, prefix: string, count: number) =>
+  [
+    `/images/accommodations/${folder}/${prefix}.webp`,
+    ...Array.from({ length: count }, (_, index) => `/images/accommodations/${folder}/${prefix}${index + 1}.webp`),
+  ];
+
 export const featuredAccommodations = [
   {
     id: 1,
     title: 'Cantinho da Gingeira',
     location: 'Sesimbra',
-    image: '/images/accommodation-1.jpg',
+    image: '/images/accommodations/cantinho-da-gingeira/cantinho_da_gingeira.webp',
+    images: buildAccommodationGallery('cantinho-da-gingeira', 'cantinho_da_gingeira', 22),
     features: ['garden', 'beach', 'parking', 'wifi'] as const,
     price: 40,
     guests: 4,
@@ -35,7 +42,8 @@ export const featuredAccommodations = [
     id: 2,
     title: 'Casa do Dário',
     location: 'Sesimbra',
-    image: '/images/accommodation-2.jpg',
+    image: '/images/accommodations/casa-do-dario/casa_do_dario.webp',
+    images: buildAccommodationGallery('casa-do-dario', 'casa_do_dario', 15),
     features: ['beach', 'center', 'wifi'] as const,
     price: 55,
     guests: 2,
