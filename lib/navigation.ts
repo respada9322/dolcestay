@@ -21,6 +21,7 @@ export const routes = {
   contact: '/contactos',
   terms: '/termos-e-condicoes',
   privacy: '/politica-de-privacidade',
+  cookies: '/politica-de-cookies',
   consumerDisputes: '/litigios-de-consumo',
 } as const;
 

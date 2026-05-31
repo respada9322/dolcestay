@@ -1,9 +1,13 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { LanguageProvider } from '@/lib/language-context'
 import { HashScrollHandler } from '@/components/hash-scroll-handler'
+import { GoogleConsentMode } from '@/components/google-consent-mode'
+import { GoogleAnalytics } from '@/components/google-analytics'
+import { ConditionalVercelAnalytics } from '@/components/conditional-vercel-analytics'
+import { CookieConsentProvider } from '@/lib/cookie-consent-context'
+import { CookieConsentBanner } from '@/components/cookie-consent-banner'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -109,11 +113,16 @@ export default function RootLayout({
   return (
     <html lang="pt" className={`${inter.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased">
+        <GoogleConsentMode />
         <LanguageProvider>
-          <HashScrollHandler />
-          {children}
+          <CookieConsentProvider>
+            <HashScrollHandler />
+            {children}
+            <CookieConsentBanner />
+          </CookieConsentProvider>
         </LanguageProvider>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <GoogleAnalytics />
+        <ConditionalVercelAnalytics />
       </body>
     </html>
   )

@@ -11,6 +11,7 @@ import {
   routes,
 } from '@/lib/navigation';
 import { SiteNavLink } from '@/components/site-nav-link';
+import { openCookiePreferences } from '@/lib/cookie-consent-context';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -39,6 +40,7 @@ export function Footer() {
     },
     { href: routes.terms, label: t.footer.legalLinks.terms },
     { href: routes.privacy, label: t.footer.legalLinks.privacy },
+    { href: routes.cookies, label: t.footer.legalLinks.cookies },
     { href: routes.consumerDisputes, label: t.footer.legalLinks.disputes },
   ];
 
@@ -187,6 +189,15 @@ export function Footer() {
                   )}
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={openCookiePreferences}
+                  className="text-white/80 hover:text-[#8DBE91] text-sm transition-colors text-left"
+                >
+                  {t.cookieConsent.managePreferences}
+                </button>
+              </li>
             </ul>
           </div>
         </div>
