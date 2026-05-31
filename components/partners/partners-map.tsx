@@ -6,7 +6,7 @@
  * API key (Next.js):
  *   process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
  *
- * Set in `.env.local`, then restart the dev server. See README.md → "Google Maps setup".
+ * Set in `.env` (local) or Vercel env vars, then restart/redeploy. See README.md → "Google Maps setup".
  * The key is read via `getGoogleMapsApiKey()` in `@/lib/google-maps-config`.
  *
  * If the key is missing or invalid, the map renders a safe fallback (no crash).
@@ -39,10 +39,7 @@ const MAP_OPTIONS: google.maps.MapOptions = {
   streetViewControl: false,
   fullscreenControl: true,
   gestureHandling: 'cooperative',
-  styles: [
-    { featureType: 'poi', stylers: [{ visibility: 'off' }] },
-    { featureType: 'transit', stylers: [{ visibility: 'off' }] },
-  ],
+  mapTypeId: 'satellite',
 };
 
 function buildMarkerIcon(): google.maps.Icon | undefined {
@@ -107,7 +104,7 @@ function MapUnavailableFallback({
         {missingKey && (
           <div className="mb-5 rounded-xl border border-[#E5E7EB] bg-[#F8FAF8] px-4 py-3 text-left">
             <p className="text-xs font-medium uppercase tracking-wide text-[#6B7280] mb-2">
-              .env.local
+              .env / Vercel
             </p>
             <code className="block break-all text-left text-xs text-[#1F4E5F] font-mono leading-relaxed">
               {GOOGLE_MAPS_ENV_VAR}=your_google_maps_api_key_here
