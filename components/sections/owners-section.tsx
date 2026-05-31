@@ -3,6 +3,7 @@
 import { Check, Shield, TrendingUp, Users2, Sparkles, Calendar, MessageCircle, Banknote } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { PremiumCtaCard } from '@/components/sections/premium-cta-card';
+import { ownersContactSection } from '@/lib/navigation';
 
 export function OwnersSection() {
   const { t } = useLanguage();
@@ -67,6 +68,7 @@ export function OwnersSection() {
           ]}
           ctaLabel={t.owners.cta}
           disclaimer={t.owners.ctaDisclaimer}
+          href={ownersContactSection()}
         />
       </div>
     </section>

@@ -23,7 +23,7 @@ export function Footer() {
       href: homeSection(HOME_SECTION_IDS.services),
       label: t.nav.services,
     },
-    { href: homeSection(HOME_SECTION_IDS.owners), label: t.nav.owners },
+    { href: routes.owners, label: t.nav.owners },
     ...HEADER_NAV_LINKS.filter(
       (item) =>
         item.key === 'partnerships' ||

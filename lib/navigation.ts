@@ -16,6 +16,7 @@ export function homeSection(sectionId: HomeSectionId | string): string {
 
 export const routes = {
   home: '/',
+  owners: '/proprietarios',
   partnerships: '/parcerias',
   about: '/quem-somos',
   contact: '/contactos',
@@ -24,6 +25,12 @@ export const routes = {
   cookies: '/politica-de-cookies',
   consumerDisputes: '/litigios-de-consumo',
 } as const;
+
+/** Lead form anchor on the owners landing page. */
+export const OWNERS_CONTACT_SECTION_ID = 'contacto-proprietario';
+
+export const ownersContactSection = (): string =>
+  `${routes.owners}#${OWNERS_CONTACT_SECTION_ID}`;
 
 export type HeaderNavKey =
   | 'home'
@@ -42,11 +49,11 @@ export const HEADER_NAV_LINKS: { key: HeaderNavKey; href: string }[] = [
     href: homeSection(HOME_SECTION_IDS.accommodations),
   },
   { key: 'services', href: homeSection(HOME_SECTION_IDS.services) },
-  { key: 'owners', href: homeSection(HOME_SECTION_IDS.owners) },
+  { key: 'owners', href: routes.owners },
   { key: 'partnerships', href: routes.partnerships },
   { key: 'about', href: routes.about },
   { key: 'contact', href: routes.contact },
 ];
 
-/** CTA: "Sou Proprietário" — same section as Proprietários on the homepage. */
-export const OWNER_CTA_HREF = homeSection(HOME_SECTION_IDS.owners);
+/** CTA: "Sou Proprietário" — dedicated owners landing page. */
+export const OWNER_CTA_HREF = routes.owners;

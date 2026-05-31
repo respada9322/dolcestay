@@ -3,6 +3,7 @@
 import { MapPin, Star, Users, Building2 } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { BOOKING_URL } from '@/lib/data';
+import { routes } from '@/lib/navigation';
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -63,7 +64,7 @@ export function HeroSection() {
                 {t.hero.bookNow}
               </a>
               <a
-                href="#owners"
+                href={routes.owners}
                 className="group inline-flex items-center justify-center gap-2 px-10 py-5 text-lg font-bold text-[#1F4E5F] bg-white border-2 border-[#1F4E5F] hover:bg-[#1F4E5F] hover:text-white rounded-full transition-all shadow-lg hover:shadow-xl"
               >
                 <Building2 className="h-5 w-5" />

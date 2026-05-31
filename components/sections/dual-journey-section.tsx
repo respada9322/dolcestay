@@ -3,6 +3,7 @@
 import { Home, Users, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { BOOKING_URL } from '@/lib/data';
+import { routes } from '@/lib/navigation';
 
 export function DualJourneySection() {
   const { t } = useLanguage();
@@ -118,7 +119,7 @@ export function DualJourneySection() {
               </ul>
               
               <a
-                href="#owners"
+                href={routes.owners}
                 className="group/btn inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1F4E5F] text-white font-bold rounded-full hover:bg-[#163B48] transition-all shadow-lg"
               >
                 {t.dualJourney.owner.cta}

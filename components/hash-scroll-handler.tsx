@@ -15,13 +15,14 @@ function scrollToHashElement(behavior: ScrollBehavior = 'smooth') {
 }
 
 /**
- * Scrolls to the URL hash when landing on the homepage (including cross-page `/#section` links).
+ * Scrolls to the URL hash when landing on pages with in-page anchors.
  */
 export function HashScrollHandler() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname !== '/') return;
+    const hashPaths = ['/', '/proprietarios'];
+    if (!hashPaths.includes(pathname)) return;
 
     const run = () => scrollToHashElement('smooth');
     run();

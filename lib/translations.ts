@@ -168,6 +168,168 @@ export const translations = {
       },
       cta: 'Quero Rentabilizar o Meu Imóvel',
     },
+    ownersPage: {
+      hero: {
+        badge: 'Gestão de Alojamento Local',
+        title: 'Rentabilize o seu imóvel em Sesimbra sem preocupações',
+        subtitle:
+          'Tratamos da gestão completa do seu alojamento local — reservas, hóspedes, limpeza, manutenção, preços e acompanhamento — para que obtenha mais rendimento com menos esforço.',
+        ctaPrimary: 'Quero Rentabilizar o Meu Imóvel',
+        ctaSecondary: 'Falar com a Equipa',
+        imageAlt: 'Alojamento premium em Sesimbra com vista para a costa',
+        floatingCard: {
+          title: 'DolceStay',
+          items: ['Gestão completa', 'Apoio local', 'Resposta em menos de 24h'],
+        },
+      },
+      trustMetrics: {
+        badge: 'CONFIANÇA DOLCESTAY',
+        title: 'Resultados que falam por si',
+        subtitle: 'Indicadores que refletem o nosso compromisso com proprietários em Sesimbra.',
+        labels: {
+          metric1: 'Transparência operacional',
+          metric2: 'Satisfação média dos hóspedes',
+          metric3: 'Apoio contínuo',
+          metric4: 'Potencial de otimização de receita',
+        },
+      },
+      whyUs: {
+        title: 'Porquê trabalhar connosco?',
+        description:
+          'Gerimos o seu alojamento local como se fosse nosso. Combinamos tecnologia, experiência e conhecimento local para maximizar o rendimento e garantir uma experiência excelente aos hóspedes.',
+        points: [
+          'Conhecimento local de Sesimbra',
+          'Gestão profissional',
+          'Comunicação rápida',
+          'Estratégia de preço',
+          'Experiência do hóspede',
+          'Relatórios claros',
+        ],
+      },
+      services: {
+        badge: 'Serviços incluídos',
+        title: 'O que tratamos por si',
+        subtitle: 'Uma gestão completa para que o seu imóvel funcione como um negócio premium.',
+        items: {
+          listing: {
+            title: 'Criação e otimização de anúncios',
+            description: 'Anúncios profissionais, fotos e posicionamento em múltiplas plataformas.',
+          },
+          booking: {
+            title: 'Gestão de reservas',
+            description: 'Calendário, confirmações e coordenação de todas as reservas.',
+          },
+          communication: {
+            title: 'Comunicação com hóspedes',
+            description: 'Respostas rápidas antes, durante e após cada estadia.',
+          },
+          checkIn: {
+            title: 'Check-in e check-out',
+            description: 'Receção personalizada e processos fluidos para cada hóspede.',
+          },
+          cleaning: {
+            title: 'Limpeza e lavandaria',
+            description: 'Preparação impecável do imóvel entre cada estadia.',
+          },
+          maintenance: {
+            title: 'Manutenção e apoio operacional',
+            description: 'Pequenas reparações e coordenação de serviços locais.',
+          },
+          pricing: {
+            title: 'Otimização de preços',
+            description: 'Preços dinâmicos ajustados à procura e à época.',
+          },
+          reports: {
+            title: 'Relatórios e acompanhamento',
+            description: 'Indicadores claros sobre desempenho e rendimento.',
+          },
+        },
+      },
+      benefits: {
+        title: 'Mais rendimento, menos preocupações',
+        subtitle: 'Benefícios concretos para proprietários que querem resultados sem o stress do dia-a-dia.',
+        items: [
+          'Poupa tempo',
+          'Reduz preocupações operacionais',
+          'Melhora a experiência dos hóspedes',
+          'Aumenta a visibilidade do imóvel',
+          'Otimiza preços conforme procura e época',
+          'Acompanha resultados com transparência',
+        ],
+      },
+      faq: {
+        title: 'Perguntas frequentes',
+        subtitle: 'Respostas claras às dúvidas mais comuns de proprietários.',
+        items: [
+          {
+            question: 'Tenho de ter licença de Alojamento Local?',
+            answer:
+              'Sim, o imóvel deve cumprir os requisitos legais para alojamento local. Ajudamos a perceber o que é necessário e orientamos no processo, em colaboração com os serviços competentes.',
+          },
+          {
+            question: 'A DolceStay trata da limpeza?',
+            answer:
+              'Sim. Coordenamos limpeza e lavandaria profissional entre cada estadia, garantindo que o imóvel está sempre pronto para receber hóspedes.',
+          },
+          {
+            question: 'Quem comunica com os hóspedes?',
+            answer:
+              'A nossa equipa trata de toda a comunicação — desde a reserva até ao check-out — mantendo-o informado quando necessário.',
+          },
+          {
+            question: 'Como são definidos os preços?',
+            answer:
+              'Utilizamos estratégias de preço dinâmico baseadas na procura, época, concorrência e perfil do imóvel, com ajustes regulares para maximizar o rendimento.',
+          },
+          {
+            question: 'Recebo relatórios?',
+            answer:
+              'Sim. Partilhamos relatórios periódicos com indicadores de ocupação, receita e desempenho, com total transparência.',
+          },
+          {
+            question: 'Posso usar o imóvel quando quiser?',
+            answer:
+              'Sim. Pode bloquear datas no calendário para uso pessoal. Coordenamos connosco com antecedência para não afetar reservas existentes.',
+          },
+          {
+            question: 'Como começo?',
+            answer:
+              'Preencha o formulário abaixo ou contacte-nos. Avaliamos o imóvel, apresentamos uma proposta personalizada e, se fizer sentido para ambos, avançamos com a preparação.',
+          },
+        ],
+      },
+      form: {
+        title: 'Quer saber quanto pode render o seu imóvel?',
+        subtitle: 'Preencha o formulário e receba uma avaliação gratuita da nossa equipa.',
+        fields: {
+          name: 'Nome',
+          email: 'Email',
+          phone: 'Telefone',
+          location: 'Localização do imóvel',
+          propertyType: 'Tipo de imóvel',
+          bedrooms: 'Nº de quartos',
+          message: 'Mensagem',
+        },
+        propertyTypes: {
+          apartment: 'Apartamento',
+          house: 'Moradia',
+          villa: 'Moradia/Villa',
+          other: 'Outro',
+        },
+        submit: 'Pedir Avaliação Gratuita',
+        submitting: 'A enviar...',
+        successTitle: 'Pedido enviado!',
+        successMessage: 'Entraremos em contacto consigo em menos de 24 horas.',
+      },
+      finalCta: {
+        title: 'Pronto para rentabilizar o seu imóvel?',
+        description:
+          'Fale connosco e descubra como podemos ajudar a transformar o seu alojamento numa fonte de rendimento consistente.',
+        button: 'Agendar Conversa',
+        pills: ['Sem compromisso', 'Resposta em 24h', 'Equipa local'],
+        disclaimer: 'Avaliação gratuita e personalizada para o seu imóvel.',
+      },
+    },
     howItWorks: {
       title: 'Como funciona',
       subtitle: 'Um processo claro, transparente e pensado para resultados consistentes.',
@@ -654,6 +816,102 @@ export const translations = {
         },
       },
       cta: 'I Want to Monetize My Property',
+    },
+    ownersPage: {
+      hero: {
+        badge: 'Local Accommodation Management',
+        title: 'Monetize your property in Sesimbra without worries',
+        subtitle:
+          'We handle complete management of your short-term rental — bookings, guests, cleaning, maintenance, pricing and reporting — so you earn more with less effort.',
+        ctaPrimary: 'I Want to Monetize My Property',
+        ctaSecondary: 'Talk to Our Team',
+        imageAlt: 'Premium accommodation in Sesimbra with coastal views',
+        floatingCard: {
+          title: 'DolceStay',
+          items: ['Full management', 'Local support', 'Response within 24h'],
+        },
+      },
+      trustMetrics: {
+        badge: 'DOLCESTAY TRUST',
+        title: 'Results that speak for themselves',
+        subtitle: 'Metrics that reflect our commitment to property owners in Sesimbra.',
+        labels: {
+          metric1: 'Operational transparency',
+          metric2: 'Average guest satisfaction',
+          metric3: 'Continuous support',
+          metric4: 'Revenue optimization potential',
+        },
+      },
+      whyUs: {
+        title: 'Why work with us?',
+        description:
+          'We manage your rental as if it were our own. We combine technology, experience and local knowledge to maximize income and deliver an excellent guest experience.',
+        points: [
+          'Local knowledge of Sesimbra',
+          'Professional management',
+          'Fast communication',
+          'Pricing strategy',
+          'Guest experience',
+          'Clear reporting',
+        ],
+      },
+      services: {
+        badge: 'Included services',
+        title: 'What we handle for you',
+        subtitle: 'Complete management so your property runs like a premium business.',
+        items: {
+          listing: { title: 'Listing creation & optimization', description: 'Professional listings, photos and positioning across multiple platforms.' },
+          booking: { title: 'Booking management', description: 'Calendar, confirmations and coordination of all reservations.' },
+          communication: { title: 'Guest communication', description: 'Fast responses before, during and after every stay.' },
+          checkIn: { title: 'Check-in & check-out', description: 'Personal welcome and smooth processes for every guest.' },
+          cleaning: { title: 'Cleaning & laundry', description: 'Impeccable property preparation between each stay.' },
+          maintenance: { title: 'Maintenance & operational support', description: 'Minor repairs and coordination of local services.' },
+          pricing: { title: 'Price optimization', description: 'Dynamic pricing adjusted to demand and season.' },
+          reports: { title: 'Reports & follow-up', description: 'Clear indicators on performance and revenue.' },
+        },
+      },
+      benefits: {
+        title: 'More income, fewer worries',
+        subtitle: 'Concrete benefits for owners who want results without daily stress.',
+        items: [
+          'Save time',
+          'Reduce operational worries',
+          'Improve guest experience',
+          'Increase property visibility',
+          'Optimize prices based on demand and season',
+          'Track results with transparency',
+        ],
+      },
+      faq: {
+        title: 'Frequently asked questions',
+        subtitle: 'Clear answers to the most common owner questions.',
+        items: [
+          { question: 'Do I need a local accommodation license?', answer: 'Yes, the property must meet legal requirements. We help you understand what is needed and guide you through the process.' },
+          { question: 'Does DolceStay handle cleaning?', answer: 'Yes. We coordinate professional cleaning and laundry between each stay.' },
+          { question: 'Who communicates with guests?', answer: 'Our team handles all communication — from booking to check-out — keeping you informed when needed.' },
+          { question: 'How are prices set?', answer: 'We use dynamic pricing based on demand, season, competition and property profile, with regular adjustments to maximize revenue.' },
+          { question: 'Do I receive reports?', answer: 'Yes. We share periodic reports with occupancy, revenue and performance indicators, with full transparency.' },
+          { question: 'Can I use the property whenever I want?', answer: 'Yes. You can block dates for personal use. We coordinate in advance to avoid affecting existing bookings.' },
+          { question: 'How do I get started?', answer: 'Fill in the form below or contact us. We assess the property, present a personalized proposal and proceed if it makes sense for both parties.' },
+        ],
+      },
+      form: {
+        title: 'Want to know how much your property could earn?',
+        subtitle: 'Fill in the form and receive a free assessment from our team.',
+        fields: { name: 'Name', email: 'Email', phone: 'Phone', location: 'Property location', propertyType: 'Property type', bedrooms: 'Number of bedrooms', message: 'Message' },
+        propertyTypes: { apartment: 'Apartment', house: 'House', villa: 'Villa', other: 'Other' },
+        submit: 'Request Free Assessment',
+        submitting: 'Sending...',
+        successTitle: 'Request sent!',
+        successMessage: 'We will contact you within 24 hours.',
+      },
+      finalCta: {
+        title: 'Ready to monetize your property?',
+        description: 'Talk to us and discover how we can help turn your rental into a consistent source of income.',
+        button: 'Schedule a Call',
+        pills: ['No commitment', 'Response within 24h', 'Local team'],
+        disclaimer: 'Free, personalized assessment for your property.',
+      },
     },
     howItWorks: {
       title: 'How it works',
@@ -1142,6 +1400,102 @@ export const translations = {
       },
       cta: 'Je Veux Rentabiliser Mon Bien',
     },
+    ownersPage: {
+      hero: {
+        badge: 'Gestion d\'Hébergement Local',
+        title: 'Rentabilisez votre bien à Sesimbra sans souci',
+        subtitle:
+          'Nous gérons l\'intégralité de votre location saisonnière — réservations, clients, ménage, maintenance, tarifs et suivi — pour plus de revenus avec moins d\'effort.',
+        ctaPrimary: 'Je Veux Rentabiliser Mon Bien',
+        ctaSecondary: 'Parler à l\'Équipe',
+        imageAlt: 'Hébergement premium à Sesimbra avec vue sur la côte',
+        floatingCard: {
+          title: 'DolceStay',
+          items: ['Gestion complète', 'Support local', 'Réponse sous 24h'],
+        },
+      },
+      trustMetrics: {
+        badge: 'CONFIANCE DOLCESTAY',
+        title: 'Des résultats qui parlent d\'eux-mêmes',
+        subtitle: 'Indicateurs qui reflètent notre engagement envers les propriétaires à Sesimbra.',
+        labels: {
+          metric1: 'Transparence opérationnelle',
+          metric2: 'Satisfaction moyenne des clients',
+          metric3: 'Support continu',
+          metric4: 'Potentiel d\'optimisation des revenus',
+        },
+      },
+      whyUs: {
+        title: 'Pourquoi travailler avec nous ?',
+        description:
+          'Nous gérons votre location comme si c\'était la nôtre. Nous combinons technologie, expérience et connaissance locale pour maximiser les revenus et garantir une excellente expérience client.',
+        points: [
+          'Connaissance locale de Sesimbra',
+          'Gestion professionnelle',
+          'Communication rapide',
+          'Stratégie tarifaire',
+          'Expérience client',
+          'Rapports clairs',
+        ],
+      },
+      services: {
+        badge: 'Services inclus',
+        title: 'Ce que nous gérons pour vous',
+        subtitle: 'Une gestion complète pour que votre bien fonctionne comme une activité premium.',
+        items: {
+          listing: { title: 'Création et optimisation d\'annonces', description: 'Annonces professionnelles, photos et positionnement sur plusieurs plateformes.' },
+          booking: { title: 'Gestion des réservations', description: 'Calendrier, confirmations et coordination de toutes les réservations.' },
+          communication: { title: 'Communication avec les clients', description: 'Réponses rapides avant, pendant et après chaque séjour.' },
+          checkIn: { title: 'Check-in et check-out', description: 'Accueil personnalisé et processus fluides pour chaque client.' },
+          cleaning: { title: 'Ménage et blanchisserie', description: 'Préparation impeccable du bien entre chaque séjour.' },
+          maintenance: { title: 'Maintenance et support opérationnel', description: 'Petites réparations et coordination des services locaux.' },
+          pricing: { title: 'Optimisation des prix', description: 'Tarifs dynamiques ajustés à la demande et à la saison.' },
+          reports: { title: 'Rapports et suivi', description: 'Indicateurs clairs sur les performances et les revenus.' },
+        },
+      },
+      benefits: {
+        title: 'Plus de revenus, moins de soucis',
+        subtitle: 'Des avantages concrets pour les propriétaires qui veulent des résultats sans le stress quotidien.',
+        items: [
+          'Gain de temps',
+          'Réduction des soucis opérationnels',
+          'Meilleure expérience client',
+          'Plus de visibilité pour le bien',
+          'Optimisation des prix selon la demande et la saison',
+          'Suivi des résultats en toute transparence',
+        ],
+      },
+      faq: {
+        title: 'Questions fréquentes',
+        subtitle: 'Réponses claires aux questions les plus courantes des propriétaires.',
+        items: [
+          { question: 'Dois-je avoir une licence d\'hébergement local ?', answer: 'Oui, le bien doit respecter les exigences légales. Nous vous aidons à comprendre ce qui est nécessaire et vous orientons dans le processus.' },
+          { question: 'DolceStay s\'occupe-t-il du ménage ?', answer: 'Oui. Nous coordonnons le ménage et la blanchisserie professionnels entre chaque séjour.' },
+          { question: 'Qui communique avec les clients ?', answer: 'Notre équipe gère toute la communication — de la réservation au check-out — en vous tenant informé si nécessaire.' },
+          { question: 'Comment les prix sont-ils définis ?', answer: 'Nous utilisons une tarification dynamique basée sur la demande, la saison, la concurrence et le profil du bien.' },
+          { question: 'Est-ce que je reçois des rapports ?', answer: 'Oui. Nous partageons des rapports périodiques avec occupation, revenus et performance, en toute transparence.' },
+          { question: 'Puis-je utiliser le bien quand je veux ?', answer: 'Oui. Vous pouvez bloquer des dates pour usage personnel. Nous coordonnons à l\'avance pour ne pas affecter les réservations existantes.' },
+          { question: 'Comment commencer ?', answer: 'Remplissez le formulaire ci-dessous ou contactez-nous. Nous évaluons le bien, présentons une proposition personnalisée et avançons si cela convient aux deux parties.' },
+        ],
+      },
+      form: {
+        title: 'Vous voulez savoir combien votre bien peut rapporter ?',
+        subtitle: 'Remplissez le formulaire et recevez une évaluation gratuite de notre équipe.',
+        fields: { name: 'Nom', email: 'Email', phone: 'Téléphone', location: 'Localisation du bien', propertyType: 'Type de bien', bedrooms: 'Nombre de chambres', message: 'Message' },
+        propertyTypes: { apartment: 'Appartement', house: 'Maison', villa: 'Villa', other: 'Autre' },
+        submit: 'Demander une Évaluation Gratuite',
+        submitting: 'Envoi en cours...',
+        successTitle: 'Demande envoyée !',
+        successMessage: 'Nous vous contacterons dans les 24 heures.',
+      },
+      finalCta: {
+        title: 'Prêt à rentabiliser votre bien ?',
+        description: 'Parlez-nous et découvrez comment transformer votre location en source de revenus constante.',
+        button: 'Planifier un Appel',
+        pills: ['Sans engagement', 'Réponse sous 24h', 'Équipe locale'],
+        disclaimer: 'Évaluation gratuite et personnalisée pour votre bien.',
+      },
+    },
     howItWorks: {
       title: 'Comment ça marche',
       subtitle: 'Un processus clair, transparent et conçu pour des résultats constants.',
@@ -1629,6 +1983,102 @@ export const translations = {
       },
       cta: 'Quiero Rentabilizar Mi Inmueble',
     },
+    ownersPage: {
+      hero: {
+        badge: 'Gestión de Alojamiento Local',
+        title: 'Rentabilice su inmueble en Sesimbra sin preocupaciones',
+        subtitle:
+          'Gestionamos su alojamiento local por completo — reservas, huéspedes, limpieza, mantenimiento, precios y seguimiento — para que obtenga más ingresos con menos esfuerzo.',
+        ctaPrimary: 'Quiero Rentabilizar Mi Inmueble',
+        ctaSecondary: 'Hablar con el Equipo',
+        imageAlt: 'Alojamiento premium en Sesimbra con vistas a la costa',
+        floatingCard: {
+          title: 'DolceStay',
+          items: ['Gestión completa', 'Apoyo local', 'Respuesta en menos de 24h'],
+        },
+      },
+      trustMetrics: {
+        badge: 'CONFIANZA DOLCESTAY',
+        title: 'Resultados que hablan por sí solos',
+        subtitle: 'Indicadores que reflejan nuestro compromiso con los propietarios en Sesimbra.',
+        labels: {
+          metric1: 'Transparencia operativa',
+          metric2: 'Satisfacción media de los huéspedes',
+          metric3: 'Apoyo continuo',
+          metric4: 'Potencial de optimización de ingresos',
+        },
+      },
+      whyUs: {
+        title: '¿Por qué trabajar con nosotros?',
+        description:
+          'Gestionamos su alojamiento como si fuera nuestro. Combinamos tecnología, experiencia y conocimiento local para maximizar los ingresos y garantizar una excelente experiencia al huésped.',
+        points: [
+          'Conocimiento local de Sesimbra',
+          'Gestión profesional',
+          'Comunicación rápida',
+          'Estrategia de precios',
+          'Experiencia del huésped',
+          'Informes claros',
+        ],
+      },
+      services: {
+        badge: 'Servicios incluidos',
+        title: 'Lo que gestionamos por usted',
+        subtitle: 'Gestión completa para que su inmueble funcione como un negocio premium.',
+        items: {
+          listing: { title: 'Creación y optimización de anuncios', description: 'Anuncios profesionales, fotos y posicionamiento en múltiples plataformas.' },
+          booking: { title: 'Gestión de reservas', description: 'Calendario, confirmaciones y coordinación de todas las reservas.' },
+          communication: { title: 'Comunicación con huéspedes', description: 'Respuestas rápidas antes, durante y después de cada estancia.' },
+          checkIn: { title: 'Check-in y check-out', description: 'Recepción personalizada y procesos fluidos para cada huésped.' },
+          cleaning: { title: 'Limpieza y lavandería', description: 'Preparación impecable del inmueble entre cada estancia.' },
+          maintenance: { title: 'Mantenimiento y apoyo operativo', description: 'Pequeñas reparaciones y coordinación de servicios locales.' },
+          pricing: { title: 'Optimización de precios', description: 'Precios dinámicos ajustados a la demanda y la temporada.' },
+          reports: { title: 'Informes y seguimiento', description: 'Indicadores claros sobre rendimiento e ingresos.' },
+        },
+      },
+      benefits: {
+        title: 'Más ingresos, menos preocupaciones',
+        subtitle: 'Beneficios concretos para propietarios que quieren resultados sin el estrés del día a día.',
+        items: [
+          'Ahorra tiempo',
+          'Reduce preocupaciones operativas',
+          'Mejora la experiencia de los huéspedes',
+          'Aumenta la visibilidad del inmueble',
+          'Optimiza precios según demanda y temporada',
+          'Sigue los resultados con transparencia',
+        ],
+      },
+      faq: {
+        title: 'Preguntas frecuentes',
+        subtitle: 'Respuestas claras a las dudas más comunes de los propietarios.',
+        items: [
+          { question: '¿Necesito licencia de alojamiento local?', answer: 'Sí, el inmueble debe cumplir los requisitos legales. Le ayudamos a entender qué es necesario y le orientamos en el proceso.' },
+          { question: '¿DolceStay se encarga de la limpieza?', answer: 'Sí. Coordinamos limpieza y lavandería profesional entre cada estancia.' },
+          { question: '¿Quién se comunica con los huéspedes?', answer: 'Nuestro equipo gestiona toda la comunicación — desde la reserva hasta el check-out — manteniéndole informado cuando sea necesario.' },
+          { question: '¿Cómo se definen los precios?', answer: 'Utilizamos precios dinámicos basados en demanda, temporada, competencia y perfil del inmueble.' },
+          { question: '¿Recibo informes?', answer: 'Sí. Compartimos informes periódicos con ocupación, ingresos y rendimiento, con total transparencia.' },
+          { question: '¿Puedo usar el inmueble cuando quiera?', answer: 'Sí. Puede bloquear fechas para uso personal. Coordinamos con antelación para no afectar reservas existentes.' },
+          { question: '¿Cómo empiezo?', answer: 'Complete el formulario abajo o contáctenos. Evaluamos el inmueble, presentamos una propuesta personalizada y avanzamos si tiene sentido para ambas partes.' },
+        ],
+      },
+      form: {
+        title: '¿Quiere saber cuánto puede rendir su inmueble?',
+        subtitle: 'Complete el formulario y reciba una evaluación gratuita de nuestro equipo.',
+        fields: { name: 'Nombre', email: 'Email', phone: 'Teléfono', location: 'Ubicación del inmueble', propertyType: 'Tipo de inmueble', bedrooms: 'Nº de habitaciones', message: 'Mensaje' },
+        propertyTypes: { apartment: 'Apartamento', house: 'Casa', villa: 'Villa', other: 'Otro' },
+        submit: 'Solicitar Evaluación Gratuita',
+        submitting: 'Enviando...',
+        successTitle: '¡Solicitud enviada!',
+        successMessage: 'Nos pondremos en contacto en menos de 24 horas.',
+      },
+      finalCta: {
+        title: '¿Listo para rentabilizar su inmueble?',
+        description: 'Hable con nosotros y descubra cómo transformar su alojamiento en una fuente de ingresos constante.',
+        button: 'Agendar Conversación',
+        pills: ['Sin compromiso', 'Respuesta en 24h', 'Equipo local'],
+        disclaimer: 'Evaluación gratuita y personalizada para su inmueble.',
+      },
+    },
     howItWorks: {
       title: 'Cómo funciona',
       subtitle: 'Un proceso claro, transparente y pensado para resultados consistentes.',
@@ -2115,6 +2565,102 @@ export const translations = {
         },
       },
       cta: 'Ich möchte meine Immobilie monetarisieren',
+    },
+    ownersPage: {
+      hero: {
+        badge: 'Lokale Unterkunftsverwaltung',
+        title: 'Monetarisieren Sie Ihre Immobilie in Sesimbra ohne Sorgen',
+        subtitle:
+          'Wir übernehmen die komplette Verwaltung Ihrer Ferienunterkunft — Buchungen, Gäste, Reinigung, Wartung, Preise und Reporting — für mehr Einkommen mit weniger Aufwand.',
+        ctaPrimary: 'Ich möchte meine Immobilie monetarisieren',
+        ctaSecondary: 'Mit dem Team sprechen',
+        imageAlt: 'Premium-Unterkunft in Sesimbra mit Küstenblick',
+        floatingCard: {
+          title: 'DolceStay',
+          items: ['Komplette Verwaltung', 'Lokaler Support', 'Antwort innerhalb von 24h'],
+        },
+      },
+      trustMetrics: {
+        badge: 'DOLCESTAY VERTRAUEN',
+        title: 'Ergebnisse, die für sich sprechen',
+        subtitle: 'Kennzahlen, die unser Engagement für Eigentümer in Sesimbra widerspiegeln.',
+        labels: {
+          metric1: 'Operative Transparenz',
+          metric2: 'Durchschnittliche Gästezufriedenheit',
+          metric3: 'Kontinuierlicher Support',
+          metric4: 'Potenzial zur Umsatzoptimierung',
+        },
+      },
+      whyUs: {
+        title: 'Warum mit uns arbeiten?',
+        description:
+          'Wir verwalten Ihre Unterkunft, als wäre sie unsere eigene. Wir kombinieren Technologie, Erfahrung und lokales Wissen, um Einkommen zu maximieren und ein hervorragendes Gästeerlebnis zu gewährleisten.',
+        points: [
+          'Lokales Wissen über Sesimbra',
+          'Professionelle Verwaltung',
+          'Schnelle Kommunikation',
+          'Preisstrategie',
+          'Gästeerlebnis',
+          'Klare Berichte',
+        ],
+      },
+      services: {
+        badge: 'Enthaltene Leistungen',
+        title: 'Was wir für Sie übernehmen',
+        subtitle: 'Komplette Verwaltung, damit Ihre Immobilie wie ein Premium-Geschäft läuft.',
+        items: {
+          listing: { title: 'Erstellung & Optimierung von Inseraten', description: 'Professionelle Inserate, Fotos und Positionierung auf mehreren Plattformen.' },
+          booking: { title: 'Buchungsverwaltung', description: 'Kalender, Bestätigungen und Koordination aller Reservierungen.' },
+          communication: { title: 'Gästekommunikation', description: 'Schnelle Antworten vor, während und nach jedem Aufenthalt.' },
+          checkIn: { title: 'Check-in & Check-out', description: 'Persönlicher Empfang und reibungslose Abläufe für jeden Gast.' },
+          cleaning: { title: 'Reinigung & Wäsche', description: 'Makellose Vorbereitung der Immobilie zwischen jedem Aufenthalt.' },
+          maintenance: { title: 'Wartung & operativer Support', description: 'Kleinere Reparaturen und Koordination lokaler Dienstleister.' },
+          pricing: { title: 'Preisoptimierung', description: 'Dynamische Preise angepasst an Nachfrage und Saison.' },
+          reports: { title: 'Berichte & Nachverfolgung', description: 'Klare Indikatoren zu Leistung und Einnahmen.' },
+        },
+      },
+      benefits: {
+        title: 'Mehr Einkommen, weniger Sorgen',
+        subtitle: 'Konkrete Vorteile für Eigentümer, die Ergebnisse ohne täglichen Stress wollen.',
+        items: [
+          'Zeit sparen',
+          'Operative Sorgen reduzieren',
+          'Gästeerlebnis verbessern',
+          'Sichtbarkeit der Immobilie erhöhen',
+          'Preise nach Nachfrage und Saison optimieren',
+          'Ergebnisse transparent verfolgen',
+        ],
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        subtitle: 'Klare Antworten auf die häufigsten Fragen von Eigentümern.',
+        items: [
+          { question: 'Brauche ich eine lokale Unterkunftslizenz?', answer: 'Ja, die Immobilie muss die gesetzlichen Anforderungen erfüllen. Wir helfen Ihnen zu verstehen, was nötig ist, und begleiten Sie im Prozess.' },
+          { question: 'Kümmert sich DolceStay um die Reinigung?', answer: 'Ja. Wir koordinieren professionelle Reinigung und Wäsche zwischen jedem Aufenthalt.' },
+          { question: 'Wer kommuniziert mit den Gästen?', answer: 'Unser Team übernimmt die gesamte Kommunikation — von der Buchung bis zum Check-out — und informiert Sie bei Bedarf.' },
+          { question: 'Wie werden Preise festgelegt?', answer: 'Wir nutzen dynamische Preise basierend auf Nachfrage, Saison, Wettbewerb und Immobilienprofil.' },
+          { question: 'Erhalte ich Berichte?', answer: 'Ja. Wir teilen regelmäßige Berichte mit Belegung, Einnahmen und Leistung — vollständig transparent.' },
+          { question: 'Kann ich die Immobilie jederzeit nutzen?', answer: 'Ja. Sie können Daten für den Eigenbedarf blockieren. Wir koordinieren im Voraus, um bestehende Buchungen nicht zu beeinträchtigen.' },
+          { question: 'Wie fange ich an?', answer: 'Füllen Sie das Formular unten aus oder kontaktieren Sie uns. Wir bewerten die Immobilie, präsentieren ein personalisiertes Angebot und starten, wenn es für beide Seiten passt.' },
+        ],
+      },
+      form: {
+        title: 'Möchten Sie wissen, wie viel Ihre Immobilie einbringen kann?',
+        subtitle: 'Füllen Sie das Formular aus und erhalten Sie eine kostenlose Bewertung von unserem Team.',
+        fields: { name: 'Name', email: 'E-Mail', phone: 'Telefon', location: 'Standort der Immobilie', propertyType: 'Immobilientyp', bedrooms: 'Anzahl Schlafzimmer', message: 'Nachricht' },
+        propertyTypes: { apartment: 'Wohnung', house: 'Haus', villa: 'Villa', other: 'Sonstiges' },
+        submit: 'Kostenlose Bewertung Anfordern',
+        submitting: 'Wird gesendet...',
+        successTitle: 'Anfrage gesendet!',
+        successMessage: 'Wir melden uns innerhalb von 24 Stunden bei Ihnen.',
+      },
+      finalCta: {
+        title: 'Bereit, Ihre Immobilie zu monetarisieren?',
+        description: 'Sprechen Sie mit uns und erfahren Sie, wie wir Ihre Unterkunft in eine konstante Einnahmequelle verwandeln können.',
+        button: 'Gespräch Vereinbaren',
+        pills: ['Unverbindlich', 'Antwort in 24h', 'Lokales Team'],
+        disclaimer: 'Kostenlose, personalisierte Bewertung für Ihre Immobilie.',
+      },
     },
     howItWorks: {
       title: 'So funktioniert es',
