@@ -237,7 +237,7 @@ export const translations = {
       zoomOut: 'Diminuir zoom',
       mapComingSoon: 'Mapa interativo disponível em breve. Contacte-nos para recomendações personalizadas.',
       mapLocation: 'Sesimbra, Portugal',
-      mapPartnersCount: '21 parceiros DolceStay',
+      mapPartnersCount: '20 parceiros DolceStay',
       openInGoogleMaps: 'Abrir no Google Maps',
       mapUnavailableTitle: 'Mapa indisponível',
       mapUnavailableDescription:
@@ -690,7 +690,7 @@ export const translations = {
       zoomOut: 'Zoom out',
       mapComingSoon: 'Interactive map coming soon. Contact us for personalized recommendations.',
       mapLocation: 'Sesimbra, Portugal',
-      mapPartnersCount: '21 DolceStay partners',
+      mapPartnersCount: '20 DolceStay partners',
       openInGoogleMaps: 'Open in Google Maps',
       mapUnavailableTitle: 'Map unavailable',
       mapUnavailableDescription:
@@ -1143,7 +1143,7 @@ export const translations = {
       zoomOut: 'Réduire',
       mapComingSoon: 'Carte interactive bientôt disponible. Contactez-nous pour des recommandations personnalisées.',
       mapLocation: 'Sesimbra, Portugal',
-      mapPartnersCount: '21 partenaires DolceStay',
+      mapPartnersCount: '20 partenaires DolceStay',
       openInGoogleMaps: 'Ouvrir dans Google Maps',
       mapUnavailableTitle: 'Carte indisponible',
       mapUnavailableDescription:
@@ -1596,7 +1596,7 @@ export const translations = {
       zoomOut: 'Alejar',
       mapComingSoon: 'Mapa interactivo próximamente. Contáctenos para recomendaciones personalizadas.',
       mapLocation: 'Sesimbra, Portugal',
-      mapPartnersCount: '21 colaboradores DolceStay',
+      mapPartnersCount: '20 colaboradores DolceStay',
       openInGoogleMaps: 'Abrir en Google Maps',
       mapUnavailableTitle: 'Mapa no disponible',
       mapUnavailableDescription:
@@ -2049,7 +2049,7 @@ export const translations = {
       zoomOut: 'Verkleinern',
       mapComingSoon: 'Interaktive Karte demnächst verfügbar. Kontaktieren Sie uns für personalisierte Empfehlungen.',
       mapLocation: 'Sesimbra, Portugal',
-      mapPartnersCount: '21 DolceStay-Partner',
+      mapPartnersCount: '20 DolceStay-Partner',
       openInGoogleMaps: 'In Google Maps öffnen',
       mapUnavailableTitle: 'Karte nicht verfügbar',
       mapUnavailableDescription:

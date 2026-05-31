@@ -43,13 +43,6 @@ export const MAP_PARTNERS: MapPartner[] = [
     lng: -9.1010944,
   },
   {
-    id: 'jungle',
-    name: 'Jungle',
-    address: 'Praça da Califórnia, 2970-760 Sesimbra, Portugal',
-    lat: 38.4421036,
-    lng: -9.0952067,
-  },
-  {
     id: 'onda-selvagem',
     name: 'Onda Selvagem',
     address: 'Praça da Califórnia 4C, 2970-760 Sesimbra, Portugal',
