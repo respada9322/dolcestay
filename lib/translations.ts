@@ -524,7 +524,7 @@ export const translations = {
     },
     contact: {
       title: 'Contactos',
-      subtitle: 'Entre em contacto connosco',
+      subtitle: 'Vamos conversar',
       viewAccommodations: 'Ver Alojamentos Disponíveis',
       messageSent: 'Mensagem Enviada!',
       thankYou: 'Obrigado pelo seu contacto. Responderemos em breve.',
