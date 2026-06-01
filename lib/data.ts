@@ -162,7 +162,7 @@ export const partnerExperiences = [
     },
     ...withPartnerImages('Look Around Tours', '/images/partner-lookaround.jpg', ['lookaroundtours']),
     instagram: 'https://instagram.com/lookaroundtours',
-    facebook: 'https://facebook.com/lookaroundtours',
+    facebook: 'https://www.facebook.com/lookaroundtoursportugal',
     website: 'https://lookaroundtours.com/',
   },
   {
@@ -177,8 +177,8 @@ export const partnerExperiences = [
       de: ['Kanufahren', 'Kajaktouren', 'Stand up paddle', 'Bootsfahrten'],
     },
     ...withPartnerImages('Our Roots', '/images/partners/Our_Roots_photo1.png', ['ourroots']),
-    instagram: 'https://instagram.com/ourroots',
-    facebook: 'https://facebook.com/ourroots',
+    instagram: 'https://www.instagram.com/ourroots___',
+    facebook: 'https://www.facebook.com/ourroots.pt/',
     website: 'https://www.ourroots.pt/',
   },
   {
@@ -193,7 +193,7 @@ export const partnerExperiences = [
       de: ['Paddelbrett-Verleih', 'Brett wird zu Ihrer Adresse geliefert', 'Auspacken, aufblasen und ins Wasser!'],
     },
     ...withPartnerImages('Sesimbra SUP Rentals', '/images/partner-sup.jpg', ['sesimbrasuprentals']),
-    instagram: 'https://instagram.com/sesimbrasup',
+    instagram: 'https://www.instagram.com/sesimbrasuprentals',
     website: 'https://sesimbrasuprentals.com/',
   },
   {
@@ -208,8 +208,8 @@ export const partnerExperiences = [
       de: ['Tauch-Taufe', 'Tauchausflüge', 'Verschiedene Kurse'],
     },
     ...withPartnerImages('Cipreia Dive Club', '/images/partner-cipreia.jpg', ['cipreia']),
-    instagram: 'https://instagram.com/cipreiadive',
-    facebook: 'https://facebook.com/cipreiadive',
+    instagram: 'https://www.instagram.com/cipreiadiveclub',
+    facebook: 'https://www.facebook.com/CipreiaDiveClub',
     website: 'https://cipreiadiveclub.com/',
   },
   {
@@ -224,8 +224,8 @@ export const partnerExperiences = [
       de: ['Kulturausflüge', 'Ausflüge zum historischen Erbe', 'Wanderausflüge'],
     },
     ...withPartnerImages('Pexitos', '/images/partner-pexitos.jpg'),
-    instagram: 'https://instagram.com/pexitos',
-    facebook: 'https://facebook.com/pexitos',
+    instagram: 'https://www.instagram.com/pexitos.sesimbra/',
+    facebook: 'https://www.facebook.com/wearepexitos',
     website: 'https://www.wearepexitos.com/',
   },
   {
@@ -240,7 +240,8 @@ export const partnerExperiences = [
       de: ['Clear Kayak Erlebnis', 'Kajak-Verleih', 'Personalisierte Touren'],
     },
     ...withPartnerImages('Seatru', '/images/partner-seatru.jpg'),
-    instagram: 'https://instagram.com/seatru',
+    instagram: 'https://www.instagram.com/seatruu',
+    facebook: 'https://www.facebook.com/seatruu',
     website: 'https://www.seatru.eu/',
   },
 ];
