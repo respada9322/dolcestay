@@ -40,7 +40,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-gradient-to-b from-white to-[#F8FAF8] scroll-mt-20">
+    <section id="contact" className="pt-20 pb-0 lg:pt-28 bg-gradient-to-b from-white to-[#F8FAF8] scroll-mt-20">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-14">
@@ -275,7 +275,7 @@ export function ContactSection() {
         whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.55, ease: 'easeOut' }}
-        className="group relative mt-16 w-full overflow-hidden shadow-[0_12px_34px_rgba(20,43,56,0.16)] transition-shadow duration-300 hover:shadow-[0_16px_42px_rgba(20,43,56,0.22)]"
+        className="group relative mt-16 w-full overflow-hidden"
       >
         <a
           href="https://www.google.com/maps/search/?api=1&query=Av.+da+Liberdade+58%2F60%2C+2970-635+Sesimbra%2C+Portugal"
@@ -290,10 +290,10 @@ export function ContactSection() {
           title="Mapa de DolceStay em Sesimbra"
           src="https://www.google.com/maps?q=Av.+da+Liberdade+58/60,+2970-635+Sesimbra,+Portugal&z=15&t=k&output=embed"
           width="100%"
-          height="420"
+          height="720"
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
-          className="block h-[320px] w-full border-0 md:h-[420px]"
+          className="block h-[min(70vh,720px)] min-h-[420px] w-full border-0 sm:min-h-[520px] md:min-h-[600px]"
         />
       </motion.div>
     </section>
