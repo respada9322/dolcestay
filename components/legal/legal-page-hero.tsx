@@ -3,6 +3,7 @@
 import { Calendar, FileText } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { LegalBackNav } from '@/components/legal/legal-back-nav';
+import { useLanguage } from '@/lib/language-context';
 import { cn } from '@/lib/utils';
 
 type LegalPageHeroProps = {
@@ -32,15 +33,18 @@ const fadeUp = {
 };
 
 export function LegalPageHero({
-  badge = 'Legal',
+  badge,
   title,
   description,
-  lastUpdated = 'Maio 2026',
-  metadataNote = 'Política aplicável a reservas e estadias',
+  lastUpdated,
+  metadataNote,
   currentPageLabel,
   className,
 }: LegalPageHeroProps) {
+  const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
+  const resolvedBadge = badge ?? t.legal.badge;
+  const resolvedLastUpdated = lastUpdated ?? t.legal.pages.terms.lastUpdated;
 
   return (
     <header
@@ -89,7 +93,7 @@ export function LegalPageHero({
             variants={shouldReduceMotion ? undefined : fadeUp}
             className="mb-5 inline-block rounded-full border border-[#CFE8D2] bg-[#CFE8D2]/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#1F4E5F]"
           >
-            {badge}
+            {resolvedBadge}
           </motion.span>
 
           <motion.h1
@@ -113,8 +117,8 @@ export function LegalPageHero({
             <p className="inline-flex items-center gap-2 text-sm text-[#6B7280]">
               <Calendar className="h-4 w-4 text-[#8DBE91]" aria-hidden />
               <span>
-                <span className="font-medium text-[#1F4E5F]">Última atualização:</span>{' '}
-                {lastUpdated}
+                <span className="font-medium text-[#1F4E5F]">{t.legal.lastUpdated}</span>{' '}
+                {resolvedLastUpdated}
               </span>
             </p>
             <span

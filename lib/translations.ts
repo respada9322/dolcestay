@@ -588,6 +588,47 @@ export const translations = {
       back: 'Voltar',
       close: 'Fechar',
     },
+    legal: {
+      badge: 'Legal',
+      backToHome: 'Voltar ao início',
+      home: 'Início',
+      navAriaLabel: 'Navegação da página legal',
+      lastUpdated: 'Última atualização:',
+      onThisPage: 'Nesta página',
+      indexAriaLabel: 'Índice da página',
+      readingProgress: 'Progresso de leitura',
+      backToTop: 'Voltar ao topo',
+      pages: {
+        privacy: {
+          title: 'Política de Privacidade',
+          description:
+            'Como a DolceStay recolhe, trata e protege os seus dados pessoais, em conformidade com o RGPD.',
+          metadataNote: 'Proteção de dados pessoais (RGPD)',
+          lastUpdated: 'Maio 2026',
+        },
+        terms: {
+          title: 'Termos e Condições',
+          description:
+            'Condições gerais aplicáveis às reservas e estadias nos alojamentos geridos pela DolceStay.',
+          metadataNote: 'Política aplicável a reservas e estadias',
+          lastUpdated: 'Maio 2026',
+        },
+        cookies: {
+          title: 'Política de Cookies',
+          description:
+            'Informação sobre os cookies utilizados no website DolceStay e como pode gerir as suas preferências.',
+          metadataNote: 'Cookies e consentimento (RGPD)',
+          lastUpdated: 'Junho 2026',
+        },
+        consumerDisputes: {
+          title: 'Litígios de Consumo',
+          description:
+            'Informação sobre entidades de resolução alternativa de litígios de consumo em caso de disputa.',
+          metadataNote: 'Resolução alternativa de litígios',
+          lastUpdated: 'Maio 2026',
+        },
+      },
+    },
     testimonials: {
       title: 'O que dizem os nossos clientes',
       subtitle: 'Testemunhos de hóspedes e proprietários',
@@ -1170,6 +1211,47 @@ export const translations = {
       managePreferences: 'Manage cookie preferences',
       back: 'Back',
       close: 'Close',
+    },
+    legal: {
+      badge: 'Legal',
+      backToHome: 'Back to home',
+      home: 'Home',
+      navAriaLabel: 'Legal page navigation',
+      lastUpdated: 'Last updated:',
+      onThisPage: 'On this page',
+      indexAriaLabel: 'Page index',
+      readingProgress: 'Reading progress',
+      backToTop: 'Back to top',
+      pages: {
+        privacy: {
+          title: 'Privacy Policy',
+          description:
+            'How DolceStay collects, processes and protects your personal data in accordance with the GDPR.',
+          metadataNote: 'Personal data protection (GDPR)',
+          lastUpdated: 'May 2026',
+        },
+        terms: {
+          title: 'Terms and Conditions',
+          description:
+            'General conditions applicable to bookings and stays at accommodations managed by DolceStay.',
+          metadataNote: 'Policy applicable to bookings and stays',
+          lastUpdated: 'May 2026',
+        },
+        cookies: {
+          title: 'Cookie Policy',
+          description:
+            'Information about cookies used on the DolceStay website and how you can manage your preferences.',
+          metadataNote: 'Cookies and consent (GDPR)',
+          lastUpdated: 'June 2026',
+        },
+        consumerDisputes: {
+          title: 'Consumer Disputes',
+          description:
+            'Information on alternative consumer dispute resolution entities in case of a dispute.',
+          metadataNote: 'Alternative dispute resolution',
+          lastUpdated: 'May 2026',
+        },
+      },
     },
     testimonials: {
       title: 'What our clients say',
@@ -1754,6 +1836,47 @@ export const translations = {
       back: 'Retour',
       close: 'Fermer',
     },
+    legal: {
+      badge: 'Légal',
+      backToHome: "Retour à l'accueil",
+      home: 'Accueil',
+      navAriaLabel: 'Navigation de la page légale',
+      lastUpdated: 'Dernière mise à jour :',
+      onThisPage: 'Sur cette page',
+      indexAriaLabel: 'Index de la page',
+      readingProgress: 'Progression de lecture',
+      backToTop: 'Retour en haut',
+      pages: {
+        privacy: {
+          title: 'Politique de Confidentialité',
+          description:
+            'Comment DolceStay collecte, traite et protège vos données personnelles conformément au RGPD.',
+          metadataNote: 'Protection des données personnelles (RGPD)',
+          lastUpdated: 'Mai 2026',
+        },
+        terms: {
+          title: 'Termes et Conditions',
+          description:
+            'Conditions générales applicables aux réservations et séjours dans les hébergements gérés par DolceStay.',
+          metadataNote: 'Politique applicable aux réservations et séjours',
+          lastUpdated: 'Mai 2026',
+        },
+        cookies: {
+          title: 'Politique de Cookies',
+          description:
+            'Informations sur les cookies utilisés sur le site DolceStay et comment gérer vos préférences.',
+          metadataNote: 'Cookies et consentement (RGPD)',
+          lastUpdated: 'Juin 2026',
+        },
+        consumerDisputes: {
+          title: 'Litiges de Consommation',
+          description:
+            "Informations sur les entités de résolution alternative des litiges de consommation en cas de litige.",
+          metadataNote: 'Résolution alternative des litiges',
+          lastUpdated: 'Mai 2026',
+        },
+      },
+    },
     testimonials: {
       title: 'Ce que disent nos clients',
       subtitle: 'Témoignages de clients et propriétaires',
@@ -2337,6 +2460,47 @@ export const translations = {
       back: 'Volver',
       close: 'Cerrar',
     },
+    legal: {
+      badge: 'Legal',
+      backToHome: 'Volver al inicio',
+      home: 'Inicio',
+      navAriaLabel: 'Navegación de la página legal',
+      lastUpdated: 'Última actualización:',
+      onThisPage: 'En esta página',
+      indexAriaLabel: 'Índice de la página',
+      readingProgress: 'Progreso de lectura',
+      backToTop: 'Volver arriba',
+      pages: {
+        privacy: {
+          title: 'Política de Privacidad',
+          description:
+            'Cómo DolceStay recopila, trata y protege sus datos personales de conformidad con el RGPD.',
+          metadataNote: 'Protección de datos personales (RGPD)',
+          lastUpdated: 'Mayo 2026',
+        },
+        terms: {
+          title: 'Términos y Condiciones',
+          description:
+            'Condiciones generales aplicables a las reservas y estancias en los alojamientos gestionados por DolceStay.',
+          metadataNote: 'Política aplicable a reservas y estancias',
+          lastUpdated: 'Mayo 2026',
+        },
+        cookies: {
+          title: 'Política de Cookies',
+          description:
+            'Información sobre las cookies utilizadas en el sitio web DolceStay y cómo gestionar sus preferencias.',
+          metadataNote: 'Cookies y consentimiento (RGPD)',
+          lastUpdated: 'Junio 2026',
+        },
+        consumerDisputes: {
+          title: 'Litigios de Consumo',
+          description:
+            'Información sobre entidades de resolución alternativa de litigios de consumo en caso de disputa.',
+          metadataNote: 'Resolución alternativa de litigios',
+          lastUpdated: 'Mayo 2026',
+        },
+      },
+    },
     testimonials: {
       title: 'Lo que dicen nuestros clientes',
       subtitle: 'Testimonios de huéspedes y propietarios',
@@ -2919,6 +3083,47 @@ export const translations = {
       managePreferences: 'Cookie-Einstellungen verwalten',
       back: 'Zurück',
       close: 'Schließen',
+    },
+    legal: {
+      badge: 'Rechtliches',
+      backToHome: 'Zurück zur Startseite',
+      home: 'Startseite',
+      navAriaLabel: 'Navigation der Rechtsseite',
+      lastUpdated: 'Zuletzt aktualisiert:',
+      onThisPage: 'Auf dieser Seite',
+      indexAriaLabel: 'Seitenindex',
+      readingProgress: 'Lesefortschritt',
+      backToTop: 'Nach oben',
+      pages: {
+        privacy: {
+          title: 'Datenschutzrichtlinie',
+          description:
+            'Wie DolceStay Ihre personenbezogenen Daten gemäß der DSGVO erhebt, verarbeitet und schützt.',
+          metadataNote: 'Schutz personenbezogener Daten (DSGVO)',
+          lastUpdated: 'Mai 2026',
+        },
+        terms: {
+          title: 'Allgemeine Geschäftsbedingungen',
+          description:
+            'Allgemeine Bedingungen für Buchungen und Aufenthalte in von DolceStay verwalteten Unterkünften.',
+          metadataNote: 'Richtlinie für Buchungen und Aufenthalte',
+          lastUpdated: 'Mai 2026',
+        },
+        cookies: {
+          title: 'Cookie-Richtlinie',
+          description:
+            'Informationen zu Cookies auf der DolceStay-Website und zur Verwaltung Ihrer Einstellungen.',
+          metadataNote: 'Cookies und Einwilligung (DSGVO)',
+          lastUpdated: 'Juni 2026',
+        },
+        consumerDisputes: {
+          title: 'Verbraucherstreitigkeiten',
+          description:
+            'Informationen zu außergerichtlichen Verbraucherschlichtungsstellen bei Streitigkeiten.',
+          metadataNote: 'Alternative Streitbeilegung',
+          lastUpdated: 'Mai 2026',
+        },
+      },
     },
     testimonials: {
       title: 'Was unsere Kunden sagen',

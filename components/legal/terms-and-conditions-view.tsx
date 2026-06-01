@@ -2,19 +2,24 @@
 
 import { LegalDocument } from '@/components/legal/legal-document';
 import { LegalPageHero } from '@/components/legal/legal-page-hero';
-import { TERMS_LAST_UPDATED, termsAndConditionsSections } from '@/lib/terms-and-conditions';
+import { getLegalContent } from '@/lib/legal-content';
+import { useLanguage } from '@/lib/language-context';
 
 export function TermsAndConditionsView() {
+  const { language, t } = useLanguage();
+  const page = t.legal.pages.terms;
+  const { sections } = getLegalContent(language).terms;
+
   return (
     <>
       <LegalPageHero
-        title="Termos e Condições"
-        description="Condições gerais aplicáveis às reservas e estadias nos alojamentos geridos pela DolceStay."
-        lastUpdated={TERMS_LAST_UPDATED}
-        metadataNote="Política aplicável a reservas e estadias"
-        currentPageLabel="Termos e Condições"
+        title={page.title}
+        description={page.description}
+        lastUpdated={page.lastUpdated}
+        metadataNote={page.metadataNote}
+        currentPageLabel={page.title}
       />
-      <LegalDocument sections={termsAndConditionsSections} />
+      <LegalDocument sections={sections} />
     </>
   );
 }

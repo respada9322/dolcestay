@@ -2,17 +2,20 @@
 
 import { ConsumerDisputesContent } from '@/components/legal/consumer-disputes-content';
 import { LegalPageHero } from '@/components/legal/legal-page-hero';
-import { CONSUMER_DISPUTES_LAST_UPDATED } from '@/lib/consumer-disputes';
+import { useLanguage } from '@/lib/language-context';
 
 export function ConsumerDisputesView() {
+  const { t } = useLanguage();
+  const page = t.legal.pages.consumerDisputes;
+
   return (
     <>
       <LegalPageHero
-        title="Litígios de Consumo"
-        description="Informação sobre entidades de resolução alternativa de litígios de consumo em caso de disputa."
-        lastUpdated={CONSUMER_DISPUTES_LAST_UPDATED}
-        metadataNote="Resolução alternativa de litígios"
-        currentPageLabel="Litígios de Consumo"
+        title={page.title}
+        description={page.description}
+        lastUpdated={page.lastUpdated}
+        metadataNote={page.metadataNote}
+        currentPageLabel={page.title}
       />
       <ConsumerDisputesContent />
     </>

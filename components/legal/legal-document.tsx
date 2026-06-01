@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { getLegalSectionId, type LegalSection } from '@/lib/legal';
+import { useLanguage } from '@/lib/language-context';
 import { cn } from '@/lib/utils';
 
 type LegalDocumentProps = {
@@ -11,8 +12,11 @@ type LegalDocumentProps = {
 };
 
 export function LegalDocument({ sections }: LegalDocumentProps) {
+  const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
-  const [activeId, setActiveId] = useState(getLegalSectionId(sections[0]?.title ?? ''));
+  const [activeId, setActiveId] = useState(() =>
+    getLegalSectionId(sections[0] ?? { title: '', paragraphs: [] })
+  );
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -30,10 +34,14 @@ export function LegalDocument({ sections }: LegalDocumentProps) {
   }, []);
 
   useEffect(() => {
+    setActiveId(getLegalSectionId(sections[0] ?? { title: '', paragraphs: [] }));
+  }, [sections]);
+
+  useEffect(() => {
     const observers: IntersectionObserver[] = [];
 
     sections.forEach((section) => {
-      const id = getLegalSectionId(section.title);
+      const id = getLegalSectionId(section);
       const el = document.getElementById(id);
       if (!el) return;
 
@@ -65,22 +73,22 @@ export function LegalDocument({ sections }: LegalDocumentProps) {
         aria-valuenow={Math.round(scrollProgress * 100)}
         aria-valuemin={0}
         aria-valuemax={100}
-        aria-label="Progresso de leitura"
+        aria-label={t.legal.readingProgress}
       />
 
       <div className="container mx-auto px-4 py-12 lg:py-16">
         <div className="mx-auto flex max-w-6xl flex-col gap-12 lg:flex-row lg:gap-16">
           <aside className="lg:w-64 lg:flex-shrink-0">
             <nav
-              aria-label="Índice dos termos"
+              aria-label={t.legal.indexAriaLabel}
               className="lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto"
             >
               <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#8DBE91]">
-                Nesta página
+                {t.legal.onThisPage}
               </p>
               <ul className="space-y-1 rounded-2xl border border-[#E5E7EB]/80 bg-white/80 p-3 shadow-[0_8px_30px_rgba(31,78,95,0.06)] backdrop-blur-sm">
                 {sections.map((section) => {
-                  const id = getLegalSectionId(section.title);
+                  const id = getLegalSectionId(section);
                   const isActive = activeId === id;
 
                   return (
@@ -108,7 +116,7 @@ export function LegalDocument({ sections }: LegalDocumentProps) {
           <div className="min-w-0 flex-1">
             <div className="mx-auto max-w-3xl space-y-0">
               {sections.map((section, index) => {
-                const id = getLegalSectionId(section.title);
+                const id = getLegalSectionId(section);
 
                 return (
                   <motion.section
@@ -163,7 +171,7 @@ export function LegalDocument({ sections }: LegalDocumentProps) {
         transition={{ duration: 0.25 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-8 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-[#1F4E5F]/10 bg-white/90 text-[#1F4E5F] shadow-[0_8px_32px_rgba(31,78,95,0.12)] backdrop-blur-md transition-colors hover:border-[#8DBE91]/40 hover:bg-white hover:text-[#8DBE91] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8DBE91] focus-visible:ring-offset-2 sm:right-6 lg:right-10"
-        aria-label="Voltar ao topo"
+        aria-label={t.legal.backToTop}
       >
         <ArrowUp className="h-5 w-5" aria-hidden />
       </motion.button>

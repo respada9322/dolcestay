@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { useLanguage } from '@/lib/language-context';
 import { cn } from '@/lib/utils';
 
 type LegalBackNavProps = {
@@ -14,15 +15,17 @@ type LegalBackNavProps = {
 
 export function LegalBackNav({
   backHref = '/',
-  backLabel = 'Voltar ao início',
-  currentLabel = 'Termos e Condições',
+  backLabel,
+  currentLabel = '',
   className,
 }: LegalBackNavProps) {
+  const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
+  const resolvedBackLabel = backLabel ?? t.legal.backToHome;
 
   return (
     <nav
-      aria-label="Navegação da página legal"
+      aria-label={t.legal.navAriaLabel}
       className={cn('flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between', className)}
     >
       <motion.div
@@ -38,7 +41,7 @@ export function LegalBackNav({
             className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-0.5"
             aria-hidden
           />
-          {backLabel}
+          {resolvedBackLabel}
         </Link>
       </motion.div>
 
@@ -50,14 +53,14 @@ export function LegalBackNav({
       >
         <li>
           <Link href="/" className="transition-colors hover:text-[#8DBE91]">
-            Início
+            {t.legal.home}
           </Link>
         </li>
         <li aria-hidden>
           <ChevronRight className="h-3.5 w-3.5 text-[#CFE8D2]" />
         </li>
         <li>
-          <span className="text-[#8DBE91]">Legal</span>
+          <span className="text-[#8DBE91]">{t.legal.badge}</span>
         </li>
         <li aria-hidden>
           <ChevronRight className="h-3.5 w-3.5 text-[#CFE8D2]" />
