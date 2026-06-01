@@ -516,7 +516,7 @@ export const translations = {
       },
       cta: {
         title: 'Pronto para rentabilizar o seu imóvel?',
-        description: 'Descubra quanto pode faturar com uma gestão profissional.',
+        description: 'Descubra quanto pode ganhar com uma gestão profissional.',
         button: 'Agendar Conversa',
         pills: ['Sem compromisso', 'Equipa local', 'Avaliação personalizada'],
         disclaimer: 'Resposta em menos de 24 horas.',
