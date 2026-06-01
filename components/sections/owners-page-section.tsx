@@ -252,7 +252,7 @@ export function OwnersPageSection() {
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="absolute -bottom-4 -left-2 z-10 w-[min(100%,280px)] rounded-2xl border border-white/60 bg-white/95 p-5 shadow-[0_16px_48px_-12px_rgba(31,78,95,0.25)] backdrop-blur-sm sm:-bottom-6 sm:-left-6 lg:-left-8"
+                className="absolute -bottom-4 -left-2 z-10 hidden w-[min(100%,280px)] rounded-2xl border border-white/60 bg-white/95 p-5 shadow-[0_16px_48px_-12px_rgba(31,78,95,0.25)] backdrop-blur-sm sm:-bottom-6 sm:-left-6 sm:block lg:-left-8"
               >
                 <p className="mb-3 text-sm font-bold text-[#1F4E5F]">
                   {page.hero.floatingCard.title}
