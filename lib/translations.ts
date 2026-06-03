@@ -685,6 +685,11 @@ export const translations = {
     },
     common: {
       loading: 'A carregar...',
+      submitting: 'A enviar...',
+      formSuccess:
+        'A sua mensagem foi enviada com sucesso. Entraremos em contacto em breve.',
+      formError:
+        'Não foi possível enviar a mensagem. Tente novamente ou contacte-nos diretamente.',
       error: 'Ocorreu um erro',
       viewAll: 'Ver Todos',
       close: 'Fechar',
@@ -1309,6 +1314,11 @@ export const translations = {
     },
     common: {
       loading: 'Loading...',
+      submitting: 'Sending...',
+      formSuccess:
+        'Your message was sent successfully. We will get back to you shortly.',
+      formError:
+        'We could not send your message. Please try again or contact us directly.',
       error: 'An error occurred',
       viewAll: 'View All',
       close: 'Close',
@@ -1933,6 +1943,11 @@ export const translations = {
     },
     common: {
       loading: 'Chargement...',
+      submitting: 'Envoi en cours...',
+      formSuccess:
+        'Votre message a été envoyé avec succès. Nous vous contacterons sous peu.',
+      formError:
+        'Impossible d\'envoyer votre message. Réessayez ou contactez-nous directement.',
       error: 'Une erreur est survenue',
       viewAll: 'Voir Tout',
       close: 'Fermer',
@@ -2557,6 +2572,11 @@ export const translations = {
     },
     common: {
       loading: 'Cargando...',
+      submitting: 'Enviando...',
+      formSuccess:
+        'Su mensaje se envió correctamente. Nos pondremos en contacto en breve.',
+      formError:
+        'No fue posible enviar el mensaje. Inténtelo de nuevo o contáctenos directamente.',
       error: 'Se produjo un error',
       viewAll: 'Ver Todo',
       close: 'Cerrar',
@@ -3181,6 +3201,11 @@ export const translations = {
     },
     common: {
       loading: 'Wird geladen...',
+      submitting: 'Wird gesendet...',
+      formSuccess:
+        'Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen.',
+      formError:
+        'Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
       error: 'Ein Fehler ist aufgetreten',
       viewAll: 'Alle Anzeigen',
       close: 'Schließen',

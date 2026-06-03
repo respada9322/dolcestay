@@ -1,43 +1,65 @@
 'use client';
 
-import { useState } from 'react';
-import { MapPin, Phone, Mail, MessageCircle, Send, ArrowRight } from 'lucide-react';
+import { useCallback, useState } from 'react';
+import { MapPin, Phone, Mail, MessageCircle, Send, ArrowRight, Loader2 } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '@/lib/language-context';
 import { contactInfo, BOOKING_URL } from '@/lib/data';
 import { Button } from '@/components/ui/button';
+import { useContactForm } from '@/hooks/use-contact-form';
+import {
+  mapContactFormType,
+  mapContactTypeValue,
+} from '@/lib/contact/validation';
+import { FormStatusAlert } from '@/components/contact/form-status-alert';
+
+const INITIAL_FORM = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  type: 'reservation',
+  message: '',
+};
 
 export function ContactSection() {
   const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    type: 'reservation',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState(INITIAL_FORM);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate form submission - in production, connect to your backend/CRM
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setSubmitted(true);
-  };
+  const buildPayload = useCallback(
+    () => ({
+      name: `${formData.firstName.trim()} ${formData.lastName.trim()}`.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim() || undefined,
+      contactType: mapContactTypeValue(formData.type),
+      message: formData.message.trim(),
+      formType: mapContactFormType(formData.type),
+    }),
+    [formData],
+  );
+
+  const { errorMessage, submit, reset, isSubmitting, isSuccess } =
+    useContactForm({
+      buildPayload,
+      onSuccess: () => setFormData(INITIAL_FORM),
+    });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
+
+  const handleSendAnother = () => {
+    reset();
+    setFormData(INITIAL_FORM);
+  };
+
+  const submitLabel = isSubmitting ? t.common.submitting : t.contact.form.submit;
 
   return (
     <section id="contact" className="pt-20 pb-0 lg:pt-28 bg-gradient-to-b from-white to-[#F8FAF8] scroll-mt-20">
@@ -143,7 +165,7 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <div>
-            {submitted ? (
+            {isSuccess ? (
               <div className="bg-gradient-to-br from-[#CFE8D2] to-[#8DBE91]/30 rounded-3xl p-10 text-center h-full flex flex-col items-center justify-center shadow-xl">
                 <div className="w-20 h-20 bg-[#8DBE91] rounded-full flex items-center justify-center mb-6 shadow-lg">
                   <Send className="h-10 w-10 text-white" />
@@ -152,17 +174,24 @@ export function ContactSection() {
                   {t.contact.messageSent}
                 </h3>
                 <p className="text-[#1F4E5F]/80 text-lg mb-6">
-                  {t.contact.thankYou}
+                  {t.common.formSuccess}
                 </p>
                 <button
-                  onClick={() => setSubmitted(false)}
+                  type="button"
+                  onClick={handleSendAnother}
                   className="text-[#1F4E5F] hover:text-[#8DBE91] font-semibold transition-colors underline underline-offset-4"
                 >
                   {t.contact.sendAnother}
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-[#E5E7EB] space-y-6">
+              <form
+                onSubmit={submit}
+                className="relative bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-[#E5E7EB] space-y-6"
+                noValidate
+              >
+                {errorMessage && <FormStatusAlert message={errorMessage} />}
+
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-semibold text-[#1F4E5F] mb-2">
@@ -175,7 +204,8 @@ export function ContactSection() {
                       value={formData.firstName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111]"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111] disabled:opacity-60"
                     />
                   </div>
                   <div>
@@ -189,7 +219,8 @@ export function ContactSection() {
                       value={formData.lastName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111]"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111] disabled:opacity-60"
                     />
                   </div>
                 </div>
@@ -205,7 +236,8 @@ export function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111]"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111] disabled:opacity-60"
                   />
                 </div>
 
@@ -219,7 +251,8 @@ export function ContactSection() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111]"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111] disabled:opacity-60"
                   />
                 </div>
 
@@ -232,7 +265,8 @@ export function ContactSection() {
                     name="type"
                     value={formData.type}
                     onChange={handleChange}
-                    className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111]"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111] disabled:opacity-60"
                   >
                     <option value="reservation">{t.contact.form.types.reservation}</option>
                     <option value="owner">{t.contact.form.types.owner}</option>
@@ -252,16 +286,21 @@ export function ContactSection() {
                     onChange={handleChange}
                     rows={4}
                     required
-                    className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all resize-none bg-[#F8FAF8] text-[#111111]"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all resize-none bg-[#F8FAF8] text-[#111111] disabled:opacity-60"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
+                  aria-busy={isSubmitting}
                   className="w-full py-4 h-auto bg-[#1F4E5F] hover:bg-[#163B48] text-white font-bold text-base rounded-xl transition-all disabled:opacity-50 shadow-lg hover:shadow-xl"
                 >
-                  {isSubmitting ? t.common.loading : t.contact.form.submit}
+                  {isSubmitting && (
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" aria-hidden />
+                  )}
+                  {submitLabel}
                 </Button>
               </form>
             )}

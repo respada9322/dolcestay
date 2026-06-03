@@ -6,7 +6,8 @@ __v0_jsx-dev-runtime.ts
 .v0-trash/
 .vercel/
 
-# Environment variables
+# Environment variables (secrets — use .env.example as template)
+.env
 .env*.local
 
 # Common ignores

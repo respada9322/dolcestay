@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -22,6 +22,7 @@ import {
   Headphones,
   Handshake,
   Send,
+  Loader2,
   type LucideIcon,
 } from 'lucide-react';
 import { animate, motion, useInView, useReducedMotion } from 'framer-motion';
@@ -35,6 +36,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
+import { useContactForm } from '@/hooks/use-contact-form';
+import { FormStatusAlert } from '@/components/contact/form-status-alert';
 import {
   OWNERS_PAGE_METRICS,
   type OwnersPageMetricKey,
@@ -48,6 +51,16 @@ import {
 const PAGE_IMAGES = {
   hero: '/images/accommodations/casa-do-dario/casa_do_dario.webp',
 } as const;
+
+const INITIAL_OWNER_FORM = {
+  name: '',
+  email: '',
+  phone: '',
+  location: '',
+  propertyType: 'apartment',
+  bedrooms: '',
+  message: '',
+};
 
 const metricKeys: OwnersPageMetricKey[] = [
   'metric1',
@@ -166,25 +179,32 @@ export function OwnersPageSection() {
   const metricsInView = useInView(metricsRef, { once: true, amount: 0.35 });
   const animateMetrics = metricsInView && !shouldReduceMotion;
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    location: '',
-    propertyType: 'apartment',
-    bedrooms: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState(INITIAL_OWNER_FORM);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setSubmitted(true);
-  };
+  const buildPayload = useCallback(() => {
+    const propertyTypeLabel =
+      page.form.propertyTypes[
+        formData.propertyType as keyof typeof page.form.propertyTypes
+      ] ?? formData.propertyType;
+
+    return {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      contactType: 'Proprietário',
+      propertyLocation: formData.location.trim(),
+      propertyType: propertyTypeLabel,
+      bedrooms: formData.bedrooms.trim(),
+      message: formData.message.trim() || undefined,
+      formType: 'property-evaluation' as const,
+    };
+  }, [formData, page.form.propertyTypes]);
+
+  const { errorMessage, submit, isSubmitting, isSuccess } =
+    useContactForm({
+      buildPayload,
+      onSuccess: () => setFormData(INITIAL_OWNER_FORM),
+    });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
@@ -511,7 +531,7 @@ export function OwnersPageSection() {
           </div>
 
           <div className="rounded-[28px] border border-[#E8EDEA] bg-[#F8FAF8] p-8 shadow-[0_8px_40px_rgba(31,78,95,0.08)] lg:p-10">
-            {submitted ? (
+            {isSuccess ? (
               <div className="py-12 text-center">
                 <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#CFE8D2]">
                   <CheckCircle2 className="h-8 w-8 text-[#1F4E5F]" />
@@ -520,7 +540,8 @@ export function OwnersPageSection() {
                 <p className="mt-3 text-[#6B7280]">{page.form.successMessage}</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={submit} className="relative space-y-5" noValidate>
+                {errorMessage && <FormStatusAlert message={errorMessage} />}
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="owner-name" className="mb-2 block text-sm font-medium text-[#1F4E5F]">
@@ -533,7 +554,8 @@ export function OwnersPageSection() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20"
+                      disabled={isSubmitting}
+                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20 disabled:opacity-60"
                     />
                   </div>
                   <div>
@@ -547,7 +569,8 @@ export function OwnersPageSection() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20"
+                      disabled={isSubmitting}
+                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20 disabled:opacity-60"
                     />
                   </div>
                 </div>
@@ -564,7 +587,8 @@ export function OwnersPageSection() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20"
+                      disabled={isSubmitting}
+                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20 disabled:opacity-60"
                     />
                   </div>
                   <div>
@@ -578,7 +602,8 @@ export function OwnersPageSection() {
                       required
                       value={formData.location}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20"
+                      disabled={isSubmitting}
+                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20 disabled:opacity-60"
                     />
                   </div>
                 </div>
@@ -593,7 +618,8 @@ export function OwnersPageSection() {
                       name="propertyType"
                       value={formData.propertyType}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20"
+                      disabled={isSubmitting}
+                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20 disabled:opacity-60"
                     >
                       {Object.entries(page.form.propertyTypes).map(([value, label]) => (
                         <option key={value} value={value}>
@@ -614,7 +640,8 @@ export function OwnersPageSection() {
                       required
                       value={formData.bedrooms}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20"
+                      disabled={isSubmitting}
+                      className="w-full rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20 disabled:opacity-60"
                     />
                   </div>
                 </div>
@@ -629,17 +656,22 @@ export function OwnersPageSection() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full resize-none rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20"
+                    disabled={isSubmitting}
+                    className="w-full resize-none rounded-xl border border-[#E5E7EB] bg-white px-4 py-3 text-[#111111] outline-none transition-colors focus:border-[#8DBE91] focus:ring-2 focus:ring-[#8DBE91]/20 disabled:opacity-60"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full rounded-full bg-[#8DBE91] py-6 text-base font-bold text-white hover:bg-[#7AAD7E] sm:w-auto sm:px-10"
+                  aria-busy={isSubmitting}
+                  className="w-full rounded-full bg-[#8DBE91] py-6 text-base font-bold text-white hover:bg-[#7AAD7E] sm:w-auto sm:px-10 disabled:opacity-60"
                 >
                   {isSubmitting ? (
-                    page.form.submitting
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" aria-hidden />
+                      {page.form.submitting}
+                    </>
                   ) : (
                     <>
                       <Send className="mr-2 h-5 w-5" />
