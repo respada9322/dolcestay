@@ -1,9 +1,12 @@
+export type MapPartnerCategory = 'experiences' | 'restaurants';
+
 export type MapPartner = {
   id: string;
   name: string;
   address: string;
   lat: number;
   lng: number;
+  category: MapPartnerCategory;
 };
 
 export const MAP_PARTNERS: MapPartner[] = [
@@ -13,6 +16,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Praça da Califórnia Lojas 2i e 2j, 2970-760 Sesimbra, Portugal',
     lat: 38.4424654,
     lng: -9.0956796,
+    category: 'restaurants',
   },
   {
     id: 'o-batel',
@@ -20,6 +24,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Av. dos Náufragos 3, 2970-760 Sesimbra, Portugal',
     lat: 38.4431471,
     lng: -9.102557,
+    category: 'restaurants',
   },
   {
     id: 'o-zagaia',
@@ -27,6 +32,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'R. Dr. Peixoto Correia 33, 2970-752 Sesimbra, Portugal',
     lat: 38.443403,
     lng: -9.1033384,
+    category: 'restaurants',
   },
   {
     id: 'casa-mateus',
@@ -34,6 +40,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Largo Anselmo Braamcamp 4, 2970-654 Sesimbra, Portugal',
     lat: 38.4430884,
     lng: -9.0996113,
+    category: 'restaurants',
   },
   {
     id: 'tasca-do-13',
@@ -41,6 +48,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'R. da República 2, 2970-741 Sesimbra, Portugal',
     lat: 38.4437301,
     lng: -9.1010944,
+    category: 'restaurants',
   },
   {
     id: 'onda-selvagem',
@@ -48,6 +56,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Praça da Califórnia 4C, 2970-760 Sesimbra, Portugal',
     lat: 38.44218,
     lng: -9.09535,
+    category: 'restaurants',
   },
   {
     id: 'fun-friends',
@@ -55,6 +64,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Largo da Marinha 30, 2970-657 Sesimbra, Portugal',
     lat: 38.4430216,
     lng: -9.1020224,
+    category: 'restaurants',
   },
   {
     id: 'virgilinda',
@@ -62,6 +72,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'R. Jorge Nunes 11, 2970-765 Sesimbra, Portugal',
     lat: 38.4433983,
     lng: -9.099825,
+    category: 'restaurants',
   },
   {
     id: 'ribamar',
@@ -69,6 +80,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Av. dos Náufragos 29, 2970-637 Sesimbra, Portugal',
     lat: 38.4429497,
     lng: -9.1099809,
+    category: 'restaurants',
   },
   {
     id: 'o-velho-e-o-mar',
@@ -76,6 +88,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'R. Joaquim Brandão 30, 2970-764 Sesimbra, Portugal',
     lat: 38.4428333,
     lng: -9.0997849,
+    category: 'restaurants',
   },
   {
     id: 'o-golfinho',
@@ -83,6 +96,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'R. da República 34, 2970-741 Sesimbra, Portugal',
     lat: 38.44378,
     lng: -9.10125,
+    category: 'restaurants',
   },
   {
     id: 'a-sesimbrense',
@@ -90,6 +104,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'R. Jorge Nunes 19, 2970-765 Sesimbra, Portugal',
     lat: 38.44345,
     lng: -9.0999,
+    category: 'restaurants',
   },
   {
     id: 'tasca-do-isaias',
@@ -97,6 +112,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'R. Cel. Barreto 2, 2970-772 Sesimbra, Portugal',
     lat: 38.4436162,
     lng: -9.0992842,
+    category: 'restaurants',
   },
   {
     id: 'vidal',
@@ -104,6 +120,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Av. dos Náufragos 17A, 2970-744 Sesimbra, Portugal',
     lat: 38.4431502,
     lng: -9.1035813,
+    category: 'restaurants',
   },
   {
     id: 'restaurante-mare',
@@ -111,6 +128,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'R. Latino Coelho 5, 2970-768 Sesimbra, Portugal',
     lat: 38.4430068,
     lng: -9.0987714,
+    category: 'restaurants',
   },
   {
     id: 'gelatomania',
@@ -118,6 +136,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Av. 25 de Abril 7-C, 2970-634 Sesimbra, Portugal',
     lat: 38.4422299,
     lng: -9.0974609,
+    category: 'restaurants',
   },
   {
     id: 'bar-do-peixe-meco',
@@ -125,6 +144,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Praia das Bicas, 2970-000, Portugal',
     lat: 38.4647687,
     lng: -9.192498,
+    category: 'restaurants',
   },
   {
     id: 'look-around-tours',
@@ -132,6 +152,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Tv. das Palmeiras 8B, 2970-520 Maçã, Portugal',
     lat: 38.4759255,
     lng: -9.0734557,
+    category: 'experiences',
   },
   {
     id: 'our-roots',
@@ -139,6 +160,7 @@ export const MAP_PARTNERS: MapPartner[] = [
     address: 'Porto de Abrigo de Sesimbra, 2970-263 Sesimbra, Portugal',
     lat: 38.4365543,
     lng: -9.1156772,
+    category: 'experiences',
   },
   {
     id: 'cipreia-dive-club',
@@ -147,14 +169,25 @@ export const MAP_PARTNERS: MapPartner[] = [
       'Rua do Clube Naval de Sesimbra, Porto de Abrigo Edifício do Clube Naval de Sesimbra, R/C Loja, 2970-263 Sesimbra, Portugal',
     lat: 38.4357046,
     lng: -9.1152645,
+    category: 'experiences',
   },
 ];
 
 export const SESIMBRA_MAP_CENTER = { lat: 38.4425, lng: -9.1015 };
+
+/** Comfortable default zoom for Sesimbra village and surroundings. */
+export const SESIMBRA_MAP_DEFAULT_ZOOM = 13;
 
 export const MAP_PARTNER_COUNT = MAP_PARTNERS.length;
 
 export function getGoogleMapsDirectionsUrl(partner: MapPartner): string {
   const query = encodeURIComponent(`${partner.name}, ${partner.address}`);
   return `https://www.google.com/maps/search/?api=1&query=${query}`;
+}
+
+export function getMapPartnerCategoryLabel(
+  partner: MapPartner,
+  labels: { experiences: string; restaurants: string },
+): string {
+  return partner.category === 'experiences' ? labels.experiences : labels.restaurants;
 }

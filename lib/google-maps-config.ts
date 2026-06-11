@@ -1,12 +1,13 @@
 /**
  * Google Maps API key (Next.js).
  *
- * This project uses Next.js — client-side env vars must be prefixed with NEXT_PUBLIC_.
- * Set the key in `.env.local` (not committed):
+ * Client-side env vars must be prefixed with NEXT_PUBLIC_.
+ * Local: set in `.env` (see `.env.example`). Vercel: same name in Project → Environment Variables.
  *
  *   NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
  *
- * Restart the dev server after changing env files (`npm run dev`).
+ * Restart the dev server after changing `.env` locally (`npm run dev`).
+ * On Vercel, redeploy after adding or updating the variable.
  *
  * @see README.md — "Google Maps setup"
  */

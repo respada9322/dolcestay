@@ -17,9 +17,13 @@ The partners map on `/parcerias` uses the **Google Maps JavaScript API** via `@r
 
 1. Create an API key in [Google Cloud Console](https://console.cloud.google.com/google/maps-apis).
 2. Enable **Maps JavaScript API** for the project.
-3. (Optional) Enable **Places API** if you add place search later.
-4. (Optional) Enable **Geocoding API** only if you geocode addresses in the browser. Partner coordinates are stored in `lib/partner-map-data.ts`, so Geocoding is not required for the current map.
-5. Copy `.env.example` to `.env` and set your key:
+3. Under **APIs & Services → Credentials → your key → Application restrictions**, choose **HTTP referrers (web sites)** and add every origin that will load the map, for example:
+   - `http://localhost:3000/*` (default Next.js dev port)
+   - `http://localhost:3001/*` (if port 3000 is already in use)
+   - `https://your-site.vercel.app/*` and your production domain
+4. (Optional) Enable **Places API** if you add place search later.
+5. (Optional) Enable **Geocoding API** only if you geocode addresses in the browser. Partner coordinates are stored in `lib/partner-map-data.ts`, so Geocoding is not required for the current map.
+6. Copy `.env.example` to `.env` and set your key:
 
    ```bash
    cp .env.example .env
@@ -29,7 +33,7 @@ The partners map on `/parcerias` uses the **Google Maps JavaScript API** via `@r
    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
    ```
 
-6. **Restart the dev server** after changing `.env` (`npm run dev`).
+7. **Restart the dev server** after changing `.env` (`npm run dev`).
 
 Never commit `.env` with real keys or hardcode API keys in source code.
 

@@ -13,7 +13,7 @@ const PartnersMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-[380px] lg:h-[500px] items-center justify-center bg-[#E8F0EA]">
+      <div className="flex h-[450px] lg:h-[620px] items-center justify-center bg-[#E8F0EA]">
         <div className="h-10 w-10 animate-spin rounded-full border-2 border-[#8DBE91] border-t-transparent" />
       </div>
     ),
@@ -77,19 +77,22 @@ export function PartnershipsSection() {
         </div>
 
         {/* Interactive partners map */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h3 className="font-serif text-2xl lg:text-3xl text-[#1F4E5F] mb-8 text-center">
             {t.partnerships.mapTitle}
           </h3>
-          <div className="relative h-[380px] lg:h-[500px] overflow-hidden rounded-3xl bg-[#E5E7EB] shadow-[0_20px_50px_rgba(31,78,95,0.12)] ring-1 ring-[#1F4E5F]/5">
+          <div className="relative h-[450px] lg:h-[620px] overflow-hidden rounded-3xl bg-[#E5E7EB] shadow-[0_20px_50px_rgba(31,78,95,0.12)] ring-1 ring-[#1F4E5F]/5">
             <PartnersMap
               locationLabel={t.partnerships.mapLocation}
               partnersCountLabel={t.partnerships.mapPartnersCount}
               openInGoogleMapsLabel={t.partnerships.openInGoogleMaps}
+              categoryExperiencesLabel={t.partnerships.categories.experiences}
+              categoryRestaurantsLabel={t.partnerships.categories.restaurants}
               unavailableTitle={t.partnerships.mapUnavailableTitle}
               unavailableDescription={t.partnerships.mapUnavailableDescription}
               unavailableRestart={t.partnerships.mapUnavailableRestart}
               unavailableLoadError={t.partnerships.mapUnavailableLoadError}
+              unavailableReferrerError={t.partnerships.mapUnavailableReferrerError}
             />
           </div>
         </div>

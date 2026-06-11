@@ -12,10 +12,10 @@
  * If the key is missing or invalid, the map renders a safe fallback (no crash).
  */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { MarkerClusterer } from '@googlemaps/markerclusterer';
-import { AlertCircle, ExternalLink, MapPin, RefreshCw } from 'lucide-react';
+import { MarkerClusterer, SuperClusterAlgorithm } from '@googlemaps/markerclusterer';
+import { AlertCircle, MapPin, RefreshCw } from 'lucide-react';
 import {
   getGoogleMapsApiKey,
   GOOGLE_MAPS_ENV_VAR,
@@ -24,13 +24,21 @@ import {
 import {
   MAP_PARTNERS,
   SESIMBRA_MAP_CENTER,
+  SESIMBRA_MAP_DEFAULT_ZOOM,
   type MapPartner,
   getGoogleMapsDirectionsUrl,
+  getMapPartnerCategoryLabel,
 } from '@/lib/partner-map-data';
 
 const MAP_LIBRARIES: never[] = [];
 
 const MAP_CONTAINER_STYLE = { width: '100%', height: '100%' };
+
+const MAP_FIT_PADDING = { top: 40, right: 40, bottom: 100, left: 40 };
+
+const MAP_MIN_ZOOM = 12;
+const MAP_MAX_ZOOM = 15;
+const CLUSTER_MAX_ZOOM = 14;
 
 const MAP_OPTIONS: google.maps.MapOptions = {
   disableDefaultUI: false,
@@ -42,19 +50,39 @@ const MAP_OPTIONS: google.maps.MapOptions = {
   mapTypeId: 'satellite',
 };
 
-function buildMarkerIcon(): google.maps.Icon | undefined {
+const PIN_WIDTH = 28;
+const PIN_HEIGHT = 36;
+
+function buildPinIcon(): google.maps.Icon | undefined {
   if (typeof google === 'undefined') return undefined;
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="44" viewBox="0 0 36 44" fill="none">
-    <path d="M18 0C9.716 0 3 6.716 3 15c0 10.5 15 29 15 29s15-18.5 15-29C33 6.716 26.284 0 18 0z" fill="#8DBE91"/>
-    <circle cx="18" cy="15" r="7" fill="#1F4E5F"/>
-    <circle cx="18" cy="15" r="3" fill="#CFE8D2"/>
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${PIN_WIDTH}" height="${PIN_HEIGHT}" viewBox="0 0 28 36" fill="none">
+    <path d="M14 0C7.373 0 2 5.373 2 12c0 8.25 12 24 12 24s12-15.75 12-24C26 5.373 20.627 0 14 0z" fill="#DC2626"/>
+    <circle cx="14" cy="12" r="4.5" fill="#FFFFFF"/>
+    <circle cx="14" cy="12" r="2" fill="#DC2626"/>
   </svg>`;
 
   return {
     url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`,
-    scaledSize: new google.maps.Size(36, 44),
-    anchor: new google.maps.Point(18, 44),
+    scaledSize: new google.maps.Size(PIN_WIDTH, PIN_HEIGHT),
+    anchor: new google.maps.Point(PIN_WIDTH / 2, PIN_HEIGHT),
+  };
+}
+
+function buildClusterIcon(count: number): google.maps.Icon | undefined {
+  if (typeof google === 'undefined') return undefined;
+
+  const size = 30;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 30 30">
+    <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
+    <circle cx="15" cy="15" r="10" fill="#DC2626"/>
+    <text x="15" y="19" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">${count}</text>
+  </svg>`;
+
+  return {
+    url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`,
+    scaledSize: new google.maps.Size(size, size),
+    anchor: new google.maps.Point(size / 2, size / 2),
   };
 }
 
@@ -62,11 +90,20 @@ type PartnersMapLabels = {
   locationLabel: string;
   partnersCountLabel: string;
   openInGoogleMapsLabel: string;
+  categoryExperiencesLabel: string;
+  categoryRestaurantsLabel: string;
   unavailableTitle: string;
   unavailableDescription: string;
   unavailableRestart: string;
   unavailableLoadError: string;
+  unavailableReferrerError: string;
 };
+
+declare global {
+  interface Window {
+    gm_authFailure?: () => void;
+  }
+}
 
 type MapUnavailableFallbackProps = {
   title: string;
@@ -84,7 +121,7 @@ function MapUnavailableFallback({
   missingKey,
 }: MapUnavailableFallbackProps) {
   return (
-    <div className="flex h-full min-h-[380px] lg:min-h-[500px] items-center justify-center bg-gradient-to-br from-[#E8F0EA] via-[#F8FAF8] to-[#E8F0EA] px-4 py-10">
+    <div className="flex h-full min-h-[450px] lg:min-h-[620px] items-center justify-center bg-gradient-to-br from-[#E8F0EA] via-[#F8FAF8] to-[#E8F0EA] px-4 py-10">
       <div
         className="w-full max-w-md rounded-2xl border border-[#1F4E5F]/10 bg-white p-8 text-center shadow-[0_12px_40px_rgba(31,78,95,0.1)]"
         role="status"
@@ -144,6 +181,44 @@ export function PartnersMap(labels: PartnersMapLabels) {
   return <PartnersMapLoaded apiKey={apiKey} labels={labels} />;
 }
 
+function buildInfoWindowContent(
+  partner: MapPartner,
+  labels: Pick<
+    PartnersMapLabels,
+    'openInGoogleMapsLabel' | 'categoryExperiencesLabel' | 'categoryRestaurantsLabel'
+  >,
+): HTMLElement {
+  const content = document.createElement('div');
+  content.className = 'p-3 max-w-[min(280px,calc(100vw-3rem))] font-sans';
+
+  const category = document.createElement('p');
+  category.className =
+    'text-[11px] font-semibold uppercase tracking-wide text-[#8DBE91] mb-1.5';
+  category.textContent = getMapPartnerCategoryLabel(partner, {
+    experiences: labels.categoryExperiencesLabel,
+    restaurants: labels.categoryRestaurantsLabel,
+  });
+
+  const title = document.createElement('p');
+  title.className = 'font-semibold text-[#1F4E5F] text-base mb-1 leading-snug';
+  title.textContent = partner.name;
+
+  const address = document.createElement('p');
+  address.className = 'text-sm text-[#6B7280] mb-3 leading-relaxed';
+  address.textContent = partner.address;
+
+  const link = document.createElement('a');
+  link.href = getGoogleMapsDirectionsUrl(partner);
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.className =
+    'inline-flex items-center justify-center w-full px-4 py-2.5 bg-[#1F4E5F] text-white text-sm font-semibold rounded-full hover:bg-[#163B48] transition-colors';
+  link.textContent = labels.openInGoogleMapsLabel;
+
+  content.append(category, title, address, link);
+  return content;
+}
+
 function PartnersMapLoaded({
   apiKey,
   labels,
@@ -156,61 +231,52 @@ function PartnersMapLoaded({
     libraries: MAP_LIBRARIES,
   });
 
+  const [authFailure, setAuthFailure] = useState(false);
   const [map, setMap] = useState<google.maps.Map | null>(null);
-  const [selectedPartner, setSelectedPartner] = useState<MapPartner | null>(null);
-  const [activePartnerId, setActivePartnerId] = useState<string | null>(null);
   const clustererRef = useRef<MarkerClusterer | null>(null);
   const markersRef = useRef<google.maps.Marker[]>([]);
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
 
-  const sortedPartners = useMemo(
-    () => [...MAP_PARTNERS].sort((a, b) => a.name.localeCompare(b.name, 'pt')),
-    [],
-  );
-
-  const fitAllPartners = useCallback((targetMap: google.maps.Map) => {
+  const fitMapToPartners = useCallback((targetMap: google.maps.Map) => {
     const bounds = new google.maps.LatLngBounds();
     MAP_PARTNERS.forEach((partner) => {
       bounds.extend({ lat: partner.lat, lng: partner.lng });
     });
-    targetMap.fitBounds(bounds, { top: 56, right: 56, bottom: 88, left: 56 });
+
+    targetMap.fitBounds(bounds, MAP_FIT_PADDING);
+
+    const listener = google.maps.event.addListenerOnce(targetMap, 'idle', () => {
+      const zoom = targetMap.getZoom();
+      if (zoom == null) return;
+
+      if (zoom < MAP_MIN_ZOOM) {
+        targetMap.setCenter(SESIMBRA_MAP_CENTER);
+        targetMap.setZoom(SESIMBRA_MAP_DEFAULT_ZOOM);
+      } else if (zoom > MAP_MAX_ZOOM) {
+        targetMap.setZoom(MAP_MAX_ZOOM);
+      }
+    });
+
+    return () => {
+      google.maps.event.removeListener(listener);
+    };
   }, []);
 
   const openPartner = useCallback(
     (partner: MapPartner, targetMap: google.maps.Map) => {
-      setSelectedPartner(partner);
-      setActivePartnerId(partner.id);
-      targetMap.panTo({ lat: partner.lat, lng: partner.lng });
-      const currentZoom = targetMap.getZoom() ?? 14;
-      if (currentZoom < 15) {
-        targetMap.setZoom(15);
-      }
-
       if (!infoWindowRef.current) {
-        infoWindowRef.current = new google.maps.InfoWindow();
+        infoWindowRef.current = new google.maps.InfoWindow({
+          maxWidth: 300,
+        });
       }
 
-      const content = document.createElement('div');
-      content.className = 'p-1 max-w-[260px] font-sans';
-
-      const title = document.createElement('p');
-      title.className = 'font-semibold text-[#1F4E5F] text-base mb-1 leading-snug';
-      title.textContent = partner.name;
-
-      const address = document.createElement('p');
-      address.className = 'text-sm text-[#6B7280] mb-3 leading-relaxed';
-      address.textContent = partner.address;
-
-      const link = document.createElement('a');
-      link.href = getGoogleMapsDirectionsUrl(partner);
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.className =
-        'inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-[#1F4E5F] text-white text-sm font-semibold rounded-full hover:bg-[#163B48] transition-colors';
-      link.textContent = labels.openInGoogleMapsLabel;
-
-      content.append(title, address, link);
-      infoWindowRef.current.setContent(content);
+      infoWindowRef.current.setContent(
+        buildInfoWindowContent(partner, {
+          openInGoogleMapsLabel: labels.openInGoogleMapsLabel,
+          categoryExperiencesLabel: labels.categoryExperiencesLabel,
+          categoryRestaurantsLabel: labels.categoryRestaurantsLabel,
+        }),
+      );
 
       const anchor = markersRef.current.find((m) => m.getTitle() === partner.name);
       if (anchor) {
@@ -220,16 +286,31 @@ function PartnersMapLoaded({
         infoWindowRef.current.open(targetMap);
       }
     },
-    [labels.openInGoogleMapsLabel],
+    [
+      labels.openInGoogleMapsLabel,
+      labels.categoryExperiencesLabel,
+      labels.categoryRestaurantsLabel,
+    ],
   );
 
   const onMapLoad = useCallback(
     (loadedMap: google.maps.Map) => {
       setMap(loadedMap);
-      fitAllPartners(loadedMap);
+      fitMapToPartners(loadedMap);
     },
-    [fitAllPartners],
+    [fitMapToPartners],
   );
+
+  useEffect(() => {
+    const previousAuthFailure = window.gm_authFailure;
+    window.gm_authFailure = () => {
+      setAuthFailure(true);
+    };
+
+    return () => {
+      window.gm_authFailure = previousAuthFailure;
+    };
+  }, []);
 
   useEffect(() => {
     if (!map || !isLoaded) return;
@@ -238,12 +319,13 @@ function PartnersMapLoaded({
     markersRef.current = [];
     clustererRef.current?.clearMarkers();
 
-    const icon = buildMarkerIcon();
+    const icon = buildPinIcon();
     const markers = MAP_PARTNERS.map((partner) => {
       const marker = new google.maps.Marker({
         position: { lat: partner.lat, lng: partner.lng },
         title: partner.name,
         icon,
+        optimized: true,
       });
 
       marker.addListener('click', () => openPartner(partner, map));
@@ -255,21 +337,16 @@ function PartnersMapLoaded({
     clustererRef.current = new MarkerClusterer({
       map,
       markers,
+      algorithm: new SuperClusterAlgorithm({
+        maxZoom: CLUSTER_MAX_ZOOM,
+        radius: 50,
+      }),
       renderer: {
         render: ({ count, position }) => {
-          const clusterSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="22" fill="#1F4E5F" fill-opacity="0.92"/>
-            <circle cx="24" cy="24" r="18" fill="#8DBE91"/>
-            <text x="24" y="29" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1F4E5F">${count}</text>
-          </svg>`;
-
+          const clusterIcon = buildClusterIcon(count);
           return new google.maps.Marker({
             position,
-            icon: {
-              url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(clusterSvg)}`,
-              scaledSize: new google.maps.Size(48, 48),
-              anchor: new google.maps.Point(24, 24),
-            },
+            icon: clusterIcon,
             zIndex: Number(google.maps.Marker.MAX_ZINDEX) + count,
           });
         },
@@ -283,18 +360,13 @@ function PartnersMapLoaded({
     };
   }, [map, isLoaded, openPartner]);
 
-  const handlePartnerSelect = (partner: MapPartner) => {
-    if (!map) return;
-    openPartner(partner, map);
-  };
-
-  if (loadError) {
+  if (loadError || authFailure) {
     return (
       <MapUnavailableFallback
         title={labels.unavailableTitle}
         description={labels.unavailableDescription}
         restartHint={labels.unavailableRestart}
-        loadErrorMessage={labels.unavailableLoadError}
+        loadErrorMessage={authFailure ? labels.unavailableReferrerError : labels.unavailableLoadError}
         missingKey={false}
       />
     );
@@ -302,7 +374,7 @@ function PartnersMapLoaded({
 
   if (!isLoaded) {
     return (
-      <div className="flex h-full min-h-[380px] lg:min-h-[500px] items-center justify-center bg-[#E8F0EA]">
+      <div className="flex h-full min-h-[450px] lg:min-h-[620px] items-center justify-center bg-[#E8F0EA]">
         <div
           className="h-10 w-10 animate-spin rounded-full border-2 border-[#8DBE91] border-t-transparent"
           role="status"
@@ -313,59 +385,30 @@ function PartnersMapLoaded({
   }
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-full w-full overflow-hidden">
       <GoogleMap
         mapContainerStyle={MAP_CONTAINER_STYLE}
         center={SESIMBRA_MAP_CENTER}
-        zoom={14}
+        zoom={SESIMBRA_MAP_DEFAULT_ZOOM}
         onLoad={onMapLoad}
         options={MAP_OPTIONS}
       />
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-gradient-to-b from-white via-white/90 to-transparent px-3 pb-6 pt-3 sm:px-4">
-        <div className="pointer-events-auto flex gap-2 overflow-x-auto pb-1">
-          {sortedPartners.map((partner) => (
-            <button
-              key={partner.id}
-              type="button"
-              onClick={() => handlePartnerSelect(partner)}
-              className={`shrink-0 rounded-full border px-3.5 py-1.5 text-xs font-medium transition-all sm:text-sm ${
-                activePartnerId === partner.id
-                  ? 'border-[#8DBE91] bg-[#1F4E5F] text-white shadow-md'
-                  : 'border-[#E5E7EB] bg-white/95 text-[#1F4E5F] shadow-sm hover:border-[#8DBE91]/60 hover:bg-white'
-              }`}
-            >
-              {partner.name}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="pointer-events-none absolute bottom-5 left-5 z-10">
-        <div className="pointer-events-auto rounded-xl bg-white px-5 py-3 shadow-xl">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#CFE8D2]">
-              <MapPin className="h-5 w-5 text-[#8DBE91]" />
+      <div className="pointer-events-none absolute bottom-4 left-4 z-10 sm:bottom-5 sm:left-5">
+        <div className="pointer-events-none rounded-xl bg-white/95 px-4 py-2.5 shadow-lg ring-1 ring-[#1F4E5F]/5 backdrop-blur-sm sm:px-5 sm:py-3">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FEE2E2] sm:h-10 sm:w-10">
+              <MapPin className="h-4 w-4 text-[#DC2626] sm:h-5 sm:w-5" aria-hidden />
             </div>
-            <div>
-              <span className="block font-bold text-[#1F4E5F]">{labels.locationLabel}</span>
-              <span className="text-sm text-[#6B7280]">{labels.partnersCountLabel}</span>
+            <div className="min-w-0">
+              <span className="block text-sm font-bold text-[#1F4E5F] sm:text-base">
+                {labels.locationLabel}
+              </span>
+              <span className="text-xs text-[#6B7280] sm:text-sm">{labels.partnersCountLabel}</span>
             </div>
           </div>
         </div>
       </div>
-
-      {selectedPartner && (
-        <a
-          href={getGoogleMapsDirectionsUrl(selectedPartner)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="sr-only"
-        >
-          {labels.openInGoogleMapsLabel}
-          <ExternalLink className="h-4 w-4" />
-        </a>
-      )}
     </div>
   );
 }

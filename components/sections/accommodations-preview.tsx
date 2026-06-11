@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { MapPin, Users, Bed, Wifi, Car, Waves, TreePine, Building, Sun, Wind, Star } from 'lucide-react';
+import { MapPin, Users, Bed, Wifi, Car, Waves, TreePine, Building, Sun, Wind, Star, Tv } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { featuredAccommodations } from '@/lib/data';
 import { AccommodationsCta } from '@/components/sections/accommodations-cta';
@@ -19,6 +19,7 @@ const featureIcons: Record<string, React.ReactNode> = {
   wifi: <Wifi className="h-3.5 w-3.5" />,
   parking: <Car className="h-3.5 w-3.5" />,
   aircon: <Wind className="h-3.5 w-3.5" />,
+  tv: <Tv className="h-3.5 w-3.5" />,
 };
 
 function AccommodationImageSlideshow({
