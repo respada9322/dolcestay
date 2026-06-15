@@ -129,11 +129,10 @@ function PartnerExperienceCard({ partner, t, language }: { partner: typeof partn
           {partner.name}
         </h4>
         
-        <ul className="space-y-2 mb-6 flex-1">
+        <ul className="list-disc space-y-2 mb-6 flex-1 pl-5 marker:text-[#8DBE91]">
           {(partner.description as Record<string, string[]>)[language]?.map((item, index) => (
-            <li key={index} className="text-sm text-[#1F4E5F]/80 flex items-start gap-2">
-              <span className="text-[#8DBE91] mt-1">&#x2022;</span>
-              <span>{item}</span>
+            <li key={index} className="text-sm text-[#1F4E5F]/80">
+              {item}
             </li>
           ))}
         </ul>
