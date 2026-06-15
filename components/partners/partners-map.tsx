@@ -121,7 +121,7 @@ function MapUnavailableFallback({
   missingKey,
 }: MapUnavailableFallbackProps) {
   return (
-    <div className="flex h-full min-h-[450px] lg:min-h-[620px] items-center justify-center bg-gradient-to-br from-[#E8F0EA] via-[#F8FAF8] to-[#E8F0EA] px-4 py-10">
+    <div className="flex h-full min-h-[420px] items-center justify-center bg-gradient-to-br from-[#E8F0EA] via-[#F8FAF8] to-[#E8F0EA] px-4 py-10 sm:min-h-[520px] md:min-h-[600px]">
       <div
         className="w-full max-w-md rounded-2xl border border-[#1F4E5F]/10 bg-white p-8 text-center shadow-[0_12px_40px_rgba(31,78,95,0.1)]"
         role="status"
@@ -374,7 +374,7 @@ function PartnersMapLoaded({
 
   if (!isLoaded) {
     return (
-      <div className="flex h-full min-h-[450px] lg:min-h-[620px] items-center justify-center bg-[#E8F0EA]">
+      <div className="flex h-full min-h-[420px] items-center justify-center bg-[#E8F0EA] sm:min-h-[520px] md:min-h-[600px]">
         <div
           className="h-10 w-10 animate-spin rounded-full border-2 border-[#8DBE91] border-t-transparent"
           role="status"

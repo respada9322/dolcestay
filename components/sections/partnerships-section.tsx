@@ -13,7 +13,7 @@ const PartnersMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-[450px] lg:h-[620px] items-center justify-center bg-[#E8F0EA]">
+      <div className="flex h-[min(70vh,720px)] min-h-[420px] items-center justify-center bg-[#E8F0EA] sm:min-h-[520px] md:min-h-[600px]">
         <div className="h-10 w-10 animate-spin rounded-full border-2 border-[#8DBE91] border-t-transparent" />
       </div>
     ),
@@ -24,7 +24,7 @@ export function PartnershipsSection() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="partnerships" className="py-20 lg:py-28 bg-white scroll-mt-20">
+    <section id="partnerships" className="pt-20 pb-0 lg:pt-28 bg-white scroll-mt-20">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-14 lg:mb-20">
@@ -76,25 +76,27 @@ export function PartnershipsSection() {
           <PartnerRestaurantsCarousel partners={partnerRestaurants} t={t} />
         </div>
 
-        {/* Interactive partners map */}
-        <div className="max-w-6xl mx-auto">
-          <h3 className="font-serif text-2xl lg:text-3xl text-[#1F4E5F] mb-8 text-center">
-            {t.partnerships.mapTitle}
-          </h3>
-          <div className="relative h-[450px] lg:h-[620px] overflow-hidden rounded-3xl bg-[#E5E7EB] shadow-[0_20px_50px_rgba(31,78,95,0.12)] ring-1 ring-[#1F4E5F]/5">
-            <PartnersMap
-              locationLabel={t.partnerships.mapLocation}
-              partnersCountLabel={t.partnerships.mapPartnersCount}
-              openInGoogleMapsLabel={t.partnerships.openInGoogleMaps}
-              categoryExperiencesLabel={t.partnerships.categories.experiences}
-              categoryRestaurantsLabel={t.partnerships.categories.restaurants}
-              unavailableTitle={t.partnerships.mapUnavailableTitle}
-              unavailableDescription={t.partnerships.mapUnavailableDescription}
-              unavailableRestart={t.partnerships.mapUnavailableRestart}
-              unavailableLoadError={t.partnerships.mapUnavailableLoadError}
-              unavailableReferrerError={t.partnerships.mapUnavailableReferrerError}
-            />
-          </div>
+        {/* Map title */}
+        <h3 className="font-serif text-2xl lg:text-3xl text-[#1F4E5F] mb-8 text-center">
+          {t.partnerships.mapTitle}
+        </h3>
+      </div>
+
+      {/* Full-width partners map */}
+      <div className="relative w-full overflow-hidden">
+        <div className="relative h-[min(70vh,720px)] min-h-[420px] w-full bg-[#E5E7EB] sm:min-h-[520px] md:min-h-[600px]">
+          <PartnersMap
+            locationLabel={t.partnerships.mapLocation}
+            partnersCountLabel={t.partnerships.mapPartnersCount}
+            openInGoogleMapsLabel={t.partnerships.openInGoogleMaps}
+            categoryExperiencesLabel={t.partnerships.categories.experiences}
+            categoryRestaurantsLabel={t.partnerships.categories.restaurants}
+            unavailableTitle={t.partnerships.mapUnavailableTitle}
+            unavailableDescription={t.partnerships.mapUnavailableDescription}
+            unavailableRestart={t.partnerships.mapUnavailableRestart}
+            unavailableLoadError={t.partnerships.mapUnavailableLoadError}
+            unavailableReferrerError={t.partnerships.mapUnavailableReferrerError}
+          />
         </div>
       </div>
     </section>
