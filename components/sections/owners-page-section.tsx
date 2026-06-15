@@ -545,7 +545,7 @@ export function OwnersPageSection() {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="owner-name" className="mb-2 block text-sm font-medium text-[#1F4E5F]">
-                      {page.form.fields.name}
+                      {page.form.fields.name} *
                     </label>
                     <input
                       id="owner-name"
@@ -560,7 +560,7 @@ export function OwnersPageSection() {
                   </div>
                   <div>
                     <label htmlFor="owner-email" className="mb-2 block text-sm font-medium text-[#1F4E5F]">
-                      {page.form.fields.email}
+                      {page.form.fields.email} *
                     </label>
                     <input
                       id="owner-email"
@@ -578,7 +578,7 @@ export function OwnersPageSection() {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="owner-phone" className="mb-2 block text-sm font-medium text-[#1F4E5F]">
-                      {page.form.fields.phone}
+                      {page.form.fields.phone} *
                     </label>
                     <input
                       id="owner-phone"
@@ -593,7 +593,7 @@ export function OwnersPageSection() {
                   </div>
                   <div>
                     <label htmlFor="owner-location" className="mb-2 block text-sm font-medium text-[#1F4E5F]">
-                      {page.form.fields.location}
+                      {page.form.fields.location} *
                     </label>
                     <input
                       id="owner-location"
@@ -630,7 +630,7 @@ export function OwnersPageSection() {
                   </div>
                   <div>
                     <label htmlFor="owner-bedrooms" className="mb-2 block text-sm font-medium text-[#1F4E5F]">
-                      {page.form.fields.bedrooms}
+                      {page.form.fields.bedrooms} *
                     </label>
                     <input
                       id="owner-bedrooms"

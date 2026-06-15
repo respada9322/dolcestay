@@ -195,7 +195,7 @@ export function ContactSection() {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-semibold text-[#1F4E5F] mb-2">
-                      {t.contact.form.firstName}
+                      {t.contact.form.firstName} *
                     </label>
                     <input
                       type="text"
@@ -210,7 +210,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-semibold text-[#1F4E5F] mb-2">
-                      {t.contact.form.lastName}
+                      {t.contact.form.lastName} *
                     </label>
                     <input
                       type="text"
@@ -277,7 +277,7 @@ export function ContactSection() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-[#1F4E5F] mb-2">
-                    {t.contact.form.message}
+                    {t.contact.form.message} *
                   </label>
                   <textarea
                     id="message"
