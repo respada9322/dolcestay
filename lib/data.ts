@@ -121,6 +121,19 @@ const partnerGalleryFiles = [
   '/images/partners/Our_Roots_photo3.png',
   '/images/partners/Our_Roots_photo4.png',
   '/images/partners/Our_Roots_photo5.png',
+  '/images/parcerias/a_sesimbrense.webp',
+  '/images/parcerias/bar_do_peixe.webp',
+  '/images/parcerias/fadango.webp',
+  '/images/parcerias/gelatomania.webp',
+  '/images/parcerias/o_golfinho.webp',
+  '/images/parcerias/o_isaias.webp',
+  '/images/parcerias/o_velho_e_o_mar.webp',
+  '/images/parcerias/onda_selvagem.webp',
+  '/images/parcerias/restaurante_mare.webp',
+  '/images/parcerias/ribamar.webp',
+  '/images/parcerias/tasca_do_13.webp',
+  '/images/parcerias/vidal_food_and_drinks.webp',
+  '/images/parcerias/virgilinda.webp',
 ];
 
 const normalizePartnerToken = (value: string) => value.toLowerCase().replace(/[\s_-]+/g, '');
@@ -286,7 +299,7 @@ export const partnerRestaurants = [
     name: 'Tasca do 13',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('Tasca do 13', '/images/partner-tasca13.jpg', ['tascado13']),
+    ...withPartnerImages('Tasca do 13', '/images/parcerias/tasca_do_13.webp', ['tascado13']),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d4136825-Reviews-Tasca_do_13-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -294,7 +307,7 @@ export const partnerRestaurants = [
     name: 'Onda Selvagem',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('Onda Selvagem', '/images/partner-ondaselvagem.jpg', ['ondaselvagem']),
+    ...withPartnerImages('Onda Selvagem', '/images/parcerias/onda_selvagem.webp', ['ondaselvagem']),
     website: 'https://ondaselvagem.com/',
   },
   {
@@ -302,7 +315,7 @@ export const partnerRestaurants = [
     name: 'A Sesimbrense',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('A Sesimbrense', '/images/partner-sesimbrense.jpg', ['asesimbrense']),
+    ...withPartnerImages('A Sesimbrense', '/images/parcerias/a_sesimbrense.webp', ['asesimbrense']),
     website: 'https://restauranteasesimbrense.eatbu.com/?lang=pt',
   },
   {
@@ -310,7 +323,7 @@ export const partnerRestaurants = [
     name: 'Isaías',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('Isaías', '/images/partner-isaias.jpg', ['isaias']),
+    ...withPartnerImages('Isaías', '/images/parcerias/o_isaias.webp', ['isaias']),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d3169993-Reviews-Taberna_Isaias-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -318,7 +331,7 @@ export const partnerRestaurants = [
     name: 'Vidal Food and Drinks',
     category: 'restaurants' as const,
     type: 'bar' as const,
-    ...withPartnerImages('Vidal Food and Drinks', '/images/partner-vidal.jpg', ['vidalfoodanddrinks']),
+    ...withPartnerImages('Vidal Food and Drinks', '/images/parcerias/vidal_food_and_drinks.webp', ['vidalfoodanddrinks']),
     website: 'https://www.instagram.com/vidalfood_and_drinks/',
   },
   {
@@ -326,7 +339,7 @@ export const partnerRestaurants = [
     name: 'Restaurante Maré',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('Restaurante Maré', '/images/partner-mare.jpg', ['restaurantemare', 'mare']),
+    ...withPartnerImages('Restaurante Maré', '/images/parcerias/restaurante_mare.webp', ['restaurantemare', 'mare']),
     website: 'https://restaurantemaresesimbra.eatbu.com/?lang=pt',
   },
   {
@@ -334,7 +347,7 @@ export const partnerRestaurants = [
     name: 'Bar do Peixe - Meco',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('Bar do Peixe - Meco', '/images/partner-bardopeixe.jpg', ['bardopeixemeco', 'bardopeixe']),
+    ...withPartnerImages('Bar do Peixe - Meco', '/images/parcerias/bar_do_peixe.webp', ['bardopeixemeco', 'bardopeixe']),
     website: 'https://www.bardopeixe.pt/',
   },
   {
@@ -342,7 +355,7 @@ export const partnerRestaurants = [
     name: 'Gelatomania',
     category: 'restaurants' as const,
     type: 'gelataria' as const,
-    ...withPartnerImages('Gelatomania', '/images/partner-gelatomania.jpg'),
+    ...withPartnerImages('Gelatomania', '/images/parcerias/gelatomania.webp'),
     website: 'https://gelatomania.pt/',
   },
   {
@@ -350,7 +363,7 @@ export const partnerRestaurants = [
     name: 'Ribamar',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('Ribamar', '/images/partner-ribamar.jpg'),
+    ...withPartnerImages('Ribamar', '/images/parcerias/ribamar.webp'),
     website: 'https://www.restaurante-ribamar.pt/',
   },
   {
@@ -358,7 +371,7 @@ export const partnerRestaurants = [
     name: "Fun Friends n'Fandango",
     category: 'restaurants' as const,
     type: 'bar' as const,
-    ...withPartnerImages("Fun Friends n'Fandango", '/images/partner-fandango.jpg', ['funfriendsnfandango', 'fandango']),
+    ...withPartnerImages("Fun Friends n'Fandango", '/images/parcerias/fadango.webp', ['funfriendsnfandango', 'fandango', 'fadango']),
     website: 'https://www.instagram.com/fandangosesimbra/',
   },
   {
@@ -366,7 +379,7 @@ export const partnerRestaurants = [
     name: 'Virgilinda',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('Virgilinda', '/images/partner-virgilinda.jpg'),
+    ...withPartnerImages('Virgilinda', '/images/parcerias/virgilinda.webp'),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d7225471-Reviews-Restaurante_a_Virgilinda-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
@@ -374,7 +387,7 @@ export const partnerRestaurants = [
     name: 'O Velho e o Mar',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('O Velho e o Mar', '/images/partner-velhoeomar.jpg', ['ovelhoeomar']),
+    ...withPartnerImages('O Velho e o Mar', '/images/parcerias/o_velho_e_o_mar.webp', ['ovelhoeomar']),
     website: 'https://restauranteovelhoeomar.com/',
   },
   {
@@ -382,7 +395,7 @@ export const partnerRestaurants = [
     name: 'O Golfinho',
     category: 'restaurants' as const,
     type: 'restaurant' as const,
-    ...withPartnerImages('O Golfinho', '/images/partner-golfinho.jpg', ['ogolfinho']),
+    ...withPartnerImages('O Golfinho', '/images/parcerias/o_golfinho.webp', ['ogolfinho']),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d7372042-Reviews-O_Golfinho-Sesimbra_Setubal_District_Alentejo.html',
   },
 ];
