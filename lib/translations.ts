@@ -500,7 +500,7 @@ export const translations = {
           {
             title: 'Praias únicas',
             description:
-              'Da Praia da Califórnia ao Ribeiro do Cavalo — areias, falésias e águas cristalinas.',
+              'Da Praia da Califórnia ao Ribeiro do Cavalo, areias, falésias e águas cristalinas.',
             imageAlt: 'Praia em Sesimbra',
           },
           {
