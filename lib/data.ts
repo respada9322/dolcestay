@@ -209,6 +209,7 @@ export const partnerExperiences = [
     },
     ...withPartnerImages('Sesimbra SUP Rentals', '/images/partner-sup.jpg', ['sesimbrasuprentals']),
     instagram: 'https://www.instagram.com/sesimbrasuprentals',
+    facebook: 'https://www.facebook.com/share/1PEMJ23Qu3/?mibextid=wwXIfr',
     website: 'https://sesimbrasuprentals.com/',
   },
   {
