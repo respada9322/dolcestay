@@ -15,7 +15,7 @@ export const consumerDisputesSections: LegalSection[] = [
       'Morada: Av. da Liberdade nº58/60, 2970-635 Sesimbra',
       'Tel: +351 925 407 035',
       'Fax: +351 925 407 035',
-      'Correio eletrónico: dolcestayportugal@gmail.com',
+      'Correio eletrónico: geral@dolcestay.com',
     ],
   },
 ];

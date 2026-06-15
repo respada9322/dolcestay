@@ -9,7 +9,7 @@ const CONTACT_VALUES = {
   address: 'Av. da Liberdade nº58/60, 2970-635 Sesimbra',
   phone: '+351 925 407 035',
   fax: '+351 925 407 035',
-  email: 'dolcestayportugal@gmail.com',
+  email: 'geral@dolcestay.com',
 } as const;
 
 export function ConsumerDisputesContent() {
@@ -38,7 +38,7 @@ export function ConsumerDisputesContent() {
       icon: Mail,
       label: copy.labels.email,
       value: CONTACT_VALUES.email,
-      href: 'mailto:dolcestayportugal@gmail.com',
+      href: 'mailto:geral@dolcestay.com',
     },
   ];
 
