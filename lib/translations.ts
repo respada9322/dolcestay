@@ -495,7 +495,7 @@ export const translations = {
       sesimbra: {
         title: 'Porque escolhemos Sesimbra',
         panoramicAlt: 'Panorâmica da costa e vila de Sesimbra',
-        panoramicCaption: 'Um destino autêntico entre o mar, a serra e a aldeia.',
+        panoramicCaption: 'Um destino autêntico entre o mar, a serra e a vila.',
         cards: [
           {
             title: 'Praias únicas',
