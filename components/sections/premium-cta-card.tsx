@@ -155,10 +155,10 @@ export function PremiumCtaCard({
             <motion.div whileHover={shouldReduceMotion ? undefined : { y: -3 }} transition={{ duration: 0.25 }}>
               <Link
                 href={href}
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-[#0f4c5c] shadow-[0_8px_32px_-4px_rgba(0,0,0,0.2)] transition-shadow duration-300 hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.28)] sm:w-auto sm:px-10 sm:py-5 sm:text-lg"
+                className="group grid w-full grid-cols-[1fr_auto_1fr] items-center rounded-full bg-white px-8 py-4 text-base font-bold text-[#0f4c5c] shadow-[0_8px_32px_-4px_rgba(0,0,0,0.2)] transition-shadow duration-300 hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.28)] sm:inline-flex sm:w-auto sm:justify-center sm:gap-2 sm:px-10 sm:py-5 sm:text-lg"
               >
-                <span>{ctaLabel}</span>
-                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                <span className="col-start-2 text-center">{ctaLabel}</span>
+                <ArrowRight className="col-start-3 h-5 w-5 justify-self-end transition-transform duration-300 group-hover:translate-x-1 sm:col-start-auto sm:justify-self-auto" />
               </Link>
             </motion.div>
 
