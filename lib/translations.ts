@@ -290,7 +290,7 @@ export const translations = {
           {
             question: 'Posso usar o imóvel quando quiser?',
             answer:
-              'Sim. Pode bloquear datas no calendário para uso pessoal. Coordenamos connosco com antecedência para não afetar reservas existentes.',
+              'Sim. Pode bloquear datas no calendário para uso pessoal. Coordene connosco com antecedência para não afetar reservas existentes.',
           },
           {
             question: 'Como começo?',
