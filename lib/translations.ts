@@ -72,7 +72,7 @@ export const translations = {
         terrace: 'Terraço',
         modern: 'Apartamento Moderno',
         beach: 'Praia',
-        wifi: 'Internet Sem Fios',
+        wifi: 'Internet',
         parking: 'Estacionamento',
         aircon: 'Ar Condicionado',
         tv: 'TV',
