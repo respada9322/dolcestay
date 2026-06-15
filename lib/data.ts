@@ -364,7 +364,7 @@ export const partnerRestaurants = [
     category: 'restaurants' as const,
     type: 'restaurant' as const,
     ...withPartnerImages('Ribamar', '/images/parcerias/ribamar.webp'),
-    website: 'https://www.restaurante-ribamar.pt/',
+    website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d2173978-Reviews-Ribamar-Sesimbra_Setubal_District_Alentejo.html',
   },
   {
     id: 20,
