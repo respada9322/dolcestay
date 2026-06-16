@@ -9,6 +9,7 @@ import { BOOKING_URL, contactInfo } from '@/lib/data';
 import { HEADER_NAV_LINKS, OWNER_CTA_HREF } from '@/lib/navigation';
 import type { Language } from '@/lib/translations';
 import { SiteNavLink } from '@/components/site-nav-link';
+import { LanguageFlag } from '@/components/language-flag';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -17,12 +18,12 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-const languages: { code: Language; label: string; flag: string }[] = [
-  { code: 'pt', label: 'PT', flag: '🇵🇹' },
-  { code: 'en', label: 'EN', flag: '🇬🇧' },
-  { code: 'fr', label: 'FR', flag: '🇫🇷' },
-  { code: 'es', label: 'ES', flag: '🇪🇸' },
-  { code: 'de', label: 'DE', flag: '🇩🇪' },
+const languages: { code: Language; label: string }[] = [
+  { code: 'pt', label: 'PT' },
+  { code: 'en', label: 'EN' },
+  { code: 'fr', label: 'FR' },
+  { code: 'es', label: 'ES' },
+  { code: 'de', label: 'DE' },
 ];
 
 export function Header() {
@@ -95,7 +96,7 @@ export function Header() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="sm" className="gap-1.5 px-2.5 hover:bg-[#F8FAF8]">
-                    <span className="text-base">{currentLanguage.flag}</span>
+                    <LanguageFlag code={currentLanguage.code} />
                     <span className="text-sm font-medium">{currentLanguage.label}</span>
                     <ChevronDown className="h-3.5 w-3.5 opacity-60" />
                   </Button>
@@ -107,7 +108,7 @@ export function Header() {
                       onClick={() => setLanguage(lang.code)}
                       className={`cursor-pointer gap-2 ${language === lang.code ? 'bg-[#CFE8D2]' : ''}`}
                     >
-                      <span>{lang.flag}</span>
+                      <LanguageFlag code={lang.code} />
                       <span>{lang.label}</span>
                     </DropdownMenuItem>
                   ))}
