@@ -565,6 +565,7 @@ export const translations = {
         disputes: 'Litígios de Consumo',
       },
       copyright: 'Todos os direitos reservados.',
+      madeBy: 'Website feito pela',
       callCost: 'Custo de Chamada para a Rede Móvel Nacional',
     },
     cookieConsent: {
@@ -1218,6 +1219,7 @@ export const translations = {
         disputes: 'Consumer Disputes',
       },
       copyright: 'All rights reserved.',
+      madeBy: 'Website made by',
       callCost: 'Call cost to National Mobile Network',
     },
     cookieConsent: {
@@ -1871,6 +1873,7 @@ export const translations = {
         disputes: 'Litiges de Consommation',
       },
       copyright: 'Tous droits réservés.',
+      madeBy: 'Site web réalisé par',
       callCost: 'Coût d\'appel vers le réseau mobile national',
     },
     cookieConsent: {
@@ -2524,6 +2527,7 @@ export const translations = {
         disputes: 'Litigios de Consumo',
       },
       copyright: 'Todos los derechos reservados.',
+      madeBy: 'Sitio web hecho por',
       callCost: 'Coste de llamada a la red móvil nacional',
     },
     cookieConsent: {
@@ -3177,6 +3181,7 @@ export const translations = {
         disputes: 'Verbraucherstreitigkeiten',
       },
       copyright: 'Alle Rechte vorbehalten.',
+      madeBy: 'Website erstellt von',
       callCost: 'Anrufkosten zum nationalen Mobilfunknetz',
     },
     cookieConsent: {

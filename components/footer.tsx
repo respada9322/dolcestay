@@ -205,9 +205,20 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-4 space-y-2">
           <p className="text-center text-white/60 text-sm">
             Copyright &copy; {new Date().getFullYear()} DolceStay. {t.footer.copyright}
+          </p>
+          <p className="text-center text-white/40 text-xs">
+            {t.footer.madeBy}{' '}
+            <a
+              href="https://www.enigmawebs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-[#8DBE91] transition-colors"
+            >
+              EnigmaWebs
+            </a>
           </p>
         </div>
       </div>
