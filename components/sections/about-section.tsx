@@ -27,11 +27,11 @@ import { homeSection, HOME_SECTION_IDS, routes } from '@/lib/navigation';
 const ABOUT_IMAGES = {
   hero: '/hero.webp',
   story: '/images/about/sesimbra-aerial.png',
-  sesimbraPanorama: '/images/partners/Sesimbra_SUP_Rentals_photo4.jpg',
+  sesimbraPanorama: '/images/partners/Sesimbra_SUP_Rentals_photo4.webp',
   sesimbraCards: [
-    '/images/partners/Look_Around_Tours_photo1.jpg',
-    '/images/partners/Cipreia_photo1.jpg',
-    '/images/partners/O_Batel_photo1.jpg',
+    '/images/partners/Look_Around_Tours_photo1.webp',
+    '/images/partners/Cipreia_photo1.webp',
+    '/images/partners/O_Batel_photo1.webp',
   ],
 } as const;
 

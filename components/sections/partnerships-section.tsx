@@ -2,11 +2,13 @@
 
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ExternalLink, Instagram, Facebook, Navigation } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { partnerExperiences, partnerRestaurants } from '@/lib/data';
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
+const PARTNER_AUTOPLAY_INTERVAL = 4500;
 
 const PartnersMap = dynamic(
   () => import('@/components/partners/partners-map').then((mod) => mod.PartnersMap),
@@ -103,26 +105,142 @@ export function PartnershipsSection() {
   );
 }
 
+function PartnerImageGallery({ images, name }: { images: string[]; name: string }) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const updateState = () => {
+      setSelectedIndex(api.selectedScrollSnap());
+    };
+
+    updateState();
+    api.on('select', updateState);
+    api.on('reInit', updateState);
+
+    return () => {
+      api.off('select', updateState);
+      api.off('reInit', updateState);
+    };
+  }, [api]);
+
+  useEffect(() => {
+    if (!api || images.length <= 1 || isPaused) return;
+
+    const timer = window.setInterval(() => {
+      api.scrollNext();
+    }, PARTNER_AUTOPLAY_INTERVAL);
+
+    return () => window.clearInterval(timer);
+  }, [api, images.length, isPaused, selectedIndex]);
+
+  const handleSlideControl = useCallback(
+    (direction: 'prev' | 'next') => (event: React.MouseEvent) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (direction === 'prev') {
+        api?.scrollPrev();
+      } else {
+        api?.scrollNext();
+      }
+    },
+    [api],
+  );
+
+  if (images.length === 0) {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="text-white/80 text-sm font-medium">{name}</span>
+      </div>
+    );
+  }
+
+  if (images.length === 1) {
+    return (
+      <Image
+        src={images[0]}
+        alt={name}
+        fill
+        loading="lazy"
+        sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+    );
+  }
+
+  return (
+    <div
+      className="absolute inset-0"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setIsPaused(false);
+        }
+      }}
+    >
+      <Carousel setApi={setApi} opts={{ loop: true }} className="h-full w-full">
+        <CarouselContent className="ml-0 h-full">
+          {images.map((image, imageIndex) => (
+            <CarouselItem key={image} className="basis-full pl-0">
+              <div className="relative aspect-[16/10] w-full">
+                <Image
+                  src={image}
+                  alt={`${name} - ${imageIndex + 1}`}
+                  fill
+                  loading={imageIndex === 0 ? 'eager' : 'lazy'}
+                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious
+          type="button"
+          variant="ghost"
+          disabled={false}
+          className="left-2 top-1/2 z-20 h-10 w-10 -translate-y-1/2 rounded-none border-0 bg-transparent p-0 text-white shadow-none hover:bg-transparent hover:text-white/85 [&_svg]:size-7 [&_svg]:drop-shadow-[0_1px_4px_rgba(0,0,0,0.65)]"
+          onClick={handleSlideControl('prev')}
+        />
+        <CarouselNext
+          type="button"
+          variant="ghost"
+          disabled={false}
+          className="right-2 top-1/2 z-20 h-10 w-10 -translate-y-1/2 rounded-none border-0 bg-transparent p-0 text-white shadow-none hover:bg-transparent hover:text-white/85 [&_svg]:size-7 [&_svg]:drop-shadow-[0_1px_4px_rgba(0,0,0,0.65)]"
+          onClick={handleSlideControl('next')}
+        />
+        <div className="pointer-events-none absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-[#1F4E5F]/55 px-2.5 py-1 backdrop-blur-sm">
+          {images.map((image, index) => (
+            <span
+              key={image}
+              className={`h-1.5 rounded-full transition-all ${
+                selectedIndex === index ? 'w-4 bg-white' : 'w-1.5 bg-white/45'
+              }`}
+            />
+          ))}
+        </div>
+      </Carousel>
+    </div>
+  );
+}
+
 function PartnerExperienceCard({ partner, t, language }: { partner: typeof partnerExperiences[0]; t: any; language: string }) {
+  const galleryImages = useMemo(() => {
+    const photos = partner.images.filter((image) => /photo/i.test(image));
+    return photos.length > 0 ? photos : partner.image ? [partner.image] : [];
+  }, [partner.image, partner.images]);
+
   return (
     <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
       {/* Image */}
       <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#7EBBD3]/30 to-[#1F4E5F]/30">
-        {partner.image ? (
-          <Image
-            src={partner.image}
-            alt={partner.name}
-            fill
-            loading="lazy"
-            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-white/80 text-sm font-medium">{partner.name}</span>
-          </div>
-        )}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+        <PartnerImageGallery images={galleryImages} name={partner.name} />
+        <div className="pointer-events-none absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
       </div>
 
       {/* Content */}
