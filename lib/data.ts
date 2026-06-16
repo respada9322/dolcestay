@@ -76,6 +76,22 @@ export const featuredAccommodations = [
   },
 ];
 
+const pickAccommodationImages = (accommodationIndex: number, imageIndices: number[]) => {
+  const accommodation = featuredAccommodations[accommodationIndex];
+  return imageIndices.map((index) => accommodation.images[index] ?? accommodation.images[0]);
+};
+
+/** Gallery images per testimonial index (hero image first, then secondary). */
+export const testimonialGalleries = [
+  pickAccommodationImages(3, [0, 2, 5, 9, 12, 15]), // Casa da Falésia — vista
+  pickAccommodationImages(0, [0, 4, 8, 12, 16, 20]), // Cantinho da Gingeira — jardim
+  pickAccommodationImages(2, [0, 3, 6, 9, 12]), // Milady House — terraço & praia
+  pickAccommodationImages(3, [1, 4, 7, 11, 14]), // Casa da Falésia — localização
+  pickAccommodationImages(1, [0, 3, 6, 10, 13]), // Casa do Dário — apartamento praia
+  pickAccommodationImages(0, [1, 5, 10, 14, 18, 21]), // Cantinho da Gingeira — lagoa & jardim
+  pickAccommodationImages(2, [1, 4, 7, 10, 13]), // Milady House — Refúgio & mar
+] as const;
+
 // Build `images[]` now, so a per-partner gallery can be enabled later.
 // Matching is case-insensitive and tolerant to spaces, underscores and hyphens.
 const partnerGalleryFiles = [
