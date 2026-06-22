@@ -1,5 +1,6 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useCallback, useState } from 'react';
 import { MapPin, Phone, Mail, MessageCircle, Send, ArrowRight, Loader2 } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -11,38 +12,73 @@ import {
   mapContactFormType,
   mapContactTypeValue,
 } from '@/lib/contact/validation';
+import { buildPhonePayload, isOptionalPhoneValid } from '@/lib/contact/phone';
 import { FormStatusAlert } from '@/components/contact/form-status-alert';
+import { InternationalPhoneInput } from '@/components/contact/international-phone-input';
+import type { Value } from 'react-phone-number-input';
 
-const INITIAL_FORM = {
+const DolceStayLocationMap = dynamic(
+  () =>
+    import('@/components/maps/dolcestay-location-map').then((mod) => mod.DolceStayLocationMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex h-[min(70vh,720px)] min-h-[420px] items-center justify-center bg-[#E8F0EA] sm:min-h-[520px] md:min-h-[600px]">
+        <div className="h-10 w-10 animate-spin rounded-full border-2 border-[#8DBE91] border-t-transparent" />
+      </div>
+    ),
+  },
+);
+
+type ContactFormState = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: Value | undefined;
+  type: string;
+  message: string;
+};
+
+const INITIAL_FORM: ContactFormState = {
   firstName: '',
   lastName: '',
   email: '',
-  phone: '',
+  phone: undefined,
   type: 'reservation',
   message: '',
 };
 
 export function ContactSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
   const [formData, setFormData] = useState(INITIAL_FORM);
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [phoneTouched, setPhoneTouched] = useState(false);
 
   const buildPayload = useCallback(
-    () => ({
-      name: `${formData.firstName.trim()} ${formData.lastName.trim()}`.trim(),
-      email: formData.email.trim(),
-      phone: formData.phone.trim() || undefined,
-      contactType: mapContactTypeValue(formData.type),
-      message: formData.message.trim(),
-      formType: mapContactFormType(formData.type),
-    }),
+    () => {
+      const phoneFields = buildPhonePayload(formData.phone);
+
+      return {
+        name: `${formData.firstName.trim()} ${formData.lastName.trim()}`.trim(),
+        email: formData.email.trim(),
+        ...phoneFields,
+        contactType: mapContactTypeValue(formData.type),
+        message: formData.message.trim(),
+        formType: mapContactFormType(formData.type),
+      };
+    },
     [formData],
   );
 
   const { errorMessage, submit, reset, isSubmitting, isSuccess } =
     useContactForm({
       buildPayload,
-      onSuccess: () => setFormData(INITIAL_FORM),
+      onSuccess: () => {
+        setFormData(INITIAL_FORM);
+        setPhoneError(null);
+        setPhoneTouched(false);
+      },
     });
 
   const handleChange = (
@@ -57,6 +93,42 @@ export function ContactSection() {
   const handleSendAnother = () => {
     reset();
     setFormData(INITIAL_FORM);
+    setPhoneError(null);
+    setPhoneTouched(false);
+  };
+
+  const handlePhoneChange = (value: Value | undefined) => {
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
+    }));
+
+    if (phoneTouched) {
+      setPhoneError(
+        value && !isOptionalPhoneValid(value) ? t.contact.form.phoneInvalid : null,
+      );
+    }
+  };
+
+  const handlePhoneBlur = () => {
+    setPhoneTouched(true);
+    setPhoneError(
+      formData.phone && !isOptionalPhoneValid(formData.phone)
+        ? t.contact.form.phoneInvalid
+        : null,
+    );
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    if (formData.phone && !isOptionalPhoneValid(formData.phone)) {
+      e.preventDefault();
+      setPhoneTouched(true);
+      setPhoneError(t.contact.form.phoneInvalid);
+      return;
+    }
+
+    setPhoneError(null);
+    await submit(e);
   };
 
   const submitLabel = isSubmitting ? t.common.submitting : t.contact.form.submit;
@@ -186,7 +258,7 @@ export function ContactSection() {
               </div>
             ) : (
               <form
-                onSubmit={submit}
+                onSubmit={handleFormSubmit}
                 className="relative bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-[#E5E7EB] space-y-6"
                 noValidate
               >
@@ -245,15 +317,23 @@ export function ContactSection() {
                   <label htmlFor="phone" className="block text-sm font-semibold text-[#1F4E5F] mb-2">
                     {t.contact.form.phone}
                   </label>
-                  <input
-                    type="tel"
+                  <InternationalPhoneInput
                     id="phone"
-                    name="phone"
                     value={formData.phone}
-                    onChange={handleChange}
+                    onChange={handlePhoneChange}
+                    onBlur={handlePhoneBlur}
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3.5 border border-[#E5E7EB] rounded-xl focus:ring-2 focus:ring-[#8DBE91] focus:border-transparent outline-none transition-all bg-[#F8FAF8] text-[#111111] disabled:opacity-60"
+                    invalid={Boolean(phoneError)}
+                    language={language}
+                    defaultCountry="PT"
+                    searchPlaceholder={t.contact.form.phoneSearch}
+                    emptyMessage={t.contact.form.phoneSearchEmpty}
                   />
+                  {phoneError && (
+                    <p className="mt-2 text-sm text-[#EF4444]" role="alert">
+                      {phoneError}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -322,18 +402,16 @@ export function ContactSection() {
           rel="noopener noreferrer"
           className="absolute right-4 top-4 z-10 rounded-full border border-white/30 bg-white/90 px-3 py-1 text-xs font-semibold text-[#1F4E5F] shadow-lg transition-colors hover:bg-white"
         >
-          Abrir no Google Maps
+          {t.partnerships.openInGoogleMaps}
         </a>
 
-        <iframe
-          title="Mapa de DolceStay em Sesimbra"
-          src="https://www.google.com/maps?q=Av.+da+Liberdade+58/60,+2970-635+Sesimbra,+Portugal&z=15&t=k&output=embed"
-          width="100%"
-          height="720"
-          loading="lazy"
-          referrerPolicy="strict-origin-when-cross-origin"
-          className="block h-[min(70vh,720px)] min-h-[420px] w-full border-0 sm:min-h-[520px] md:min-h-[600px]"
-        />
+        <div className="relative h-[min(70vh,720px)] min-h-[420px] w-full sm:min-h-[520px] md:min-h-[600px]">
+          <DolceStayLocationMap
+            unavailableDescription={t.partnerships.mapUnavailableDescription}
+            unavailableLoadError={t.partnerships.mapUnavailableLoadError}
+            unavailableReferrerError={t.partnerships.mapUnavailableReferrerError}
+          />
+        </div>
       </motion.div>
     </section>
   );

@@ -536,6 +536,9 @@ export const translations = {
         lastName: 'Apelido',
         email: 'Email',
         phone: 'Telefone',
+        phoneInvalid: 'Introduza um número de telefone válido para o país selecionado.',
+        phoneSearch: 'Pesquisar país...',
+        phoneSearchEmpty: 'Nenhum país encontrado.',
         type: 'Tipo de contacto',
         types: {
           reservation: 'Reserva',
@@ -1189,6 +1192,9 @@ export const translations = {
         lastName: 'Last Name',
         email: 'Email',
         phone: 'Phone',
+        phoneInvalid: 'Enter a valid phone number for the selected country.',
+        phoneSearch: 'Search country...',
+        phoneSearchEmpty: 'No country found.',
         type: 'Contact Type',
         types: {
           reservation: 'Reservation',
@@ -1842,6 +1848,9 @@ export const translations = {
         lastName: 'Nom',
         email: 'Email',
         phone: 'Téléphone',
+        phoneInvalid: 'Saisissez un numéro de téléphone valide pour le pays sélectionné.',
+        phoneSearch: 'Rechercher un pays...',
+        phoneSearchEmpty: 'Aucun pays trouvé.',
         type: 'Type de contact',
         types: {
           reservation: 'Réservation',
@@ -2495,6 +2504,9 @@ export const translations = {
         lastName: 'Apellido',
         email: 'Email',
         phone: 'Teléfono',
+        phoneInvalid: 'Introduzca un número de teléfono válido para el país seleccionado.',
+        phoneSearch: 'Buscar país...',
+        phoneSearchEmpty: 'Ningún país encontrado.',
         type: 'Tipo de contacto',
         types: {
           reservation: 'Reserva',
@@ -3148,6 +3160,9 @@ export const translations = {
         lastName: 'Nachname',
         email: 'E-Mail',
         phone: 'Telefon',
+        phoneInvalid: 'Geben Sie eine gültige Telefonnummer für das ausgewählte Land ein.',
+        phoneSearch: 'Land suchen...',
+        phoneSearchEmpty: 'Kein Land gefunden.',
         type: 'Kontaktart',
         types: {
           reservation: 'Reservierung',

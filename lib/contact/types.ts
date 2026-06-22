@@ -12,6 +12,10 @@ export type ContactPayload = {
   name: string;
   email: string;
   phone?: string;
+  countryCode?: string;
+  countryIso?: string;
+  formattedPhone?: string;
+  rawPhone?: string;
   contactType?: string;
   propertyLocation?: string;
   propertyType?: string;

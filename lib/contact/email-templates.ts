@@ -34,7 +34,7 @@ function buildFieldRows(data: ContactPayload): string {
     formatOptionalRow('Página de origem', data.sourcePage),
     formatOptionalRow('Nome', data.name),
     formatOptionalRow('Email', data.email),
-    formatOptionalRow('Telefone', data.phone),
+    formatOptionalRow('Telefone', data.formattedPhone ?? data.phone),
     formatOptionalRow('Tipo de contacto', data.contactType),
     formatOptionalRow('Localização do imóvel', data.propertyLocation),
     formatOptionalRow('Tipo de imóvel', data.propertyType),
@@ -84,7 +84,9 @@ export function buildInternalEmailText(data: ContactPayload): string {
     data.sourcePage ? `Página: ${data.sourcePage}` : '',
     `Nome: ${data.name}`,
     `Email: ${data.email}`,
-    data.phone ? `Telefone: ${data.phone}` : '',
+    data.formattedPhone ?? data.phone
+      ? `Telefone: ${data.formattedPhone ?? data.phone}`
+      : '',
     data.contactType ? `Tipo de contacto: ${data.contactType}` : '',
     data.propertyLocation ? `Localização: ${data.propertyLocation}` : '',
     data.propertyType ? `Tipo de imóvel: ${data.propertyType}` : '',

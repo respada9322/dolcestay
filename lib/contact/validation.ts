@@ -1,4 +1,6 @@
+import { isValidPhoneNumber } from 'libphonenumber-js';
 import { z } from 'zod';
+import { PHONE_VALIDATION_ERROR } from './phone';
 import { FORM_TYPES, type ContactPayload } from './types';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -34,6 +36,10 @@ export const contactPayloadSchema = z
       .max(FIELD_LIMITS.email)
       .refine((v) => EMAIL_REGEX.test(v), 'Email inválido.'),
     phone: z.string().trim().max(FIELD_LIMITS.phone).optional(),
+    countryCode: z.string().trim().max(6).optional(),
+    countryIso: z.string().trim().max(2).optional(),
+    formattedPhone: z.string().trim().max(FIELD_LIMITS.phone).optional(),
+    rawPhone: z.string().trim().max(FIELD_LIMITS.phone).optional(),
     contactType: z.string().trim().max(FIELD_LIMITS.contactType).optional(),
     propertyLocation: z
       .string()
@@ -59,6 +65,16 @@ export const contactPayloadSchema = z
         message: 'Mensagem é obrigatória.',
         path: ['message'],
       });
+    }
+
+    if (data.phone && data.phone.length > 0) {
+      if (!data.phone.startsWith('+') || !isValidPhoneNumber(data.phone)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: PHONE_VALIDATION_ERROR,
+          path: ['phone'],
+        });
+      }
     }
   });
 
