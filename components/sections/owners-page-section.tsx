@@ -98,7 +98,6 @@ const whyIcons: LucideIcon[] = [
   MessageCircle,
   TrendingUp,
   Users,
-  BarChart3,
 ];
 
 const fadeUp = {
@@ -364,13 +363,13 @@ export function OwnersPageSection() {
       </section>
 
       {/* Why us */}
-      <section className="bg-white py-20 lg:py-28">
+      <section className="bg-white py-16 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl leading-tight text-[#1F4E5F] lg:text-4xl xl:text-[2.75rem]">
+            <h2 className="font-serif text-2xl leading-tight text-[#1F4E5F] sm:text-3xl lg:text-4xl xl:text-[2.75rem]">
               {page.whyUs.title}
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[#6B7280]">
+            <p className="mt-4 text-base leading-relaxed text-[#6B7280] sm:mt-6 sm:text-lg">
               {page.whyUs.description}
             </p>
           </div>
@@ -380,20 +379,32 @@ export function OwnersPageSection() {
             whileInView={shouldReduceMotion ? {} : 'visible'}
             viewport={{ once: true, amount: 0.2 }}
             variants={stagger}
-            className="mx-auto mt-14 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+            className="mx-auto mt-10 grid max-w-5xl gap-3 sm:mt-14 sm:grid-cols-4 sm:gap-4 lg:grid-cols-6 lg:gap-6"
           >
             {page.whyUs.points.map((point, index) => {
               const Icon = whyIcons[index];
+              const total = page.whyUs.points.length;
+              const isLastAloneOnSm = index === total - 1 && total % 2 === 1;
+              const isLastPairStartOnLg = index === total - 2 && total % 3 === 2;
+
               return (
                 <motion.div
                   key={point}
                   variants={cardReveal}
-                  className="group flex items-start gap-4 rounded-2xl border border-[#E8EDEA] bg-[#F8FAF8] p-6 transition-all hover:border-[#CFE8D2] hover:bg-white hover:shadow-[0_8px_32px_rgba(31,78,95,0.08)]"
+                  className={[
+                    'group flex items-start gap-3 rounded-2xl border border-[#E8EDEA] bg-[#F8FAF8] p-4 transition-all hover:border-[#CFE8D2] hover:bg-white hover:shadow-[0_8px_32px_rgba(31,78,95,0.08)] sm:col-span-2 sm:gap-4 sm:p-5 lg:col-span-2 lg:p-6',
+                    isLastAloneOnSm && 'sm:col-start-2',
+                    isLastPairStartOnLg && 'lg:col-start-2',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#CFE8D2] transition-colors group-hover:bg-[#8DBE91]">
-                    <Icon className="h-6 w-6 text-[#1F4E5F] group-hover:text-white transition-colors" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#CFE8D2] transition-colors group-hover:bg-[#8DBE91] sm:h-12 sm:w-12">
+                    <Icon className="h-5 w-5 text-[#1F4E5F] transition-colors group-hover:text-white sm:h-6 sm:w-6" />
                   </div>
-                  <span className="pt-2 text-base font-semibold text-[#1F4E5F]">{point}</span>
+                  <span className="pt-1.5 text-sm font-semibold text-[#1F4E5F] sm:pt-2 sm:text-base">
+                    {point}
+                  </span>
                 </motion.div>
               );
             })}

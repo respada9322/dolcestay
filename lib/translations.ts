@@ -204,7 +204,6 @@ export const translations = {
           'Comunicação rápida',
           'Estratégia de preço',
           'Experiência do hóspede',
-          'Relatórios claros',
         ],
       },
       services: {
@@ -924,7 +923,6 @@ export const translations = {
           'Fast communication',
           'Pricing strategy',
           'Guest experience',
-          'Clear reporting',
         ],
       },
       services: {
@@ -1578,7 +1576,6 @@ export const translations = {
           'Communication rapide',
           'Stratégie tarifaire',
           'Expérience client',
-          'Rapports clairs',
         ],
       },
       services: {
@@ -2232,7 +2229,6 @@ export const translations = {
           'Comunicación rápida',
           'Estrategia de precios',
           'Experiencia del huésped',
-          'Informes claros',
         ],
       },
       services: {
@@ -2886,7 +2882,6 @@ export const translations = {
           'Schnelle Kommunikation',
           'Preisstrategie',
           'Gästeerlebnis',
-          'Klare Berichte',
         ],
       },
       services: {
