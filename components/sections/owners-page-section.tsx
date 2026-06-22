@@ -296,14 +296,14 @@ export function OwnersPageSection() {
       </section>
 
       {/* Trust metrics */}
-      <section className="border-y border-[#E8EDEA] bg-[#F8FAF8] py-14 lg:py-20">
+      <section className="border-y border-[#E8EDEA] bg-[#F8FAF8] py-10 sm:py-14 lg:py-20">
         <div ref={metricsRef} className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={shouldReduceMotion ? false : 'hidden'}
             whileInView={shouldReduceMotion ? {} : 'visible'}
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeUp}
-            className="mx-auto mb-12 max-w-3xl text-center"
+            className="mx-auto mb-6 max-w-3xl text-center sm:mb-12"
           >
             <p className="mb-3 text-[11px] font-semibold tracking-[0.2em] text-[#1F4E5F]/80 uppercase">
               {page.trustMetrics.badge}
@@ -321,7 +321,7 @@ export function OwnersPageSection() {
             whileInView={shouldReduceMotion ? {} : 'visible'}
             viewport={{ once: true, amount: 0.2 }}
             variants={stagger}
-            className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6"
+            className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6"
           >
             {metricKeys.map((key, index) => {
               const metric = OWNERS_PAGE_METRICS[key];
@@ -337,12 +337,12 @@ export function OwnersPageSection() {
                       ? {}
                       : { y: -5, transition: { duration: 0.25 } }
                   }
-                  className="group rounded-[24px] border border-[#E8EDEA] bg-white p-7 shadow-[0_4px_28px_rgba(31,78,95,0.05)] transition-[box-shadow,border-color] duration-300 hover:border-[#CFE8D2] hover:shadow-[0_14px_44px_rgba(31,78,95,0.1)] lg:p-8"
+                  className="group rounded-2xl border border-[#E8EDEA] bg-white p-3.5 text-center shadow-[0_4px_28px_rgba(31,78,95,0.05)] transition-[box-shadow,border-color] duration-300 hover:border-[#CFE8D2] hover:shadow-[0_14px_44px_rgba(31,78,95,0.1)] sm:rounded-[24px] sm:p-7 sm:text-left lg:p-8"
                 >
-                  <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-[#E8F4EA] transition-transform duration-300 group-hover:scale-105">
-                    <Icon className="h-5 w-5 text-[#1F4E5F]" strokeWidth={1.75} />
+                  <div className="mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#E8F4EA] transition-transform duration-300 group-hover:scale-105 sm:mx-0 sm:mb-6 sm:h-11 sm:w-11 sm:rounded-xl">
+                    <Icon className="h-4 w-4 text-[#1F4E5F] sm:h-5 sm:w-5" strokeWidth={1.75} />
                   </div>
-                  <p className="text-3xl font-bold tracking-tight text-[#1F4E5F] lg:text-[2rem]">
+                  <p className="text-xl font-bold tracking-tight text-[#1F4E5F] sm:text-3xl lg:text-[2rem]">
                     {shouldReduceMotion || metric.counterType === 'static' ? (
                       <span className="tabular-nums">{metric.value}</span>
                     ) : (
@@ -354,7 +354,9 @@ export function OwnersPageSection() {
                       />
                     )}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">{label}</p>
+                  <p className="mt-1 text-[11px] leading-snug text-[#6B7280] sm:mt-2 sm:text-sm sm:leading-relaxed">
+                    {label}
+                  </p>
                 </motion.article>
               );
             })}
