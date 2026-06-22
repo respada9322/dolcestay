@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Google Maps setup
 
-The partners map on `/parcerias` uses the **Google Maps JavaScript API** via `@react-google-maps/api`.
+The partners map on `/atividades` uses the **Google Maps JavaScript API** via `@react-google-maps/api`.
 
 1. Create an API key in [Google Cloud Console](https://console.cloud.google.com/google/maps-apis).
 2. Enable **Maps JavaScript API** for the project.

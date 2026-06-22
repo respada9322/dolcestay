@@ -117,7 +117,8 @@ export function mapContactTypeValue(type: string): string {
   const map: Record<string, string> = {
     reservation: 'Reserva',
     owner: 'Proprietário',
-    partnership: 'Parceria',
+    activity: 'Atividade',
+    partnership: 'Atividade',
     other: 'Geral',
   };
   return map[type] ?? type;
@@ -127,6 +128,7 @@ export function mapContactFormType(type: string): ContactPayload['formType'] {
   const map: Record<string, ContactPayload['formType']> = {
     reservation: 'booking',
     owner: 'owner-lead',
+    activity: 'contact',
     partnership: 'contact',
     other: 'general',
   };

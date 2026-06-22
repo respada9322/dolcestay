@@ -7,7 +7,7 @@ import { ContactSection } from '@/components/sections/contact-section';
 export const metadata: Metadata = {
   title: 'Contactos | DolceStay',
   description:
-    'Entre em contacto com a DolceStay em Sesimbra. Telefone, email, WhatsApp e formulário para reservas, parcerias e gestão de imóveis.',
+    'Entre em contacto com a DolceStay em Sesimbra. Telefone, email, WhatsApp e formulário para reservas, atividades e gestão de imóveis.',
   robots: { index: true, follow: true },
 };
 

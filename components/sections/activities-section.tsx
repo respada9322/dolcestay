@@ -22,22 +22,22 @@ const PartnersMap = dynamic(
   },
 );
 
-export function PartnershipsSection() {
+export function ActivitiesSection() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="partnerships" className="pt-20 pb-0 lg:pt-28 bg-white scroll-mt-20">
+    <section id="activities" className="pt-20 pb-0 lg:pt-28 bg-white scroll-mt-20">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-14 lg:mb-20">
           <span className="inline-block px-4 py-1.5 bg-[#CFE8D2] text-[#1F4E5F] text-sm font-semibold rounded-full mb-4">
-            {t.partnerships.subtitle}
+            {t.activities.subtitle}
           </span>
           <h1 className="font-serif text-3xl lg:text-4xl xl:text-5xl text-[#1F4E5F] mb-6">
-            {t.partnerships.title}
+            {t.activities.title}
           </h1>
           <p className="text-[#6B7280] max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
-            {t.partnerships.description}
+            {t.activities.description}
           </p>
         </div>
 
@@ -49,10 +49,10 @@ export function PartnershipsSection() {
             </div>
             <div>
               <h3 className="font-semibold text-lg text-[#1F4E5F] mb-2">
-                {t.partnerships.exclusiveTitle}
+                {t.activities.exclusiveTitle}
               </h3>
               <p className="text-[#6B7280]">
-                {t.partnerships.exclusiveDescription}
+                {t.activities.exclusiveDescription}
               </p>
             </div>
           </div>
@@ -61,7 +61,7 @@ export function PartnershipsSection() {
         {/* Tourist Experiences */}
         <div className="mb-20">
           <h3 className="font-serif text-2xl lg:text-3xl text-[#1F4E5F] mb-10 text-center">
-            {t.partnerships.categories.experiences}
+            {t.activities.categories.experiences}
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {partnerExperiences.map((partner) => (
@@ -73,14 +73,14 @@ export function PartnershipsSection() {
         {/* Restaurants & Bars */}
         <div className="mb-20">
           <h3 className="font-serif text-2xl lg:text-3xl text-[#1F4E5F] mb-10 text-center">
-            {t.partnerships.categories.restaurants}
+            {t.activities.categories.restaurants}
           </h3>
           <PartnerRestaurantsCarousel partners={partnerRestaurants} t={t} />
         </div>
 
         {/* Map title */}
         <h3 className="font-serif text-2xl lg:text-3xl text-[#1F4E5F] mb-8 text-center">
-          {t.partnerships.mapTitle}
+          {t.activities.mapTitle}
         </h3>
       </div>
 
@@ -88,16 +88,16 @@ export function PartnershipsSection() {
       <div className="relative w-full overflow-hidden">
         <div className="relative h-[min(70vh,720px)] min-h-[420px] w-full bg-[#E5E7EB] sm:min-h-[520px] md:min-h-[600px]">
           <PartnersMap
-            locationLabel={t.partnerships.mapLocation}
-            partnersCountLabel={t.partnerships.mapPartnersCount}
-            openInGoogleMapsLabel={t.partnerships.openInGoogleMaps}
-            categoryExperiencesLabel={t.partnerships.categories.experiences}
-            categoryRestaurantsLabel={t.partnerships.categories.restaurants}
-            unavailableTitle={t.partnerships.mapUnavailableTitle}
-            unavailableDescription={t.partnerships.mapUnavailableDescription}
-            unavailableRestart={t.partnerships.mapUnavailableRestart}
-            unavailableLoadError={t.partnerships.mapUnavailableLoadError}
-            unavailableReferrerError={t.partnerships.mapUnavailableReferrerError}
+            locationLabel={t.activities.mapLocation}
+            partnersCountLabel={t.activities.mapPartnersCount}
+            openInGoogleMapsLabel={t.activities.openInGoogleMaps}
+            categoryExperiencesLabel={t.activities.categories.experiences}
+            categoryRestaurantsLabel={t.activities.categories.restaurants}
+            unavailableTitle={t.activities.mapUnavailableTitle}
+            unavailableDescription={t.activities.mapUnavailableDescription}
+            unavailableRestart={t.activities.mapUnavailableRestart}
+            unavailableLoadError={t.activities.mapUnavailableLoadError}
+            unavailableReferrerError={t.activities.mapUnavailableReferrerError}
           />
         </div>
       </div>
@@ -289,7 +289,7 @@ function PartnerExperienceCard({ partner, t, language }: { partner: typeof partn
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F4E5F] text-white text-sm font-semibold rounded-full hover:bg-[#163B48] transition-colors shadow-md"
           >
-            {t.partnerships.learnMore}
+            {t.activities.learnMore}
             <ExternalLink className="h-4 w-4" />
           </a>
         </div>
@@ -323,7 +323,7 @@ function PartnerRestaurantCard({ partner, t }: { partner: typeof partnerRestaura
       <div className="bg-gradient-to-b from-[#E5F2E8] to-[#DDEDE1] px-5 py-4">
         <h4 className="mb-1 line-clamp-1 text-base font-bold text-[#1F4E5F] transition-colors group-hover:text-[#18404F]">{partner.name}</h4>
         <p className="text-sm text-[#1F4E5F]/70">
-          {t.partnerships.typeLabels[partner.type as keyof typeof t.partnerships.typeLabels]}
+          {t.activities.typeLabels[partner.type as keyof typeof t.activities.typeLabels]}
         </p>
       </div>
     </a>
@@ -385,7 +385,7 @@ function PartnerRestaurantsCarousel({ partners, t }: { partners: typeof partnerR
               className={`h-2 rounded-full transition-all ${
                 selectedIndex === index ? 'w-6 bg-[#1F4E5F]' : 'w-2 bg-[#1F4E5F]/20 hover:bg-[#1F4E5F]/40'
               }`}
-              aria-label={`${t.partnerships.categories.restaurants} ${index + 1}`}
+              aria-label={`${t.activities.categories.restaurants} ${index + 1}`}
             />
           ))}
         </div>

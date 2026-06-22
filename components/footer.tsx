@@ -26,7 +26,7 @@ export function Footer() {
     { href: routes.owners, label: t.nav.owners },
     ...HEADER_NAV_LINKS.filter(
       (item) =>
-        item.key === 'partnerships' ||
+        item.key === 'activities' ||
         item.key === 'about' ||
         item.key === 'contact',
     ).map((item) => ({ href: item.href, label: t.nav[item.key] })),

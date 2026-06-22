@@ -17,7 +17,7 @@ export function homeSection(sectionId: HomeSectionId | string): string {
 export const routes = {
   home: '/',
   owners: '/proprietarios',
-  partnerships: '/parcerias',
+  activities: '/atividades',
   about: '/quem-somos',
   contact: '/contactos',
   terms: '/termos-e-condicoes',
@@ -37,7 +37,7 @@ export type HeaderNavKey =
   | 'accommodations'
   | 'services'
   | 'owners'
-  | 'partnerships'
+  | 'activities'
   | 'about'
   | 'contact';
 
@@ -50,7 +50,7 @@ export const HEADER_NAV_LINKS: { key: HeaderNavKey; href: string }[] = [
   },
   { key: 'services', href: homeSection(HOME_SECTION_IDS.services) },
   { key: 'owners', href: routes.owners },
-  { key: 'partnerships', href: routes.partnerships },
+  { key: 'activities', href: routes.activities },
   { key: 'about', href: routes.about },
   { key: 'contact', href: routes.contact },
 ];

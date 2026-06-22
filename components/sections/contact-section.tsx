@@ -350,7 +350,7 @@ export function ContactSection() {
                   >
                     <option value="reservation">{t.contact.form.types.reservation}</option>
                     <option value="owner">{t.contact.form.types.owner}</option>
-                    <option value="partnership">{t.contact.form.types.partnership}</option>
+                    <option value="activity">{t.contact.form.types.activity}</option>
                     <option value="other">{t.contact.form.types.other}</option>
                   </select>
                 </div>
@@ -402,14 +402,14 @@ export function ContactSection() {
           rel="noopener noreferrer"
           className="absolute right-4 top-4 z-10 rounded-full border border-white/30 bg-white/90 px-3 py-1 text-xs font-semibold text-[#1F4E5F] shadow-lg transition-colors hover:bg-white"
         >
-          {t.partnerships.openInGoogleMaps}
+          {t.activities.openInGoogleMaps}
         </a>
 
         <div className="relative h-[min(70vh,720px)] min-h-[420px] w-full sm:min-h-[520px] md:min-h-[600px]">
           <DolceStayLocationMap
-            unavailableDescription={t.partnerships.mapUnavailableDescription}
-            unavailableLoadError={t.partnerships.mapUnavailableLoadError}
-            unavailableReferrerError={t.partnerships.mapUnavailableReferrerError}
+            unavailableDescription={t.activities.mapUnavailableDescription}
+            unavailableLoadError={t.activities.mapUnavailableLoadError}
+            unavailableReferrerError={t.activities.mapUnavailableReferrerError}
           />
         </div>
       </motion.div>
