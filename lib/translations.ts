@@ -141,7 +141,7 @@ export const translations = {
         dedicatedTeam: 'Equipa dedicada',
         premiumManagement: 'Gestão premium',
       },
-      ctaDisclaimer: 'Sem compromisso inicial. Resposta em menos de 24h.',
+      ctaDisclaimer: 'Sem compromisso inicial.',
       benefits: {
         fullManagement: 'Gestão completa',
         visibility: 'Mais visibilidade',
@@ -180,7 +180,7 @@ export const translations = {
         imageAlt: 'Alojamento premium em Sesimbra com vista para a costa',
         floatingCard: {
           title: 'DolceStay',
-          items: ['Gestão completa', 'Apoio local', 'Resposta em menos de 24h'],
+          items: ['Gestão completa', 'Apoio local'],
         },
       },
       trustMetrics: {
@@ -319,14 +319,14 @@ export const translations = {
         submit: 'Pedir Avaliação Gratuita',
         submitting: 'A enviar...',
         successTitle: 'Pedido enviado!',
-        successMessage: 'Entraremos em contacto consigo em menos de 24 horas.',
+        successMessage: 'Entraremos em contacto consigo em breve.',
       },
       finalCta: {
         title: 'Pronto para rentabilizar o seu imóvel?',
         description:
           'Fale connosco e descubra como podemos ajudar a transformar o seu alojamento numa fonte de rendimento consistente.',
         button: 'Ligue-nos',
-        pills: ['Sem compromisso', 'Resposta em 24h', 'Equipa local'],
+        pills: ['Sem compromisso', 'Equipa local'],
         disclaimer: 'Avaliação gratuita e personalizada para o seu imóvel.',
       },
     },
@@ -521,7 +521,7 @@ export const translations = {
         description: 'Descubra quanto pode ganhar com uma gestão profissional.',
         button: 'Agendar Conversa',
         pills: ['Sem compromisso', 'Equipa local', 'Avaliação personalizada'],
-        disclaimer: 'Resposta em menos de 24 horas.',
+        disclaimer: 'Avaliação gratuita e personalizada para o seu imóvel.',
       },
     },
     contact: {
@@ -863,7 +863,7 @@ export const translations = {
         dedicatedTeam: 'Dedicated team',
         premiumManagement: 'Premium management',
       },
-      ctaDisclaimer: 'No initial commitment. Response in less than 24h.',
+      ctaDisclaimer: 'No initial commitment.',
       benefits: {
         fullManagement: 'Complete management',
         visibility: 'More visibility',
@@ -902,7 +902,7 @@ export const translations = {
         imageAlt: 'Premium accommodation in Sesimbra with coastal views',
         floatingCard: {
           title: 'DolceStay',
-          items: ['Full management', 'Local support', 'Response within 24h'],
+          items: ['Full management', 'Local support'],
         },
       },
       trustMetrics: {
@@ -976,13 +976,13 @@ export const translations = {
         submit: 'Request Free Assessment',
         submitting: 'Sending...',
         successTitle: 'Request sent!',
-        successMessage: 'We will contact you within 24 hours.',
+        successMessage: 'We will contact you shortly.',
       },
       finalCta: {
         title: 'Ready to monetize your property?',
         description: 'Talk to us and discover how we can help turn your rental into a consistent source of income.',
         button: 'Call Us',
-        pills: ['No commitment', 'Response within 24h', 'Local team'],
+        pills: ['No commitment', 'Local team'],
         disclaimer: 'Free, personalized assessment for your property.',
       },
     },
@@ -1177,7 +1177,7 @@ export const translations = {
         description: 'Find out how much you could earn with professional management.',
         button: 'Schedule a Call',
         pills: ['No commitment', 'Local team', 'Personalized assessment'],
-        disclaimer: 'Response within 24 hours.',
+        disclaimer: 'Free, personalized assessment for your property.',
       },
     },
     contact: {
@@ -1519,7 +1519,7 @@ export const translations = {
         dedicatedTeam: 'Équipe dédiée',
         premiumManagement: 'Gestion premium',
       },
-      ctaDisclaimer: 'Sans engagement initial. Réponse en moins de 24h.',
+      ctaDisclaimer: 'Sans engagement initial.',
       benefits: {
         fullManagement: 'Gestion complète',
         visibility: 'Plus de visibilité',
@@ -1558,7 +1558,7 @@ export const translations = {
         imageAlt: 'Hébergement premium à Sesimbra avec vue sur la côte',
         floatingCard: {
           title: 'DolceStay',
-          items: ['Gestion complète', 'Support local', 'Réponse sous 24h'],
+          items: ['Gestion complète', 'Support local'],
         },
       },
       trustMetrics: {
@@ -1632,13 +1632,13 @@ export const translations = {
         submit: 'Demander une Évaluation Gratuite',
         submitting: 'Envoi en cours...',
         successTitle: 'Demande envoyée !',
-        successMessage: 'Nous vous contacterons dans les 24 heures.',
+        successMessage: 'Nous vous contacterons prochainement.',
       },
       finalCta: {
         title: 'Prêt à rentabiliser votre bien ?',
         description: 'Parlez-nous et découvrez comment transformer votre location en source de revenus constante.',
         button: 'Appelez-nous',
-        pills: ['Sans engagement', 'Réponse sous 24h', 'Équipe locale'],
+        pills: ['Sans engagement', 'Équipe locale'],
         disclaimer: 'Évaluation gratuite et personnalisée pour votre bien.',
       },
     },
@@ -1833,7 +1833,7 @@ export const translations = {
         description: 'Découvrez combien vous pourriez gagner avec une gestion professionnelle.',
         button: 'Planifier un appel',
         pills: ['Sans engagement', 'Équipe locale', 'Évaluation personnalisée'],
-        disclaimer: 'Réponse sous 24 heures.',
+        disclaimer: 'Évaluation gratuite et personnalisée pour votre bien.',
       },
     },
     contact: {
@@ -2175,7 +2175,7 @@ export const translations = {
         dedicatedTeam: 'Equipo dedicado',
         premiumManagement: 'Gestión premium',
       },
-      ctaDisclaimer: 'Sin compromiso inicial. Respuesta en menos de 24h.',
+      ctaDisclaimer: 'Sin compromiso inicial.',
       benefits: {
         fullManagement: 'Gestión completa',
         visibility: 'Mayor visibilidad',
@@ -2214,7 +2214,7 @@ export const translations = {
         imageAlt: 'Alojamiento premium en Sesimbra con vistas a la costa',
         floatingCard: {
           title: 'DolceStay',
-          items: ['Gestión completa', 'Apoyo local', 'Respuesta en menos de 24h'],
+          items: ['Gestión completa', 'Apoyo local'],
         },
       },
       trustMetrics: {
@@ -2288,13 +2288,13 @@ export const translations = {
         submit: 'Solicitar Evaluación Gratuita',
         submitting: 'Enviando...',
         successTitle: '¡Solicitud enviada!',
-        successMessage: 'Nos pondremos en contacto en menos de 24 horas.',
+        successMessage: 'Nos pondremos en contacto en breve.',
       },
       finalCta: {
         title: '¿Listo para rentabilizar su inmueble?',
         description: 'Hable con nosotros y descubra cómo transformar su alojamiento en una fuente de ingresos constante.',
         button: 'Llámenos',
-        pills: ['Sin compromiso', 'Respuesta en 24h', 'Equipo local'],
+        pills: ['Sin compromiso', 'Equipo local'],
         disclaimer: 'Evaluación gratuita y personalizada para su inmueble.',
       },
     },
@@ -2489,7 +2489,7 @@ export const translations = {
         description: 'Descubra cuánto puede facturar con una gestión profesional.',
         button: 'Agendar conversación',
         pills: ['Sin compromiso', 'Equipo local', 'Evaluación personalizada'],
-        disclaimer: 'Respuesta en menos de 24 horas.',
+        disclaimer: 'Evaluación gratuita y personalizada para su inmueble.',
       },
     },
     contact: {
@@ -2831,7 +2831,7 @@ export const translations = {
         dedicatedTeam: 'Dediziertes Team',
         premiumManagement: 'Premium-Verwaltung',
       },
-      ctaDisclaimer: 'Keine anfängliche Verpflichtung. Antwort in weniger als 24 Stunden.',
+      ctaDisclaimer: 'Keine anfängliche Verpflichtung.',
       benefits: {
         fullManagement: 'Komplette Verwaltung',
         visibility: 'Mehr Sichtbarkeit',
@@ -2870,7 +2870,7 @@ export const translations = {
         imageAlt: 'Premium-Unterkunft in Sesimbra mit Küstenblick',
         floatingCard: {
           title: 'DolceStay',
-          items: ['Komplette Verwaltung', 'Lokaler Support', 'Antwort innerhalb von 24h'],
+          items: ['Komplette Verwaltung', 'Lokaler Support'],
         },
       },
       trustMetrics: {
@@ -2944,13 +2944,13 @@ export const translations = {
         submit: 'Kostenlose Bewertung Anfordern',
         submitting: 'Wird gesendet...',
         successTitle: 'Anfrage gesendet!',
-        successMessage: 'Wir melden uns innerhalb von 24 Stunden bei Ihnen.',
+        successMessage: 'Wir melden uns in Kürze bei Ihnen.',
       },
       finalCta: {
         title: 'Bereit, Ihre Immobilie zu monetarisieren?',
         description: 'Sprechen Sie mit uns und erfahren Sie, wie wir Ihre Unterkunft in eine konstante Einnahmequelle verwandeln können.',
         button: 'Rufen Sie uns an',
-        pills: ['Unverbindlich', 'Antwort in 24h', 'Lokales Team'],
+        pills: ['Unverbindlich', 'Lokales Team'],
         disclaimer: 'Kostenlose, personalisierte Bewertung für Ihre Immobilie.',
       },
     },
@@ -3145,7 +3145,7 @@ export const translations = {
         description: 'Erfahren Sie, wie viel Sie mit professioneller Verwaltung verdienen können.',
         button: 'Gespräch vereinbaren',
         pills: ['Unverbindlich', 'Lokales Team', 'Persönliche Bewertung'],
-        disclaimer: 'Antwort innerhalb von 24 Stunden.',
+        disclaimer: 'Kostenlose, personalisierte Bewertung für Ihre Immobilie.',
       },
     },
     contact: {
