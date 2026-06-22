@@ -42,11 +42,8 @@ import {
   OWNERS_PAGE_METRICS,
   type OwnersPageMetricKey,
 } from '@/lib/owners-page-metrics';
-import {
-  OWNERS_CONTACT_SECTION_ID,
-  ownersContactSection,
-  routes,
-} from '@/lib/navigation';
+import { contactInfo } from '@/lib/data';
+import { OWNERS_CONTACT_SECTION_ID, routes } from '@/lib/navigation';
 
 const PAGE_IMAGES = {
   hero: '/images/accommodations/casa-do-dario/casa_do_dario.webp',
@@ -705,7 +702,7 @@ export function OwnersPageSection() {
           pills={page.finalCta.pills}
           ctaLabel={page.finalCta.button}
           disclaimer={page.finalCta.disclaimer}
-          href={ownersContactSection()}
+          href={`tel:${contactInfo.phones[0].replace(/\s/g, '')}`}
         />
       </section>
     </>

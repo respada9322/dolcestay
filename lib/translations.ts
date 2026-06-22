@@ -325,7 +325,7 @@ export const translations = {
         title: 'Pronto para rentabilizar o seu imóvel?',
         description:
           'Fale connosco e descubra como podemos ajudar a transformar o seu alojamento numa fonte de rendimento consistente.',
-        button: 'Agendar Conversa',
+        button: 'Ligue-nos',
         pills: ['Sem compromisso', 'Resposta em 24h', 'Equipa local'],
         disclaimer: 'Avaliação gratuita e personalizada para o seu imóvel.',
       },
@@ -981,7 +981,7 @@ export const translations = {
       finalCta: {
         title: 'Ready to monetize your property?',
         description: 'Talk to us and discover how we can help turn your rental into a consistent source of income.',
-        button: 'Schedule a Call',
+        button: 'Call Us',
         pills: ['No commitment', 'Response within 24h', 'Local team'],
         disclaimer: 'Free, personalized assessment for your property.',
       },
@@ -1637,7 +1637,7 @@ export const translations = {
       finalCta: {
         title: 'Prêt à rentabiliser votre bien ?',
         description: 'Parlez-nous et découvrez comment transformer votre location en source de revenus constante.',
-        button: 'Planifier un Appel',
+        button: 'Appelez-nous',
         pills: ['Sans engagement', 'Réponse sous 24h', 'Équipe locale'],
         disclaimer: 'Évaluation gratuite et personnalisée pour votre bien.',
       },
@@ -2293,7 +2293,7 @@ export const translations = {
       finalCta: {
         title: '¿Listo para rentabilizar su inmueble?',
         description: 'Hable con nosotros y descubra cómo transformar su alojamiento en una fuente de ingresos constante.',
-        button: 'Agendar Conversación',
+        button: 'Llámenos',
         pills: ['Sin compromiso', 'Respuesta en 24h', 'Equipo local'],
         disclaimer: 'Evaluación gratuita y personalizada para su inmueble.',
       },
@@ -2949,7 +2949,7 @@ export const translations = {
       finalCta: {
         title: 'Bereit, Ihre Immobilie zu monetarisieren?',
         description: 'Sprechen Sie mit uns und erfahren Sie, wie wir Ihre Unterkunft in eine konstante Einnahmequelle verwandeln können.',
-        button: 'Gespräch Vereinbaren',
+        button: 'Rufen Sie uns an',
         pills: ['Unverbindlich', 'Antwort in 24h', 'Lokales Team'],
         disclaimer: 'Kostenlose, personalisierte Bewertung für Ihre Immobilie.',
       },
