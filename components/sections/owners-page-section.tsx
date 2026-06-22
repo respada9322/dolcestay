@@ -702,7 +702,7 @@ export function OwnersPageSection() {
           pills={page.finalCta.pills}
           ctaLabel={page.finalCta.button}
           disclaimer={page.finalCta.disclaimer}
-          href={`tel:${contactInfo.phones[0].replace(/\s/g, '')}`}
+          href={`tel:${contactInfo.phones[0].number.replace(/\s/g, '')}`}
         />
       </section>
     </>

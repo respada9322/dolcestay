@@ -190,11 +190,11 @@ export function Header() {
             {/* Contact info in mobile menu */}
             <div className="mt-6 pt-6 border-t border-[#E5E7EB]">
               <a
-                href={`tel:${contactInfo.phones[0].replace(/\s/g, '')}`}
+                href={`tel:${contactInfo.phones[0].number.replace(/\s/g, '')}`}
                 className="flex items-center gap-3 px-4 py-3 text-[#6B7280] hover:text-[#8DBE91] transition-colors"
               >
                 <Phone className="h-5 w-5" />
-                <span>{contactInfo.phones[0]}</span>
+                <span>{contactInfo.phones[0].number}</span>
               </a>
             </div>
           </nav>

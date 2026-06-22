@@ -178,14 +178,16 @@ export function ContactSection() {
                     <Phone className="h-7 w-7 text-[#8DBE91]" />
                   </div>
                   <div className="pt-1">
-                    {contactInfo.phones.map((phone, index) => (
-                      <a
-                        key={index}
-                        href={`tel:${phone.replace(/\s/g, '')}`}
-                        className="block text-[#1F4E5F] hover:text-[#8DBE91] transition-colors font-medium py-0.5"
-                      >
-                        {phone}
-                      </a>
+                    {contactInfo.phones.map((contact) => (
+                      <div key={contact.number} className="mb-3 last:mb-0">
+                        <p className="font-semibold text-[#1F4E5F] mb-0.5">{contact.name}</p>
+                        <a
+                          href={`tel:${contact.number.replace(/\s/g, '')}`}
+                          className="block text-[#6B7280] hover:text-[#8DBE91] transition-colors font-medium"
+                        >
+                          {contact.number}
+                        </a>
+                      </div>
                     ))}
                   </div>
                 </div>

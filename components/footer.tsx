@@ -96,17 +96,23 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-[#8DBE91] flex-shrink-0 mt-0.5" />
-                <div className="text-sm">
-                  {contactInfo.phones.map((phone, index) => (
+                <div className="text-sm space-y-3">
+                  {contactInfo.phones.map((contact) => (
                     <a
-                      key={index}
-                      href={`tel:${phone.replace(/\s/g, '')}`}
-                      className="block text-white/80 hover:text-white transition-colors"
+                      key={contact.number}
+                      href={`tel:${contact.number.replace(/\s/g, '')}`}
+                      className="block group transition-colors"
                     >
-                      {phone}
+                      <span className="font-medium text-white group-hover:text-[#8DBE91]">
+                        {contact.name}
+                      </span>
+                      <br />
+                      <span className="text-white/80 group-hover:text-white">
+                        {contact.number}
+                      </span>
                     </a>
                   ))}
-                  <span className="text-white/50 text-xs mt-1 block">
+                  <span className="text-white/50 text-xs block pt-0.5">
                     {t.footer.callCost}
                   </span>
                 </div>

@@ -5,7 +5,10 @@ export const BOOKING_URL = "https://reservas.dolcestay.com/pt-PT/rentals/";
 
 export const contactInfo = {
   email: 'geral@dolcestay.com',
-  phones: ['+351 968 442 646', '+351 925 407 035'],
+  phones: [
+    { number: '+351 968 442 646', name: 'Rodrigo Texugo' },
+    { number: '+351 925 407 035', name: 'Luis Santos' },
+  ],
   whatsapp: '+351968442646',
   address: {
     street: 'Av. da Liberdade n°58/60',
