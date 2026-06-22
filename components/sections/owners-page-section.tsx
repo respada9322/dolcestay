@@ -189,7 +189,7 @@ export function OwnersPageSection() {
     return {
       name: formData.name.trim(),
       email: formData.email.trim(),
-      phone: formData.phone.trim(),
+      phone: formData.phone.trim() || undefined,
       contactType: 'Proprietário',
       propertyLocation: formData.location.trim(),
       propertyType: propertyTypeLabel,
@@ -589,13 +589,12 @@ export function OwnersPageSection() {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="owner-phone" className="mb-2 block text-sm font-medium text-[#1F4E5F]">
-                      {page.form.fields.phone} *
+                      {page.form.fields.phone}
                     </label>
                     <input
                       id="owner-phone"
                       name="phone"
                       type="tel"
-                      required
                       value={formData.phone}
                       onChange={handleChange}
                       disabled={isSubmitting}
