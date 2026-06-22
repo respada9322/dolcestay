@@ -465,8 +465,8 @@ export function OwnersPageSection() {
       {/* How it works — reuses homepage component */}
       <HowItWorksSection />
 
-      {/* Benefits */}
-      <section className="bg-white py-20 lg:py-28">
+      {/* Benefits — hidden on mobile, visible from tablet up */}
+      <section className="hidden bg-white py-20 md:block lg:py-28">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
