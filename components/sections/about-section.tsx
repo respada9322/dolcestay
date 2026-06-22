@@ -268,8 +268,8 @@ export function AboutSection() {
         </div>
       </section>
 
-      {/* Why choose */}
-      <section className="bg-[#F8FAF8] py-20 lg:py-28">
+      {/* Why choose — hidden on mobile, visible from tablet up */}
+      <section className="hidden bg-[#F8FAF8] py-20 md:block lg:py-28">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={shouldReduceMotion ? false : 'hidden'}
