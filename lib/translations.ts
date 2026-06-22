@@ -14,7 +14,7 @@ export const translations = {
       imOwner: 'Sou Proprietário',
     },
     hero: {
-      headline: 'Alojamento Local em Sesimbra, com conforto e autenticidade',
+      headline: 'Alojamento Local em Sesimbra',
       subheadline: 'Descubra estadias únicas junto ao mar ou rentabilize o seu imóvel com uma equipa local de confiança.',
       bookNow: 'Reservar Agora',
       imOwner: 'Sou Proprietário',
