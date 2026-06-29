@@ -239,10 +239,6 @@ export const translations = {
             title: 'Otimização de preços',
             description: 'Preços dinâmicos ajustados à procura e à época.',
           },
-          reports: {
-            title: 'Relatórios e acompanhamento',
-            description: 'Indicadores claros sobre desempenho e rendimento.',
-          },
         },
       },
       benefits: {
@@ -940,7 +936,6 @@ export const translations = {
           cleaning: { title: 'Cleaning & laundry', description: 'Impeccable property preparation between each stay.' },
           maintenance: { title: 'Maintenance & operational support', description: 'Minor repairs and coordination of local services.' },
           pricing: { title: 'Price optimization', description: 'Dynamic pricing adjusted to demand and season.' },
-          reports: { title: 'Reports & follow-up', description: 'Clear indicators on performance and revenue.' },
         },
       },
       benefits: {
@@ -1596,7 +1591,6 @@ export const translations = {
           cleaning: { title: 'Ménage et blanchisserie', description: 'Préparation impeccable du bien entre chaque séjour.' },
           maintenance: { title: 'Maintenance et support opérationnel', description: 'Petites réparations et coordination des services locaux.' },
           pricing: { title: 'Optimisation des prix', description: 'Tarifs dynamiques ajustés à la demande et à la saison.' },
-          reports: { title: 'Rapports et suivi', description: 'Indicateurs clairs sur les performances et les revenus.' },
         },
       },
       benefits: {
@@ -2252,7 +2246,6 @@ export const translations = {
           cleaning: { title: 'Limpieza y lavandería', description: 'Preparación impecable del inmueble entre cada estancia.' },
           maintenance: { title: 'Mantenimiento y apoyo operativo', description: 'Pequeñas reparaciones y coordinación de servicios locales.' },
           pricing: { title: 'Optimización de precios', description: 'Precios dinámicos ajustados a la demanda y la temporada.' },
-          reports: { title: 'Informes y seguimiento', description: 'Indicadores claros sobre rendimiento e ingresos.' },
         },
       },
       benefits: {
@@ -2908,7 +2901,6 @@ export const translations = {
           cleaning: { title: 'Reinigung & Wäsche', description: 'Makellose Vorbereitung der Immobilie zwischen jedem Aufenthalt.' },
           maintenance: { title: 'Wartung & operativer Support', description: 'Kleinere Reparaturen und Koordination lokaler Dienstleister.' },
           pricing: { title: 'Preisoptimierung', description: 'Dynamische Preise angepasst an Nachfrage und Saison.' },
-          reports: { title: 'Berichte & Nachverfolgung', description: 'Klare Indikatoren zu Leistung und Einnahmen.' },
         },
       },
       benefits: {

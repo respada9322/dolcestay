@@ -13,7 +13,6 @@ import {
   Sparkles,
   Wrench,
   TrendingUp,
-  BarChart3,
   MapPinned,
   Layers,
   Users,
@@ -75,7 +74,6 @@ const serviceKeys = [
   'cleaning',
   'maintenance',
   'pricing',
-  'reports',
 ] as const;
 
 const serviceIcons: LucideIcon[] = [
@@ -86,7 +84,6 @@ const serviceIcons: LucideIcon[] = [
   Sparkles,
   Wrench,
   TrendingUp,
-  BarChart3,
 ];
 
 const whyIcons: LucideIcon[] = [
