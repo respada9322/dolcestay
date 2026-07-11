@@ -45,7 +45,7 @@ import { contactInfo } from '@/lib/data';
 import { OWNERS_CONTACT_SECTION_ID, routes } from '@/lib/navigation';
 
 const PAGE_IMAGES = {
-  hero: '/images/accommodations/casa-do-dario/casa_do_dario.webp',
+  hero: '/images/ProprietariosHeroSection.jpg',
 } as const;
 
 const INITIAL_OWNER_FORM = {

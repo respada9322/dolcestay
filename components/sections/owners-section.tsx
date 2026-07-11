@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, Shield, TrendingUp, Users2, Sparkles, Calendar, MessageCircle, Banknote } from 'lucide-react';
+import { Check, Shield, TrendingUp, Wrench, Sparkles, Camera, Banknote, Gift } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { PremiumCtaCard } from '@/components/sections/premium-cta-card';
 import { ownersContactSection } from '@/lib/navigation';
@@ -11,11 +11,11 @@ export function OwnersSection() {
   const benefits = [
     { icon: Shield, text: t.owners.benefits.fullManagement },
     { icon: TrendingUp, text: t.owners.benefits.visibility },
-    { icon: Users2, text: t.owners.benefits.localSupport },
-    { icon: MessageCircle, text: t.owners.benefits.guestComm },
-    { icon: Sparkles, text: t.owners.benefits.cleaningMaint },
     { icon: Banknote, text: t.owners.benefits.pricingOpt },
-    { icon: Calendar, text: t.owners.benefits.bookingMgmt },
+    { icon: Sparkles, text: t.owners.benefits.cleaningMaint },
+    { icon: Wrench, text: t.owners.benefits.localSupport },
+    { icon: Camera, text: t.owners.benefits.guestComm },
+    { icon: Gift, text: t.owners.benefits.bookingMgmt },
     { icon: Check, text: t.owners.benefits.personalized },
   ];
 

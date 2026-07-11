@@ -145,11 +145,11 @@ export const translations = {
       benefits: {
         fullManagement: 'Gestão completa',
         visibility: 'Mais visibilidade',
-        localSupport: 'Apoio local em Sesimbra',
-        guestComm: 'Comunicação com hóspedes',
-        cleaningMaint: 'Limpeza e manutenção',
-        pricingOpt: 'Otimização de preços',
-        bookingMgmt: 'Gestão de reservas',
+        localSupport: 'Manutenção e apoio local',
+        guestComm: 'Fotografias',
+        cleaningMaint: 'Limpeza e lavandaria',
+        pricingOpt: 'Otimização de Preços',
+        bookingMgmt: 'Amenities',
         personalized: 'Acompanhamento personalizado',
       },
       steps: {
@@ -357,7 +357,7 @@ export const translations = {
       badge: 'CONFIANÇA DOLCESTAY',
       title: 'Uma marca premium construída em resultados consistentes.',
       subtitle:
-        'Indicadores editáveis para apresentação comercial. Substitua estes valores pelos seus números reais sem alterar a estrutura.',
+        'Transformamos cada estadia numa experiência premium, combinando gestão eficiente, comunicação clara e valorização contínua do seu imóvel.',
       metrics: {
         metric1: {
           value: '100%',
@@ -379,7 +379,7 @@ export const translations = {
         },
         metric4: {
           value: '24/7',
-          label: 'Apoio contínuo para hóspedes e proprietários',
+          label: 'Apoio contínuo para hóspedes.',
           counterType: 'static',
         },
       },
@@ -863,11 +863,11 @@ export const translations = {
       benefits: {
         fullManagement: 'Complete management',
         visibility: 'More visibility',
-        localSupport: 'Local support in Sesimbra',
-        guestComm: 'Guest communication',
-        cleaningMaint: 'Cleaning and maintenance',
+        localSupport: 'Maintenance and local support',
+        guestComm: 'Photography',
+        cleaningMaint: 'Cleaning and laundry',
         pricingOpt: 'Price optimization',
-        bookingMgmt: 'Booking management',
+        bookingMgmt: 'Amenities',
         personalized: 'Personalized follow-up',
       },
       steps: {
@@ -1518,11 +1518,11 @@ export const translations = {
       benefits: {
         fullManagement: 'Gestion complète',
         visibility: 'Plus de visibilité',
-        localSupport: 'Support local à Sesimbra',
-        guestComm: 'Communication avec les clients',
-        cleaningMaint: 'Ménage et maintenance',
+        localSupport: 'Maintenance et support local',
+        guestComm: 'Photographies',
+        cleaningMaint: 'Ménage et blanchisserie',
         pricingOpt: 'Optimisation des prix',
-        bookingMgmt: 'Gestion des réservations',
+        bookingMgmt: 'Amenities',
         personalized: 'Suivi personnalisé',
       },
       steps: {
@@ -2173,11 +2173,11 @@ export const translations = {
       benefits: {
         fullManagement: 'Gestión completa',
         visibility: 'Mayor visibilidad',
-        localSupport: 'Apoyo local en Sesimbra',
-        guestComm: 'Comunicación con huéspedes',
-        cleaningMaint: 'Limpieza y mantenimiento',
+        localSupport: 'Mantenimiento y apoyo local',
+        guestComm: 'Fotografías',
+        cleaningMaint: 'Limpieza y lavandería',
         pricingOpt: 'Optimización de precios',
-        bookingMgmt: 'Gestión de reservas',
+        bookingMgmt: 'Amenities',
         personalized: 'Seguimiento personalizado',
       },
       steps: {
@@ -2828,11 +2828,11 @@ export const translations = {
       benefits: {
         fullManagement: 'Komplette Verwaltung',
         visibility: 'Mehr Sichtbarkeit',
-        localSupport: 'Lokaler Support in Sesimbra',
-        guestComm: 'Gästekommunikation',
-        cleaningMaint: 'Reinigung und Wartung',
+        localSupport: 'Wartung und lokaler Support',
+        guestComm: 'Fotografie',
+        cleaningMaint: 'Reinigung und Wäscherei',
         pricingOpt: 'Preisoptimierung',
-        bookingMgmt: 'Buchungsverwaltung',
+        bookingMgmt: 'Amenities',
         personalized: 'Persönliche Betreuung',
       },
       steps: {

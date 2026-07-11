@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Interactive Google Maps — DolceStay partners (/parcerias).
+ * Interactive Google Maps — DolceStay partners (/atividades).
  *
  * API key (Next.js):
  *   process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
@@ -22,6 +22,10 @@ import {
   hasGoogleMapsApiKey,
 } from '@/lib/google-maps-config';
 import {
+  attachTransitLayer,
+  HYBRID_MAP_OPTIONS,
+} from '@/lib/google-maps-shared';
+import {
   MAP_PARTNERS,
   SESIMBRA_MAP_CENTER,
   SESIMBRA_MAP_DEFAULT_ZOOM,
@@ -40,15 +44,7 @@ const MAP_MIN_ZOOM = 12;
 const MAP_MAX_ZOOM = 15;
 const CLUSTER_MAX_ZOOM = 14;
 
-const MAP_OPTIONS: google.maps.MapOptions = {
-  disableDefaultUI: false,
-  zoomControl: true,
-  mapTypeControl: false,
-  streetViewControl: false,
-  fullscreenControl: true,
-  gestureHandling: 'cooperative',
-  mapTypeId: 'satellite',
-};
+const MAP_OPTIONS = HYBRID_MAP_OPTIONS;
 
 const PIN_WIDTH = 28;
 const PIN_HEIGHT = 36;
@@ -315,6 +311,8 @@ function PartnersMapLoaded({
   useEffect(() => {
     if (!map || !isLoaded) return;
 
+    const transitLayer = attachTransitLayer(map);
+
     markersRef.current.forEach((marker) => marker.setMap(null));
     markersRef.current = [];
     clustererRef.current?.clearMarkers();
@@ -354,6 +352,7 @@ function PartnersMapLoaded({
     });
 
     return () => {
+      transitLayer.setMap(null);
       markersRef.current.forEach((marker) => marker.setMap(null));
       clustererRef.current?.clearMarkers();
       infoWindowRef.current?.close();
