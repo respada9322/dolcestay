@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Star, Users, Building2 } from 'lucide-react';
+import { MapPin, Star, TrendingUp, Building2 } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { BOOKING_URL } from '@/lib/data';
 import { routes } from '@/lib/navigation';
@@ -11,13 +11,13 @@ export function HeroSection() {
   const trustBadges = [
     { icon: MapPin, label: t.hero.trustBadges.local },
     { icon: Star, label: t.hero.trustBadges.personalized },
-    { icon: Users, label: t.hero.trustBadges.support },
+    { icon: TrendingUp, label: t.hero.trustBadges.support },
   ] as const;
 
   const mobileTrustBadges = [
     { icon: MapPin, label: t.hero.trustBadges.local },
     { icon: Star, label: t.hero.trustBadges.personalizedShort },
-    { icon: Users, label: t.hero.trustBadges.support },
+    { icon: TrendingUp, label: t.hero.trustBadges.support },
   ] as const;
 
   return (

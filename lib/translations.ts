@@ -22,7 +22,7 @@ export const translations = {
         local: 'Gestão Local',
         personalized: 'Experiências Personalizadas',
         personalizedShort: 'Experiências',
-        support: 'Apoio ao Hóspede',
+        support: 'Rendimento Otimizado',
       },
     },
     dualJourney: {
