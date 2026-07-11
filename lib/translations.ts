@@ -95,35 +95,35 @@ export const translations = {
       items: {
         bookingManagement: {
           title: 'Gestão de Reservas',
-          description: 'Colocamos e gerimos as reservas do seu alojamento em plataformas como Airbnb, Booking.com e o nosso próprio site.',
+          description: 'Criamos os anúncios e gerimos as reservas do seu alojamento em plataformas como Airbnb, Booking.com e no nosso site.',
         },
         checkInOut: {
           title: 'Check-in e Check-out',
-          description: 'A nossa equipa recebe os hóspedes e acompanha-os, garantindo uma experiência pessoal.',
+          description: 'Recebemos os hóspedes e acompanhamos o check-out, garantindo uma experiência pessoal e a integridade do alojamento.',
         },
         cleaning: {
           title: 'Limpeza e Lavandaria',
-          description: 'Garantimos que o seu imóvel está sempre impecável para receber novos hóspedes.',
+          description: 'Asseguramos a limpeza do imóvel e a gestão da lavandaria, para que cada estadia comece com tudo impecável.',
         },
         pricing: {
           title: 'Otimização de Preços',
-          description: 'Ajustamos os preços dinamicamente para maximizar a ocupação e rentabilidade.',
+          description: 'Utilizamos software de pricing dinâmico para ajustar os preços, maximizar a ocupação e aumentar a rentabilidade.',
         },
         guestSupport: {
           title: 'Atendimento ao Hóspede',
-          description: 'Apoio 24/7 aos hóspedes durante toda a estadia para garantir a melhor experiência.',
+          description: 'Prestamos apoio aos hóspedes durante toda a estadia, garantindo uma comunicação rápida, clara e eficiente.',
         },
         marketing: {
           title: 'Divulgação e Marketing',
-          description: 'Promovemos o seu alojamento nas nossas redes sociais e website.',
+          description: 'Realizamos fotografias e promovemos o seu alojamento no nosso site e redes sociais e canais parceiros.',
         },
         maintenance: {
           title: 'Manutenção e Apoio Local',
           description: 'Tratamos de pequenas reparações e coordenamos serviços de manutenção.',
         },
         preparation: {
-          title: 'Preparação do Imóvel',
-          description: 'Preparamos o seu imóvel para receber hóspedes com todos os detalhes.',
+          title: 'Preparação e Amenities',
+          description: 'Preparamos o imóvel para cada estadia, com todos os amenities necessários incluindo roupa de cama, toalhas, e consumíveis.',
         },
       },
     },
