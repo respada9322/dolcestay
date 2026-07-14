@@ -8,9 +8,10 @@ import { useLanguage } from '@/lib/language-context';
 import type { Translations } from '@/lib/translations';
 import { getGoogleReviewsUrl } from '@/lib/google-reviews-config';
 import { testimonialGalleries } from '@/lib/data';
+import { getTestimonialItems, type TestimonialItem } from '@/lib/testimonials-data';
 import { cn } from '@/lib/utils';
 
-type Testimonial = Translations['testimonials']['items'][number];
+type Testimonial = TestimonialItem;
 
 const AUTOPLAY_INTERVAL = 12000;
 
@@ -36,8 +37,8 @@ const fadeVariants = {
 };
 
 export function TestimonialsSection() {
-  const { t } = useLanguage();
-  const testimonials = t.testimonials.items;
+  const { t, language } = useLanguage();
+  const testimonials = getTestimonialItems(language);
   const shouldReduceMotion = useReducedMotion();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);

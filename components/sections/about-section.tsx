@@ -25,7 +25,7 @@ import { PremiumCtaCard } from '@/components/sections/premium-cta-card';
 import { homeSection, HOME_SECTION_IDS, routes } from '@/lib/navigation';
 
 const ABOUT_IMAGES = {
-  hero: '/hero.webp',
+  hero: '/images/QuemSomosHeroSection.png',
   story: '/images/about/sesimbra-aerial.png',
   sesimbraPanorama: '/images/partners/Sesimbra_SUP_Rentals_photo4.webp',
   sesimbraCards: [

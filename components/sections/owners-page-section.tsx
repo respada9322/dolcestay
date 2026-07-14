@@ -13,6 +13,7 @@ import {
   Sparkles,
   Wrench,
   TrendingUp,
+  Package,
   MapPinned,
   Layers,
   Users,
@@ -74,6 +75,7 @@ const serviceKeys = [
   'cleaning',
   'maintenance',
   'pricing',
+  'amenities',
 ] as const;
 
 const serviceIcons: LucideIcon[] = [
@@ -84,6 +86,7 @@ const serviceIcons: LucideIcon[] = [
   Sparkles,
   Wrench,
   TrendingUp,
+  Package,
 ];
 
 const whyIcons: LucideIcon[] = [

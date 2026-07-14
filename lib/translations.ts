@@ -239,6 +239,11 @@ export const translations = {
             title: 'Otimização de preços',
             description: 'Preços dinâmicos ajustados à procura e à época.',
           },
+          amenities: {
+            title: 'Amenities',
+            description:
+              'Fornecemos todos os amenities necessários para cada estadia incluindo roupa de cama, toalhas, e consumíveis de cozinha e higiene.',
+          },
         },
       },
       benefits: {
@@ -425,7 +430,7 @@ export const translations = {
           'Ajudamos proprietários a maximizar o rendimento dos seus imóveis enquanto criamos experiências memoráveis para quem visita Sesimbra.',
         ctaPrimary: 'Falar Connosco',
         ctaSecondary: 'Conhecer os Serviços',
-        imageAlt: 'Vista de Sesimbra com praia e costa atlântica',
+        imageAlt: 'Rua estreita em Sesimbra com vista para o mar',
       },
       stats: {
         stat1: { value: '+33', label: 'Propriedades geridas', counterType: 'plus' as const, counterValue: 33 },
@@ -649,57 +654,6 @@ export const translations = {
         button: 'Avaliar a DolceStay',
         microcopy: 'Leva menos de 1 minuto.',
       },
-      items: [
-        {
-          text: 'A vista é espetacular, um verdadeiro postal - O apartamento é limpo e de bom gosto',
-          author: 'Sandrine Ramos',
-          location: 'França',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Bela casa num local tranquilo. O jardim está muito bem cuidado e bem equipado! O Luís foi muito simpático e prestável. Voltaremos com muito prazer!',
-          author: 'Ya-Nine',
-          location: 'Nápoles, Itália',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Localização fantástica e bem equipada. Absolutamente cheio de coisas para fazer nas proximidades... praias, caiaque, restaurantes! Além disso, muito tranquilo e desfrutei de algum descanso e leitura relaxante em casa no terraço ou na sala de estar.',
-          author: 'Alexandra',
-          location: 'Geelong, Austrália',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Excelente localização, uma vista fabulosa, um excelente anfitrião. Obrigada Luís.',
-          author: 'Francisco',
-          location: 'Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'O anfitrião responde muito rapidamente e é muito atencioso. O sítio é muito agradável, ideal para uns dias na praia. O apartamento não tem nada de desnecessário, apenas o básico, tudo o que é necessário para uns dias relaxantes.',
-          author: 'João Pedro',
-          location: 'Almada, Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Passámos uma semana muito agradável nesta casa. O jardim era bonito e agradável, com vistas deslumbrantes. Gostámos particularmente do fácil acesso à lagoa, o que tornou a nossa estadia ainda mais especial. Os funcionários foram incrivelmente simpáticos e prestáveis, garantindo que tínhamos tudo o que precisávamos. Recomendamos vivamente este local para uma escapadela relaxante.',
-          author: 'Pedro',
-          location: 'Manchester, Reino Unido',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Tivemos uma estadia fantástica no Refúgio em Sesimbra. O co-anfitrião, Luís, foi simpático e incrivelmente prestável, tornando a nossa experiência ainda melhor. O apartamento em si era limpo, bem equipado e tinha tudo o que precisávamos para uma estadia confortável. O ponto alto da nossa estadia foi sem dúvida o terraço com vista para o mar. É uma verdadeira joia, completa com um grande guarda-sol que nos permitiu desfrutar dele a qualquer hora do dia. Recomendo vivamente este sítio para quem quer desfrutar de Sesimbra!',
-          author: 'Yulia',
-          location: 'Estocolmo, Suécia',
-          type: 'guest',
-          rating: 5,
-        },
-      ],
     },
     header: {
       toggleMenu: 'Abrir menu',
@@ -935,6 +889,11 @@ export const translations = {
           cleaning: { title: 'Cleaning & laundry', description: 'Impeccable property preparation between each stay.' },
           maintenance: { title: 'Maintenance & operational support', description: 'Minor repairs and coordination of local services.' },
           pricing: { title: 'Price optimization', description: 'Dynamic pricing adjusted to demand and season.' },
+          amenities: {
+            title: 'Amenities',
+            description:
+              'We provide all necessary amenities for each stay, including bed linen, towels, and kitchen and hygiene consumables.',
+          },
         },
       },
       benefits: {
@@ -1080,7 +1039,7 @@ export const translations = {
           'We help property owners maximize their rental income while creating memorable experiences for everyone who visits Sesimbra.',
         ctaPrimary: 'Talk to Us',
         ctaSecondary: 'Explore Our Services',
-        imageAlt: 'Sesimbra coastline with beach and Atlantic views',
+        imageAlt: 'Narrow street in Sesimbra with a view of the sea',
       },
       stats: {
         stat1: { value: '+33', label: 'Properties managed', counterType: 'plus' as const, counterValue: 33 },
@@ -1304,57 +1263,6 @@ export const translations = {
         button: 'Rate DolceStay',
         microcopy: 'Takes less than 1 minute.',
       },
-      items: [
-        {
-          text: 'The view is spectacular, a true postcard - The apartment is clean and tasteful',
-          author: 'Sandrine Ramos',
-          location: 'France',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Beautiful house in a quiet location. The garden is very well maintained and well equipped! Luís was very friendly and helpful. We will return with great pleasure!',
-          author: 'Ya-Nine',
-          location: 'Naples, Italy',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Fantastic location and well equipped. Absolutely full of things to do nearby... beaches, kayaking, restaurants! Furthermore, very quiet and I enjoyed some rest and relaxing reading at home on the terrace or in the living room.',
-          author: 'Alexandra',
-          location: 'Geelong, Australia',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Excellent location, a fabulous view, an excellent host. Thank you Luís.',
-          author: 'Francisco',
-          location: 'Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'The host responds very quickly and is very attentive. The place is very pleasant, ideal for a few days at the beach. The apartment has nothing unnecessary, just the basics, everything needed for a relaxing few days.',
-          author: 'João Pedro',
-          location: 'Almada, Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'We spent a very pleasant week in this house. The garden was beautiful and pleasant, with stunning views. We particularly liked the easy access to the lagoon, which made our stay even more special. The staff were incredibly friendly and helpful, ensuring we had everything we needed. We highly recommend this place for a relaxing getaway.',
-          author: 'Pedro',
-          location: 'Manchester, UK',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'We had a fantastic stay at Refúgio in Sesimbra. The co-host, Luís, was friendly and incredibly helpful, making our experience even better. The apartment itself was clean, well-equipped and had everything we needed for a comfortable stay. The highlight of our stay was undoubtedly the terrace with a sea view. It\'s a true gem, complete with a large umbrella that allowed us to enjoy it at any time of day. I highly recommend this place for anyone who wants to enjoy Sesimbra!',
-          author: 'Yulia',
-          location: 'Stockholm, Sweden',
-          type: 'guest',
-          rating: 5,
-        },
-      ],
     },
     header: {
       toggleMenu: 'Toggle menu',
@@ -1590,6 +1498,11 @@ export const translations = {
           cleaning: { title: 'Ménage et blanchisserie', description: 'Préparation impeccable du bien entre chaque séjour.' },
           maintenance: { title: 'Maintenance et support opérationnel', description: 'Petites réparations et coordination des services locaux.' },
           pricing: { title: 'Optimisation des prix', description: 'Tarifs dynamiques ajustés à la demande et à la saison.' },
+          amenities: {
+            title: 'Amenities',
+            description:
+              'Nous fournissons tous les amenities nécessaires pour chaque séjour, y compris le linge de lit, les serviettes et les consommables de cuisine et d\'hygiène.',
+          },
         },
       },
       benefits: {
@@ -1735,7 +1648,7 @@ export const translations = {
           'Nous aidons les propriétaires à maximiser leurs revenus tout en créant des expériences mémorables pour ceux qui visitent Sesimbra.',
         ctaPrimary: 'Nous contacter',
         ctaSecondary: 'Découvrir nos services',
-        imageAlt: 'Vue de Sesimbra avec plage et côte atlantique',
+        imageAlt: 'Rue étroite à Sesimbra avec vue sur la mer',
       },
       stats: {
         stat1: { value: '+33', label: 'Propriétés gérées', counterType: 'plus' as const, counterValue: 33 },
@@ -1959,57 +1872,6 @@ export const translations = {
         button: 'Évaluer DolceStay',
         microcopy: 'Moins d\'une minute.',
       },
-      items: [
-        {
-          text: 'La vue est spectaculaire, une véritable carte postale - L\'appartement est propre et de bon goût',
-          author: 'Sandrine Ramos',
-          location: 'France',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Belle maison dans un endroit tranquille. Le jardin est très bien entretenu et bien équipé ! Luís a été très sympathique et serviable. Nous reviendrons avec grand plaisir !',
-          author: 'Ya-Nine',
-          location: 'Naples, Italie',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Emplacement fantastique et bien équipé. Absolument plein de choses à faire à proximité... plages, kayak, restaurants ! De plus, très calme et j\'ai profité d\'un repos et d\'une lecture relaxante à la maison sur la terrasse ou dans le salon.',
-          author: 'Alexandra',
-          location: 'Geelong, Australie',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Excellent emplacement, une vue fabuleuse, un excellent hôte. Merci Luís.',
-          author: 'Francisco',
-          location: 'Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'L\'hôte répond très rapidement et est très attentionné. L\'endroit est très agréable, idéal pour quelques jours à la plage. L\'appartement n\'a rien de superflu, juste l\'essentiel, tout ce qu\'il faut pour quelques jours de détente.',
-          author: 'João Pedro',
-          location: 'Almada, Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Nous avons passé une semaine très agréable dans cette maison. Le jardin était beau et agréable, avec des vues magnifiques. Nous avons particulièrement apprécié l\'accès facile à la lagune, ce qui a rendu notre séjour encore plus spécial. Le personnel a été incroyablement sympathique et serviable, s\'assurant que nous avions tout ce dont nous avions besoin. Nous recommandons vivement cet endroit pour une escapade relaxante.',
-          author: 'Pedro',
-          location: 'Manchester, Royaume-Uni',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Nous avons passé un séjour fantastique au Refúgio à Sesimbra. Le co-hôte, Luís, a été sympathique et incroyablement serviable, rendant notre expérience encore meilleure. L\'appartement lui-même était propre, bien équipé et avait tout ce dont nous avions besoin pour un séjour confortable. Le point fort de notre séjour a été sans aucun doute la terrasse avec vue sur la mer. C\'est un véritable joyau, complet avec un grand parasol qui nous a permis d\'en profiter à tout moment de la journée. Je recommande vivement cet endroit à quiconque veut profiter de Sesimbra !',
-          author: 'Yulia',
-          location: 'Stockholm, Suède',
-          type: 'guest',
-          rating: 5,
-        },
-      ],
     },
     header: {
       toggleMenu: 'Basculer le menu',
@@ -2245,6 +2107,11 @@ export const translations = {
           cleaning: { title: 'Limpieza y lavandería', description: 'Preparación impecable del inmueble entre cada estancia.' },
           maintenance: { title: 'Mantenimiento y apoyo operativo', description: 'Pequeñas reparaciones y coordinación de servicios locales.' },
           pricing: { title: 'Optimización de precios', description: 'Precios dinámicos ajustados a la demanda y la temporada.' },
+          amenities: {
+            title: 'Amenities',
+            description:
+              'Proporcionamos todos los amenities necesarios para cada estancia, incluyendo ropa de cama, toallas y consumibles de cocina e higiene.',
+          },
         },
       },
       benefits: {
@@ -2390,7 +2257,7 @@ export const translations = {
           'Ayudamos a propietarios a maximizar el rendimiento de sus inmuebles mientras creamos experiencias memorables para quienes visitan Sesimbra.',
         ctaPrimary: 'Hablar con nosotros',
         ctaSecondary: 'Conocer los servicios',
-        imageAlt: 'Vista de Sesimbra con playa y costa atlántica',
+        imageAlt: 'Calle estrecha en Sesimbra con vista al mar',
       },
       stats: {
         stat1: { value: '+33', label: 'Propiedades gestionadas', counterType: 'plus' as const, counterValue: 33 },
@@ -2614,57 +2481,6 @@ export const translations = {
         button: 'Valorar DolceStay',
         microcopy: 'Menos de 1 minuto.',
       },
-      items: [
-        {
-          text: 'La vista es espectacular, una auténtica postal - El apartamento está limpio y es de buen gusto',
-          author: 'Sandrine Ramos',
-          location: 'Francia',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Bella casa en un lugar tranquilo. El jardín está muy bien cuidado y bien equipado. ¡Luís fue muy amable y servicial. Volveremos con mucho gusto!',
-          author: 'Ya-Nine',
-          location: 'Nápoles, Italia',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Ubicación fantástica y bien equipada. Absolutamente llena de cosas que hacer cerca... playas, kayak, restaurantes. Además, muy tranquilo y disfruté de un descanso y lectura relajante en casa en la terraza o en el salón.',
-          author: 'Alexandra',
-          location: 'Geelong, Australia',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Excelente ubicación, una vista fabulosa, un excelente anfitrión. Gracias Luís.',
-          author: 'Francisco',
-          location: 'Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'El anfitrión responde muy rápidamente y es muy atento. El lugar es muy agradable, ideal para unos días en la playa. El apartamento no tiene nada innecesario, solo lo básico, todo lo necesario para unos días relajantes.',
-          author: 'João Pedro',
-          location: 'Almada, Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Pasamos una semana muy agradable en esta casa. El jardín era bonito y agradable, con vistas impresionantes. Nos gustó especialmente el fácil acceso a la laguna, lo que hizo nuestra estancia aún más especial. El personal fue increíblemente amable y servicial, asegurándose de que teníamos todo lo que necesitábamos. Recomendamos encarecidamente este lugar para una escapada relajante.',
-          author: 'Pedro',
-          location: 'Manchester, Reino Unido',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Tuvimos una estancia fantástica en el Refúgio en Sesimbra. El coanfitrión, Luís, fue amable e increíblemente servicial, haciendo nuestra experiencia aún mejor. El apartamento en sí estaba limpio, bien equipado y tenía todo lo que necesitábamos para una estancia cómoda. Lo más destacado de nuestra estancia fue sin duda la terraza con vistas al mar. Es una auténtica joya, completa con una gran sombrilla que nos permitió disfrutarla a cualquier hora del día. Recomiendo encarecidamente este lugar para quien quiera disfrutar de Sesimbra.',
-          author: 'Yulia',
-          location: 'Estocolmo, Suecia',
-          type: 'guest',
-          rating: 5,
-        },
-      ],
     },
     header: {
       toggleMenu: 'Abrir menú',
@@ -2900,6 +2716,11 @@ export const translations = {
           cleaning: { title: 'Reinigung & Wäsche', description: 'Makellose Vorbereitung der Immobilie zwischen jedem Aufenthalt.' },
           maintenance: { title: 'Wartung & operativer Support', description: 'Kleinere Reparaturen und Koordination lokaler Dienstleister.' },
           pricing: { title: 'Preisoptimierung', description: 'Dynamische Preise angepasst an Nachfrage und Saison.' },
+          amenities: {
+            title: 'Amenities',
+            description:
+              'Wir stellen alle notwendigen Amenities für jeden Aufenthalt bereit, einschließlich Bettwäsche, Handtücher und Küchen- und Hygieneartikel.',
+          },
         },
       },
       benefits: {
@@ -3045,7 +2866,7 @@ export const translations = {
           'Wir helfen Eigentümern, ihre Mieteinnahmen zu maximieren und gleichzeitig unvergessliche Erlebnisse für alle zu schaffen, die Sesimbra besuchen.',
         ctaPrimary: 'Kontakt aufnehmen',
         ctaSecondary: 'Unsere Leistungen entdecken',
-        imageAlt: 'Sesimbra-Küste mit Strand und Atlantikblick',
+        imageAlt: 'Enge Straße in Sesimbra mit Meerblick',
       },
       stats: {
         stat1: { value: '+33', label: 'Verwaltete Objekte', counterType: 'plus' as const, counterValue: 33 },
@@ -3269,57 +3090,6 @@ export const translations = {
         button: 'DolceStay bewerten',
         microcopy: 'Dauert weniger als 1 Minute.',
       },
-      items: [
-        {
-          text: 'Die Aussicht ist spektakulär, eine wahre Postkarte - Die Wohnung ist sauber und geschmackvoll eingerichtet',
-          author: 'Sandrine Ramos',
-          location: 'Frankreich',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Schönes Haus an einem ruhigen Ort. Der Garten ist sehr gut gepflegt und gut ausgestattet! Luís war sehr freundlich und hilfsbereit. Wir kommen sehr gerne wieder!',
-          author: 'Ya-Nine',
-          location: 'Neapel, Italien',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Fantastische Lage und gut ausgestattet. Absolut voller Aktivitäten in der Nähe... Strände, Kajakfahren, Restaurants! Außerdem sehr ruhig und ich genoss etwas Ruhe und entspanntes Lesen zu Hause auf der Terrasse oder im Wohnzimmer.',
-          author: 'Alexandra',
-          location: 'Geelong, Australien',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Ausgezeichnete Lage, eine fabelhafte Aussicht, ein ausgezeichneter Gastgeber. Danke Luís.',
-          author: 'Francisco',
-          location: 'Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Der Gastgeber antwortet sehr schnell und ist sehr aufmerksam. Der Ort ist sehr angenehm, ideal für ein paar Tage am Strand. Die Wohnung hat nichts Überflüssiges, nur das Nötigste, alles was man für ein paar entspannte Tage braucht.',
-          author: 'João Pedro',
-          location: 'Almada, Portugal',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Wir verbrachten eine sehr angenehme Woche in diesem Haus. Der Garten war schön und angenehm, mit atemberaubender Aussicht. Besonders gut gefiel uns der einfache Zugang zur Lagune, was unseren Aufenthalt noch besonderer machte. Das Personal war unglaublich freundlich und hilfsbereit und stellte sicher, dass wir alles hatten, was wir brauchten. Wir empfehlen diesen Ort wärmstens für einen entspannten Kurzurlaub.',
-          author: 'Pedro',
-          location: 'Manchester, UK',
-          type: 'guest',
-          rating: 5,
-        },
-        {
-          text: 'Wir hatten einen fantastischen Aufenthalt im Refúgio in Sesimbra. Der Co-Gastgeber Luís war freundlich und unglaublich hilfsbereit, was unsere Erfahrung noch besser machte. Die Wohnung selbst war sauber, gut ausgestattet und hatte alles, was wir für einen komfortablen Aufenthalt brauchten. Der Höhepunkt unseres Aufenthalts war zweifellos die Terrasse mit Meerblick. Sie ist ein wahres Juwel, komplett mit einem großen Sonnenschirm, der es uns ermöglichte, sie zu jeder Tageszeit zu genießen. Ich empfehle diesen Ort wärmstens für jeden, der Sesimbra genießen möchte.',
-          author: 'Yulia',
-          location: 'Stockholm, Schweden',
-          type: 'guest',
-          rating: 5,
-        },
-      ],
     },
     header: {
       toggleMenu: 'Menü umschalten',

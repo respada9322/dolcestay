@@ -84,16 +84,51 @@ const pickAccommodationImages = (accommodationIndex: number, imageIndices: numbe
   return imageIndices.map((index) => accommodation.images[index] ?? accommodation.images[0]);
 };
 
+import { testimonialPropertyKeys } from './testimonials-data';
+
+const propertyGalleryMap = {
+  'casa-da-falesia': pickAccommodationImages(3, [0, 2, 5, 9, 12, 15]),
+  'casa-do-dario': pickAccommodationImages(1, [0, 3, 6, 10, 13]),
+  'milady-house': pickAccommodationImages(2, [0, 3, 6, 9, 12]),
+  'cantinho-da-gingeira': pickAccommodationImages(0, [0, 4, 8, 12, 16, 20]),
+} as const;
+
+const testimonialPropertyGalleryKeys: Record<string, keyof typeof propertyGalleryMap> = {
+  'trevo-beach-house': 'casa-da-falesia',
+  'casa-da-falesia': 'casa-da-falesia',
+  'casa-campo-e-praia': 'cantinho-da-gingeira',
+  'casa-do-dario': 'casa-do-dario',
+  'casa-da-lagoa': 'cantinho-da-gingeira',
+  'olive-tree-house': 'cantinho-da-gingeira',
+  'paradise-in-lagoa': 'cantinho-da-gingeira',
+  'casa-da-praia': 'casa-do-dario',
+  refugio: 'milady-house',
+  'vila-das-conchas': 'casa-da-falesia',
+  'casa-atlas': 'casa-do-dario',
+  'milady-house': 'milady-house',
+  'my-home': 'casa-do-dario',
+  'sesimbra-beach-apartment': 'casa-do-dario',
+  'mar-a-vista': 'casa-da-falesia',
+  'casa-azul': 'casa-do-dario',
+  'casa-da-alegria': 'cantinho-da-gingeira',
+  'casa-luminosa': 'milady-house',
+  'sesimbra-99': 'casa-da-falesia',
+  'castle-apartment': 'casa-da-falesia',
+  dolceplace: 'casa-do-dario',
+  'quinta-das-figueiras': 'cantinho-da-gingeira',
+  'seaflower-house': 'casa-da-falesia',
+  'vista-azul': 'casa-da-falesia',
+  'villa-pinheirinhos': 'cantinho-da-gingeira',
+  'villa-manuelina': 'cantinho-da-gingeira',
+};
+
+const defaultGallery = propertyGalleryMap['casa-da-falesia'];
+
 /** Gallery images per testimonial index (hero image first, then secondary). */
-export const testimonialGalleries = [
-  pickAccommodationImages(3, [0, 2, 5, 9, 12, 15]), // Casa da Falésia — vista
-  pickAccommodationImages(0, [0, 4, 8, 12, 16, 20]), // Cantinho da Gingeira — jardim
-  pickAccommodationImages(2, [0, 3, 6, 9, 12]), // Milady House — terraço & praia
-  pickAccommodationImages(3, [1, 4, 7, 11, 14]), // Casa da Falésia — localização
-  pickAccommodationImages(1, [0, 3, 6, 10, 13]), // Casa do Dário — apartamento praia
-  pickAccommodationImages(0, [1, 5, 10, 14, 18, 21]), // Cantinho da Gingeira — lagoa & jardim
-  pickAccommodationImages(2, [1, 4, 7, 10, 13]), // Milady House — Refúgio & mar
-] as const;
+export const testimonialGalleries = testimonialPropertyKeys.map((propertyKey) => {
+  const galleryKey = testimonialPropertyGalleryKeys[propertyKey] ?? 'casa-da-falesia';
+  return propertyGalleryMap[galleryKey] ?? defaultGallery;
+});
 
 // Build `images[]` now, so a per-partner gallery can be enabled later.
 // Matching is case-insensitive and tolerant to spaces, underscores and hyphens.
