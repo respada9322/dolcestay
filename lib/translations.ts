@@ -197,9 +197,9 @@ export const translations = {
       whyUs: {
         title: 'Porquê trabalhar connosco?',
         description:
-          'Gerimos o seu alojamento local como se fosse nosso. Combinamos tecnologia, experiência e conhecimento local para maximizar o rendimento e garantir uma experiência excelente aos hóspedes.',
+          'Gerimos o seu alojamento como se fosse nosso, combinando tecnologia, experiência e conhecimento local para valorizar o seu imóvel e elevar a experiência dos hóspedes.',
         points: [
-          'Conhecimento local de Sesimbra',
+          'Conhecimento local',
           'Gestão profissional',
           'Comunicação rápida',
           'Estratégia de preço',
@@ -245,12 +245,12 @@ export const translations = {
         title: 'Mais rendimento, menos preocupações',
         subtitle: 'Benefícios concretos para proprietários que querem resultados sem o stress do dia-a-dia.',
         items: [
-          'Poupa tempo',
+          'Poupa Tempo',
           'Reduz preocupações operacionais',
           'Melhora a experiência dos hóspedes',
           'Aumenta a visibilidade do imóvel',
-          'Otimiza preços conforme procura e época',
-          'Acompanha resultados com transparência',
+          'Maximiza ocupação',
+          'Otimiza rendimento',
         ],
       },
       faq: {
@@ -260,37 +260,37 @@ export const translations = {
           {
             question: 'Tenho de ter licença de Alojamento Local?',
             answer:
-              'Sim, o imóvel deve cumprir os requisitos legais para alojamento local. Ajudamos a perceber o que é necessário e orientamos no processo, em colaboração com os serviços competentes.',
+              'Sim. O imóvel deve cumprir os requisitos legais para Alojamento Local. A nossa equipa ajuda-o a compreender os passos necessários, reunir a documentação e orientar o processo em colaboração com as entidades competentes.',
           },
           {
-            question: 'A DolceStay trata da limpeza?',
+            question: 'A DolceStay trata da limpeza e lavandaria?',
             answer:
               'Sim. Coordenamos limpeza e lavandaria profissional entre cada estadia, garantindo que o imóvel está sempre pronto para receber hóspedes.',
           },
           {
             question: 'Quem comunica com os hóspedes?',
             answer:
-              'A nossa equipa trata de toda a comunicação — desde a reserva até ao check-out — mantendo-o informado quando necessário.',
+              'A nossa equipa trata de toda a comunicação com os hóspedes, desde a confirmação da reserva até ao check-out, assegurando uma gestão eficiente e uma experiência próxima, clara e acolhedora.',
           },
           {
             question: 'Como são definidos os preços?',
             answer:
-              'Utilizamos estratégias de preço dinâmico baseadas na procura, época, concorrência e perfil do imóvel, com ajustes regulares para maximizar o rendimento.',
+              'Utilizamos software de pricing dinâmico, que ajusta os preços de acordo com o perfil do imóvel, a procura, a oferta, a época do ano e outros fatores relevantes. Além disso, fazemos ajustes regulares à estratégia de preços para maximizar a ocupação e o rendimento.',
           },
           {
-            question: 'Recebo relatórios?',
+            question: 'Posso usar o meu imóvel quando quiser?',
             answer:
-              'Sim. Partilhamos relatórios periódicos com indicadores de ocupação, receita e desempenho, com total transparência.',
+              'Sim. Pode reservar datas no calendário do seu imóvel para uso pessoal. Disponibilizamos uma área de proprietário onde poderá consultar o calendário da sua propriedade, incluindo reservas provenientes das diferentes plataformas de arrendamento, facilitando o planeamento das suas estadias.',
           },
           {
-            question: 'Posso usar o imóvel quando quiser?',
+            question: 'Recebo relatórios de desempenho do meu alojamento?',
             answer:
-              'Sim. Pode bloquear datas no calendário para uso pessoal. Coordene connosco com antecedência para não afetar reservas existentes.',
+              'Sim. Partilhamos relatórios periódicos com indicadores de ocupação, receita e desempenho, garantindo total transparência. Estes dados também podem ser consultados na sua área de proprietário.',
           },
           {
-            question: 'Como começo?',
+            question: 'Como começo a trabalhar com a DolceStay?',
             answer:
-              'Preencha o formulário abaixo ou contacte-nos. Avaliamos o imóvel, apresentamos uma proposta personalizada e, se fizer sentido para ambos, avançamos com a preparação.',
+              'Preencha o formulário abaixo ou contacte-nos. Avaliamos o imóvel, apresentamos uma proposta personalizada e, se fizer sentido para ambas as partes, avançamos com a preparação e integração do alojamento.',
           },
         ],
       },
@@ -308,7 +308,6 @@ export const translations = {
         },
         propertyTypes: {
           apartment: 'Apartamento',
-          house: 'Moradia',
           villa: 'Moradia/Villa',
           other: 'Outro',
         },
@@ -387,7 +386,7 @@ export const translations = {
     activities: {
       title: 'Atividades',
       subtitle: 'Os melhores planos para as suas férias',
-      description: 'Na DolceStay procuramos proporcionar aos nossos hóspedes umas férias de sonho, autênticas e personalizadas. Para este fim, apresentamos diversas atividades com restaurantes, bares e empresas que exploram o turismo em Sesimbra.',
+      description: 'Na DolceStay criamos férias autênticas e memoráveis, com experiências personalizadas e parcerias locais que revelam o melhor de Sesimbra',
       exclusiveTitle: 'Experiências exclusivas para hóspedes DolceStay',
       exclusiveDescription: 'Ao reservar connosco, tem acesso a recomendações personalizadas e descontos especiais nos nossos parceiros locais.',
       partners: 'parceiros',
@@ -446,7 +445,7 @@ export const translations = {
       whyUs: {
         title: 'Porquê escolher a DolceStay',
         subtitle:
-          'Gestão premium com foco local, resultados mensuráveis e proximidade real com proprietários e hóspedes.',
+          'Gestão premium com conhecimento local, resultados mensuráveis e proximidade real com proprietários e hóspedes.',
         items: [
           {
             title: 'Conhecimento local',
@@ -461,12 +460,12 @@ export const translations = {
           {
             title: 'Gestão completa',
             description:
-              'Da reserva à limpeza, passando por manutenção e check-in — tudo centralizado numa só equipa.',
+              'Da reserva ao check-in, da limpeza à manutenção — tudo centralizado numa só equipa.',
           },
           {
             title: 'Equipa dedicada',
             description:
-              'Profissionais locais que tratam cada imóvel com o cuidado de quem conhece o território.',
+              'Profissionais locais que tratam cada imóvel como se fosse seu.',
           },
           {
             title: 'Estratégias de rentabilização',
@@ -483,9 +482,9 @@ export const translations = {
       mission: {
         missionTitle: 'Missão',
         missionText:
-          'Maximizar o potencial dos imóveis e elevar a experiência turística em Sesimbra.',
+          'Maximizar o potencial de cada alojamento, apoiar os proprietários e proporcionar estadias memoráveis em Sesimbra.',
         valuesTitle: 'Valores',
-        values: ['Transparência', 'Proximidade', 'Excelência', 'Confiança'],
+        values: ['Confiança', 'Excelência', 'Hospitalidade', 'Proximidade'],
       },
       sesimbra: {
         title: 'Porque escolhemos Sesimbra',
@@ -967,7 +966,7 @@ export const translations = {
         title: 'Want to know how much your property could earn?',
         subtitle: 'Fill in the form and receive a free assessment from our team.',
         fields: { name: 'Name', email: 'Email', phone: 'Phone', location: 'Property location', propertyType: 'Property type', bedrooms: 'Number of bedrooms', message: 'Message' },
-        propertyTypes: { apartment: 'Apartment', house: 'House', villa: 'Villa', other: 'Other' },
+        propertyTypes: { apartment: 'Apartment', villa: 'Villa', other: 'Other' },
         submit: 'Request Free Assessment',
         submitting: 'Sending...',
         successTitle: 'Request sent!',
@@ -1622,7 +1621,7 @@ export const translations = {
         title: 'Vous voulez savoir combien votre bien peut rapporter ?',
         subtitle: 'Remplissez le formulaire et recevez une évaluation gratuite de notre équipe.',
         fields: { name: 'Nom', email: 'Email', phone: 'Téléphone', location: 'Localisation du bien', propertyType: 'Type de bien', bedrooms: 'Nombre de chambres', message: 'Message' },
-        propertyTypes: { apartment: 'Appartement', house: 'Maison', villa: 'Villa', other: 'Autre' },
+        propertyTypes: { apartment: 'Appartement', villa: 'Villa', other: 'Autre' },
         submit: 'Demander une Évaluation Gratuite',
         submitting: 'Envoi en cours...',
         successTitle: 'Demande envoyée !',
@@ -2277,7 +2276,7 @@ export const translations = {
         title: '¿Quiere saber cuánto puede rendir su inmueble?',
         subtitle: 'Complete el formulario y reciba una evaluación gratuita de nuestro equipo.',
         fields: { name: 'Nombre', email: 'Email', phone: 'Teléfono', location: 'Ubicación del inmueble', propertyType: 'Tipo de inmueble', bedrooms: 'Nº de habitaciones', message: 'Mensaje' },
-        propertyTypes: { apartment: 'Apartamento', house: 'Casa', villa: 'Villa', other: 'Otro' },
+        propertyTypes: { apartment: 'Apartamento', villa: 'Villa', other: 'Otro' },
         submit: 'Solicitar Evaluación Gratuita',
         submitting: 'Enviando...',
         successTitle: '¡Solicitud enviada!',
@@ -2932,7 +2931,7 @@ export const translations = {
         title: 'Möchten Sie wissen, wie viel Ihre Immobilie einbringen kann?',
         subtitle: 'Füllen Sie das Formular aus und erhalten Sie eine kostenlose Bewertung von unserem Team.',
         fields: { name: 'Name', email: 'E-Mail', phone: 'Telefon', location: 'Standort der Immobilie', propertyType: 'Immobilientyp', bedrooms: 'Anzahl Schlafzimmer', message: 'Nachricht' },
-        propertyTypes: { apartment: 'Wohnung', house: 'Haus', villa: 'Villa', other: 'Sonstiges' },
+        propertyTypes: { apartment: 'Wohnung', villa: 'Villa', other: 'Sonstiges' },
         submit: 'Kostenlose Bewertung Anfordern',
         submitting: 'Wird gesendet...',
         successTitle: 'Anfrage gesendet!',
