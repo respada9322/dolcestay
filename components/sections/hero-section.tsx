@@ -26,7 +26,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/hero.webp')`,
+          backgroundImage: `url('/images/HeroSection.png')`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#1F4E5F]/40 via-[#1F4E5F]/20 to-[#1F4E5F]/50" />
