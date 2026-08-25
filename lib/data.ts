@@ -1,6 +1,9 @@
 // DolceStay Data Structures
 // These can be connected to a CMS or WordPress in the future
 
+import { accommodations, accommodationsBySlug } from './accommodations';
+import { testimonialPropertyKeys } from './testimonials-data';
+
 export const BOOKING_URL = "https://reservas.dolcestay.com/pt-PT/rentals/";
 
 export const contactInfo = {
@@ -22,112 +25,28 @@ export const contactInfo = {
   },
 };
 
-const buildAccommodationGallery = (folder: string, prefix: string, count: number) =>
-  [
-    `/images/accommodations/${folder}/${prefix}.webp`,
-    ...Array.from({ length: count }, (_, index) => `/images/accommodations/${folder}/${prefix}${index + 1}.webp`),
-  ];
+export const featuredAccommodations = accommodations;
 
-export const featuredAccommodations = [
-  {
-    id: 1,
-    title: 'Cantinho da Gingeira',
-    location: 'Sesimbra',
-    image: '/images/accommodations/cantinho-da-gingeira/cantinho_da_gingeira.webp',
-    images: buildAccommodationGallery('cantinho-da-gingeira', 'cantinho_da_gingeira', 22),
-    features: ['garden', 'beach', 'parking', 'wifi'] as const,
-    price: 40,
-    guests: 4,
-    bedrooms: 1,
-    bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/29065/',
-  },
-  {
-    id: 2,
-    title: 'Casa do Dário',
-    location: 'Sesimbra',
-    image: '/images/accommodations/casa-do-dario/casa_do_dario.webp',
-    images: buildAccommodationGallery('casa-do-dario', 'casa_do_dario', 15),
-    features: ['beach', 'center', 'wifi'] as const,
-    price: 55,
-    guests: 4,
-    bedrooms: 1,
-    bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/25150/',
-  },
-  {
-    id: 3,
-    title: 'Milady House',
-    location: 'Sesimbra',
-    image: '/images/accommodations/milady-house/milady_house.webp',
-    images: buildAccommodationGallery('milady-house', 'milady_house', 13),
-    features: ['beach', 'wifi', 'tv'] as const,
-    price: 120,
-    guests: 7,
-    bedrooms: 3,
-    bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/27612/',
-  },
-  {
-    id: 4,
-    title: 'Casa da Falésia',
-    location: 'Sesimbra',
-    image: '/images/accommodations/casa-da-falesia/casa_da_falesia.webp',
-    images: buildAccommodationGallery('casa-da-falesia', 'casa_da_falesia', 17),
-    features: ['beach', 'wifi', 'parking', 'tv'] as const,
-    price: 80,
-    guests: 4,
-    bedrooms: 1,
-    bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/24520/',
-  },
-];
-
-const pickAccommodationImages = (accommodationIndex: number, imageIndices: number[]) => {
-  const accommodation = featuredAccommodations[accommodationIndex];
-  return imageIndices.map((index) => accommodation.images[index] ?? accommodation.images[0]);
+const testimonialSlugAliases: Record<string, string> = {
+  'my-home': 'my-home-in-sesimbra',
+  'sesimbra-beach-apartment': 'beach-apartment',
+  'vista-azul': 'sesimbra-vista-azul',
 };
 
-import { testimonialPropertyKeys } from './testimonials-data';
-
-const propertyGalleryMap = {
-  'casa-da-falesia': pickAccommodationImages(3, [0, 2, 5, 9, 12, 15]),
-  'casa-do-dario': pickAccommodationImages(1, [0, 3, 6, 10, 13]),
-  'milady-house': pickAccommodationImages(2, [0, 3, 6, 9, 12]),
-  'cantinho-da-gingeira': pickAccommodationImages(0, [0, 4, 8, 12, 16, 20]),
-} as const;
-
-const testimonialPropertyGalleryKeys: Record<string, keyof typeof propertyGalleryMap> = {
-  'trevo-beach-house': 'casa-da-falesia',
-  'casa-da-falesia': 'casa-da-falesia',
-  'casa-campo-e-praia': 'cantinho-da-gingeira',
-  'casa-do-dario': 'casa-do-dario',
-  'casa-da-lagoa': 'cantinho-da-gingeira',
-  'olive-tree-house': 'cantinho-da-gingeira',
-  'paradise-in-lagoa': 'cantinho-da-gingeira',
-  'casa-da-praia': 'casa-do-dario',
-  refugio: 'milady-house',
-  'vila-das-conchas': 'casa-da-falesia',
-  'casa-atlas': 'casa-do-dario',
-  'milady-house': 'milady-house',
-  'my-home': 'casa-do-dario',
-  'sesimbra-beach-apartment': 'casa-do-dario',
-  'mar-a-vista': 'casa-da-falesia',
-  'casa-azul': 'casa-do-dario',
-  'casa-da-alegria': 'cantinho-da-gingeira',
-  'casa-luminosa': 'milady-house',
-  'sesimbra-99': 'casa-da-falesia',
-  'castle-apartment': 'casa-da-falesia',
-  dolceplace: 'casa-do-dario',
-  'quinta-das-figueiras': 'cantinho-da-gingeira',
-  'seaflower-house': 'casa-da-falesia',
-  'vista-azul': 'casa-da-falesia',
-  'villa-pinheirinhos': 'cantinho-da-gingeira',
-  'villa-manuelina': 'cantinho-da-gingeira',
+const pickGalleryImages = (images: string[], indices = [0, 2, 5, 9, 12, 15]) => {
+  if (!images.length) return [];
+  const picked = indices.map((index) => images[index]).filter((image): image is string => Boolean(image));
+  return picked.length ? picked : images.slice(0, 6);
 };
 
-const defaultGallery = propertyGalleryMap['casa-da-falesia'];
+const defaultGallery = pickGalleryImages(accommodationsBySlug['casa-da-falesia']?.images ?? []);
 
 /** Gallery images per testimonial index (hero image first, then secondary). */
 export const testimonialGalleries = testimonialPropertyKeys.map((propertyKey) => {
-  const galleryKey = testimonialPropertyGalleryKeys[propertyKey] ?? 'casa-da-falesia';
-  return propertyGalleryMap[galleryKey] ?? defaultGallery;
+  const slug = testimonialSlugAliases[propertyKey] ?? propertyKey;
+  const images = accommodationsBySlug[slug]?.images ?? [];
+  const gallery = pickGalleryImages(images);
+  return gallery.length ? gallery : defaultGallery;
 });
 
 // Build `images[]` now, so a per-partner gallery can be enabled later.
