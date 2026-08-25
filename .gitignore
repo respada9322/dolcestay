@@ -13,4 +13,10 @@ __v0_jsx-dev-runtime.ts
 # Common ignores
 node_modules
 .next/
+
+# Copied from /images during prebuild (do not commit a symlink here)
+public/images/listings/
+
+# Common ignores
+.DS_Store
 .DS_Storeenigmawebs.com*

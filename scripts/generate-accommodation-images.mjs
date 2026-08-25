@@ -1,8 +1,10 @@
 /**
  * Lists house photos in /images and writes lib/accommodation-images.ts.
- * Also ensures public/images/listings points at that source folder.
+ * Copies those folders into public/images/listings (no symlink — Vercel cannot
+ * deploy a public symlink that points at ../../images).
  *
  * Run: node scripts/generate-accommodation-images.mjs
+ *      node scripts/generate-accommodation-images.mjs --sync-only
  */
 import fs from 'node:fs'
 import path from 'node:path'
@@ -10,8 +12,9 @@ import { fileURLToPath } from 'node:url'
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
 const SOURCE = path.join(ROOT, 'images')
-const PUBLIC_LINK = path.join(ROOT, 'public', 'images', 'listings')
+const PUBLIC_LISTINGS = path.join(ROOT, 'public', 'images', 'listings')
 const OUTPUT = path.join(ROOT, 'lib', 'accommodation-images.ts')
+const SYNC_ONLY = process.argv.includes('--sync-only')
 
 /** slug -> folder name inside /images */
 export const ACCOMMODATION_FOLDERS = {
@@ -75,19 +78,43 @@ function listImages(folderName) {
     .map((file) => encodePublicPath(folderName, file))
 }
 
-function ensureSymlink() {
-  const target = path.relative(path.dirname(PUBLIC_LINK), SOURCE)
+function linkOrCopyFile(from, to) {
   try {
-    const existing = fs.lstatSync(PUBLIC_LINK)
-    if (existing.isSymbolicLink()) {
-      fs.unlinkSync(PUBLIC_LINK)
-    } else {
-      throw new Error(`${PUBLIC_LINK} exists and is not a symlink`)
-    }
-  } catch (error) {
-    if (error && error.code !== 'ENOENT') throw error
+    fs.linkSync(from, to)
+  } catch {
+    fs.copyFileSync(from, to)
   }
-  fs.symlinkSync(target, PUBLIC_LINK)
+}
+
+function syncFolder(from, to) {
+  fs.mkdirSync(to, { recursive: true })
+  for (const entry of fs.readdirSync(from, { withFileTypes: true })) {
+    if (entry.name.startsWith('.')) continue
+    const sourcePath = path.join(from, entry.name)
+    const destPath = path.join(to, entry.name)
+    if (entry.isDirectory()) {
+      syncFolder(sourcePath, destPath)
+    } else if (entry.isFile()) {
+      linkOrCopyFile(sourcePath, destPath)
+    }
+  }
+}
+
+function syncPublicListings() {
+  if (fs.existsSync(PUBLIC_LISTINGS)) {
+    fs.rmSync(PUBLIC_LISTINGS, { recursive: true, force: true })
+  }
+  fs.mkdirSync(PUBLIC_LISTINGS, { recursive: true })
+
+  const folders = [...new Set(Object.values(ACCOMMODATION_FOLDERS))]
+  for (const folder of folders) {
+    const from = path.join(SOURCE, folder)
+    if (!fs.existsSync(from)) {
+      console.warn(`Missing folder: ${folder}`)
+      continue
+    }
+    syncFolder(from, path.join(PUBLIC_LISTINGS, folder))
+  }
 }
 
 function writeManifest(map) {
@@ -107,17 +134,20 @@ ${body}
   fs.writeFileSync(OUTPUT, contents)
 }
 
-const map = Object.fromEntries(
-  Object.entries(ACCOMMODATION_FOLDERS).map(([slug, folder]) => [slug, listImages(folder)]),
-)
+syncPublicListings()
 
-ensureSymlink()
-writeManifest(map)
+if (!SYNC_ONLY) {
+  const map = Object.fromEntries(
+    Object.entries(ACCOMMODATION_FOLDERS).map(([slug, folder]) => [slug, listImages(folder)]),
+  )
+  writeManifest(map)
 
-const counts = Object.entries(map)
-  .map(([slug, files]) => `${String(files.length).padStart(3, ' ')}  ${slug}`)
-  .join('\n')
+  const counts = Object.entries(map)
+    .map(([slug, files]) => `${String(files.length).padStart(3, ' ')}  ${slug}`)
+    .join('\n')
 
-console.log(counts)
-console.log(`\nWrote ${OUTPUT}`)
-console.log(`Linked ${PUBLIC_LINK} -> ${SOURCE}`)
+  console.log(counts)
+  console.log(`\nWrote ${OUTPUT}`)
+}
+
+console.log(`Synced listing photos into ${PUBLIC_LISTINGS}`)

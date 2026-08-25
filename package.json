@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/generate-accommodation-images.mjs --sync-only",
     "dev": "next dev",
+    "prebuild": "node scripts/generate-accommodation-images.mjs --sync-only",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
