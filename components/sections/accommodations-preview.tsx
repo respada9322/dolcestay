@@ -312,21 +312,25 @@ export function AccommodationsPreview() {
           </div>
 
           <div className="mt-8 flex items-center justify-center gap-5">
-            <CarouselNavButton
-              direction="prev"
-              onClick={() => api?.scrollPrev()}
-              disabled={!canScrollPrev}
-              label={t.accommodations.prev}
-            />
+            <div className="lg:hidden">
+              <CarouselNavButton
+                direction="prev"
+                onClick={() => api?.scrollPrev()}
+                disabled={!canScrollPrev}
+                label={t.accommodations.prev}
+              />
+            </div>
             <p className="min-w-[5rem] text-center text-lg font-semibold text-[#1F4E5F]">
               {selectedIndex + 1} / {accommodations.length}
             </p>
-            <CarouselNavButton
-              direction="next"
-              onClick={() => api?.scrollNext()}
-              disabled={!canScrollNext}
-              label={t.accommodations.next}
-            />
+            <div className="lg:hidden">
+              <CarouselNavButton
+                direction="next"
+                onClick={() => api?.scrollNext()}
+                disabled={!canScrollNext}
+                label={t.accommodations.next}
+              />
+            </div>
           </div>
         </div>
 
