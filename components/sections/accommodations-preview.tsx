@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { MapPin, Users, Bed, Wifi, Car, Waves, TreePine, Building, Sun, Wind, Star, Tv, ArrowLeft, ArrowRight } from 'lucide-react';
+import { MapPin, Users, Bed, Wifi, Car, Waves, TreePine, Building, Sun, Wind, Star, Tv, ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { accommodations } from '@/lib/accommodations';
 import { AccommodationsCta } from '@/components/sections/accommodations-cta';
@@ -95,27 +95,27 @@ function AccommodationImageSlideshow({
         />
       </a>
       {images.length > 1 && (
-        <div className="absolute inset-x-3 bottom-3 z-20 flex items-center justify-between">
+        <>
           <button
             type="button"
             onClick={goTo('prev')}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#1F4E5F] shadow-md transition hover:scale-105"
+            className="absolute left-1.5 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center text-white transition hover:scale-110"
             aria-label={`${title} foto anterior`}
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ChevronLeft className="h-8 w-8 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]" strokeWidth={2.5} />
           </button>
-          <div className="rounded-full bg-black/55 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
+          <div className="absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-black/55 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
             {selectedIndex + 1} / {images.length}
           </div>
           <button
             type="button"
             onClick={goTo('next')}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#1F4E5F] shadow-md transition hover:scale-105"
+            className="absolute right-1.5 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center text-white transition hover:scale-110"
             aria-label={`${title} foto seguinte`}
           >
-            <ArrowRight className="h-5 w-5" />
+            <ChevronRight className="h-8 w-8 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]" strokeWidth={2.5} />
           </button>
-        </div>
+        </>
       )}
     </div>
   );
