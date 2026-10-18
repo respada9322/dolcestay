@@ -9,6 +9,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { PHOTO_ORDER_OVERRIDES } from './photo-order-overrides.mjs'
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
 const SOURCE = path.join(ROOT, 'images')
@@ -62,20 +63,35 @@ function encodePublicPath(folder, file) {
   return `/images/listings/${folder.split('/').map(encodeURIComponent).join('/')}/${encodeURIComponent(file)}`
 }
 
-function listImages(folderName) {
+function listImages(folderName, slug) {
   const dir = path.join(SOURCE, folderName)
   if (!fs.existsSync(dir)) {
     console.warn(`Missing folder: ${folderName}`)
     return []
   }
 
-  return fs
+  const files = fs
     .readdirSync(dir, { withFileTypes: true })
     .filter((entry) => entry.isFile())
     .map((entry) => entry.name)
     .filter((name) => IMAGE_EXT.has(path.extname(name).toLowerCase()) && !SKIP_NAME.test(name))
-    .sort((a, b) => a.localeCompare(b, 'pt', { numeric: true, sensitivity: 'base' }))
-    .map((file) => encodePublicPath(folderName, file))
+
+  const order = PHOTO_ORDER_OVERRIDES[slug]
+  if (order) {
+    // Matches the photo order shown on reservas.dolcestay.com for this listing.
+    // Any local file not covered by the override is appended alphabetically.
+    const rank = new Map(order.map((name, index) => [name, index]))
+    files.sort((a, b) => {
+      const ra = rank.has(a) ? rank.get(a) : Number.POSITIVE_INFINITY
+      const rb = rank.has(b) ? rank.get(b) : Number.POSITIVE_INFINITY
+      if (ra !== rb) return ra - rb
+      return a.localeCompare(b, 'pt', { numeric: true, sensitivity: 'base' })
+    })
+  } else {
+    files.sort((a, b) => a.localeCompare(b, 'pt', { numeric: true, sensitivity: 'base' }))
+  }
+
+  return files.map((file) => encodePublicPath(folderName, file))
 }
 
 function linkOrCopyFile(from, to) {
@@ -138,7 +154,7 @@ syncPublicListings()
 
 if (!SYNC_ONLY) {
   const map = Object.fromEntries(
-    Object.entries(ACCOMMODATION_FOLDERS).map(([slug, folder]) => [slug, listImages(folder)]),
+    Object.entries(ACCOMMODATION_FOLDERS).map(([slug, folder]) => [slug, listImages(folder, slug)]),
   )
   writeManifest(map)
 
