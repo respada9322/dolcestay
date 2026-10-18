@@ -46,7 +46,7 @@ import { contactInfo } from '@/lib/data';
 import { OWNERS_CONTACT_SECTION_ID, routes } from '@/lib/navigation';
 
 const PAGE_IMAGES = {
-  hero: '/images/ProprietariosHeroSection.jpg',
+  hero: '/images/rentabilize-imovel-sesimbra-hero.png',
 } as const;
 
 const INITIAL_OWNER_FORM = {
