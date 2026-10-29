@@ -26,6 +26,7 @@ export type Accommodation = {
   guests: number;
   bedrooms: number;
   bookingUrl: string;
+  rating: number | null;
 };
 
 const withImages = (
@@ -52,6 +53,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/31781/',
+    rating: 4.9,
   }),
   withImages('villa-manuelina', {
     id: 36,
@@ -63,6 +65,7 @@ export const accommodations: Accommodation[] = [
     guests: 10,
     bedrooms: 5,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/26301/',
+    rating: 5.0,
   }),
   withImages('olive-tree-house', {
     id: 26,
@@ -74,6 +77,7 @@ export const accommodations: Accommodation[] = [
     guests: 7,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/26784/',
+    rating: 4.9,
   }),
   withImages('refugio', {
     id: 14,
@@ -85,6 +89,7 @@ export const accommodations: Accommodation[] = [
     guests: 5,
     bedrooms: 2,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/30282/',
+    rating: 4.8,
   }),
   withImages('vila-das-conchas', {
     id: 18,
@@ -96,6 +101,7 @@ export const accommodations: Accommodation[] = [
     guests: 6,
     bedrooms: 2,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/30185/',
+    rating: 4.6,
   }),
   withImages('casa-da-alegria', {
     id: 33,
@@ -107,6 +113,7 @@ export const accommodations: Accommodation[] = [
     guests: 9,
     bedrooms: 4,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/28463/',
+    rating: 4.9,
   }),
   withImages('casa-da-lagoa', {
     id: 13,
@@ -118,6 +125,7 @@ export const accommodations: Accommodation[] = [
     guests: 5,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/23842/',
+    rating: 4.7,
   }),
   withImages('sesimbra-vista-azul', {
     id: 8,
@@ -129,6 +137,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/31331/',
+    rating: 5.0,
   }),
   withImages('casa-da-falesia', {
     id: 6,
@@ -140,6 +149,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/24520/',
+    rating: 4.8,
   }),
   withImages('seriz-beach-house', {
     id: 27,
@@ -151,6 +161,7 @@ export const accommodations: Accommodation[] = [
     guests: 7,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/32857/',
+    rating: 4.8,
   }),
   withImages('villa-terracos-do-castelo', {
     id: 34,
@@ -162,6 +173,7 @@ export const accommodations: Accommodation[] = [
     guests: 10,
     bedrooms: 4,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/24185/',
+    rating: 4.2,
   }),
   withImages('trevo-beach-house', {
     id: 29,
@@ -173,6 +185,7 @@ export const accommodations: Accommodation[] = [
     guests: 8,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/31326/',
+    rating: 4.8,
   }),
   withImages('sesimbra-99', {
     id: 1,
@@ -184,6 +197,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/29798/',
+    rating: 4.7,
   }),
   withImages('casa-do-dario', {
     id: 2,
@@ -195,6 +209,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/25150/',
+    rating: null,
   }),
   withImages('casa-do-castelo', {
     id: 3,
@@ -206,6 +221,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 2,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/33273/',
+    rating: null,
   }),
   withImages('casa-azul', {
     id: 4,
@@ -217,6 +233,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/29032/',
+    rating: null,
   }),
   withImages('cantinho-da-gingeira', {
     id: 5,
@@ -228,6 +245,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/29065/',
+    rating: 5.0,
   }),
   withImages('casa-ferreira', {
     id: 9,
@@ -239,6 +257,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/24186/',
+    rating: 4.6,
   }),
   withImages('casa-atlas', {
     id: 10,
@@ -250,6 +269,7 @@ export const accommodations: Accommodation[] = [
     guests: 4,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/28191/',
+    rating: 4.5,
   }),
   withImages('estudio-do-abacateiro', {
     id: 11,
@@ -261,6 +281,7 @@ export const accommodations: Accommodation[] = [
     guests: 5,
     bedrooms: 1,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/29074/',
+    rating: 4.8,
   }),
   withImages('casa-luminosa', {
     id: 12,
@@ -272,6 +293,7 @@ export const accommodations: Accommodation[] = [
     guests: 5,
     bedrooms: 2,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/28276/',
+    rating: 4.7,
   }),
   withImages('mar-a-vista', {
     id: 15,
@@ -283,6 +305,7 @@ export const accommodations: Accommodation[] = [
     guests: 5,
     bedrooms: 2,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/32415/',
+    rating: 4.9,
   }),
   withImages('quinta-das-figueiras', {
     id: 16,
@@ -294,6 +317,7 @@ export const accommodations: Accommodation[] = [
     guests: 5,
     bedrooms: 2,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/32984/',
+    rating: 5.0,
   }),
   withImages('my-home-in-sesimbra', {
     id: 17,
@@ -305,6 +329,7 @@ export const accommodations: Accommodation[] = [
     guests: 6,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/31937/',
+    rating: 4.9,
   }),
   withImages('castle-apartment', {
     id: 19,
@@ -316,6 +341,7 @@ export const accommodations: Accommodation[] = [
     guests: 6,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/30834/',
+    rating: 4.9,
   }),
   withImages('dolceplace', {
     id: 20,
@@ -327,6 +353,7 @@ export const accommodations: Accommodation[] = [
     guests: 6,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/28671/',
+    rating: 4.8,
   }),
   withImages('casa-da-praia', {
     id: 21,
@@ -338,6 +365,7 @@ export const accommodations: Accommodation[] = [
     guests: 6,
     bedrooms: 2,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/28121/',
+    rating: 4.8,
   }),
   withImages('seaflower-house', {
     id: 22,
@@ -349,6 +377,7 @@ export const accommodations: Accommodation[] = [
     guests: 6,
     bedrooms: 2,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/27061/',
+    rating: 4.9,
   }),
   withImages('ocean-sesimbra', {
     id: 23,
@@ -360,6 +389,7 @@ export const accommodations: Accommodation[] = [
     guests: 6,
     bedrooms: 2,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/33763/',
+    rating: null,
   }),
   withImages('milady-house', {
     id: 24,
@@ -371,6 +401,7 @@ export const accommodations: Accommodation[] = [
     guests: 7,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/27612/',
+    rating: 4.8,
   }),
   withImages('paradise-in-lagoa', {
     id: 25,
@@ -382,6 +413,7 @@ export const accommodations: Accommodation[] = [
     guests: 7,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/27022/',
+    rating: 4.8,
   }),
   withImages('retiro-d-alma', {
     id: 28,
@@ -393,6 +425,7 @@ export const accommodations: Accommodation[] = [
     guests: 8,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/33398/',
+    rating: 4.8,
   }),
   withImages('brisa-de-sesimbra', {
     id: 30,
@@ -404,6 +437,7 @@ export const accommodations: Accommodation[] = [
     guests: 8,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/32094/',
+    rating: null,
   }),
   withImages('casa-campo-e-praia', {
     id: 31,
@@ -415,6 +449,7 @@ export const accommodations: Accommodation[] = [
     guests: 8,
     bedrooms: 4,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/26572/',
+    rating: 4.9,
   }),
   withImages('villa-pinheirinhos', {
     id: 32,
@@ -426,6 +461,7 @@ export const accommodations: Accommodation[] = [
     guests: 9,
     bedrooms: 3,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/31732/',
+    rating: 5.0,
   }),
   withImages('villa-penim', {
     id: 35,
@@ -437,6 +473,7 @@ export const accommodations: Accommodation[] = [
     guests: 10,
     bedrooms: 5,
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/32918/',
+    rating: 4.9,
   }),
 ];
 

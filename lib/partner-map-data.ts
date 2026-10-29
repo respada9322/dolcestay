@@ -123,14 +123,6 @@ export const MAP_PARTNERS: MapPartner[] = [
     category: 'restaurants',
   },
   {
-    id: 'restaurante-mare',
-    name: 'Restaurante Maré',
-    address: 'R. Latino Coelho 5, 2970-768 Sesimbra, Portugal',
-    lat: 38.4430068,
-    lng: -9.0987714,
-    category: 'restaurants',
-  },
-  {
     id: 'gelatomania',
     name: 'Gelatomania',
     address: 'Av. 25 de Abril 7-C, 2970-634 Sesimbra, Portugal',

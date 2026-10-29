@@ -309,14 +309,6 @@ export const partnerRestaurants = [
     website: 'https://www.instagram.com/vidalfood_and_drinks/',
   },
   {
-    id: 16,
-    name: 'Restaurante Maré',
-    category: 'restaurants' as const,
-    type: 'restaurant' as const,
-    ...withPartnerImages('Restaurante Maré', '/images/parcerias/restaurante_mare.webp', ['restaurantemare', 'mare']),
-    website: 'https://restaurantemaresesimbra.eatbu.com/?lang=pt',
-  },
-  {
     id: 17,
     name: 'Bar do Peixe - Meco',
     category: 'restaurants' as const,

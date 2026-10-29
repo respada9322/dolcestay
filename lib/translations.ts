@@ -117,7 +117,7 @@ export const translations = {
         },
         marketing: {
           title: 'Divulgação e Marketing',
-          description: 'Realizamos fotografias e promovemos o seu alojamento no nosso site e redes sociais e canais parceiros.',
+          description: 'Realizamos fotografias e promovemos o seu alojamento no nosso site, redes sociais e canais parceiros.',
         },
         maintenance: {
           title: 'Manutenção e Apoio Local',
@@ -444,8 +444,8 @@ export const translations = {
         title: 'Nascemos em Sesimbra',
         paragraphs: [
           'A DolceStay nasceu da vontade de elevar a gestão de alojamento local num destino que conhecemos como a palma da nossa mão.',
-          'Vivemos e trabalhamos em Sesimbra. Conhecemos as praias, os proprietários, os ritmos da temporada e o que faz cada estadia ser inesquecível.',
-          'Para nós, cada imóvel é um projecto: tratamos da operação diária para que proprietários ganhem tempo e hóspedes vivam Sesimbra com autenticidade.',
+          'Vivemos e trabalhamos em Sesimbra. Conhecemos as praias, os proprietários, os ritmos de cada época e aquilo que torna cada estadia inesquecível.',
+          'Para nós, cada imóvel tem a sua identidade. Cuidamos de todos os detalhes da sua operação para que os proprietários tenham tranquilidade e os hóspedes vivam Sesimbra com autenticidade.',
         ],
         imageAlt: 'Vista aérea de Sesimbra com o castelo, a vila e a baía',
       },

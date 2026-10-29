@@ -265,10 +265,14 @@ export function AccommodationsPreview() {
                           <MapPin className="h-4 w-4" />
                           <span>{accommodation.location}</span>
                         </div>
-                        <div className="flex items-center gap-1 text-[#F59E0B]">
-                          <Star className="h-4 w-4 fill-current" />
-                          <span className="text-sm font-medium text-[#1F4E5F]">4.9</span>
-                        </div>
+                        {accommodation.rating !== null && (
+                          <div className="flex items-center gap-1 text-[#F59E0B]">
+                            <Star className="h-4 w-4 fill-current" />
+                            <span className="text-sm font-medium text-[#1F4E5F]">
+                              {accommodation.rating.toFixed(1)}
+                            </span>
+                          </div>
+                        )}
                       </div>
 
                       <div className="flex flex-wrap gap-2 mb-5">
