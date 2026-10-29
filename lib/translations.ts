@@ -53,7 +53,7 @@ export const translations = {
     },
     accommodations: {
       title: 'Alojamentos em Destaque',
-      subtitle: 'Deslize para descobrir as nossas 36 propriedades em Sesimbra',
+      subtitle: 'Deslize para descobrir as nossas 37 propriedades em Sesimbra',
       badge: 'Alojamento Sesimbra',
       featured: 'Destaque',
       prev: 'Casas anteriores',
@@ -726,7 +726,7 @@ export const translations = {
     },
     accommodations: {
       title: 'Featured Accommodations',
-      subtitle: 'Swipe to discover our 36 properties in Sesimbra',
+      subtitle: 'Swipe to discover our 37 properties in Sesimbra',
       badge: 'Sesimbra Accommodation',
       featured: 'Featured',
       prev: 'Previous homes',
@@ -1337,7 +1337,7 @@ export const translations = {
     },
     accommodations: {
       title: 'Hébergements en Vedette',
-      subtitle: 'Faites glisser pour découvrir nos 36 propriétés à Sesimbra',
+      subtitle: 'Faites glisser pour découvrir nos 37 propriétés à Sesimbra',
       badge: 'Hébergement Sesimbra',
       featured: 'En Vedette',
       prev: 'Logements précédents',
@@ -1948,7 +1948,7 @@ export const translations = {
     },
     accommodations: {
       title: 'Alojamientos Destacados',
-      subtitle: 'Deslice para descubrir nuestras 36 propiedades en Sesimbra',
+      subtitle: 'Deslice para descubrir nuestras 37 propiedades en Sesimbra',
       badge: 'Alojamiento Sesimbra',
       featured: 'Destacado',
       prev: 'Alojamientos anteriores',
@@ -2559,7 +2559,7 @@ export const translations = {
     },
     accommodations: {
       title: 'Ausgewählte Unterkünfte',
-      subtitle: 'Wischen Sie, um unsere 36 Unterkünfte in Sesimbra zu entdecken',
+      subtitle: 'Wischen Sie, um unsere 37 Unterkünfte in Sesimbra zu entdecken',
       badge: 'Unterkunft Sesimbra',
       featured: 'Empfohlen',
       prev: 'Vorherige Unterkünfte',

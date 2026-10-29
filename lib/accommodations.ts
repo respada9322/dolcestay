@@ -223,6 +223,18 @@ export const accommodations: Accommodation[] = [
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/33273/',
     rating: null,
   }),
+  withImages('casa-do-castelo-t3', {
+    id: 37,
+    title: 'Casa do Castelo T3',
+    subtitle: 'T3 com lareira e jardim, perto do castelo',
+    location: 'Sesimbra',
+    features: ['garden', 'terrace', 'wifi', 'tv'],
+    price: 80,
+    guests: 6,
+    bedrooms: 3,
+    bookingUrl: 'https://reservasdolcestay.talkguestwebsites.com/pt-PT/rentals/33680/',
+    rating: 5,
+  }),
   withImages('casa-azul', {
     id: 4,
     title: 'Casa Azul',
