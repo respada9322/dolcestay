@@ -39,13 +39,22 @@ const pickGalleryImages = (images: string[], indices = [0, 2, 5, 9, 12, 15]) => 
   return picked.length ? picked : images.slice(0, 6);
 };
 
+// Extra picks per slug, added on top of the default indices (without removing any of them).
+const testimonialGalleryExtraIndices: Record<string, number[]> = {
+  'casa-da-lagoa': [1],
+};
+
 const defaultGallery = pickGalleryImages(accommodationsBySlug['casa-da-falesia']?.images ?? []);
 
 /** Gallery images per testimonial index (hero image first, then secondary). */
 export const testimonialGalleries = testimonialPropertyKeys.map((propertyKey) => {
   const slug = testimonialSlugAliases[propertyKey] ?? propertyKey;
   const images = accommodationsBySlug[slug]?.images ?? [];
-  const gallery = pickGalleryImages(images);
+  const extraIndices = testimonialGalleryExtraIndices[slug] ?? [];
+  const indices = extraIndices.length
+    ? [...extraIndices, ...[0, 2, 5, 9, 12, 15]].sort((a, b) => a - b)
+    : undefined;
+  const gallery = pickGalleryImages(images, indices);
   return gallery.length ? gallery : defaultGallery;
 });
 
