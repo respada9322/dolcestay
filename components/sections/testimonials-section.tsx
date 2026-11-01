@@ -303,7 +303,7 @@ function TestimonialGallery({
                       src={src}
                       alt={`${author} — ${index + 2}`}
                       fill
-                      className="object-cover"
+                      className="bg-[#F0F4F2] object-cover"
                       sizes="120px"
                     />
                   </div>
@@ -336,7 +336,7 @@ function GalleryImage({
         src={src}
         alt={alt}
         fill
-        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+        className="bg-[#F0F4F2] object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
         sizes={sizes}
         priority={priority}
       />

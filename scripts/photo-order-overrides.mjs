@@ -651,9 +651,7 @@ export const PHOTO_ORDER_OVERRIDES = {
   "dolceplace": [
     "21-c63.webp",
     "03-c63.webp",
-    "02-c63 - Cópia.webp",
     "10-c63.webp",
-    "01-c63 - Cópia.webp",
     "18-c63.webp",
     "23-c63.webp",
     "19-c63.webp",

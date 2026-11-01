@@ -76,7 +76,7 @@ function listImages(folderName, slug) {
     .readdirSync(dir, { withFileTypes: true })
     .filter((entry) => entry.isFile())
     .map((entry) => entry.name)
-    .filter((name) => IMAGE_EXT.has(path.extname(name).toLowerCase()) && !SKIP_NAME.test(name))
+    .filter((name) => IMAGE_EXT.has(path.extname(name).toLowerCase()) && !SKIP_NAME.test(name.normalize('NFC')))
 
   const order = PHOTO_ORDER_OVERRIDES[slug]
   if (order) {

@@ -620,9 +620,7 @@ export const accommodationImages: Record<string, string[]> = {
   "dolceplace": [
     "/images/listings/dolcePlace/21-c63.webp",
     "/images/listings/dolcePlace/03-c63.webp",
-    "/images/listings/dolcePlace/02-c63%20-%20Co%CC%81pia.webp",
     "/images/listings/dolcePlace/10-c63.webp",
-    "/images/listings/dolcePlace/01-c63%20-%20Co%CC%81pia.webp",
     "/images/listings/dolcePlace/18-c63.webp",
     "/images/listings/dolcePlace/23-c63.webp",
     "/images/listings/dolcePlace/19-c63.webp",
