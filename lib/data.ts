@@ -44,6 +44,23 @@ const testimonialGalleryExtraIndices: Record<string, number[]> = {
   'casa-da-lagoa': [1],
 };
 
+// Explicit overrides per slug: [hero, thumb1, thumb2, thumb3, thumb4], matched by the
+// numeric filename (e.g. 76 matches both "76.webp" and "0076.webp") in that listing's
+// image folder. Use `null` to keep whatever the default computed gallery picks for that slot.
+const testimonialGalleryOverrides: Record<string, (number | null)[]> = {
+  'villa-manuelina': [null, 76, 41, 64, 74],
+  'villa-pinheirinhos': [10, 6, 44, 28, 46],
+  'castle-apartment': [null, null, 11, null, null],
+};
+
+const getImageNumber = (path: string) => {
+  const match = path.match(/(\d+)\.webp$/i);
+  return match ? parseInt(match[1], 10) : NaN;
+};
+
+const findImageByNumber = (images: string[], num: number) =>
+  images.find((image) => getImageNumber(image) === num);
+
 const defaultGallery = pickGalleryImages(accommodationsBySlug['casa-da-falesia']?.images ?? []);
 
 /** Gallery images per testimonial index (hero image first, then secondary). */
@@ -54,7 +71,14 @@ export const testimonialGalleries = testimonialPropertyKeys.map((propertyKey) =>
   const indices = extraIndices.length
     ? [...extraIndices, ...[0, 2, 5, 9, 12, 15]].sort((a, b) => a - b)
     : undefined;
-  const gallery = pickGalleryImages(images, indices);
+  const computedGallery = pickGalleryImages(images, indices);
+
+  const override = testimonialGalleryOverrides[slug];
+  const gallery = override
+    ? override.map((num, i) => (num === null ? computedGallery[i] : findImageByNumber(images, num) ?? computedGallery[i]))
+        .filter((image): image is string => Boolean(image))
+    : computedGallery;
+
   return gallery.length ? gallery : defaultGallery;
 });
 
