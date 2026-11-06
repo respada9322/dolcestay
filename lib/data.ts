@@ -52,6 +52,7 @@ const testimonialGalleryOverrides: Record<string, (number | null)[]> = {
   'villa-pinheirinhos': [10, 6, 44, 28, 46],
   'castle-apartment': [null, null, 11, null, null],
   'casa-campo-e-praia': [null, 3655, null, null, null],
+  refugio: [null, 4752, null, null, null],
 };
 
 const getImageNumber = (path: string) => {
