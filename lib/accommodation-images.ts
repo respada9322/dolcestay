@@ -544,6 +544,10 @@ export const accommodationImages: Record<string, string[]> = {
   ],
   "my-home-in-sesimbra": [
     "/images/listings/My%20Home%20In%20Sesimbra/1.webp",
+    "/images/listings/My%20Home%20In%20Sesimbra/10.webp",
+    "/images/listings/My%20Home%20In%20Sesimbra/14.webp",
+    "/images/listings/My%20Home%20In%20Sesimbra/15.webp",
+    "/images/listings/My%20Home%20In%20Sesimbra/18.webp",
   ],
   "vila-das-conchas": [
     "/images/listings/Vila%20das%20Conchas/34-c45.webp",
