@@ -7,7 +7,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '@/lib/language-context';
 import type { Translations } from '@/lib/translations';
 import { getGoogleReviewsUrl } from '@/lib/google-reviews-config';
-import { testimonialGalleries } from '@/lib/data';
+import { testimonialGalleries, testimonialPropertyNames } from '@/lib/data';
 import { getTestimonialItems, type TestimonialItem } from '@/lib/testimonials-data';
 import { cn } from '@/lib/utils';
 
@@ -104,6 +104,7 @@ export function TestimonialsSection() {
 
   const currentTestimonial = testimonials[currentIndex];
   const currentGallery = testimonialGalleries[currentIndex] ?? testimonialGalleries[0];
+  const currentPropertyName = testimonialPropertyNames[currentIndex];
   const transition = shouldReduceMotion
     ? { duration: 0 }
     : { duration: 0.55, ease: 'easeInOut' as const };
@@ -150,7 +151,11 @@ export function TestimonialsSection() {
                     transition={transition}
                     className="flex h-full min-h-[380px] flex-1 sm:min-h-[400px] lg:min-h-[460px]"
                   >
-                    <TestimonialPanel testimonial={currentTestimonial} t={t} />
+                    <TestimonialPanel
+                      testimonial={currentTestimonial}
+                      propertyName={currentPropertyName}
+                      t={t}
+                    />
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -346,9 +351,11 @@ function GalleryImage({
 
 function TestimonialPanel({
   testimonial,
+  propertyName,
   t,
 }: {
   testimonial: Testimonial;
+  propertyName?: string;
   t: Translations;
 }) {
   const typeLabel = testimonial.type === 'guest' ? t.testimonials.guest : t.testimonials.owner;
@@ -374,6 +381,12 @@ function TestimonialPanel({
         </div>
         <Quote className="h-7 w-7 shrink-0 text-[#CFE8D2] lg:h-8 lg:w-8" aria-hidden="true" />
       </div>
+
+      {propertyName && (
+        <p className="mb-4 shrink-0 text-xs font-semibold uppercase tracking-wide text-[#8DBE91] sm:text-sm">
+          {propertyName}
+        </p>
+      )}
 
       <blockquote
         className={cn(

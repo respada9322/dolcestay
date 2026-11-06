@@ -82,6 +82,12 @@ export const testimonialGalleries = testimonialPropertyKeys.map((propertyKey) =>
   return gallery.length ? gallery : defaultGallery;
 });
 
+/** Property display name per testimonial index, matched the same way as the gallery. */
+export const testimonialPropertyNames = testimonialPropertyKeys.map((propertyKey) => {
+  const slug = testimonialSlugAliases[propertyKey] ?? propertyKey;
+  return accommodationsBySlug[slug]?.title ?? '';
+});
+
 // Build `images[]` now, so a per-partner gallery can be enabled later.
 // Matching is case-insensitive and tolerant to spaces, underscores and hyphens.
 const partnerGalleryFiles = [
