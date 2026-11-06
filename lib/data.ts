@@ -44,10 +44,12 @@ const testimonialGalleryExtraIndices: Record<string, number[]> = {
   'casa-da-lagoa': [1],
 };
 
-// Explicit overrides per slug: [hero, thumb1, thumb2, thumb3, thumb4], matched by the
-// numeric filename (e.g. 76 matches both "76.webp" and "0076.webp") in that listing's
-// image folder. Use `null` to keep whatever the default computed gallery picks for that slot.
-const testimonialGalleryOverrides: Record<string, (number | null)[]> = {
+// Explicit overrides per slug: [hero, thumb1, thumb2, thumb3, thumb4]. A number matches the
+// numeric filename (e.g. 76 matches both "76.webp" and "0076.webp") in that listing's image
+// folder; a string matches any filename containing it (for folders where filenames share the
+// same trailing number, e.g. "01-c60.webp"). Use `null` to keep whatever the default computed
+// gallery picks for that slot.
+const testimonialGalleryOverrides: Record<string, (number | string | null)[]> = {
   'villa-manuelina': [null, 76, 41, 64, 74],
   'villa-pinheirinhos': [10, 6, 44, 28, 46],
   'castle-apartment': [null, null, 11, null, null],
@@ -57,6 +59,7 @@ const testimonialGalleryOverrides: Record<string, (number | null)[]> = {
   'my-home-in-sesimbra': [1, 18, 14, 15, 10],
   'seaflower-house': [1161, 1174, 1170, 1163, 1178],
   'sesimbra-99': [null, null, 11, null, null],
+  'sesimbra-vista-azul': [null, '03-c60', null, '02-c60', null],
 };
 
 const getImageNumber = (path: string) => {
@@ -64,8 +67,10 @@ const getImageNumber = (path: string) => {
   return match ? parseInt(match[1], 10) : NaN;
 };
 
-const findImageByNumber = (images: string[], num: number) =>
-  images.find((image) => getImageNumber(image) === num);
+const findImageByNumber = (images: string[], num: number | string) =>
+  typeof num === 'string'
+    ? images.find((image) => image.includes(num))
+    : images.find((image) => getImageNumber(image) === num);
 
 const defaultGallery = pickGalleryImages(accommodationsBySlug['casa-da-falesia']?.images ?? []);
 
