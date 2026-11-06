@@ -62,6 +62,7 @@ const testimonialGalleryOverrides: Record<string, (number | string | null)[]> = 
   'sesimbra-vista-azul': [null, '01-c60', null, '02-c60', null],
   dolceplace: ['02-c63', '06-c63', '04-c63', '08-c63', '01-c63'],
   'trevo-beach-house': [null, '03-c58', '31-c58', '24-c58', '37-c58'],
+  'olive-tree-house': [null, 5351, null, null, null],
 };
 
 const getImageNumber = (path: string) => {
