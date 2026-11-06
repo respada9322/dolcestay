@@ -59,7 +59,7 @@ const testimonialGalleryOverrides: Record<string, (number | string | null)[]> = 
   'my-home-in-sesimbra': [1, 18, 14, 15, 10],
   'seaflower-house': [1161, 1174, 1170, 1163, 1178],
   'sesimbra-99': [null, null, 11, null, null],
-  'sesimbra-vista-azul': [null, '03-c60', null, '02-c60', null],
+  'sesimbra-vista-azul': [null, '01-c60', null, '02-c60', null],
   dolceplace: ['02-c63', '06-c63', '04-c63', '08-c63', '01-c63'],
 };
 
