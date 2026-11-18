@@ -13,6 +13,31 @@ const nextConfig = {
         destination: '/atividades',
         permanent: true,
       },
+      {
+        source: '/sobre',
+        destination: '/quem-somos',
+        permanent: true,
+      },
+      {
+        source: '/contato',
+        destination: '/contactos',
+        permanent: true,
+      },
+      {
+        source: '/properties',
+        destination: '/#accommodations',
+        permanent: true,
+      },
+      {
+        source: '/en/properties',
+        destination: '/#accommodations',
+        permanent: true,
+      },
+      {
+        source: '/en',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 }

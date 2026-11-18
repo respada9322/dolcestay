@@ -148,7 +148,7 @@ export function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 max-w-6xl mx-auto">
           {/* Contact Info */}
-          <div>
+          <div className="min-w-0">
             <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-[#E5E7EB]">
               <h3 className="font-serif text-2xl text-[#1F4E5F] mb-8">
                 {t.footer.addressTitle}
@@ -238,7 +238,7 @@ export function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <div>
+          <div className="min-w-0">
             {isSuccess ? (
               <div className="bg-gradient-to-br from-[#CFE8D2] to-[#8DBE91]/30 rounded-3xl p-10 text-center h-full flex flex-col items-center justify-center shadow-xl">
                 <div className="w-20 h-20 bg-[#8DBE91] rounded-full flex items-center justify-center mb-6 shadow-lg">

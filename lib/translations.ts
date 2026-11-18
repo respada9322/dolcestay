@@ -435,7 +435,7 @@ export const translations = {
         imageAlt: 'Rua estreita em Sesimbra com vista para o mar',
       },
       stats: {
-        stat1: { value: '+33', label: 'Propriedades geridas', counterType: 'plus' as const, counterValue: 33 },
+        stat1: { value: '+40', label: 'Propriedades geridas', counterType: 'plus' as const, counterValue: 40 },
         stat2: { value: '+1000', label: 'Hóspedes recebidos', counterType: 'plus' as const, counterValue: 1000 },
         stat3: { value: '4.9★', label: 'Avaliação média', counterType: 'decimal' as const, counterValue: 4.9 },
         stat4: { value: '24/7', label: 'Apoio permanente', counterType: 'static' as const },
