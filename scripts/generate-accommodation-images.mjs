@@ -56,6 +56,7 @@ export const ACCOMMODATION_FOLDERS = {
   'villa-terracos-do-castelo': 'Villa terraços do castelo',
   'villa-penim': 'Villa Penim',
   'villa-manuelina': 'Villa Manuelina',
+  'perola-azul': 'Perola Azul',
 }
 
 const IMAGE_EXT = new Set(['.webp', '.jpg', '.jpeg', '.png'])

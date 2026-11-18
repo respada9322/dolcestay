@@ -487,6 +487,18 @@ export const accommodations: Accommodation[] = [
     bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/32918/',
     rating: 4.9,
   }),
+  withImages('perola-azul', {
+    id: 38,
+    title: 'Pérola Azul',
+    subtitle: 'A 5 min a Pé da Praia, Quintal & BBQ',
+    location: 'Sesimbra',
+    features: ['beach', 'garden', 'parking', 'wifi', 'aircon'],
+    price: 70,
+    guests: 5,
+    bedrooms: 2,
+    bookingUrl: 'https://reservas.dolcestay.com/pt-PT/rentals/33806/',
+    rating: null,
+  }),
 ];
 
 export const accommodationsBySlug = Object.fromEntries(
