@@ -9,6 +9,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import sharp from 'sharp'
 import { PHOTO_ORDER_OVERRIDES } from './photo-order-overrides.mjs'
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -16,6 +17,13 @@ const SOURCE = path.join(ROOT, 'images')
 const PUBLIC_LISTINGS = path.join(ROOT, 'public', 'images', 'listings')
 const OUTPUT = path.join(ROOT, 'lib', 'accommodation-images.ts')
 const SYNC_ONLY = process.argv.includes('--sync-only')
+
+// Source photos are full camera resolution (some 60+ megapixels). Served as-is
+// they forced mobile Safari to decode dozens of megabytes per image at once,
+// which is what was crashing the tab. Cap the long edge and recompress instead.
+const MAX_DIMENSION = 2000
+const WEBP_QUALITY = 78
+const JPEG_QUALITY = 78
 
 /** slug -> folder name inside /images */
 export const ACCOMMODATION_FOLDERS = {
@@ -105,34 +113,91 @@ function linkOrCopyFile(from, to) {
   }
 }
 
-function syncFolder(from, to) {
+async function resizeFile(from, to, ext) {
+  const pipeline = sharp(from).rotate().resize({
+    width: MAX_DIMENSION,
+    height: MAX_DIMENSION,
+    fit: 'inside',
+    withoutEnlargement: true,
+  })
+
+  if (ext === '.webp') {
+    await pipeline.webp({ quality: WEBP_QUALITY }).toFile(to)
+  } else if (ext === '.jpg' || ext === '.jpeg') {
+    await pipeline.jpeg({ quality: JPEG_QUALITY, mozjpeg: true }).toFile(to)
+  } else {
+    await pipeline.toFile(to)
+  }
+}
+
+async function syncImageFile(from, to) {
+  const srcStat = fs.statSync(from)
+  if (fs.existsSync(to) && fs.statSync(to).mtimeMs >= srcStat.mtimeMs) {
+    return
+  }
+
+  const ext = path.extname(from).toLowerCase()
+  if (!IMAGE_EXT.has(ext)) {
+    linkOrCopyFile(from, to)
+    return
+  }
+
+  try {
+    const metadata = await sharp(from).metadata()
+    const longEdge = Math.max(metadata.width ?? 0, metadata.height ?? 0)
+    if (longEdge > MAX_DIMENSION) {
+      await resizeFile(from, to, ext)
+      return
+    }
+  } catch (err) {
+    console.warn(`Could not read/resize ${from}: ${err.message}`)
+  }
+
+  linkOrCopyFile(from, to)
+}
+
+async function syncFolder(from, to) {
   fs.mkdirSync(to, { recursive: true })
-  for (const entry of fs.readdirSync(from, { withFileTypes: true })) {
+  const entries = fs.readdirSync(from, { withFileTypes: true })
+
+  // Drop files that no longer exist in the source folder.
+  const sourceNames = new Set(entries.map((entry) => entry.name))
+  for (const existing of fs.readdirSync(to, { withFileTypes: true })) {
+    if (!sourceNames.has(existing.name)) {
+      fs.rmSync(path.join(to, existing.name), { recursive: true, force: true })
+    }
+  }
+
+  for (const entry of entries) {
     if (entry.name.startsWith('.')) continue
     const sourcePath = path.join(from, entry.name)
     const destPath = path.join(to, entry.name)
     if (entry.isDirectory()) {
-      syncFolder(sourcePath, destPath)
+      await syncFolder(sourcePath, destPath)
     } else if (entry.isFile()) {
-      linkOrCopyFile(sourcePath, destPath)
+      await syncImageFile(sourcePath, destPath)
     }
   }
 }
 
-function syncPublicListings() {
-  if (fs.existsSync(PUBLIC_LISTINGS)) {
-    fs.rmSync(PUBLIC_LISTINGS, { recursive: true, force: true })
-  }
+async function syncPublicListings() {
   fs.mkdirSync(PUBLIC_LISTINGS, { recursive: true })
 
   const folders = [...new Set(Object.values(ACCOMMODATION_FOLDERS))]
+  const keepFolders = new Set(folders)
+  for (const existing of fs.readdirSync(PUBLIC_LISTINGS, { withFileTypes: true })) {
+    if (existing.isDirectory() && !keepFolders.has(existing.name)) {
+      fs.rmSync(path.join(PUBLIC_LISTINGS, existing.name), { recursive: true, force: true })
+    }
+  }
+
   for (const folder of folders) {
     const from = path.join(SOURCE, folder)
     if (!fs.existsSync(from)) {
       console.warn(`Missing folder: ${folder}`)
       continue
     }
-    syncFolder(from, path.join(PUBLIC_LISTINGS, folder))
+    await syncFolder(from, path.join(PUBLIC_LISTINGS, folder))
   }
 }
 
@@ -153,7 +218,7 @@ ${body}
   fs.writeFileSync(OUTPUT, contents)
 }
 
-syncPublicListings()
+await syncPublicListings()
 
 if (!SYNC_ONLY) {
   const map = Object.fromEntries(

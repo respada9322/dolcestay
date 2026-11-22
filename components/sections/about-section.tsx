@@ -25,9 +25,9 @@ import { PremiumCtaCard } from '@/components/sections/premium-cta-card';
 import { homeSection, HOME_SECTION_IDS, routes } from '@/lib/navigation';
 
 const ABOUT_IMAGES = {
-  hero: '/images/somos-locais-gerimos-como-proprietarios.png',
-  story: '/images/nascemos-em-sesimbra.png',
-  sesimbraPanorama: '/images/porque-escolhemos-sesimbra.png',
+  hero: '/images/somos-locais-gerimos-como-proprietarios.webp',
+  story: '/images/nascemos-em-sesimbra.webp',
+  sesimbraPanorama: '/images/porque-escolhemos-sesimbra.webp',
   sesimbraCards: [
     '/images/partners/Look_Around_Tours_photo1.webp',
     '/images/partners/Cipreia_photo1.webp',

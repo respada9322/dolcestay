@@ -15,7 +15,11 @@ const preloadImage = (src: string) => {
   image.src = src;
 };
 
-const COVER_PRELOAD_AHEAD = 5;
+const COVER_PRELOAD_AHEAD = 2;
+// Embla keeps every slide mounted (it doesn't virtualize), so without this all
+// 38 property cards would request their cover photo at once on page load.
+// Only mount the <Image> for cards within this distance of the active slide.
+const RENDER_WINDOW = 6;
 
 const featureIcons: Record<string, React.ReactNode> = {
   seaView: <Waves className="h-4 w-4" />,
@@ -36,20 +40,31 @@ function AccommodationImageSlideshow({
   title,
   bookingUrl,
   eager,
+  shouldRender,
 }: {
   images: string[];
   title: string;
   bookingUrl: string;
   eager?: boolean;
+  shouldRender: boolean;
 }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const currentImage = images[selectedIndex];
 
   useEffect(() => {
-    if (images.length < 2) return;
+    // Only warm neighbor images for cards that are actually near the viewport —
+    // all 38 property cards are mounted at once by the carousel, so doing this
+    // unconditionally forced dozens of off-screen image decodes on every load.
+    if (!eager || images.length < 2) return;
     preloadImage(images[(selectedIndex - 1 + images.length) % images.length]);
     preloadImage(images[(selectedIndex + 1) % images.length]);
-  }, [images, selectedIndex]);
+  }, [images, selectedIndex, eager]);
+
+  if (!shouldRender) {
+    // Cards far from the active slide stay unmounted until the user scrolls
+    // near them, so the carousel doesn't force-decode dozens of photos at once.
+    return null;
+  }
 
   if (!currentImage) {
     return (
@@ -234,7 +249,8 @@ export function AccommodationsPreview() {
                         images={accommodation.images}
                         title={accommodation.title}
                         bookingUrl={accommodation.bookingUrl}
-                        eager={index <= selectedIndex + 3 && index >= selectedIndex - 1}
+                        eager={index <= selectedIndex + 1 && index >= selectedIndex - 1}
+                        shouldRender={index >= selectedIndex - RENDER_WINDOW && index <= selectedIndex + RENDER_WINDOW}
                       />
                       <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
 
