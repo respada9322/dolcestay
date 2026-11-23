@@ -99,7 +99,7 @@ export const enPrivacySections: LegalSection[] = [
     title: 'Any questions?',
     paragraphs: [
       'If you have any questions about the processing of your personal data, or wish to exercise any of your rights, please contact us:',
-      'Email: dolcestayportugal@gmail.com',
+      'Email: geral@dolcestay.com',
       'Address: Av. da Liberdade nº58/60, 2970-635 Sesimbra',
       'Please note that DolceStay occasionally updates this Privacy Policy. We ask you to review this document periodically to ensure you have the most recent information.',
     ],
