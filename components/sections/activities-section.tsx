@@ -299,11 +299,13 @@ function PartnerExperienceCard({ partner, t, language }: { partner: typeof partn
 }
 
 function PartnerRestaurantCard({ partner, t }: { partner: typeof partnerRestaurants[0]; t: any }) {
+  const website = (partner as { website?: string }).website;
+  const Wrapper = website ? 'a' : 'div';
+  const linkProps = website ? { href: website, target: '_blank', rel: 'noopener noreferrer' } : {};
+
   return (
-    <a
-      href={partner.website}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Wrapper
+      {...linkProps}
       className="group block h-full overflow-hidden rounded-[28px] border border-[#1F4E5F]/8 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#1F4E5F]/15 hover:shadow-[0_8px_24px_rgba(31,78,95,0.1)]"
     >
       {/* Image */}
@@ -326,7 +328,7 @@ function PartnerRestaurantCard({ partner, t }: { partner: typeof partnerRestaura
           {t.activities.typeLabels[partner.type as keyof typeof t.activities.typeLabels]}
         </p>
       </div>
-    </a>
+    </Wrapper>
   );
 }
 

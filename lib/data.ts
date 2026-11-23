@@ -152,6 +152,7 @@ const partnerGalleryFiles = [
   '/images/partners/OurRoots_Photo6.webp',
   '/images/parcerias/a_sesimbrense.webp',
   '/images/parcerias/bar_do_peixe.webp',
+  '/images/parcerias/contraste.webp',
   '/images/parcerias/fadango.webp',
   '/images/parcerias/gelatomania.webp',
   '/images/parcerias/o_golfinho.webp',
@@ -419,6 +420,13 @@ export const partnerRestaurants = [
     type: 'restaurant' as const,
     ...withPartnerImages('O Golfinho', '/images/parcerias/o_golfinho.webp', ['ogolfinho']),
     website: 'https://www.tripadvisor.pt/Restaurant_Review-g227946-d7372042-Reviews-O_Golfinho-Sesimbra_Setubal_District_Alentejo.html',
+  },
+  {
+    id: 24,
+    name: 'Contraste',
+    category: 'restaurants' as const,
+    type: 'restaurant' as const,
+    ...withPartnerImages('Contraste', '/images/parcerias/contraste.webp'),
   },
 ];
 
