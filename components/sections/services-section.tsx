@@ -35,7 +35,7 @@ export function ServicesSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-20 lg:py-28 bg-white scroll-mt-20">
+    <section id="servicos" className="py-20 lg:py-28 bg-white scroll-mt-20">
       <div className="container mx-auto px-4">
         {/* Section Header - SEO optimized */}
         <div className="text-center mb-14 lg:mb-20">

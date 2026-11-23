@@ -25,12 +25,12 @@ const nextConfig = {
       },
       {
         source: '/properties',
-        destination: '/#accommodations',
+        destination: '/#alojamentos',
         permanent: true,
       },
       {
         source: '/en/properties',
-        destination: '/#accommodations',
+        destination: '/#alojamentos',
         permanent: true,
       },
       {

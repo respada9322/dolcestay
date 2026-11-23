@@ -202,7 +202,7 @@ export function AccommodationsPreview() {
   }, [selectedIndex]);
 
   return (
-    <section id="accommodations" className="py-20 lg:py-28 bg-[#F8FAF8] scroll-mt-20">
+    <section id="alojamentos" className="py-20 lg:py-28 bg-[#F8FAF8] scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
           <span className="inline-block px-4 py-1.5 bg-[#CFE8D2] text-[#1F4E5F] text-sm font-semibold rounded-full mb-4">

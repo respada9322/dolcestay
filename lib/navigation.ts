@@ -1,7 +1,7 @@
 /** Section element ids on the homepage (must match section `id` attributes). */
 export const HOME_SECTION_IDS = {
-  accommodations: 'accommodations',
-  services: 'services',
+  accommodations: 'alojamentos',
+  services: 'servicos',
   owners: 'owners',
   howItWorks: 'como-funciona',
 } as const;
