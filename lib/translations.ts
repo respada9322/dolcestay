@@ -53,7 +53,7 @@ export const translations = {
     },
     accommodations: {
       title: 'Alojamentos em Destaque',
-      subtitle: 'Deslize para descobrir as nossas 37 propriedades em Sesimbra',
+      subtitle: 'Deslize para descobrir as nossas 38 propriedades em Sesimbra',
       badge: 'Alojamento Sesimbra',
       featured: 'Destaque',
       prev: 'Casas anteriores',
