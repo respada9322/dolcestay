@@ -188,7 +188,7 @@ export function TestimonialsSection() {
                   </button>
 
                   <div
-                    className="flex flex-1 justify-center gap-2"
+                    className="flex min-w-0 flex-1 gap-2 overflow-x-auto scroll-px-4 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:justify-center"
                     role="tablist"
                     aria-label={t.testimonials.indicatorsLabel}
                   >
@@ -198,7 +198,7 @@ export function TestimonialsSection() {
                         type="button"
                         onClick={() => goToSlide(index)}
                         className={cn(
-                          'h-1.5 rounded-full transition-all duration-300',
+                          'h-1.5 shrink-0 rounded-full transition-all duration-300',
                           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8DBE91] focus-visible:ring-offset-2',
                           index === currentIndex
                             ? 'w-7 bg-[#8DBE91]'
