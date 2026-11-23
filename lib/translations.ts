@@ -372,10 +372,10 @@ export const translations = {
           counterValue: 100,
         },
         metric2: {
-          value: '4.9',
+          value: '4.8',
           label: 'Satisfação média dos hóspedes',
           counterType: 'decimal',
-          counterValue: 4.9,
+          counterValue: 4.8,
         },
         metric3: {
           value: '+32%',
@@ -983,10 +983,10 @@ export const translations = {
           counterValue: 100,
         },
         metric2: {
-          value: '4.9',
+          value: '4.8',
           label: 'Average guest satisfaction',
           counterType: 'decimal',
-          counterValue: 4.9,
+          counterValue: 4.8,
         },
         metric3: {
           value: '+32%',
@@ -1594,10 +1594,10 @@ export const translations = {
           counterValue: 100,
         },
         metric2: {
-          value: '4.9',
+          value: '4.8',
           label: 'Satisfaction moyenne des clients',
           counterType: 'decimal',
-          counterValue: 4.9,
+          counterValue: 4.8,
         },
         metric3: {
           value: '+32%',
@@ -2205,10 +2205,10 @@ export const translations = {
           counterValue: 100,
         },
         metric2: {
-          value: '4.9',
+          value: '4.8',
           label: 'Satisfacción media de los huéspedes',
           counterType: 'decimal',
-          counterValue: 4.9,
+          counterValue: 4.8,
         },
         metric3: {
           value: '+32%',
@@ -2816,10 +2816,10 @@ export const translations = {
           counterValue: 100,
         },
         metric2: {
-          value: '4.9',
+          value: '4.8',
           label: 'Durchschnittliche Gästezufriedenheit',
           counterType: 'decimal',
-          counterValue: 4.9,
+          counterValue: 4.8,
         },
         metric3: {
           value: '+32%',
