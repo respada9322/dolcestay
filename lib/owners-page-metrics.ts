@@ -6,9 +6,9 @@ export const OWNERS_PAGE_METRICS = {
     counterValue: 100,
   },
   metric2: {
-    value: '4.9',
+    value: '4.8',
     counterType: 'decimal' as const,
-    counterValue: 4.9,
+    counterValue: 4.8,
   },
   metric3: {
     value: '24/7',

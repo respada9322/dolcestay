@@ -176,7 +176,7 @@ export const translations = {
         badge: 'Gestão de Alojamento Local',
         title: 'Rentabilize o seu imóvel em Sesimbra sem preocupações',
         subtitle:
-          'Tratamos da gestão completa do seu alojamento local — reservas, hóspedes, limpeza, manutenção, preços e acompanhamento — para que obtenha mais rendimento com menos esforço.',
+          'Tratamos da gestão completa do seu alojamento local, reservas, hóspedes, limpeza, manutenção, preços e acompanhamento, para que obtenha mais rendimento com menos esforço.',
         ctaPrimary: 'Quero Rentabilizar o Meu Imóvel',
         ctaSecondary: 'Falar com a Equipa',
         imageAlt: 'Alojamento premium em Sesimbra com vista para a costa',
